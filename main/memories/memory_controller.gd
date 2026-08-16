@@ -17,6 +17,8 @@ func _ready() -> void:
 		GameData.Memory.STORAGE_AREA:
 			print("storing the area")
 			memory_ended()
+	
+	SoundManager.play_music((SRM as SoundResourceManager).get_sound("memory_start")).volume_db = -12
 
 
 

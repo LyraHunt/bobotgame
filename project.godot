@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 Dialogic="*uid://ds2q0uclmolvu"
 GameLogic="*uid://bd8k5icr5hgty"
 GameData="*uid://c8dithvgaocpv"
+SoundManager="*uid://c6k0kljaff41f"
+SRM="*uid://cspeywkbkm0q7"
 
 [debug]
 
@@ -61,6 +63,21 @@ choices/reveal_delay=0
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
+text/autopauses={}
+audio/channel_defaults={
+"": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": false,
+"volume": 0.0
+},
+"music": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": true,
+"volume": 0.0
+}
+}
 
 [display]
 
@@ -72,7 +89,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
 
 [global_group]
 

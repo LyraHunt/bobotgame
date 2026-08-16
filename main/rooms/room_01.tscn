@@ -43,4 +43,4 @@ position = Vector2(-320, 0)
 power_station_id = 0
 
 [node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("6_l3tnw")]
-position = Vector2(384, 192)
+position = Vector2(-256, -128)

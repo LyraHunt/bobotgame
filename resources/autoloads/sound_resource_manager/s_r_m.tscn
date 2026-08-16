@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cspeywkbkm0q7"]
+
+[ext_resource type="Script" uid="uid://04l0xk8jgni6" path="res://resources/autoloads/sound_resource_manager/s_r_m.gd" id="1_05uwb"]
+[ext_resource type="Script" uid="uid://bh08fsqvg3562" path="res://resources/autoloads/sound_resource_manager/sound_resource_list.gd" id="2_qpb0q"]
+[ext_resource type="AudioStream" uid="uid://ymsgmpra4p44" path="res://main/world/Abandoned Lab 2.mp3" id="3_qpb0q"]
+[ext_resource type="AudioStream" uid="uid://c2fist4ufang7" path="res://main/world/Memories of the Past 1.mp3" id="4_duaue"]
+[ext_resource type="AudioStream" uid="uid://cq43hlhhimbbl" path="res://main/world/Escaping The Lab 1.mp3" id="5_8do5p"]
+
+[sub_resource type="Resource" id="Resource_mtad7"]
+script = ExtResource("2_qpb0q")
+sounds = Array[AudioStream]([ExtResource("3_qpb0q")])
+metadata/_custom_type_script = "uid://bh08fsqvg3562"
+
+[sub_resource type="Resource" id="Resource_i3uv8"]
+script = ExtResource("2_qpb0q")
+sounds = Array[AudioStream]([ExtResource("4_duaue")])
+metadata/_custom_type_script = "uid://bh08fsqvg3562"
+
+[sub_resource type="Resource" id="Resource_qpb0q"]
+script = ExtResource("2_qpb0q")
+sounds = Array[AudioStream]([ExtResource("5_8do5p")])
+metadata/_custom_type_script = "uid://bh08fsqvg3562"
+
+[node name="SRM" type="Node" unique_id=1279880996]
+script = ExtResource("1_05uwb")
+sound_lists = Dictionary[String, ExtResource("2_qpb0q")]({
+"escape": SubResource("Resource_qpb0q"),
+"lab": SubResource("Resource_mtad7"),
+"memory_start": SubResource("Resource_i3uv8")
+})
+metadata/_custom_type_script = "uid://04l0xk8jgni6"

@@ -7,12 +7,14 @@ class_name Bobot extends CharacterBody2D
 @onready var charge_label: RichTextLabel = get_node("CanvasLayer/RichTextLabel")
 @onready var idle_timer: Timer = get_node("IdleTimer")
 
+var eepy_tween: Tween
+
 func _ready() -> void:
 	#start_charge(GameData.power_stations[GameData.bobot_last_power_station])
 	GameLogic.power_stations_initialized.connect(_start_charge_on_load)
 
 func _start_charge_on_load() -> void:
-	add_memory(GameData.Memory.GREENHOUSE)
+	#add_memory(GameData.Memory.GREENHOUSE)
 	start_charge(GameData.power_stations[GameData.bobot_last_power_station])
 
 func add_memory(memory_id: GameData.Memory) -> void:
@@ -22,6 +24,7 @@ func start_charge(power_station: PowerStation) -> void:
 	global_position = power_station.global_position
 	velocity = Vector2.ZERO
 	movement_component.motion_input = Vector2.ZERO
+	idle_timer.start()
 	
 	GameData.bobot_last_power_station = power_station.power_station_id
 	animated_sprite.animation = "stand_down"
@@ -82,7 +85,7 @@ func _handle_movement_input() -> void:
 			movement_component.motion_input = movement_input
 		
 		if y_direction > 0:
-			animated_sprite.animation = "eepy"
+			animated_sprite.animation = "walk_up"
 		elif y_direction < 0:
 			animated_sprite.animation = "walk_down"
 		elif x_direction > 0:
@@ -95,10 +98,9 @@ func _handle_movement_input() -> void:
 	elif movement_component:
 		movement_component.motion_input = Vector2.ZERO
 		
-		if animated_sprite.animation == "walk_right":
-				animated_sprite.animation = "stand_right"
-		elif animated_sprite.animation == "walk_left":
-				animated_sprite.animation = "stand_left"
+		if animated_sprite.animation.contains("walk_"):
+			var animation_suffix: String = animated_sprite.animation.split("_")[1]
+			animated_sprite.animation = "stand_" + animation_suffix
 
 func _unhandled_input(event: InputEvent) -> void:
 	match GameLogic.state:
@@ -113,6 +115,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_idle_timer_timeout() -> void:
-	print("eepy")
 	animated_sprite.animation = "eepy"
-	#sprite.texture = sprites.blink
+	if eepy_tween:
+		eepy_tween.kill()
+	eepy_tween = get_tree().create_tween()
+	eepy_tween.tween_property(animated_sprite, "scale", Vector2(0.3, 0.25), 0.15)
+	eepy_tween.tween_property(animated_sprite, "scale", Vector2(0.3, 0.3), 0.15)

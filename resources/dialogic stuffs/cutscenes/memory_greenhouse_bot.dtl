@@ -4,4 +4,15 @@ char_natasha: That's the last one.
 char_greenhouse_bot: She pockets the tablet she's been using to take notes on the plants in the greenhouse and leans against a garden bed.
 char_natasha: The Crab Vine's flowering again.
 char_greenhouse_bot: Her voice sounds different today. There's an emotion there. Sadness, I think, is what they call it.
+char_natasha: We'll have to make sure we prune them off before the pollen gets all over the glass again.
+char_natasha: Remember how long that took to clean?
+char_greenhouse_bot: Oh, I remember. I give her a little beep and a nod and she smiles.
+char_greenhouse_bot: She stands there longer than usual before taking a step towards the door. She hesitates in the threshold.
+char_natasha: Twig...
+char_greenhouse_bot: She walks over and crouches down to my eye level.
+char_natasha: Take good care of the plants tonight. Don't forget to water the Buglemelon Tree. It's been three weeks since last time.
+char_natasha: Who am I kidding, you never forget stuff like that. No matter how complicated the watering schedules, you keep it all in that little head of yours.
+char_greenhouse_bot: She pats my head with her hand and stands.
+char_natasha: Goodnight, Twig. Make sure you go to sleep on time tonight.
+char_greenhouse_bot: She walks to the door and leaves.
 [signal arg="memory_ended"]

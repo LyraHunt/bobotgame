@@ -36,7 +36,7 @@ autoplay = "walk_down"
 material = ExtResource("2_d7das")
 scale = Vector2(0.3, 0.3)
 sprite_frames = ExtResource("3_25c5j")
-animation = &"eepy"
+animation = &"stand_up"
 autoplay = "stand_down"
 offset = Vector2(0, -260)
 

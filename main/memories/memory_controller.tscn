@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b0vlugndnf3pg"]
+
+[ext_resource type="Script" uid="uid://dy1jfvbwbiqp0" path="res://main/memories/memory_controller.gd" id="1_1apbe"]
+
+[node name="MemoryController" type="Node" unique_id=672729131]
+script = ExtResource("1_1apbe")

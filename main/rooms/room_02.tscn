@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://duq5cr5sfleri"]
+
+[ext_resource type="PackedScene" uid="uid://c13p8qbilnacb" path="res://structures/CRT/CRT.tscn" id="1_7184o"]
+[ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="2_6tgqy"]
+[ext_resource type="PackedScene" uid="uid://boxj3bj3d3mnm" path="res://structures/mechanics/power_station/power_station.tscn" id="3_yv8dq"]
+[ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="4_3usu8"]
+
+[node name="Room02" type="Node2D" unique_id=1671798769]
+
+[node name="CRT" parent="." unique_id=892621697 instance=ExtResource("1_7184o")]
+
+[node name="CRT2" parent="." unique_id=537753480 instance=ExtResource("1_7184o")]
+position = Vector2(192, 0)
+
+[node name="DoorwayToRoom01" parent="." unique_id=585523427 instance=ExtResource("2_6tgqy")]
+position = Vector2(-320, 0)
+
+[node name="PowerStation" parent="." unique_id=724469414 instance=ExtResource("3_yv8dq")]
+position = Vector2(0, -192)
+power_station_id = 1
+
+[node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("4_3usu8")]
+position = Vector2(320, -192)
+memory_id = 1

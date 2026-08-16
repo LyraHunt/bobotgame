@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://djyaxwrsd83y4"]
+
+[ext_resource type="Script" uid="uid://bbiaxdn4v0rfj" path="res://components/proximity_interaction/proximity_interaction_component.gd" id="1_wsh5h"]
+
+[node name="ProximityInteractionComponent" type="Area2D" unique_id=606314739]
+script = ExtResource("1_wsh5h")

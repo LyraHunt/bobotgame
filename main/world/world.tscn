@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ckbn8vhnevtqv"]
+
+[ext_resource type="Script" uid="uid://clbped7qtahdg" path="res://main/world/world.gd" id="1_myska"]
+[ext_resource type="PackedScene" uid="uid://bl8ibeyhwd5yc" path="res://main/camera/camera.tscn" id="2_vs3s0"]
+[ext_resource type="PackedScene" uid="uid://cbevrk2mdqe0i" path="res://characters/bobot/bobot.tscn" id="3_276oa"]
+[ext_resource type="PackedScene" uid="uid://b1e2shu3u76ec" path="res://main/rooms/room_01.tscn" id="4_276oa"]
+[ext_resource type="PackedScene" uid="uid://duq5cr5sfleri" path="res://main/rooms/room_02.tscn" id="5_3xpkk"]
+
+[node name="World" type="Node2D" unique_id=566275448]
+y_sort_enabled = true
+script = ExtResource("1_myska")
+
+[node name="Bobot" parent="." unique_id=1167471414 instance=ExtResource("3_276oa")]
+position = Vector2(-320, 0)
+
+[node name="Camera" parent="Bobot" unique_id=402554782 instance=ExtResource("2_vs3s0")]
+
+[node name="Room01" parent="." unique_id=1292530247 instance=ExtResource("4_276oa")]
+
+[node name="DoorwayToRoom02" parent="Room01" index="6" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../Room02/DoorwayToRoom01")
+
+[node name="Room02" parent="." unique_id=1671798769 instance=ExtResource("5_3xpkk")]
+position = Vector2(1344, 0)
+
+[node name="DoorwayToRoom01" parent="Room02" index="2" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../Room01/DoorwayToRoom02")
+
+[editable path="Room01"]
+[editable path="Room02"]

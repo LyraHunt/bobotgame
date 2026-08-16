@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://boxj3bj3d3mnm"]
+
+[ext_resource type="Script" uid="uid://dae6uucol1ivn" path="res://structures/mechanics/power_station/power_station.gd" id="1_b4vhw"]
+[ext_resource type="Texture2D" uid="uid://1yd36ol6gnwc" path="res://icon.svg" id="1_sov7i"]
+[ext_resource type="PackedScene" uid="uid://djyaxwrsd83y4" path="res://components/proximity_interaction/proximity_interaction_component.tscn" id="2_b4vhw"]
+[ext_resource type="PackedScene" uid="uid://cooufmusuhqsl" path="res://components/dynamic_hotkey/dynamic_hotkey_component.tscn" id="3_n7tvs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_63nx4"]
+radius = 20.0
+
+[node name="PowerStation" type="Node2D" unique_id=724469414]
+script = ExtResource("1_b4vhw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1924531778]
+modulate = Color(1, 0.34901962, 0.30588236, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_sov7i")
+offset = Vector2(0, -64)
+
+[node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("dynamic_hotkey") instance=ExtResource("2_b4vhw")]
+dynamic_hotkey = NodePath("../DynamicHotkeyComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityInteractionComponent" unique_id=610525176]
+shape = SubResource("CircleShape2D_63nx4")
+
+[node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("3_n7tvs")]
+position = Vector2(0, -74)
+
+[connection signal="interacted" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_interacted"]
+[connection signal="selection_update" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]

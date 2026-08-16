@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cbevrk2mdqe0i"]
+
+[ext_resource type="Script" uid="uid://djag1mf5xcqji" path="res://characters/bobot/bobot.gd" id="1_jt0t2"]
+[ext_resource type="Texture2D" uid="uid://bpep5p561veq5" path="res://characters/bobot/sprites/IMG_2848.PNG" id="2_0op0h"]
+[ext_resource type="Texture2D" uid="uid://diujarlsoaa1t" path="res://characters/bobot/sprites/IMG_2845.PNG" id="3_6h4th"]
+[ext_resource type="PackedScene" uid="uid://bpsxk644vopdu" path="res://components/movement/movement_component.tscn" id="3_eno68"]
+[ext_resource type="Texture2D" uid="uid://dksyefmpa0d3j" path="res://characters/bobot/sprites/IMG_2846.PNG" id="4_obths"]
+[ext_resource type="Script" uid="uid://cli3yj6xskekl" path="res://components/proximity_interactor/proximity_interactor_component.gd" id="4_trx6w"]
+[ext_resource type="Texture2D" uid="uid://b0uk66c735206" path="res://characters/bobot/sprites/IMG_2847.PNG" id="5_xkikd"]
+[ext_resource type="Texture2D" uid="uid://cn1l6l8l50d" path="res://characters/bobot/sprites/IMG_2849.PNG" id="6_6h4th"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r5iys"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ojbw0"]
+radius = 30.0
+
+[node name="Bobot" type="CharacterBody2D" unique_id=1167471414 groups=["bobot"]]
+motion_mode = 1
+wall_min_slide_angle = 0.08726646
+script = ExtResource("1_jt0t2")
+sprites = Dictionary[String, Texture2D]({
+"backward": ExtResource("4_obths"),
+"blink": ExtResource("6_6h4th"),
+"forward": ExtResource("2_0op0h"),
+"left": ExtResource("5_xkikd"),
+"right": ExtResource("3_6h4th")
+})
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1671335306]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_0op0h")
+offset = Vector2(10, -280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=619584465]
+shape = SubResource("CircleShape2D_r5iys")
+
+[node name="MovementComponent" parent="." unique_id=1149045610 node_paths=PackedStringArray("target_character_body", "sprite_to_wiggle") instance=ExtResource("3_eno68")]
+target_character_body = NodePath("..")
+sprite_to_wiggle = NodePath("../Sprite2D")
+sprite_wiggle_intensity = 0.075
+
+[node name="ProximityInteractorComponent" type="Area2D" parent="." unique_id=1610950849 node_paths=PackedStringArray("target_character_body")]
+script = ExtResource("4_trx6w")
+target_character_body = NodePath("..")
+metadata/_custom_type_script = "uid://cli3yj6xskekl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityInteractorComponent" unique_id=360807740]
+shape = SubResource("CircleShape2D_ojbw0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=751571380]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1828985368]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -35.0
+offset_right = 400.0
+offset_bottom = 35.0
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=32]Charge"
+fit_content = true
+
+[node name="IdleTimer" type="Timer" parent="." unique_id=1137402389]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cooufmusuhqsl"]
+
+[ext_resource type="Script" uid="uid://b0tk312eoll01" path="res://components/dynamic_hotkey/dynamic_hotkey_component.gd" id="1_4atpb"]
+[ext_resource type="Texture2D" uid="uid://dus663o6rsgve" path="res://ui/controls/keyboard/A_Key_Dark.png" id="2_kskd1"]
+
+[node name="DynamicHotkeyComponent" type="Node2D" unique_id=62764332 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_4atpb")
+sprite = NodePath("Sprite2D")
+inputName = "interact_key"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=265538363]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_kskd1")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn1l6l8l50d"
-path="res://.godot/imported/IMG_2849.PNG-f3f63529e52025e9c55f57a0b9fa7b1f.ctex"
+uid="uid://b57ox6xy7br4r"
+path="res://.godot/imported/Facing right 2.PNG-37dfd9c3bf7277896f1e0b3df83111d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/bobot/sprites/IMG_2849.PNG"
-dest_files=["res://.godot/imported/IMG_2849.PNG-f3f63529e52025e9c55f57a0b9fa7b1f.ctex"]
+source_file="res://characters/bobot/animations/Facing right 2.PNG"
+dest_files=["res://.godot/imported/Facing right 2.PNG-37dfd9c3bf7277896f1e0b3df83111d7.ctex"]
 
 [params]
 

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dus663o6rsgve" path="res://ui/controls/keyboard/A_Key_Dark.png" id="2_kskd1"]
 
 [node name="DynamicHotkeyComponent" type="Node2D" unique_id=62764332 node_paths=PackedStringArray("sprite")]
+visible = false
 script = ExtResource("1_4atpb")
 sprite = NodePath("Sprite2D")
 inputName = "interact_key"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0uk66c735206"
-path="res://.godot/imported/IMG_2847.PNG-23f72e2488f9dbeb2b8878fc9270ef49.ctex"
+uid="uid://tb521j0hdg4e"
+path="res://.godot/imported/Bobot forward eepy.PNG-615fdc715121d04b48c65a3a6c046487.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/bobot/sprites/IMG_2847.PNG"
-dest_files=["res://.godot/imported/IMG_2847.PNG-23f72e2488f9dbeb2b8878fc9270ef49.ctex"]
+source_file="res://characters/bobot/sprites/Bobot forward eepy.PNG"
+dest_files=["res://.godot/imported/Bobot forward eepy.PNG-615fdc715121d04b48c65a3a6c046487.ctex"]
 
 [params]
 

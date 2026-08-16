@@ -3,6 +3,7 @@ class_name Bobot extends CharacterBody2D
 @onready var movement_component: MovementComponent = get_node("MovementComponent")
 @onready var proximity_interactor_component: ProximityInteractorComponent = get_node("ProximityInteractorComponent")
 @onready var sprite: Sprite2D = get_node("Sprite2D")
+@onready var animated_sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
 @onready var charge_label: RichTextLabel = get_node("CanvasLayer/RichTextLabel")
 @onready var idle_timer: Timer = get_node("IdleTimer")
 
@@ -15,7 +16,7 @@ class_name Bobot extends CharacterBody2D
 }
 
 var charge: float = 5.0
-var max_charge: float = 10.0
+var max_charge: float = 20.0
 var charge_per_sec: float = 5.0
 
 func _ready() -> void:
@@ -93,19 +94,21 @@ func _handle_movement_input() -> void:
 			movement_component.motion_input = movement_input
 		
 		if y_direction > 0:
-			sprite.texture = sprites.backward
+			animated_sprite.animation = "walk_right"
 		elif y_direction < 0:
-			sprite.texture = sprites.forward
+			animated_sprite.animation = "walk_up"
 		elif x_direction > 0:
-			sprite.texture = sprites.right
+			animated_sprite.animation = "walk_right"
 		elif x_direction < 0:
-			sprite.texture = sprites.left
-		
+			animated_sprite.animation = "walk_right"
 		idle_timer.start()
 		
 	
 	elif movement_component:
 		movement_component.motion_input = Vector2.ZERO
+		
+		if animated_sprite.animation == "walk_right":
+				animated_sprite.animation = "stand_right"
 
 func _unhandled_input(event: InputEvent) -> void:
 	match GameLogic.state:
@@ -120,4 +123,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_idle_timer_timeout() -> void:
-	sprite.texture = sprites.blink
+	print("eepy")
+	animated_sprite.animation = "eepy"
+	#sprite.texture = sprites.blink

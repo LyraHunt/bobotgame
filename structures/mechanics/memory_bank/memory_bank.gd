@@ -4,8 +4,8 @@ class_name MemoryBank extends Node2D
 var bobot: Bobot
 
 func _ready() -> void:
-	if is_inside_tree():
-		bobot = get_tree().get_first_node_in_group("bobot")
+	if GameData.acquired_memories.has(memory_id) or GameData.pending_memories.has(memory_id):
+		queue_free()
 
 func _on_proximity_interaction_component_selection_update(selected: bool) -> void:
 	if selected:
@@ -14,5 +14,6 @@ func _on_proximity_interaction_component_selection_update(selected: bool) -> voi
 		modulate = Color.WHITE
 
 func _on_proximity_interaction_component_interacted() -> void:
+	bobot = get_tree().get_first_node_in_group("bobot")
 	bobot.add_memory(memory_id)
 	queue_free()

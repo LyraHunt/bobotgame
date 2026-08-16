@@ -5,14 +5,16 @@ enum Memory {GREENHOUSE, STORAGE_AREA}
 var memory_controller_scene: PackedScene = preload("res://main/memories/memory_controller.tscn")
 var world_scene: PackedScene = preload("res://main/world/world.tscn")
 
-var memory_scenes: Dictionary[Memory, PackedScene] = {
-	#Memories.GREENHOUSE: preload("res://main/memories/greenhouse_memory.tscn")
+var memory_timelines: Dictionary[Memory, DialogicTimeline] = {
+	Memory.GREENHOUSE: preload("res://resources/dialogic stuffs/cutscenes/memory_greenhouse_bot.dtl")
 }
 
 var power_stations: Dictionary[int, PowerStation] = {}
 var power_station_count: int = 2
 
 var bobot_charge: float = 5.0
+var bobot_max_charge: float = 20.0
+var bobot_charge_per_sec: float = 5.0
 var bobot_last_power_station: int
 
 var acquired_memories: Array[GameData.Memory] = []

@@ -1,58 +1,11 @@
 [gd_scene format=3 uid="uid://cbevrk2mdqe0i"]
 
 [ext_resource type="Script" uid="uid://djag1mf5xcqji" path="res://characters/bobot/bobot.gd" id="1_jt0t2"]
-[ext_resource type="Texture2D" path="res://characters/bobot/sprites/IMG_2848.PNG" id="2_0op0h"]
-[ext_resource type="Texture2D" uid="uid://dkdghjd5jxstb" path="res://characters/bobot/animations/Bobot forward 2.PNG" id="2_6h4th"]
+[ext_resource type="Material" uid="uid://baak0wv81vjkv" path="res://resources/shaders/visual_boil_shader/new_shader_material.tres" id="2_d7das"]
+[ext_resource type="SpriteFrames" uid="uid://1160c2jtd0ge" path="res://characters/bobot/bobot_sprite_frames.tres" id="3_25c5j"]
 [ext_resource type="PackedScene" uid="uid://bpsxk644vopdu" path="res://components/movement/movement_component.tscn" id="3_eno68"]
-[ext_resource type="Texture2D" uid="uid://diy8andj1at8r" path="res://characters/bobot/animations/Facing right 1.PNG" id="3_obths"]
+[ext_resource type="PackedScene" uid="uid://6bw1wgoo3rks" path="res://components/animated_shader_2d/animated_shader_2d_component.tscn" id="4_i3uv8"]
 [ext_resource type="Script" uid="uid://cli3yj6xskekl" path="res://components/proximity_interactor/proximity_interactor_component.gd" id="4_trx6w"]
-[ext_resource type="Texture2D" uid="uid://tb521j0hdg4e" path="res://characters/bobot/sprites/Bobot forward eepy.PNG" id="4_xkikd"]
-[ext_resource type="Texture2D" uid="uid://b57ox6xy7br4r" path="res://characters/bobot/animations/Facing right 2.PNG" id="6_obths"]
-[ext_resource type="Texture2D" uid="uid://bv7pp0ilceyc5" path="res://characters/bobot/animations/Facing right 3.PNG" id="7_xkikd"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0op0h"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_xkikd")
-}],
-"loop": 1,
-"name": &"eepy",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_obths")
-}],
-"loop": 1,
-"name": &"stand_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_obths")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_obths")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_xkikd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_obths")
-}],
-"loop": 1,
-"name": &"walk_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_6h4th")
-}],
-"loop": 1,
-"name": &"walk_up",
-"speed": 5.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r5iys"]
 radius = 20.0
@@ -64,26 +17,28 @@ radius = 30.0
 motion_mode = 1
 wall_min_slide_angle = 0.08726646
 script = ExtResource("1_jt0t2")
-sprites = Dictionary[String, Texture2D]({
-"backward": null,
-"blink": ExtResource("4_xkikd"),
-"forward": ExtResource("2_6h4th"),
-"left": null,
-"right": ExtResource("3_obths")
-})
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1671335306]
 visible = false
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_0op0h")
 offset = Vector2(10, -280)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1272340062]
+visible = false
+material = ExtResource("2_d7das")
 position = Vector2(0, -80)
 scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_0op0h")
-animation = &"walk_right"
-autoplay = "walk_right"
+sprite_frames = ExtResource("3_25c5j")
+animation = &"walk_down"
+autoplay = "walk_down"
+
+[node name="AnimatedShader2DComponent" parent="." unique_id=978142458 instance=ExtResource("4_i3uv8")]
+material = ExtResource("2_d7das")
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("3_25c5j")
+animation = &"eepy"
+autoplay = "stand_down"
+offset = Vector2(0, -260)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=619584465]
 shape = SubResource("CircleShape2D_r5iys")

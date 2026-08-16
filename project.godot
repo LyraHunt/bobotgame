@@ -31,9 +31,36 @@ gdscript/warnings/unsafe_call_argument=2
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
-layout/style_directory={}
+directories/dch_directory={
+"char_greenhouse_bot": "res://resources/dialogic stuffs/characters/char_greenhouse_bot.dch",
+"char_natasha": "res://resources/dialogic stuffs/characters/char_natasha.dch"
+}
+directories/dtl_directory={
+"memory_greenhouse_bot": "res://resources/dialogic stuffs/cutscenes/memory_greenhouse_bot.dtl"
+}
+layout/style_directory={
+"": "res://resources/dialogic stuffs/styles/default_style.tres",
+"default_style": "res://resources/dialogic stuffs/styles/default_style.tres"
+}
+layout/style_list=["res://resources/dialogic stuffs/styles/default_style.tres"]
+layout/default_style="res://resources/dialogic stuffs/styles/default_style.tres"
+text/letter_speed=0.023
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
 
 [display]
 
@@ -51,6 +78,10 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 bobot=""
 first_power_station=""
+
+[gui]
+
+theme/custom_font="uid://cu1nevwflxdk7"
 
 [input]
 

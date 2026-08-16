@@ -1,0 +1,7 @@
+join char_natasha center
+join char_greenhouse_bot center
+char_natasha: That's the last one.
+char_greenhouse_bot: She pockets the tablet she's been using to take notes on the plants in the greenhouse and leans against a garden bed.
+char_natasha: The Crab Vine's flowering again.
+char_greenhouse_bot: Her voice sounds different today. There's an emotion there. Sadness, I think, is what they call it.
+[signal arg="memory_ended"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://6bw1wgoo3rks"]
+
+[ext_resource type="Script" uid="uid://deyccigc2mslb" path="res://components/animated_shader_2d/animated_shader_2d_component.gd" id="1_uhyml"]
+
+[node name="AnimatedShader2DComponent" type="AnimatedSprite2D" unique_id=978142458]
+script = ExtResource("1_uhyml")

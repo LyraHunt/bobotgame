@@ -3,27 +3,16 @@ class_name Bobot extends CharacterBody2D
 @onready var movement_component: MovementComponent = get_node("MovementComponent")
 @onready var proximity_interactor_component: ProximityInteractorComponent = get_node("ProximityInteractorComponent")
 @onready var sprite: Sprite2D = get_node("Sprite2D")
-@onready var animated_sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
+@onready var animated_sprite: AnimatedShader2DComponent = get_node("AnimatedShader2DComponent")
 @onready var charge_label: RichTextLabel = get_node("CanvasLayer/RichTextLabel")
 @onready var idle_timer: Timer = get_node("IdleTimer")
-
-@export var sprites: Dictionary[String, Texture2D] = {
-	"forward": null,
-	"right": null,
-	"backward": null,
-	"left": null,
-	"blink": null
-}
-
-var charge: float = 5.0
-var max_charge: float = 20.0
-var charge_per_sec: float = 5.0
 
 func _ready() -> void:
 	#start_charge(GameData.power_stations[GameData.bobot_last_power_station])
 	GameLogic.power_stations_initialized.connect(_start_charge_on_load)
 
 func _start_charge_on_load() -> void:
+	add_memory(GameData.Memory.GREENHOUSE)
 	start_charge(GameData.power_stations[GameData.bobot_last_power_station])
 
 func add_memory(memory_id: GameData.Memory) -> void:
@@ -34,9 +23,8 @@ func start_charge(power_station: PowerStation) -> void:
 	velocity = Vector2.ZERO
 	movement_component.motion_input = Vector2.ZERO
 	
-	sprite.texture = sprites.forward
-	
 	GameData.bobot_last_power_station = power_station.power_station_id
+	animated_sprite.animation = "stand_down"
 	
 	if GameData.pending_memories.size() > 0:
 		start_memory(GameData.pending_memories[0])
@@ -70,14 +58,14 @@ func _physics_process(_delta: float) -> void:
 func _process(_delta: float) -> void:
 	match GameLogic.state:
 		GameLogic.State.EXPLORING:
-			charge -= _delta
-			if charge <= 0:
+			GameData.bobot_charge -= _delta
+			if GameData.bobot_charge <= 0:
 				charge_out()
 		GameLogic.State.CHARGING:
-			charge += _delta * charge_per_sec
-			charge = min(charge, max_charge)
+			GameData.bobot_charge += _delta * GameData.bobot_charge_per_sec
+			GameData.bobot_charge = min(GameData.bobot_charge, GameData.bobot_max_charge)
 	
-	charge_label.text = "[font_size=32]Charge: " + str(snappedf(charge, 0.1))
+	charge_label.text = "[font_size=32]Charge: " + str(snappedf(GameData.bobot_charge, 0.1))
 	charge_label.text += "\n"
 	charge_label.text += "Pending Memories: " + str(GameData.pending_memories)
 	charge_label.text += "\n"
@@ -94,13 +82,13 @@ func _handle_movement_input() -> void:
 			movement_component.motion_input = movement_input
 		
 		if y_direction > 0:
-			animated_sprite.animation = "walk_right"
+			animated_sprite.animation = "eepy"
 		elif y_direction < 0:
-			animated_sprite.animation = "walk_up"
+			animated_sprite.animation = "walk_down"
 		elif x_direction > 0:
 			animated_sprite.animation = "walk_right"
 		elif x_direction < 0:
-			animated_sprite.animation = "walk_right"
+			animated_sprite.animation = "walk_left"
 		idle_timer.start()
 		
 	
@@ -109,6 +97,8 @@ func _handle_movement_input() -> void:
 		
 		if animated_sprite.animation == "walk_right":
 				animated_sprite.animation = "stand_right"
+		elif animated_sprite.animation == "walk_left":
+				animated_sprite.animation = "stand_left"
 
 func _unhandled_input(event: InputEvent) -> void:
 	match GameLogic.state:

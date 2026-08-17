@@ -6,7 +6,8 @@ var memory_controller_scene: PackedScene = preload("res://main/memories/memory_c
 var world_scene: PackedScene = preload("res://main/world/world.tscn")
 
 var memory_timelines: Dictionary[Memory, DialogicTimeline] = {
-	Memory.GREENHOUSE: preload("res://resources/dialogic stuffs/cutscenes/memory_greenhouse_bot.dtl")
+	Memory.GREENHOUSE: preload("res://resources/dialogic stuffs/cutscenes/memory_greenhouse_bot.dtl"),
+	Memory.STORAGE_AREA: preload("res://resources/dialogic stuffs/cutscenes/memory_cargo_bot.dtl")
 }
 
 var power_stations: Dictionary[int, PowerStation] = {}

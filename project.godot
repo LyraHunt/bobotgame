@@ -34,10 +34,14 @@ gdscript/warnings/unsafe_call_argument=2
 [dialogic]
 
 directories/dch_directory={
+"char_alice": "res://resources/dialogic stuffs/characters/char_alice.dch",
+"char_cargo_bot": "res://resources/dialogic stuffs/characters/char_cargo_bot.dch",
 "char_greenhouse_bot": "res://resources/dialogic stuffs/characters/char_greenhouse_bot.dch",
-"char_natasha": "res://resources/dialogic stuffs/characters/char_natasha.dch"
+"char_natasha": "res://resources/dialogic stuffs/characters/char_natasha.dch",
+"char_owen": "res://resources/dialogic stuffs/characters/char_owen.dch"
 }
 directories/dtl_directory={
+"memory_cargo_bot": "res://resources/dialogic stuffs/cutscenes/memory_cargo_bot.dtl",
 "memory_greenhouse_bot": "res://resources/dialogic stuffs/cutscenes/memory_greenhouse_bot.dtl"
 }
 layout/style_directory={

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bpsxk644vopdu" path="res://components/movement/movement_component.tscn" id="3_eno68"]
 [ext_resource type="PackedScene" uid="uid://6bw1wgoo3rks" path="res://components/animated_shader_2d/animated_shader_2d_component.tscn" id="4_i3uv8"]
 [ext_resource type="Script" uid="uid://cli3yj6xskekl" path="res://components/proximity_interactor/proximity_interactor_component.gd" id="4_trx6w"]
+[ext_resource type="PackedScene" uid="uid://buyx0fvko6hu0" path="res://ui/bobot ui/bobot_charge_display.tscn" id="7_0op0h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r5iys"]
 radius = 20.0
@@ -69,6 +70,8 @@ grow_vertical = 2
 bbcode_enabled = true
 text = "[font_size=32]Charge"
 fit_content = true
+
+[node name="BobotChargeDisplay" parent="CanvasLayer" unique_id=1861570010 instance=ExtResource("7_0op0h")]
 
 [node name="IdleTimer" type="Timer" parent="." unique_id=1137402389]
 wait_time = 4.0

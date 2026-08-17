@@ -16,7 +16,9 @@ func _ready() -> void:
 			Dialogic.start(GameData.memory_timelines[GameData.Memory.GREENHOUSE]) 
 		GameData.Memory.STORAGE_AREA:
 			print("storing the area")
-			memory_ended()
+			if Dialogic.current_timeline != null:
+				return
+			Dialogic.start(GameData.memory_timelines[GameData.Memory.STORAGE_AREA]) 
 	
 	SoundManager.play_music((SRM as SoundResourceManager).get_sound("memory_start")).volume_db = -12
 

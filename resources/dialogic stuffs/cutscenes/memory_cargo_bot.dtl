@@ -1,0 +1,35 @@
+join char_owen center
+join char_cargo_bot center
+char_cargo_bot: The Repair Man walks over as I set a crate down.
+char_owen: Hey, Forks!
+char_cargo_bot: He sits on a crate and watches me work.
+char_owen: We've got a shipment coming in tomorrow.
+char_cargo_bot: I know this. I'm the first to get the finalized schedule. I don't know why he's telling me.
+char_cargo_bot: I put a crate on the shelf. Then another.
+char_owen: There's gonna be a box in it that's labeled, "For Owen". Can you send that one my way as soon as it gets here?
+char_owen: It's got the parts I need to finish repairing Chops.
+char_cargo_bot: "Chops". That's what he calls CX-574-03. I hum an affirmation to his question.
+char_owen: Thanks, Forks! I can always count on you.
+char_cargo_bot: He slaps the back of my torso and walks toward the door. I go back to my crates.
+char_cargo_bot: He stops in the door to the hall. The Lead Scientist's hushed voice joins his. I focus on my crates.
+char_alice: Owen, why did you order all those spare parts? Your crate alone was nearly half the cost of the whole shipment!
+char_owen: Chops- CX-574-03 lost an arm. I need to fix it.
+char_alice: And we couldn't just make do?
+char_owen: The food's burning.
+char_alice: A bit of burnt food never hurt anyone.
+char_owen: Chops is proud of their work. They don't like turning out burnt food for us.
+char_cargo_bot: The Lead Scientist sighs.
+char_alice: Owen, I know that you care about the Bots a lot, but CX-574-03 isn't programmed to feel proud. You're projecting that onto them.
+char_owen: Alice, I won't question your authority, but I'd ask that you trust me on how Bots work.
+char_alice: Don't place any more orders without talking to me first.
+char_alice: Without Mrs. Wilson vouching for us, the Company's threatening to cut our funding. If we spend too much, this whole thing could be done.
+char_owen: Shit, really?
+char_alice: That's what tonight's meeting is about. It's getting bad.
+char_owen: Is everything we've given them not enough?
+char_alice: Research is going slow.
+char_owen: And? Those fuckers need to learn some patience! It's gonna be worth it when this is all done and we've got a fix for the energy shortages!
+char_alice: If only they saw it that way.
+char_alice: See you at the meeting tonight, Owen.
+char_owen: See you. And I'm sorry about the order. It won't happen again.
+char_alice: Thanks.
+[signal arg="memory_ended"]

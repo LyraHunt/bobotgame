@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://baak0wv81vjkv"]
 
 [ext_resource type="Shader" uid="uid://cqfkwxppa2xri" path="res://resources/shaders/visual_boil_shader/new_shader_material.gdshader" id="1_bmtdr"]
-[ext_resource type="Texture2D" uid="uid://dkdghjd5jxstb" path="res://characters/bobot/animations/Bobot forward 2.PNG" id="2_bjn1s"]
+[ext_resource type="Texture2D" uid="uid://co0c03ekxrsnc" path="res://characters/bobot/animations/Bobot forward 2.PNG" id="2_bjn1s"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ffqs5"]
 

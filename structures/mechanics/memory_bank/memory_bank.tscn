@@ -2,20 +2,35 @@
 
 [ext_resource type="Script" uid="uid://jvt3jp4pju6v" path="res://structures/mechanics/memory_bank/memory_bank.gd" id="1_wr4mb"]
 [ext_resource type="PackedScene" uid="uid://djyaxwrsd83y4" path="res://components/proximity_interaction/proximity_interaction_component.tscn" id="2_1yqj0"]
-[ext_resource type="Texture2D" uid="uid://1yd36ol6gnwc" path="res://icon.svg" id="2_uwsfy"]
+[ext_resource type="Shader" uid="uid://cqfkwxppa2xri" path="res://resources/shaders/visual_boil_shader/new_shader_material.gdshader" id="2_5v1ng"]
+[ext_resource type="Texture2D" uid="uid://dbrc00hj8wylp" path="res://structures/mechanics/memory_bank/Micrscope bot test.PNG" id="2_f6w76"]
 [ext_resource type="PackedScene" uid="uid://cooufmusuhqsl" path="res://components/dynamic_hotkey/dynamic_hotkey_component.tscn" id="4_f6w76"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ffqs5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k3oqn"]
+noise = SubResource("FastNoiseLite_ffqs5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d7b4f"]
+shader = ExtResource("2_5v1ng")
+shader_parameter/sprite_texture = ExtResource("2_f6w76")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.4
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_k3oqn")
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_r5iys"]
-radius = 20.0
+radius = 50.0
 
 [node name="MemoryBank" type="Node2D" unique_id=512886027]
+y_sort_enabled = true
 script = ExtResource("1_wr4mb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=917366805]
-modulate = Color(0.38039216, 1, 0.36078432, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_uwsfy")
-offset = Vector2(0, -64)
+material = SubResource("ShaderMaterial_d7b4f")
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_f6w76")
+offset = Vector2(0, -160)
 
 [node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("dynamic_hotkey") instance=ExtResource("2_1yqj0")]
 dynamic_hotkey = NodePath("../DynamicHotkeyComponent")
@@ -24,7 +39,8 @@ dynamic_hotkey = NodePath("../DynamicHotkeyComponent")
 shape = SubResource("CircleShape2D_r5iys")
 
 [node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("4_f6w76")]
-position = Vector2(0, -74)
+visible = true
+position = Vector2(0, -194)
 
 [connection signal="interacted" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_interacted"]
 [connection signal="selection_update" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]

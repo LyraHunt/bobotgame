@@ -130,7 +130,7 @@ func reload_texture() -> void:
 				sprite.texture = load("res://ui/controls/ps4_controller/PS4_" + hotkey_name + ".png")
 
 
-func _on_sprite_3d_visibility_changed() -> void:
+func _on_sprite_2d_visibility_changed() -> void:
 	if sprite.visible and texture_should_reload:
 		texture_should_reload = false
 		reload_texture()

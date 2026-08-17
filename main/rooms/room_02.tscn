@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://duq5cr5sfleri"]
 
-[ext_resource type="PackedScene" uid="uid://c13p8qbilnacb" path="res://structures/CRT/CRT.tscn" id="1_7184o"]
 [ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="2_6tgqy"]
+[ext_resource type="PackedScene" uid="uid://b6m0qy58wq06l" path="res://structures/decor/cargo_crate/cargo_crate.tscn" id="2_fcqil"]
 [ext_resource type="PackedScene" uid="uid://boxj3bj3d3mnm" path="res://structures/mechanics/power_station/power_station.tscn" id="3_yv8dq"]
 [ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="4_3usu8"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="5_axia7"]
@@ -9,10 +9,14 @@
 
 [node name="Room02" type="Node2D" unique_id=1671798769]
 
-[node name="CRT" parent="." unique_id=892621697 instance=ExtResource("1_7184o")]
+[node name="CargoCrate" parent="." unique_id=156014196 instance=ExtResource("2_fcqil")]
+position = Vector2(-120, -90)
 
-[node name="CRT2" parent="." unique_id=537753480 instance=ExtResource("1_7184o")]
-position = Vector2(192, 0)
+[node name="CargoCrate2" parent="." unique_id=265427647 instance=ExtResource("2_fcqil")]
+position = Vector2(-121, 27)
+
+[node name="CargoCrate3" parent="." unique_id=466174694 instance=ExtResource("2_fcqil")]
+position = Vector2(-352, -192)
 
 [node name="DoorwayToRoom01" parent="." unique_id=585523427 instance=ExtResource("2_6tgqy")]
 position = Vector2(-320, 0)
@@ -26,21 +30,21 @@ position = Vector2(320, -192)
 memory_id = 1
 
 [node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]
-z_index = -1
+z_index = -2
 z_as_relative = false
 scale = Vector2(0.6, 0.6)
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAABAAAAAAD+////AAACAAAAAAD/////AAADAAAAAAAAAP//AAADAAAAAAABAP//AAABAAAAAAABAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAP//AAABAAAAAAACAP7/AAACAAAAAAABAP7/AAABAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAADAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAACAAAAAAD9/wEAAAABAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAABAAAAAAABAAEAAAAAAAAAAAACAAEAAAACAAAAAAADAAAAAAADAAAAAAADAAEAAAAAAAAAAAADAP//AAACAAAAAAADAP7/AAACAAAAAAD8//7/AAABAAAAAAD8////AAACAAAAAAD8/wAAAAACAAAAAAD8/wEAAAACAAAAAAD8/wIAAAABAAAAAAD9/wIAAAACAAAAAAD+/wIAAAACAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAACAAAAAAACAAIAAAADAAAAAAADAAIAAAADAAAAAAAEAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAAAAAABAAAAAAAEAP//AAAAAAAAAAAEAP7/AAADAAAAAAAFAP7/AAABAAAAAAAFAP//AAACAAAAAAAFAAAAAAABAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAADAAAAAAD8/wMAAAAAAAAAAAD9/wMAAAACAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAADAAAAAAABAAMAAAADAAAAAAACAAMAAAAAAAAAAAADAAMAAAACAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAA=")
 tile_set = ExtResource("5_axia7")
 
 [node name="TileMapLayerWalls" type="TileMapLayer" parent="." unique_id=1587837278]
-z_index = -1
+z_index = -2
 z_as_relative = false
 scale = Vector2(0.6, 0.6)
 tile_map_data = PackedByteArray("AAD+//7/DwAAAAAAAAD///7/DwAAAAAAAAAAAP7/DwAAAAAAAAABAP7/DwAAAAAAAAACAP7/DwAAAAAAAAADAP7/EQAAAAAAAAD9//7/EAAAAAAAAAA=")
 tile_set = ExtResource("6_kq72u")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=2104830140]
-z_index = -1
+z_index = -2
 z_as_relative = false
 scale = Vector2(0.6, 0.6)
 tile_map_data = PackedByteArray("AAADAP7/EwAAAAAAAAADAP//FAAAAAAAAAADAAAAFAAAAAAAAAADAAEAEgAAAAAAAAD9////AgAAAAAAAAD9/wAAAgAAAAAAAAD9//7/AQAAAAAAAAD9/wEAAAAAAAAAAAA=")

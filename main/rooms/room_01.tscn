@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b1e2shu3u76ec"]
 
-[ext_resource type="PackedScene" uid="uid://c13p8qbilnacb" path="res://structures/CRT/CRT.tscn" id="1_gamks"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="1_j6h4d"]
 [ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="2_6od1e"]
+[ext_resource type="PackedScene" uid="uid://b6m0qy58wq06l" path="res://structures/decor/cargo_crate/cargo_crate.tscn" id="3_l3tnw"]
 [ext_resource type="PackedScene" uid="uid://boxj3bj3d3mnm" path="res://structures/mechanics/power_station/power_station.tscn" id="5_j6h4d"]
 [ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="6_l3tnw"]
 
@@ -16,16 +16,7 @@ position = Vector2(-192, 0)
 scale = Vector2(0.5, 0.5)
 tile_set = ExtResource("1_j6h4d")
 
-[node name="CRT" parent="." unique_id=1215887751 instance=ExtResource("1_gamks")]
-
-[node name="CRT2" parent="." unique_id=971823191 instance=ExtResource("1_gamks")]
-position = Vector2(64, 0)
-
-[node name="CRT3" parent="." unique_id=892621697 instance=ExtResource("1_gamks")]
-position = Vector2(64, -128)
-
-[node name="CRT4" parent="." unique_id=100079067 instance=ExtResource("1_gamks")]
-position = Vector2(192, -128)
+[node name="CargoCrate" parent="." unique_id=892621697 instance=ExtResource("3_l3tnw")]
 
 [node name="DoorwayToRoom02" parent="." unique_id=585523427 instance=ExtResource("2_6od1e")]
 position = Vector2(384, 0)

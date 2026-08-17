@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8wrnhdxvngui"
-path="res://.godot/imported/crt_1.png-342d5574ab7f9470d033bafd38dec5cb.ctex"
+uid="uid://dsolm1pcq282g"
+path="res://.godot/imported/cargo crate.png-75b6d1fb0ac4820f5b8fa535c198299a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://structures/CRT/crt_1.png"
-dest_files=["res://.godot/imported/crt_1.png-342d5574ab7f9470d033bafd38dec5cb.ctex"]
+source_file="res://structures/decor/cargo_crate/cargo crate.png"
+dest_files=["res://.godot/imported/cargo crate.png-75b6d1fb0ac4820f5b8fa535c198299a.ctex"]
 
 [params]
 

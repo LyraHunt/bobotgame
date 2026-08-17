@@ -16,12 +16,14 @@ radius = 20.0
 radius = 30.0
 
 [node name="Bobot" type="CharacterBody2D" unique_id=1167471414 groups=["bobot"]]
+y_sort_enabled = true
 motion_mode = 1
 wall_min_slide_angle = 0.08726646
 script = ExtResource("1_jt0t2")
 
 [node name="Sprite2DShadow" type="Sprite2D" parent="." unique_id=1671335306]
 modulate = Color(0.21176471, 0.09411765, 0.101960786, 0.84313726)
+z_index = -1
 position = Vector2(-4, 86)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_6h4th")

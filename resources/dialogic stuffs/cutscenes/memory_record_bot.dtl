@@ -1,0 +1,24 @@
+join char_record_bot center
+join char_record_bot_narration center
+join char_alice left
+join char_natasha leftmost
+join char_owen rightmost
+join char_rose right
+char_record_bot: Record of meeting #503. Day 905 of Mission. Present\: Alice Johnson, Lead Scientist; Rose Wilson, Researcher; Owen Thompson, Mechanic; and Natasha Ivanovna, Botanist.
+char_alice: I just spoke with our representative in the Company. Short answer\: We're done.
+char_owen: What?
+char_natasha: Done as in?
+char_alice: All our funding's being cut. They're sending a ship in two weeks to take us back to Earth.
+char_alice: We're to leave everything but our persons behind. The cost of fuel to bring any of our research, personal belongings, or the Bots, was deemed too expensive.
+char_owen: No. No, we can't leave the Bots behind!
+char_alice: I'm sorry, Owen-
+char_owen: Call them back. Tell them to send a bigger fucking ship! Or, better yet, tell them to let us stay!
+char_alice: I wish I could.
+char_rose: And the research? Can we take our notes at least?
+char_alice: They're only sending enough fuel for the weight of the four of us. Bring anything else on board and we won't make it out of the atmosphere.
+char_alice: That being said, I may have misreported that weight slightly. We can bring our research tablets.
+char_owen: Call them back and tell them-
+char_alice: They barely gave us the ship home.
+char_natasha: Alice, are you saying...
+char_alice: At first they told me shipments were ceasing and that we had to find a way home or a way to survive here.
+char_owen: Those fuckers!

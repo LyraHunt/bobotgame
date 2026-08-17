@@ -1,0 +1,22 @@
+join char_research__bot center
+join char_research_bot_narration center
+join char_alice right
+join char_rose left
+char_research_bot_narration: While Ms. Wilson and I were working on testing the properties of the oils extracted from the Spark Bulbs, Ms. Johnson joined us in the lab.
+char_research_bot_narration: She walked up behind Ms. Wilson and put her arms around her waist. Can't she see we're working here?
+char_alice: How's it going, you two?
+char_research__bot: We were making brilliant progress until you decided to very helpfully distract Ms. Wilson from her work.
+char_rose: We've isolated the oils from the Bulb. We haven't figured out exactly how to refine them yet, but we're getting closer.
+char_alice: That's great news! It feels like it's been ages since we've made progress!
+char_research__bot: No thanks to you.
+char_alice: Sorry I haven't been around the lab as much. The Company's been giving me shit lately.
+char_alice: They say we're not making enough progress, then they keep me mired in paperwork all the time! It's like they want us to fail!
+char_research__bot: Perhaps they do. I see no other logical explanation for their actions.
+char_alice: How far do you think we are from a breakthrough big enough to prove the project to them?
+char_rose: A few months? Maybe half a year?
+char_research__bot: We've been here nearly 900 days, but we've not done 900 days worth of work. If you ask me, certain people on our team are slacking off.
+char_alice: Everyone's doing their best. I'm sorry if they can't keep up with your... expectations.
+char_research__bot: Can we get back to work?
+char_rose: Alright. Love you, Alice.
+char_alice: I love you too.
+char_research_bot_narration: They kiss and then Alice finally lets Rose get back to work.

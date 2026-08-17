@@ -14,11 +14,30 @@ func _ready() -> void:
 			if Dialogic.current_timeline != null:
 				return
 			Dialogic.start(GameData.memory_timelines[GameData.Memory.GREENHOUSE]) 
+		
 		GameData.Memory.STORAGE_AREA:
 			print("storing the area")
 			if Dialogic.current_timeline != null:
 				return
 			Dialogic.start(GameData.memory_timelines[GameData.Memory.STORAGE_AREA]) 
+		
+		GameData.Memory.KITCHEN:
+			print("getting cooked")
+			if Dialogic.current_timeline != null:
+				return
+			Dialogic.start(GameData.memory_timelines[GameData.Memory.KITCHEN])
+		
+		GameData.Memory.ALICE_QUARTERS:
+			print("lesbians? in my game jam?")
+			if Dialogic.current_timeline != null:
+				return
+			Dialogic.start(GameData.memory_timelines[GameData.Memory.ALICE_QUARTERS])
+		
+		GameData.Memory.LAB:
+			print("what is this, some kind of laboratory?")
+			if Dialogic.current_timeline != null:
+				return
+			Dialogic.start(GameData.memory_timelines[GameData.Memory.LAB])  
 	
 	SoundManager.play_music((SRM as SoundResourceManager).get_sound("memory_start")).volume_db = -12
 

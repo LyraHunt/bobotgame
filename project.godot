@@ -34,15 +34,25 @@ gdscript/warnings/unsafe_call_argument=2
 [dialogic]
 
 directories/dch_directory={
+"cha_chef_bot": "res://resources/dialogic stuffs/characters/cha_chef_bot.dch",
 "char_alice": "res://resources/dialogic stuffs/characters/char_alice.dch",
 "char_cargo_bot": "res://resources/dialogic stuffs/characters/char_cargo_bot.dch",
+"char_chef_bot_narration": "res://resources/dialogic stuffs/characters/char_chef_bot_narration.dch",
 "char_greenhouse_bot": "res://resources/dialogic stuffs/characters/char_greenhouse_bot.dch",
 "char_natasha": "res://resources/dialogic stuffs/characters/char_natasha.dch",
-"char_owen": "res://resources/dialogic stuffs/characters/char_owen.dch"
+"char_owen": "res://resources/dialogic stuffs/characters/char_owen.dch",
+"char_record_bot": "res://resources/dialogic stuffs/characters/char_record_bot.dch",
+"char_record_bot_narration": "res://resources/dialogic stuffs/characters/char_record_bot_narration.dch",
+"char_research__bot": "res://resources/dialogic stuffs/characters/char_research__bot.dch",
+"char_research_bot_narration": "res://resources/dialogic stuffs/characters/char_research_bot_narration.dch",
+"char_rose": "res://resources/dialogic stuffs/characters/char_rose.dch"
 }
 directories/dtl_directory={
 "memory_cargo_bot": "res://resources/dialogic stuffs/cutscenes/memory_cargo_bot.dtl",
-"memory_greenhouse_bot": "res://resources/dialogic stuffs/cutscenes/memory_greenhouse_bot.dtl"
+"memory_chef_bot": "res://resources/dialogic stuffs/cutscenes/memory_chef_bot.dtl",
+"memory_greenhouse_bot": "res://resources/dialogic stuffs/cutscenes/memory_greenhouse_bot.dtl",
+"memory_record_bot": "res://resources/dialogic stuffs/cutscenes/memory_record_bot.dtl",
+"memory_research_bot": "res://resources/dialogic stuffs/cutscenes/memory_research_bot.dtl"
 }
 layout/style_directory={
 "": "res://resources/dialogic stuffs/styles/default_style.tres",

@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://buyx0fvko6hu0"]
 
-[ext_resource type="Texture2D" uid="uid://d2xfa7p0cwmj0" path="res://ui/bobot ui/Arm Ui.png" id="1_beu05"]
 [ext_resource type="Script" uid="uid://jwyit6xvfoj5" path="res://ui/bobot ui/bobot_charge_display.gd" id="1_gm73x"]
+[ext_resource type="Texture2D" uid="uid://dfkka5wamim8m" path="res://ui/bobot ui/Bobot arm ui.PNG" id="2_gm73x"]
+[ext_resource type="Texture2D" uid="uid://baxoolr3mrdol" path="res://ui/bobot ui/Bobot arm inside.PNG" id="3_t7fmu"]
+[ext_resource type="Texture2D" uid="uid://cnbgl13jft2ok" path="res://ui/bobot ui/Bobot charging line.PNG" id="4_55man"]
 
 [sub_resource type="Gradient" id="Gradient_t7fmu"]
-offsets = PackedFloat32Array(0, 0.5070922, 1)
-colors = PackedColorArray(0.49844813, 0.30674717, 0, 1, 0.9494748, 0.71417, 0.013763041, 1, 0.9626953, 0.72518516, 0.014269035, 1)
+offsets = PackedFloat32Array(0, 0.5070922, 0.9078014)
+colors = PackedColorArray(0.49844813, 0.30674717, 0, 1, 0.9375181, 0.75008124, 0.17015988, 1, 0.9999111, 0.9015111, 0.70306563, 1)
 
 [node name="BobotChargeDisplay" type="Control" unique_id=1861570010]
 layout_mode = 3
@@ -17,27 +19,59 @@ grow_vertical = 2
 script = ExtResource("1_gm73x")
 charge_color_ramp = SubResource("Gradient_t7fmu")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1314648344]
-layout_mode = 0
-offset_left = 826.0
-offset_top = 902.00006
-offset_right = 866.0
-offset_bottom = 942.00006
-scale = Vector2(5.24, 1.9999999)
-color = Color(0.8966995, 0.8294752, 0.073821075, 1)
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2137871745]
+[node name="BobotArmInside" type="TextureRect" parent="." unique_id=501739250]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -307.0
-offset_top = -294.0
-offset_right = 443.0
-offset_bottom = 106.0
+offset_left = -287.0
+offset_top = -278.0
+offset_right = 414.0
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_beu05")
+texture = ExtResource("3_t7fmu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1314648344]
+layout_mode = 0
+offset_left = 871.0
+offset_top = 868.99994
+offset_right = 911.0
+offset_bottom = 908.99994
+scale = Vector2(4.5, 1.85)
+color = Color(0.8966995, 0.8294752, 0.073821075, 1)
+
+[node name="ChargeBorder" type="TextureRect" parent="." unique_id=409696202]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 853.0
+offset_right = 902.0
+offset_bottom = 975.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_55man")
+
+[node name="BobotArmOutside" type="TextureRect" parent="." unique_id=2137871745]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -273.0
+offset_top = -278.0
+offset_right = 428.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_gm73x")
+
+[node name="Control" type="Control" parent="." unique_id=1145017575]
+anchors_preset = 0
+offset_left = 960.0
+offset_top = 935.0
+offset_right = 960.0
+offset_bottom = 935.0

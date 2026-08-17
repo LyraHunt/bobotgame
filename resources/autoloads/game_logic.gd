@@ -18,7 +18,7 @@ func change_state(new_state: State) -> void:
 	state_changed.emit()
 
 func change_scene(scene: PackedScene) -> void:
-	get_tree().change_scene_to_packed(scene)
+	get_tree().change_scene_to_packed.call_deferred(scene)
 
 func update_controller_type() -> void:
 	if Input.get_joy_name(0) != "":

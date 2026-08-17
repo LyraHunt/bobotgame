@@ -22,3 +22,4 @@ char_alice: They barely gave us the ship home.
 char_natasha: Alice, are you saying...
 char_alice: At first they told me shipments were ceasing and that we had to find a way home or a way to survive here.
 char_owen: Those fuckers!
+[signal arg="memory_ended"]

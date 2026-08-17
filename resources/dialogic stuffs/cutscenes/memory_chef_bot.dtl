@@ -19,3 +19,4 @@ char_chef_bot_narration: He steps back and I lift up my newly repaired arm. I te
 cha_chef_bot: Thank you, Owen.
 char_owen: No problem! Let me know if anything starts to fail. The earlier I can repair something, the easier it will be.
 cha_chef_bot: Will do, Owen.
+[signal arg="memory_ended"]

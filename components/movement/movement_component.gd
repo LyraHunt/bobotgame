@@ -10,7 +10,7 @@ var motion_input: Vector2
 #@export var footprint_particles: GPUParticles3D
 
 @export_group("Get Wiggly With It")
-@export var sprite_to_wiggle: Sprite2D
+@export var sprite_to_wiggle: Node2D
 @export var sprite_wiggle_msec: float = 50
 @export var sprite_wiggle_intensity: float = 0.1
 

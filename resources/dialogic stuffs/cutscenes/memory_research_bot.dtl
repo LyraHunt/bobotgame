@@ -20,3 +20,4 @@ char_research__bot: Can we get back to work?
 char_rose: Alright. Love you, Alice.
 char_alice: I love you too.
 char_research_bot_narration: They kiss and then Alice finally lets Rose get back to work.
+[signal arg="memory_ended"]

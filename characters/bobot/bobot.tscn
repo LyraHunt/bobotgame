@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cbevrk2mdqe0i"]
 
 [ext_resource type="Script" uid="uid://djag1mf5xcqji" path="res://characters/bobot/bobot.gd" id="1_jt0t2"]
+[ext_resource type="Texture2D" uid="uid://drcpvm2lrroi4" path="res://characters/bobot/sprites/Bobot shadow.png" id="2_6h4th"]
 [ext_resource type="Material" uid="uid://baak0wv81vjkv" path="res://resources/shaders/visual_boil_shader/new_shader_material.tres" id="2_d7das"]
 [ext_resource type="SpriteFrames" uid="uid://1160c2jtd0ge" path="res://characters/bobot/bobot_sprite_frames.tres" id="3_25c5j"]
 [ext_resource type="PackedScene" uid="uid://bpsxk644vopdu" path="res://components/movement/movement_component.tscn" id="3_eno68"]
@@ -19,9 +20,11 @@ motion_mode = 1
 wall_min_slide_angle = 0.08726646
 script = ExtResource("1_jt0t2")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1671335306]
-visible = false
+[node name="Sprite2DShadow" type="Sprite2D" parent="." unique_id=1671335306]
+modulate = Color(0.21176471, 0.09411765, 0.101960786, 0.84313726)
+position = Vector2(-4, 86)
 scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_6h4th")
 offset = Vector2(10, -280)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1272340062]
@@ -39,15 +42,13 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = ExtResource("3_25c5j")
 animation = &"stand_up"
 autoplay = "stand_down"
-offset = Vector2(0, -260)
+offset = Vector2(0, -280)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=619584465]
 shape = SubResource("CircleShape2D_r5iys")
 
-[node name="MovementComponent" parent="." unique_id=1149045610 node_paths=PackedStringArray("target_character_body", "sprite_to_wiggle") instance=ExtResource("3_eno68")]
+[node name="MovementComponent" parent="." unique_id=1149045610 node_paths=PackedStringArray("target_character_body") instance=ExtResource("3_eno68")]
 target_character_body = NodePath("..")
-sprite_to_wiggle = NodePath("../Sprite2D")
-sprite_wiggle_intensity = 0.075
 
 [node name="ProximityInteractorComponent" type="Area2D" parent="." unique_id=1610950849 node_paths=PackedStringArray("target_character_body")]
 script = ExtResource("4_trx6w")

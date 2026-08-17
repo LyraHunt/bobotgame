@@ -49,3 +49,9 @@ func memory_ended() -> void:
 	
 	GameLogic.state = GameLogic.State.CHARGING
 	GameLogic.change_scene(GameData.world_scene)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("escape_key"):
+		if Dialogic.current_timeline != null:
+			Dialogic.end_timeline()
+			memory_ended()

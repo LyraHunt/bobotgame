@@ -1,7 +1,7 @@
-[gd_scene format=4 uid="uid://b1e2shu3u76ec"]
+[gd_scene format=3 uid="uid://b1e2shu3u76ec"]
 
 [ext_resource type="PackedScene" uid="uid://c13p8qbilnacb" path="res://structures/CRT/CRT.tscn" id="1_gamks"]
-[ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="1_l3tnw"]
+[ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="1_j6h4d"]
 [ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="2_6od1e"]
 [ext_resource type="PackedScene" uid="uid://boxj3bj3d3mnm" path="res://structures/mechanics/power_station/power_station.tscn" id="5_j6h4d"]
 [ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="6_l3tnw"]
@@ -14,8 +14,7 @@ z_index = -1
 z_as_relative = false
 position = Vector2(-192, 0)
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD///7/CAACAAAAAAAAAP7/CAACAAAAAAABAP7/CAACAAAAAAACAP7/CAACAAAAAAADAP7/CAACAAAAAAD+//7/CAAAAAAAAAAEAP7/CAABAAAAAAA=")
-tile_set = ExtResource("1_l3tnw")
+tile_set = ExtResource("1_j6h4d")
 
 [node name="CRT" parent="." unique_id=1215887751 instance=ExtResource("1_gamks")]
 

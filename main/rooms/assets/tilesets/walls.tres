@@ -1,11 +1,24 @@
 [gd_resource type="TileSet" format=3 uid="uid://bopq3ijg2orhf"]
 
+[ext_resource type="Texture2D" uid="uid://dfhbiqd1dygib" path="res://main/rooms/assets/left side wall bottom.PNG" id="1_jiyu4"]
 [ext_resource type="Texture2D" uid="uid://brlrbkdham0fh" path="res://main/rooms/assets/wall corner left.PNG" id="2_2glp5"]
+[ext_resource type="Texture2D" uid="uid://oxxcscald3qj" path="res://main/rooms/assets/left side wall top.PNG" id="2_rymle"]
 [ext_resource type="Texture2D" uid="uid://5xfdx8axj6jr" path="res://main/rooms/assets/wall corner right.PNG" id="3_2gfhy"]
 [ext_resource type="Texture2D" uid="uid://c7a7yjujryoin" path="res://main/rooms/assets/wall.png" id="4_4yj1e"]
 [ext_resource type="Texture2D" uid="uid://c0td23okew84b" path="res://main/rooms/assets/right side wall bottom.PNG" id="4_symnh"]
 [ext_resource type="Texture2D" uid="uid://c3ma057m2ouns" path="res://main/rooms/assets/right side wall top.PNG" id="5_w43r5"]
 [ext_resource type="Texture2D" uid="uid://drpmifno458j8" path="res://main/rooms/assets/right side wall.PNG" id="6_jiyu4"]
+[ext_resource type="Texture2D" uid="uid://b1yefwmvd6i3p" path="res://main/rooms/assets/left side wall.PNG" id="8_d6pok"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3c833"]
+texture = ExtResource("1_jiyu4")
+texture_region_size = Vector2i(400, 600)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07vg1"]
+texture = ExtResource("2_rymle")
+texture_region_size = Vector2i(400, 600)
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jiyu4"]
 texture = ExtResource("4_4yj1e")
@@ -32,6 +45,11 @@ texture = ExtResource("5_w43r5")
 texture_region_size = Vector2i(400, 600)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_av4sc"]
+texture = ExtResource("8_d6pok")
+texture_region_size = Vector2i(400, 600)
+0:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bsjop"]
 texture = ExtResource("6_jiyu4")
 texture_region_size = Vector2i(400, 600)
@@ -45,4 +63,7 @@ sources/17 = SubResource("TileSetAtlasSource_2gfhy")
 sources/18 = SubResource("TileSetAtlasSource_rymle")
 sources/19 = SubResource("TileSetAtlasSource_d6pok")
 sources/20 = SubResource("TileSetAtlasSource_bsjop")
+sources/0 = SubResource("TileSetAtlasSource_3c833")
+sources/1 = SubResource("TileSetAtlasSource_07vg1")
+sources/2 = SubResource("TileSetAtlasSource_av4sc")
 tile_proxies/coords_level = [[9, Vector2i(0, 0)], [12, Vector2i(0, 0)], [10, Vector2i(0, 0)], [12, Vector2i(1, 0)], [11, Vector2i(0, 0)], [12, Vector2i(2, 0)]]

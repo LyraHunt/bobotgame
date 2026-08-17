@@ -12,6 +12,8 @@ char_cargo_bot: "Chops". That's what he calls CX-574-03. I hum an affirmation to
 char_owen: Thanks, Forks! I can always count on you.
 char_cargo_bot: He slaps the back of my torso and walks toward the door. I go back to my crates.
 char_cargo_bot: He stops in the door to the hall. The Lead Scientist's hushed voice joins his. I focus on my crates.
+update char_owen right
+join char_alice left [animation="Slide From Left"]
 char_alice: Owen, why did you order all those spare parts? Your crate alone was nearly half the cost of the whole shipment!
 char_owen: Chops- CX-574-03 lost an arm. I need to fix it.
 char_alice: And we couldn't just make do?

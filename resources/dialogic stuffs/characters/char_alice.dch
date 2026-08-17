@@ -22,8 +22,8 @@
 "image": "\"res://resources/dialogic stuffs/characters/alice_picrew.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
+"offset": Vector2(0, -200),
+"scale": 0.4,
 "scene": ""
 }
 },

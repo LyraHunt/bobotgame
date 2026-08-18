@@ -1,0 +1,56 @@
+[gd_scene format=4 uid="uid://xd7tdn5pitl7"]
+
+[ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="1_nrb7j"]
+[ext_resource type="PackedScene" uid="uid://boxj3bj3d3mnm" path="res://structures/mechanics/power_station/power_station.tscn" id="2_e8shv"]
+[ext_resource type="PackedScene" uid="uid://b8hm4bqaumbh4" path="res://structures/mechanics/side_doorway/side_doorway_flip.tscn" id="2_kx2ot"]
+[ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="3_kx2ot"]
+[ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="4_jhqeb"]
+[ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="5_62tbk"]
+[ext_resource type="PackedScene" uid="uid://d0vfwatct2sst" path="res://structures/mechanics/doorway/doorway_bottom.tscn" id="6_e8shv"]
+
+[node name="CentralHallway" type="Node2D" unique_id=1671798769]
+y_sort_enabled = true
+
+[node name="door" parent="." unique_id=585523427 instance=ExtResource("1_nrb7j")]
+position = Vector2(-117, -355)
+
+[node name="CHDoorToStorage" parent="." unique_id=1037123891 instance=ExtResource("2_kx2ot")]
+position = Vector2(-456, 6)
+
+[node name="CHDoorToLab" parent="." unique_id=1432913595 instance=ExtResource("6_e8shv")]
+position = Vector2(839, 731)
+
+[node name="PowerStation" parent="." unique_id=724469414 instance=ExtResource("2_e8shv")]
+position = Vector2(97, 457)
+power_station_id = 1
+
+[node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("3_kx2ot")]
+position = Vector2(244, 207)
+memory_id = 1
+
+[node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAABAAAAAAD+////AAACAAAAAAD/////AAADAAAAAAAAAP//AAADAAAAAAABAP//AAABAAAAAAABAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAP//AAABAAAAAAACAP7/AAACAAAAAAABAP7/AAABAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAADAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAACAAAAAAD9/wEAAAABAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAABAAAAAAABAAEAAAAAAAAAAAACAAEAAAACAAAAAAADAAAAAAADAAAAAAADAAEAAAAAAAAAAAADAP//AAACAAAAAAADAP7/AAACAAAAAAD8//7/AAABAAAAAAD8////AAACAAAAAAD8/wAAAAACAAAAAAD8/wEAAAACAAAAAAD8/wIAAAABAAAAAAD9/wIAAAACAAAAAAD+/wIAAAACAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAACAAAAAAACAAIAAAADAAAAAAADAAIAAAADAAAAAAAEAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAAAAAABAAAAAAAEAP//AAAAAAAAAAAEAP7/AAADAAAAAAAFAP7/AAABAAAAAAAFAP//AAACAAAAAAAFAAAAAAABAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAADAAAAAAD8/wMAAAAAAAAAAAD9/wMAAAACAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAADAAAAAAABAAMAAAADAAAAAAACAAMAAAAAAAAAAAADAAMAAAACAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAP7/AAADAAAAAAAGAP//AAACAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAABAAAAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAHAP7/AAACAAAAAAAHAP//AAACAAAAAAAHAAAAAAABAAAAAAAHAAEAAAACAAAAAAAHAAIAAAACAAAAAAAHAAMAAAABAAAAAAAIAP7/AAADAAAAAAAIAP//AAABAAAAAAAIAAAAAAABAAAAAAAIAAEAAAADAAAAAAAIAAIAAAACAAAAAAAIAAMAAAADAAAAAAAJAP7/AAACAAAAAAAJAP//AAACAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAADAAAAAAAJAAIAAAADAAAAAAAJAAMAAAAAAAAAAAA=")
+tile_set = ExtResource("4_jhqeb")
+
+[node name="TileMapLayerWalls" type="TileMapLayer" parent="." unique_id=1587837278]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAD+//7/DwAAAAAAAAD///7/DwAAAAAAAAAAAP7/DwAAAAAAAAABAP7/DwAAAAAAAAACAP7/DwAAAAAAAAADAP7/DwAAAAAAAAD9//7/EAAAAAAAAAAEAP7/DwAAAAAAAAAFAP7/EQAAAAAAAAA=")
+tile_set = ExtResource("5_62tbk")
+
+[node name="TileMapLayerSides" type="TileMapLayer" parent="." unique_id=2104830140]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAD9////AgAAAAAAAAD9/wAAAgAAAAAAAAD9//7/AQAAAAAAAAD9/wEAAAAAAAAAAAAFAP//FAAAAAAAAAAFAAAAFAAAAAAAAAAFAAEAEgAAAAAAAAAFAP7/EwAAAAAAAAA=")
+tile_set = ExtResource("5_62tbk")
+
+[node name="RoomPhysicsBounds" type="StaticBody2D" parent="." unique_id=271627776]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1251044420]
+build_mode = 1
+polygon = PackedVector2Array(717, -360, 729, 1436, -468, 1446, -485, -366)

@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://clbped7qtahdg" path="res://main/world/world.gd" id="1_myska"]
 [ext_resource type="PackedScene" uid="uid://bl8ibeyhwd5yc" path="res://main/camera/camera.tscn" id="2_vs3s0"]
 [ext_resource type="PackedScene" uid="uid://cbevrk2mdqe0i" path="res://characters/bobot/bobot.tscn" id="3_276oa"]
-[ext_resource type="PackedScene" uid="uid://b1e2shu3u76ec" path="res://main/rooms/room_01.tscn" id="4_276oa"]
-[ext_resource type="PackedScene" uid="uid://duq5cr5sfleri" path="res://main/rooms/room_02.tscn" id="5_3xpkk"]
+[ext_resource type="PackedScene" uid="uid://b1e2shu3u76ec" path="res://main/rooms/room_greenhouse.tscn" id="4_276oa"]
+[ext_resource type="PackedScene" uid="uid://duq5cr5sfleri" path="res://main/rooms/room_storage_area.tscn" id="5_3xpkk"]
+[ext_resource type="PackedScene" uid="uid://cnjdyu7hce4vb" path="res://main/rooms/room_lab.tscn" id="5_54tnd"]
+[ext_resource type="PackedScene" uid="uid://xd7tdn5pitl7" path="res://main/rooms/room_central_hallway.tscn" id="6_1cwov"]
 
 [node name="World" type="Node2D" unique_id=566275448]
 y_sort_enabled = true
@@ -15,23 +17,43 @@ position = Vector2(-7168, -1024)
 
 [node name="Camera" parent="Bobot" unique_id=402554782 instance=ExtResource("2_vs3s0")]
 
-[node name="Room01" parent="." unique_id=1292530247 instance=ExtResource("4_276oa")]
+[node name="Greenhouse" parent="." unique_id=1292530247 instance=ExtResource("4_276oa")]
 position = Vector2(-1024, 0)
 
-[node name="DoorwayToRoom02" parent="Room01" index="1" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
-connected_doorway = NodePath("../../Room02/DoorwayToRoom01")
+[node name="DoorwayToRoom02" parent="Greenhouse" index="1" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../StorageArea/DoorwayToRoom01")
 
-[node name="Doorway" parent="Room01" index="2" unique_id=1706434301 node_paths=PackedStringArray("connected_doorway")]
-connected_doorway = NodePath("../../Room02/Doorway")
+[node name="Doorway" parent="Greenhouse" index="2" unique_id=1706434301 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../StorageArea/Doorway")
 
-[node name="Room02" parent="." unique_id=1671798769 instance=ExtResource("5_3xpkk")]
+[node name="Lab" parent="." unique_id=1671798769 instance=ExtResource("5_54tnd")]
+position = Vector2(4992, 3072)
+
+[node name="DoorwayToCentralHallway" parent="Lab" index="0" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath(".")
+
+[node name="CentralHallway" parent="." unique_id=503365650 instance=ExtResource("6_1cwov")]
+position = Vector2(3840, 448)
+
+[node name="CHDoorToStorage" parent="CentralHallway" index="1" unique_id=1037123891 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../StorageArea/Doorway2")
+
+[node name="CHDoorToLab" parent="CentralHallway" index="2" unique_id=1432913595 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../Lab/DoorwayToCentralHallway")
+
+[node name="StorageArea" parent="." unique_id=104887320 instance=ExtResource("5_3xpkk")]
 position = Vector2(1344, 0)
 
-[node name="DoorwayToRoom01" parent="Room02" index="0" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
-connected_doorway = NodePath("../../Room01/DoorwayToRoom02")
+[node name="DoorwayToRoom01" parent="StorageArea" index="0" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../Greenhouse/DoorwayToRoom02")
 
-[node name="Doorway" parent="Room02" index="1" unique_id=327097148 node_paths=PackedStringArray("connected_doorway")]
-connected_doorway = NodePath("../../Room01/Doorway")
+[node name="Doorway" parent="StorageArea" index="1" unique_id=327097148 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../Greenhouse/Doorway")
 
-[editable path="Room01"]
-[editable path="Room02"]
+[node name="Doorway2" parent="StorageArea" index="12" unique_id=46150101 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../CentralHallway/CHDoorToStorage")
+
+[editable path="Greenhouse"]
+[editable path="Lab"]
+[editable path="CentralHallway"]
+[editable path="StorageArea"]

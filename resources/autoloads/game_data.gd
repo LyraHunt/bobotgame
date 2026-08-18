@@ -31,4 +31,4 @@ func add_power_station_id(new_id: int, power_station: PowerStation) -> void:
 		GameLogic.power_stations_initialized.emit()
 
 func _ready() -> void:
-	bobot_last_power_station = 0
+	bobot_last_power_station = 1

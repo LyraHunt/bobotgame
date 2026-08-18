@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d0vfwatct2sst" path="res://structures/mechanics/doorway/doorway_bottom.tscn" id="1_mnxvq"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="2_2a65c"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="3_frm7m"]
+[ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="4_f0pkw"]
 
 [node name="AliceQuarters" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -30,6 +31,10 @@ z_as_relative = false
 scale = Vector2(0.6, 0.6)
 tile_map_data = PackedByteArray("AAD+//7/AQAAAAAAAAACAP7/EwAAAAAAAAD+/wAAAAAAAAAAAAACAAAAEgAAAAAAAAD+////AgAAAAAAAAACAP//FAAAAAAAAAA=")
 tile_set = ExtResource("3_frm7m")
+
+[node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("4_f0pkw")]
+position = Vector2(242, -183)
+memory_id = 3
 
 [node name="RoomPhysicsBounds" type="StaticBody2D" parent="." unique_id=271627776]
 

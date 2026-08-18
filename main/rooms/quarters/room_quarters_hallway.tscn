@@ -12,7 +12,7 @@ y_sort_enabled = true
 position = Vector2(106, -330)
 
 [node name="AliceDoor" parent="." unique_id=1271002927 instance=ExtResource("1_uhykc")]
-position = Vector2(972, -324)
+position = Vector2(958, -330)
 
 [node name="OwenDoor" parent="." unique_id=1904743863 instance=ExtResource("2_m5x2n")]
 position = Vector2(478, -31)

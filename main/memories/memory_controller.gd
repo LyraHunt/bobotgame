@@ -54,4 +54,5 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape_key"):
 		if Dialogic.current_timeline != null:
 			Dialogic.end_timeline()
+			await Dialogic.timeline_ended
 			memory_ended()

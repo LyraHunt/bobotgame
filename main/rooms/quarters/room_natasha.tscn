@@ -7,7 +7,7 @@
 [node name="NatashaQuarters" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
 
-[node name="AliceDoorToHallway" parent="." unique_id=585523427 instance=ExtResource("1_muiid")]
+[node name="NatashaDoorToHallway" parent="." unique_id=585523427 instance=ExtResource("1_muiid")]
 position = Vector2(121, 330)
 
 [node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]

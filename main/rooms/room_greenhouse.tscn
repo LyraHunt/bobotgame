@@ -9,7 +9,6 @@
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="7_0iwav"]
 [ext_resource type="PackedScene" uid="uid://j1kp2cxbjq4m" path="res://structures/decor/cargo_shelf/cargo_shelf.tscn" id="8_35hhk"]
 [ext_resource type="PackedScene" uid="uid://c800r2teiclqk" path="res://structures/decor/cargo_crate_sprite/cargo_crate_sprite.tscn" id="9_l4oau"]
-[ext_resource type="PackedScene" uid="uid://cfgyqsdvwo618" path="res://structures/mechanics/bobots/research_bot/research_bot.tscn" id="10_iced8"]
 [ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="11_mb6ns"]
 [ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="12_n6x0s"]
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="13_l3e06"]
@@ -71,9 +70,6 @@ position = Vector2(1, -114)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=2065594639]
 build_mode = 1
 polygon = PackedVector2Array(717, -360, 711, 724, -463, 730, -485, -366)
-
-[node name="ResearchBot" parent="." unique_id=1192683161 instance=ExtResource("10_iced8")]
-position = Vector2(482, 450)
 
 [node name="Overgrowth" type="Node2D" parent="." unique_id=1835052771]
 y_sort_enabled = true

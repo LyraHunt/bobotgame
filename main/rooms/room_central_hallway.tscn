@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="1_nrb7j"]
 [ext_resource type="PackedScene" uid="uid://boxj3bj3d3mnm" path="res://structures/mechanics/power_station/power_station.tscn" id="2_e8shv"]
 [ext_resource type="PackedScene" uid="uid://b8hm4bqaumbh4" path="res://structures/mechanics/side_doorway/side_doorway_flip.tscn" id="2_kx2ot"]
-[ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="3_kx2ot"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="4_jhqeb"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="5_62tbk"]
 [ext_resource type="PackedScene" uid="uid://d0vfwatct2sst" path="res://structures/mechanics/doorway/doorway_bottom.tscn" id="6_e8shv"]
@@ -18,15 +17,11 @@ position = Vector2(-117, -355)
 position = Vector2(-456, 6)
 
 [node name="CHDoorToLab" parent="." unique_id=1432913595 instance=ExtResource("6_e8shv")]
-position = Vector2(839, 731)
+position = Vector2(839, 714)
 
 [node name="PowerStation" parent="." unique_id=724469414 instance=ExtResource("2_e8shv")]
 position = Vector2(97, 457)
 power_station_id = 1
-
-[node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("3_kx2ot")]
-position = Vector2(244, 207)
-memory_id = 1
 
 [node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]
 z_index = -2
@@ -53,4 +48,4 @@ tile_set = ExtResource("5_62tbk")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1251044420]
 build_mode = 1
-polygon = PackedVector2Array(717, -360, 729, 1436, -468, 1446, -485, -366)
+polygon = PackedVector2Array(1205, -352, 1203, 729, -476, 721, -485, -366)

@@ -104,6 +104,11 @@ func _handle_movement_input() -> void:
 	
 	if movement_input.length() > 0:
 		movement_input = movement_input.normalized()
+		
+		if Input.is_action_pressed("sprint_key"):
+			movement_input *= 2
+		
+		
 		if movement_component:
 			movement_component.motion_input = movement_input
 		

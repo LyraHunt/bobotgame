@@ -15,7 +15,7 @@ script = ExtResource("1_oevcn")
 modulate = Color(0.27, 0.27, 0.27, 0.7490196)
 scale = Vector2(0.6, 0.54)
 texture = ExtResource("2_001k3")
-offset = Vector2(0, -300)
+offset = Vector2(0, -280)
 
 [node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("sprite", "dynamic_hotkey") instance=ExtResource("3_7xfv4")]
 position = Vector2(0, 40)

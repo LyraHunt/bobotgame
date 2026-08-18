@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="1_eb511"]
 [ext_resource type="PackedScene" uid="uid://b8hm4bqaumbh4" path="res://structures/mechanics/side_doorway/side_doorway_flip.tscn" id="2_es08y"]
-[ext_resource type="PackedScene" uid="uid://boxj3bj3d3mnm" path="res://structures/mechanics/power_station/power_station.tscn" id="3_vfd8e"]
 [ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="4_funn3"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="5_xwpff"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="6_5gw6j"]
@@ -18,10 +17,6 @@ position = Vector2(0, -355)
 
 [node name="Doorway" parent="." unique_id=327097148 instance=ExtResource("2_es08y")]
 position = Vector2(-454, 464)
-
-[node name="PowerStation" parent="." unique_id=724469414 instance=ExtResource("3_vfd8e")]
-position = Vector2(97, 457)
-power_station_id = 1
 
 [node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("4_funn3")]
 position = Vector2(244, 207)

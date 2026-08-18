@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dus663o6rsgve"
 path.s3tc="res://.godot/imported/A_Key_Dark.png-14b1046692f32675f3fce665a311c614.s3tc.ctex"
+path.etc2="res://.godot/imported/A_Key_Dark.png-14b1046692f32675f3fce665a311c614.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://ui/controls/keyboard/A_Key_Dark.png"
-dest_files=["res://.godot/imported/A_Key_Dark.png-14b1046692f32675f3fce665a311c614.s3tc.ctex"]
+dest_files=["res://.godot/imported/A_Key_Dark.png-14b1046692f32675f3fce665a311c614.s3tc.ctex", "res://.godot/imported/A_Key_Dark.png-14b1046692f32675f3fce665a311c614.etc2.ctex"]
 
 [params]
 

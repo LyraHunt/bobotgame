@@ -31,7 +31,7 @@ connected_doorway = NodePath("../../StorageArea/Doorway")
 position = Vector2(4992, 3072)
 
 [node name="DoorwayToCentralHallway" parent="Lab" index="0" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
-connected_doorway = NodePath(".")
+connected_doorway = NodePath("../../CentralHallway/CHDoorToLab")
 
 [node name="CentralHallway" parent="." unique_id=503365650 instance=ExtResource("6_1cwov")]
 position = Vector2(3840, 448)
@@ -51,7 +51,7 @@ connected_doorway = NodePath("../../Greenhouse/DoorwayToRoom02")
 [node name="Doorway" parent="StorageArea" index="1" unique_id=327097148 node_paths=PackedStringArray("connected_doorway")]
 connected_doorway = NodePath("../../Greenhouse/Doorway")
 
-[node name="Doorway2" parent="StorageArea" index="12" unique_id=46150101 node_paths=PackedStringArray("connected_doorway")]
+[node name="Doorway2" parent="StorageArea" index="11" unique_id=46150101 node_paths=PackedStringArray("connected_doorway")]
 connected_doorway = NodePath("../../CentralHallway/CHDoorToStorage")
 
 [editable path="Greenhouse"]

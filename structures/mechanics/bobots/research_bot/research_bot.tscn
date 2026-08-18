@@ -68,10 +68,14 @@ shader_parameter/strength = 0.4
 shader_parameter/fps = 6.0
 shader_parameter/noise = SubResource("NoiseTexture2D_k3oqn")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aya8i"]
+size = Vector2(132, 56.5)
+
 [node name="ResearchBot" type="Node2D" unique_id=1192683161]
 script = ExtResource("1_bryhg")
 
 [node name="MemoryBank" parent="." unique_id=512886027 node_paths=PackedStringArray("sprites_to_hide") instance=ExtResource("2_ki3jw")]
+memory_id = 4
 sprites_to_hide = [NodePath("../Casette")]
 
 [node name="Sprite2D" parent="MemoryBank" index="0" unique_id=917366805]
@@ -89,6 +93,7 @@ texture = ExtResource("3_aya8i")
 offset = Vector2(-20, -80)
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1778127819]
+self_modulate = Color(1, 1, 1, 0.78431374)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_4foh8")
 offset = Vector2(-20, -80)
@@ -109,5 +114,11 @@ material = ExtResource("9_2344x")
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_nveq6")
 offset = Vector2(-20, -80)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1716541196]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1128712945]
+position = Vector2(-1, 14)
+shape = SubResource("RectangleShape2D_aya8i")
 
 [editable path="MemoryBank"]

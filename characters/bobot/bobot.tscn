@@ -31,15 +31,6 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_6h4th")
 offset = Vector2(10, -280)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1272340062]
-visible = false
-material = ExtResource("2_d7das")
-position = Vector2(0, -80)
-scale = Vector2(0.3, 0.3)
-sprite_frames = ExtResource("3_25c5j")
-animation = &"walk_down"
-autoplay = "walk_down"
-
 [node name="AnimatedShader2DComponent" parent="." unique_id=978142458 instance=ExtResource("4_i3uv8")]
 material = ExtResource("2_d7das")
 scale = Vector2(0.3, 0.3)

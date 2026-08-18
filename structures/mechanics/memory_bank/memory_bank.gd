@@ -2,8 +2,10 @@ class_name MemoryBank extends Node2D
 
 @export var memory_id: GameData.Memory
 @export var sprites_to_hide: Array[Sprite2D]
-var bobot: Bobot
 
+@onready var hotkey_component: DynamicHotkeyComponent = get_node("DynamicHotkeyComponent")
+
+var bobot: Bobot
 var been_collected: bool = false
 
 func _ready() -> void:
@@ -20,3 +22,4 @@ func collect() -> void:
 	been_collected = true
 	for sprite: Sprite2D in sprites_to_hide:
 		sprite.visible = false
+	hotkey_component.queue_free()

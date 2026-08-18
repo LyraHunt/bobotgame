@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ckyoe6ut0owfg"]
+
+[ext_resource type="Script" uid="uid://pfd1y0bv81mu" path="res://ui/bobot ui/bobot_vignette.gd" id="1_27qxf"]
+[ext_resource type="Texture2D" uid="uid://osskwcktic07" path="res://ui/bobot ui/vignette.png" id="1_km4ki"]
+[ext_resource type="Shader" uid="uid://cqfkwxppa2xri" path="res://resources/shaders/visual_boil_shader/new_shader_material.gdshader" id="2_4oyn0"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ffqs5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k3oqn"]
+noise = SubResource("FastNoiseLite_ffqs5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_27qxf"]
+shader = ExtResource("2_4oyn0")
+shader_parameter/sprite_texture = ExtResource("1_km4ki")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.5
+shader_parameter/fps = 2.5
+shader_parameter/noise = SubResource("NoiseTexture2D_k3oqn")
+
+[node name="BobotVignette" type="Control" unique_id=809498127]
+modulate = Color(1, 1, 1, 0.20784314)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_27qxf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1691025727]
+material = SubResource("ShaderMaterial_27qxf")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_km4ki")

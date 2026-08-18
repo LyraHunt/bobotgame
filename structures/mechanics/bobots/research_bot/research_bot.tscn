@@ -83,9 +83,6 @@ sprite = NodePath("../../Casette")
 [node name="CollisionShape2D" parent="MemoryBank/ProximityInteractionComponent" index="0" unique_id=807831631]
 shape = SubResource("CircleShape2D_aya8i")
 
-[node name="DynamicHotkeyComponent" parent="MemoryBank" index="2" unique_id=62764332]
-visible = false
-
 [node name="Plants" type="Sprite2D" parent="." unique_id=2108926364]
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_aya8i")

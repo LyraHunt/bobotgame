@@ -37,5 +37,5 @@ void fragment() {
 	vec2 squiggle_uv = UV + direction * strength * 0.005;
 	
 	COLOR.rgb = (texture(sprite_texture, squiggle_uv) * modulate).rgb;
-	COLOR.a = texture(sprite_texture, squiggle_uv).a;
+	COLOR.a = texture(sprite_texture, squiggle_uv).a * modulate.a;
 }

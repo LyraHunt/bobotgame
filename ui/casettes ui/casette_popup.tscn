@@ -35,7 +35,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="CasetteTexture" type="TextureRect" parent="." unique_id=1992215323]
-visible = false
 material = ExtResource("4_lf4oa")
 layout_mode = 1
 anchors_preset = 8

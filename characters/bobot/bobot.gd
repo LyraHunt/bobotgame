@@ -2,12 +2,18 @@ class_name Bobot extends CharacterBody2D
 
 @onready var movement_component: MovementComponent = get_node("MovementComponent")
 @onready var proximity_interactor_component: ProximityInteractorComponent = get_node("ProximityInteractorComponent")
+
 @onready var animated_sprite: AnimatedShader2DComponent = get_node("AnimatedShader2DComponent")
+
 @onready var charge_label: RichTextLabel = get_node("CanvasLayer/RichTextLabel")
-@onready var idle_timer: Timer = get_node("IdleTimer")
 @onready var casette_popup: CasettePopup = get_node("CanvasLayer/CasettePopup")
+@onready var vignette: Control = get_node("CanvasLayer/BobotVignette")
+
+
+@onready var idle_timer: Timer = get_node("IdleTimer")
 
 var eepy_tween: Tween
+var world_scene: PackedScene = preload("res://main/world/world.tscn")
 
 func _ready() -> void:
 	#start_charge(GameData.power_stations[GameData.bobot_last_power_station])
@@ -50,7 +56,9 @@ func charge_out() -> void:
 	kill()
 
 func kill() -> void:
-	start_charge(GameData.power_stations[GameData.bobot_last_power_station])
+	GameData.pending_memories = []
+	GameData.bobot_charge = GameData.bobot_max_charge
+	get_tree().reload_current_scene()
 
 func start_memory(memory_id: GameData.Memory) -> void:
 	GameLogic.change_state(GameLogic.State.REMBERING)
@@ -61,10 +69,13 @@ func start_memory(memory_id: GameData.Memory) -> void:
 	GameLogic.change_scene(GameData.memory_controller_scene)
 
 func _physics_process(_delta: float) -> void:
-	match GameLogic.state:
+	"""match GameLogic.state:
 		GameLogic.State.EXPLORING:
 			_handle_movement_input()
-		
+		_:
+			movement_component.motion_input = Vector2.ZERO"""
+	_handle_movement_input()
+	
 	move_and_slide()
 
 func _process(_delta: float) -> void:
@@ -87,6 +98,9 @@ func _handle_movement_input() -> void:
 	var x_direction: float = Input.get_axis("move_left_key", "move_right_key")
 	var y_direction: float = Input.get_axis("move_down_key", "move_up_key")
 	var movement_input: Vector2 = Vector2(x_direction, y_direction)
+	
+	if GameLogic.state != GameLogic.State.EXPLORING:
+		movement_input = Vector2.ZERO
 	
 	if movement_input.length() > 0:
 		movement_input = movement_input.normalized()

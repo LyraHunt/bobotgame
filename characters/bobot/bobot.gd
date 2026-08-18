@@ -5,6 +5,7 @@ class_name Bobot extends CharacterBody2D
 @onready var animated_sprite: AnimatedShader2DComponent = get_node("AnimatedShader2DComponent")
 @onready var charge_label: RichTextLabel = get_node("CanvasLayer/RichTextLabel")
 @onready var idle_timer: Timer = get_node("IdleTimer")
+@onready var casette_popup: CasettePopup = get_node("CanvasLayer/CasettePopup")
 
 var eepy_tween: Tween
 
@@ -17,7 +18,16 @@ func _start_charge_on_load() -> void:
 	start_charge(GameData.power_stations[GameData.bobot_last_power_station])
 
 func add_memory(memory_id: GameData.Memory) -> void:
+	#var casette_popup_timer: SceneTreeTimer = get_tree().create_timer(2).timeout.connect(close_casette_popup)
+	get_tree().create_timer(3).timeout.connect(close_casette_popup)
+	casette_popup.visible = true
+	casette_popup.set_casette_and_animate(memory_id)
+	GameLogic.state = GameLogic.State.POPUP
 	GameData.pending_memories.append(memory_id)
+
+func close_casette_popup() -> void:
+	casette_popup.visible = false
+	GameLogic.state = GameLogic.State.EXPLORING
 
 func start_charge(power_station: PowerStation) -> void:
 	global_position = power_station.global_position

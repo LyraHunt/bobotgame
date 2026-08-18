@@ -16,13 +16,13 @@ var memory_timelines: Dictionary[Memory, DialogicTimeline] = {
 var power_stations: Dictionary[int, PowerStation] = {}
 var power_station_count: int = 2
 
-var bobot_charge: float = 5.0
-var bobot_max_charge: float = 20.0
-var bobot_charge_per_sec: float = 5.0
+var bobot_charge: float = 40.0
+var bobot_max_charge: float = 40.0
+var bobot_charge_per_sec: float = 10.0
 var bobot_last_power_station: int
 
 var acquired_memories: Array[GameData.Memory] = []
-var pending_memories: Array[GameData.Memory] = [0]
+var pending_memories: Array[GameData.Memory] = []
 
 func add_power_station_id(new_id: int, power_station: PowerStation) -> void:
 	power_stations.set(new_id, power_station)

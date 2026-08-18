@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b8hm4bqaumbh4"]
+
+[ext_resource type="Script" uid="uid://bum64o4tgl3aj" path="res://structures/mechanics/doorway/doorway.gd" id="1_h4nku"]
+[ext_resource type="Texture2D" uid="uid://dhkl7levuixit" path="res://main/rooms/assets/door side.png" id="2_irhna"]
+[ext_resource type="PackedScene" uid="uid://djyaxwrsd83y4" path="res://components/proximity_interaction/proximity_interaction_component.tscn" id="3_7gor1"]
+[ext_resource type="PackedScene" uid="uid://cooufmusuhqsl" path="res://components/dynamic_hotkey/dynamic_hotkey_component.tscn" id="4_i74bv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uprjh"]
+size = Vector2(36.5, 114)
+
+[node name="Doorway" type="Area2D" unique_id=585523427]
+script = ExtResource("1_h4nku")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=274388446]
+position = Vector2(-39.999992, 24)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_irhna")
+offset = Vector2(0, -100)
+flip_h = true
+
+[node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("sprite", "dynamic_hotkey") instance=ExtResource("3_7gor1")]
+position = Vector2(0, 40)
+sprite = NodePath("../Sprite2D")
+dynamic_hotkey = NodePath("../DynamicHotkeyComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityInteractionComponent" unique_id=779210597]
+position = Vector2(-0.75, -75)
+shape = SubResource("RectangleShape2D_uprjh")
+
+[node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("4_i74bv")]
+position = Vector2(0, -128)
+
+[connection signal="interacted" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_interacted"]
+[connection signal="selection_update" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]

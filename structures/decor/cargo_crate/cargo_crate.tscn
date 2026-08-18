@@ -1,20 +1,18 @@
 [gd_scene format=3 uid="uid://b6m0qy58wq06l"]
 
-[ext_resource type="Script" uid="uid://31o6gv1ar3bn" path="res://structures/decor/CRT/crt.gd" id="1_i5qfl"]
-[ext_resource type="Texture2D" uid="uid://dsolm1pcq282g" path="res://structures/decor/cargo_crate/cargo crate.png" id="2_uqu1c"]
+[ext_resource type="Texture2D" uid="uid://b2cpv736f0rum" path="res://structures/decor/cargo_crate_sprite/outlined cargo crate.png" id="1_bq41y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r5iys"]
 radius = 50.0
 
 [node name="CargoCrate" type="StaticBody2D" unique_id=892621697]
 y_sort_enabled = true
-script = ExtResource("1_i5qfl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=603463743]
 y_sort_enabled = true
 position = Vector2(0, -1.9073486e-06)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_uqu1c")
+texture = ExtResource("1_bq41y")
 offset = Vector2(0, -80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462808171]

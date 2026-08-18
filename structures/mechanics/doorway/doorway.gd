@@ -7,12 +7,6 @@ var bobot: Bobot
 func _ready() -> void:
 	bobot = get_tree().get_first_node_in_group("bobot")
 
-func _on_proximity_interaction_component_selection_update(selected: bool) -> void:
-	if selected:
-		modulate = Color(0.5, 0.5, 0.5)
-	else:
-		modulate = Color.WHITE
-
 
 func _on_proximity_interaction_component_interacted() -> void:
 	if connected_doorway:

@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://blsi222gcll5f"]
+
+[ext_resource type="Script" uid="uid://bmjr7dlm6pufc" path="res://ui/casettes ui/casette_popup.gd" id="1_025dm"]
+[ext_resource type="Texture2D" uid="uid://ct51pcgb4ccim" path="res://ui/casettes ui/Research bot cassette.PNG" id="1_nvk1k"]
+[ext_resource type="Texture2D" uid="uid://trst7pq56k7j" path="res://ui/casettes ui/Bobot cassette.PNG" id="2_2558y"]
+[ext_resource type="Material" uid="uid://da2j3woubb552" path="res://resources/shaders/outline_shader/outline_shader_mat.tres" id="4_lf4oa"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2558y"]
+load_path = "res://.godot/imported/Research bot cassette.PNG-8e7bd9bd20da73bdcef0e3ea409dd042.ctex"
+
+[node name="CasettePopup" type="Control" unique_id=492480769]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_025dm")
+casette_sprites = Dictionary[int, Texture]({
+0: ExtResource("2_2558y"),
+1: ExtResource("1_nvk1k"),
+2: null,
+3: null,
+4: ExtResource("1_nvk1k")
+})
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=700042519]
+self_modulate = Color(1, 1, 1, 0.5176471)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CasetteTexture" type="TextureRect" parent="." unique_id=1992215323]
+visible = false
+material = ExtResource("4_lf4oa")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_2558y")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=89786620]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.75
+offset_top = -60.0
+offset_right = 247.75
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 200)
+bbcode_enabled = true
+text = "[font_size=60][center]MEMORY BANK ACQUIRED"
+fit_content = true

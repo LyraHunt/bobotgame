@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://j1kp2cxbjq4m"]
+
+[ext_resource type="Texture2D" uid="uid://cuwpacjcyq4i2" path="res://structures/decor/cargo_shelf/cargo shelf.PNG" id="2_j2wr1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2wr1"]
+size = Vector2(120, 200)
+
+[node name="CargoShelf" type="StaticBody2D" unique_id=892621697]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462808171]
+shape = SubResource("RectangleShape2D_j2wr1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=603463743]
+y_sort_enabled = true
+position = Vector2(0, -1.9073486e-06)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_j2wr1")
+offset = Vector2(0, -300)

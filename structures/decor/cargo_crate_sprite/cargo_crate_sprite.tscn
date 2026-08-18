@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c800r2teiclqk"]
+
+[ext_resource type="Texture2D" uid="uid://b2cpv736f0rum" path="res://structures/decor/cargo_crate_sprite/outlined cargo crate.png" id="1_xcued"]
+
+[node name="CargoCrate" type="Node2D" unique_id=523836031]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=603463743]
+y_sort_enabled = true
+position = Vector2(0, -1.9073486e-06)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_xcued")
+offset = Vector2(0, -80)

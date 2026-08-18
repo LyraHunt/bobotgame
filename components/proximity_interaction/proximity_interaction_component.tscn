@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://djyaxwrsd83y4"]
 
 [ext_resource type="Script" uid="uid://bbiaxdn4v0rfj" path="res://components/proximity_interaction/proximity_interaction_component.gd" id="1_wsh5h"]
+[ext_resource type="Material" uid="uid://da2j3woubb552" path="res://resources/shaders/outline_shader/outline_shader_mat.tres" id="2_kn5u7"]
 
 [node name="ProximityInteractionComponent" type="Area2D" unique_id=606314739]
 script = ExtResource("1_wsh5h")
+outline_shader = ExtResource("2_kn5u7")

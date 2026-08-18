@@ -32,14 +32,14 @@ scale = Vector2(0.35, 0.35)
 texture = ExtResource("2_f6w76")
 offset = Vector2(0, -160)
 
-[node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("dynamic_hotkey") instance=ExtResource("2_1yqj0")]
+[node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("sprite", "dynamic_hotkey") instance=ExtResource("2_1yqj0")]
+sprite = NodePath("../Sprite2D")
 dynamic_hotkey = NodePath("../DynamicHotkeyComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityInteractionComponent" unique_id=807831631]
 shape = SubResource("CircleShape2D_r5iys")
 
 [node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("4_f6w76")]
-visible = true
 position = Vector2(0, -194)
 
 [connection signal="interacted" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_interacted"]

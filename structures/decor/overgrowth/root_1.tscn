@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bx5gu7ub2ue68"]
+
+[ext_resource type="Texture2D" uid="uid://g5iyctck8j20" path="res://structures/decor/overgrowth/sprites/root_1.png" id="1_l35bk"]
+
+[node name="root1" type="Sprite2D" unique_id=86382574]
+y_sort_enabled = true
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_l35bk")
+offset = Vector2(30, 0)

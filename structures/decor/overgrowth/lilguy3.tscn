@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cxd40vxy5vw24"]
+
+[ext_resource type="Texture2D" uid="uid://cypcupq8ac7si" path="res://structures/decor/overgrowth/sprites/lil_guy_3.png" id="1_j0b2l"]
+
+[node name="lilguy3" type="Sprite2D" unique_id=86382574]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_j0b2l")
+offset = Vector2(30, -20)

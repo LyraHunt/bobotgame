@@ -51,7 +51,7 @@ func _update_proximity_interaction_array() -> void:
 		else:
 			is_new_selection = true
 		
-		if is_new_selection:
+		if is_new_selection and closest_proximity_interaction_component:
 			if current_selection:
 				current_selection.deselect()
 			closest_proximity_interaction_component.select()

@@ -16,15 +16,22 @@ position = Vector2(-7168, -1024)
 [node name="Camera" parent="Bobot" unique_id=402554782 instance=ExtResource("2_vs3s0")]
 
 [node name="Room01" parent="." unique_id=1292530247 instance=ExtResource("4_276oa")]
+position = Vector2(-1024, 0)
 
-[node name="DoorwayToRoom02" parent="Room01" index="2" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
+[node name="DoorwayToRoom02" parent="Room01" index="1" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
 connected_doorway = NodePath("../../Room02/DoorwayToRoom01")
+
+[node name="Doorway" parent="Room01" index="2" unique_id=1706434301 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../Room02/Doorway")
 
 [node name="Room02" parent="." unique_id=1671798769 instance=ExtResource("5_3xpkk")]
 position = Vector2(1344, 0)
 
-[node name="DoorwayToRoom01" parent="Room02" index="3" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
+[node name="DoorwayToRoom01" parent="Room02" index="0" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
 connected_doorway = NodePath("../../Room01/DoorwayToRoom02")
+
+[node name="Doorway" parent="Room02" index="1" unique_id=327097148 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../Room01/Doorway")
 
 [editable path="Room01"]
 [editable path="Room02"]

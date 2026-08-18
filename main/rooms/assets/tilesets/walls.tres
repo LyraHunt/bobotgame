@@ -1,14 +1,14 @@
 [gd_resource type="TileSet" format=3 uid="uid://bopq3ijg2orhf"]
 
-[ext_resource type="Texture2D" uid="uid://dfhbiqd1dygib" path="res://main/rooms/assets/left side wall bottom.PNG" id="1_jiyu4"]
-[ext_resource type="Texture2D" uid="uid://brlrbkdham0fh" path="res://main/rooms/assets/wall corner left.PNG" id="2_2glp5"]
-[ext_resource type="Texture2D" uid="uid://oxxcscald3qj" path="res://main/rooms/assets/left side wall top.PNG" id="2_rymle"]
-[ext_resource type="Texture2D" uid="uid://5xfdx8axj6jr" path="res://main/rooms/assets/wall corner right.PNG" id="3_2gfhy"]
-[ext_resource type="Texture2D" uid="uid://c7a7yjujryoin" path="res://main/rooms/assets/wall.png" id="4_4yj1e"]
-[ext_resource type="Texture2D" uid="uid://c0td23okew84b" path="res://main/rooms/assets/right side wall bottom.PNG" id="4_symnh"]
-[ext_resource type="Texture2D" uid="uid://c3ma057m2ouns" path="res://main/rooms/assets/right side wall top.PNG" id="5_w43r5"]
-[ext_resource type="Texture2D" uid="uid://drpmifno458j8" path="res://main/rooms/assets/right side wall.PNG" id="6_jiyu4"]
-[ext_resource type="Texture2D" uid="uid://b1yefwmvd6i3p" path="res://main/rooms/assets/left side wall.PNG" id="8_d6pok"]
+[ext_resource type="Texture2D" uid="uid://dfhbiqd1dygib" path="res://main/rooms/assets/floors_and_walls/left side wall bottom.PNG" id="1_jiyu4"]
+[ext_resource type="Texture2D" uid="uid://oxxcscald3qj" path="res://main/rooms/assets/floors_and_walls/left side wall top.PNG" id="2_rymle"]
+[ext_resource type="Texture2D" uid="uid://c7a7yjujryoin" path="res://main/rooms/assets/floors_and_walls/wall.png" id="3_d6pok"]
+[ext_resource type="Texture2D" uid="uid://brlrbkdham0fh" path="res://main/rooms/assets/floors_and_walls/wall corner left.PNG" id="4_bsjop"]
+[ext_resource type="Texture2D" uid="uid://5xfdx8axj6jr" path="res://main/rooms/assets/floors_and_walls/wall corner right.PNG" id="5_3c833"]
+[ext_resource type="Texture2D" uid="uid://c0td23okew84b" path="res://main/rooms/assets/floors_and_walls/right side wall bottom.PNG" id="6_07vg1"]
+[ext_resource type="Texture2D" uid="uid://c3ma057m2ouns" path="res://main/rooms/assets/floors_and_walls/right side wall top.PNG" id="7_av4sc"]
+[ext_resource type="Texture2D" uid="uid://b1yefwmvd6i3p" path="res://main/rooms/assets/floors_and_walls/left side wall.PNG" id="8_r64yj"]
+[ext_resource type="Texture2D" uid="uid://drpmifno458j8" path="res://main/rooms/assets/floors_and_walls/right side wall.PNG" id="9_ll1uf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3c833"]
 texture = ExtResource("1_jiyu4")
@@ -21,37 +21,37 @@ texture_region_size = Vector2i(400, 600)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jiyu4"]
-texture = ExtResource("4_4yj1e")
+texture = ExtResource("3_d6pok")
 texture_region_size = Vector2i(400, 600)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2glp5"]
-texture = ExtResource("2_2glp5")
+texture = ExtResource("4_bsjop")
 texture_region_size = Vector2i(400, 600)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2gfhy"]
-texture = ExtResource("3_2gfhy")
+texture = ExtResource("5_3c833")
 texture_region_size = Vector2i(400, 600)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rymle"]
-texture = ExtResource("4_symnh")
+texture = ExtResource("6_07vg1")
 texture_region_size = Vector2i(400, 600)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d6pok"]
-texture = ExtResource("5_w43r5")
+texture = ExtResource("7_av4sc")
 texture_region_size = Vector2i(400, 600)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_av4sc"]
-texture = ExtResource("8_d6pok")
+texture = ExtResource("8_r64yj")
 texture_region_size = Vector2i(400, 600)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bsjop"]
-texture = ExtResource("6_jiyu4")
+texture = ExtResource("9_ll1uf")
 texture_region_size = Vector2i(400, 600)
 0:0/0 = 0
 

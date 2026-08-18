@@ -4,7 +4,7 @@ signal state_changed()
 signal controls_changed()
 signal power_stations_initialized()
 
-enum State {EXPLORING, CHARGING, REMBERING}
+enum State {EXPLORING, CHARGING, REMBERING, POPUP}
 var state: State = State.CHARGING
 var current_memory: GameData.Memory
 

@@ -15,6 +15,10 @@ run/main_scene="uid://ckbn8vhnevtqv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://c7g5i3vjg2q1x"
+
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
@@ -99,7 +103,6 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=4
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 

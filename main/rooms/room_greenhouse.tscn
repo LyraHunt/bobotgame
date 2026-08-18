@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://b1e2shu3u76ec"]
 
 [ext_resource type="PackedScene" uid="uid://b6m0qy58wq06l" path="res://structures/decor/cargo_crate/cargo_crate.tscn" id="1_mm337"]
-[ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="2_l76pj"]
 [ext_resource type="PackedScene" uid="uid://ctw0xedmi8cm8" path="res://structures/mechanics/side_doorway/side_doorway.tscn" id="3_cxk13"]
 [ext_resource type="PackedScene" uid="uid://boxj3bj3d3mnm" path="res://structures/mechanics/power_station/power_station.tscn" id="4_q8isb"]
 [ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="5_5w0c5"]
@@ -20,10 +19,7 @@ y_sort_enabled = true
 
 [node name="CargoCrate" parent="." unique_id=892621697 instance=ExtResource("1_mm337")]
 
-[node name="DoorwayToRoom02" parent="." unique_id=585523427 instance=ExtResource("2_l76pj")]
-position = Vector2(361, -353.00003)
-
-[node name="Doorway" parent="." unique_id=1706434301 instance=ExtResource("3_cxk13")]
+[node name="GreenDoorwayToStorage" parent="." unique_id=1706434301 instance=ExtResource("3_cxk13")]
 position = Vector2(707, 73)
 
 [node name="PowerStation" parent="." unique_id=724469414 groups=["first_power_station"] instance=ExtResource("4_q8isb")]

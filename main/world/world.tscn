@@ -21,11 +21,8 @@ position = Vector2(0, -54)
 [node name="Greenhouse" parent="." unique_id=1292530247 instance=ExtResource("4_276oa")]
 position = Vector2(-1024, 0)
 
-[node name="DoorwayToRoom02" parent="Greenhouse" index="1" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
-connected_doorway = NodePath("../../StorageArea/DoorwayToRoom01")
-
-[node name="Doorway" parent="Greenhouse" index="2" unique_id=1706434301 node_paths=PackedStringArray("connected_doorway")]
-connected_doorway = NodePath("../../StorageArea/Doorway")
+[node name="GreenDoorwayToStorage" parent="Greenhouse" index="1" unique_id=1706434301 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../StorageArea/StorageDoorToGreen")
 
 [node name="Lab" parent="." unique_id=1671798769 instance=ExtResource("5_54tnd")]
 position = Vector2(4992, 3072)
@@ -37,7 +34,7 @@ connected_doorway = NodePath("../../CentralHallway/CHDoorToLab")
 position = Vector2(3840, 448)
 
 [node name="CHDoorToStorage" parent="CentralHallway" index="1" unique_id=1037123891 node_paths=PackedStringArray("connected_doorway")]
-connected_doorway = NodePath("../../StorageArea/Doorway2")
+connected_doorway = NodePath("../../StorageArea/StorageDoorToCH")
 
 [node name="CHDoorToLab" parent="CentralHallway" index="2" unique_id=1432913595 node_paths=PackedStringArray("connected_doorway")]
 connected_doorway = NodePath("../../Lab/DoorwayToCentralHallway")
@@ -45,13 +42,10 @@ connected_doorway = NodePath("../../Lab/DoorwayToCentralHallway")
 [node name="StorageArea" parent="." unique_id=104887320 instance=ExtResource("5_3xpkk")]
 position = Vector2(1344, 0)
 
-[node name="DoorwayToRoom01" parent="StorageArea" index="0" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
-connected_doorway = NodePath("../../Greenhouse/DoorwayToRoom02")
+[node name="StorageDoorToGreen" parent="StorageArea" index="0" unique_id=327097148 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../Greenhouse/GreenDoorwayToStorage")
 
-[node name="Doorway" parent="StorageArea" index="1" unique_id=327097148 node_paths=PackedStringArray("connected_doorway")]
-connected_doorway = NodePath("../../Greenhouse/Doorway")
-
-[node name="Doorway2" parent="StorageArea" index="11" unique_id=46150101 node_paths=PackedStringArray("connected_doorway")]
+[node name="StorageDoorToCH" parent="StorageArea" index="1" unique_id=46150101 node_paths=PackedStringArray("connected_doorway")]
 connected_doorway = NodePath("../../CentralHallway/CHDoorToStorage")
 
 [editable path="Greenhouse"]

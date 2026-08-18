@@ -39,7 +39,7 @@ func _ready() -> void:
 				return
 			Dialogic.start(GameData.memory_timelines[GameData.Memory.LAB])  
 	
-	SoundManager.play_music((SRM as SoundResourceManager).get_sound("memory_start")).volume_db = -12
+	SoundManager.play_music((SRM as SoundResourceManager).get_sound("memory_start")).volume_db = -8
 
 
 

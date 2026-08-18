@@ -1,0 +1,43 @@
+[gd_scene format=4 uid="uid://q00t41kep4tp"]
+
+[ext_resource type="PackedScene" uid="uid://d0vfwatct2sst" path="res://structures/mechanics/doorway/doorway_bottom.tscn" id="1_hirn7"]
+[ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="2_hirn7"]
+[ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="3_147qm"]
+[ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="4_8x2wg"]
+
+[node name="Kitchen" type="Node2D" unique_id=1671798769]
+y_sort_enabled = true
+
+[node name="Doorway" parent="." unique_id=585523427 instance=ExtResource("1_hirn7")]
+position = Vector2(-122, 690)
+
+[node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("2_hirn7")]
+position = Vector2(361, -182)
+memory_id = 2
+
+[node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAABAAAAAAD+////AAACAAAAAAD/////AAADAAAAAAAAAP//AAADAAAAAAABAP//AAABAAAAAAABAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAP//AAABAAAAAAACAP7/AAACAAAAAAABAP7/AAABAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAADAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAACAAAAAAD9/wEAAAABAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAABAAAAAAABAAEAAAAAAAAAAAACAAEAAAACAAAAAAADAAAAAAADAAAAAAADAAEAAAAAAAAAAAADAP//AAACAAAAAAADAP7/AAACAAAAAAD8//7/AAABAAAAAAD8////AAACAAAAAAD8/wAAAAACAAAAAAD8/wEAAAACAAAAAAD8/wIAAAABAAAAAAD9/wIAAAACAAAAAAD+/wIAAAACAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAACAAAAAAACAAIAAAADAAAAAAADAAIAAAADAAAAAAAEAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAAAAAABAAAAAAAEAP//AAAAAAAAAAAEAP7/AAADAAAAAAAFAP7/AAABAAAAAAAFAP//AAACAAAAAAAFAAAAAAABAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAADAAAAAAD8/wMAAAAAAAAAAAD9/wMAAAACAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAADAAAAAAABAAMAAAADAAAAAAACAAMAAAAAAAAAAAADAAMAAAACAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAA=")
+tile_set = ExtResource("3_147qm")
+
+[node name="TileMapLayerWalls" type="TileMapLayer" parent="." unique_id=1587837278]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAD+//7/DwAAAAAAAAD///7/DwAAAAAAAAAAAP7/DwAAAAAAAAABAP7/DwAAAAAAAAACAP7/DwAAAAAAAAD9//7/EAAAAAAAAAADAP7/EQAAAAAAAAA=")
+tile_set = ExtResource("4_8x2wg")
+
+[node name="TileMapLayerSides" type="TileMapLayer" parent="." unique_id=2104830140]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAD9////AgAAAAAAAAD9/wAAAgAAAAAAAAD9//7/AQAAAAAAAAD9/wEAAAAAAAAAAAADAP7/EwAAAAAAAAADAP//FAAAAAAAAAADAAAAFAAAAAAAAAADAAEAEgAAAAAAAAA=")
+tile_set = ExtResource("4_8x2wg")
+
+[node name="RoomPhysicsBounds" type="StaticBody2D" parent="." unique_id=271627776]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1251044420]
+build_mode = 1
+polygon = PackedVector2Array(732, -362, 729, 724, -469, 719, -485, -366)

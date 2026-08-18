@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://duq5cr5sfleri" path="res://main/rooms/room_storage_area.tscn" id="5_3xpkk"]
 [ext_resource type="PackedScene" uid="uid://cnjdyu7hce4vb" path="res://main/rooms/room_lab.tscn" id="5_54tnd"]
 [ext_resource type="PackedScene" uid="uid://xd7tdn5pitl7" path="res://main/rooms/room_central_hallway.tscn" id="6_1cwov"]
+[ext_resource type="PackedScene" uid="uid://q00t41kep4tp" path="res://main/rooms/room_kitchen.tscn" id="8_4ttqp"]
+[ext_resource type="PackedScene" uid="uid://dvoive7gtto8" path="res://main/rooms/room_workshop.tscn" id="9_5f05i"]
+[ext_resource type="PackedScene" uid="uid://b8tx0eh5dgtar" path="res://main/rooms/room_quarters.tscn" id="10_oxa5y"]
 
 [node name="World" type="Node2D" unique_id=566275448]
 y_sort_enabled = true
@@ -48,7 +51,19 @@ connected_doorway = NodePath("../../Greenhouse/GreenDoorwayToStorage")
 [node name="StorageDoorToCH" parent="StorageArea" index="1" unique_id=46150101 node_paths=PackedStringArray("connected_doorway")]
 connected_doorway = NodePath("../../CentralHallway/CHDoorToStorage")
 
+[node name="Kitchen" parent="." unique_id=970619323 instance=ExtResource("8_4ttqp")]
+position = Vector2(2900, -2171)
+
+[node name="Workshop" parent="." unique_id=1558389239 instance=ExtResource("9_5f05i")]
+position = Vector2(2134, 3057)
+
+[node name="Quarters" parent="." unique_id=1053348840 instance=ExtResource("10_oxa5y")]
+position = Vector2(5957, -2135)
+
 [editable path="Greenhouse"]
 [editable path="Lab"]
 [editable path="CentralHallway"]
 [editable path="StorageArea"]
+[editable path="Kitchen"]
+[editable path="Workshop"]
+[editable path="Quarters"]

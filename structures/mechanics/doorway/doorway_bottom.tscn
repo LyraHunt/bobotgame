@@ -6,16 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://cooufmusuhqsl" path="res://components/dynamic_hotkey/dynamic_hotkey_component.tscn" id="4_75ty4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uprjh"]
-size = Vector2(230, 27)
+size = Vector2(230, 47.5)
 
 [node name="Doorway" type="Area2D" unique_id=585523427]
+y_sort_enabled = true
 script = ExtResource("1_oevcn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=274388446]
 modulate = Color(0.27, 0.27, 0.27, 0.7490196)
+position = Vector2(0, 30)
 scale = Vector2(0.6, 0.54)
 texture = ExtResource("2_001k3")
-offset = Vector2(0, -280)
+offset = Vector2(0, -290)
 
 [node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("sprite", "dynamic_hotkey") instance=ExtResource("3_7xfv4")]
 position = Vector2(0, 40)
@@ -23,7 +25,7 @@ sprite = NodePath("../Sprite2D")
 dynamic_hotkey = NodePath("../DynamicHotkeyComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityInteractionComponent" unique_id=779210597]
-position = Vector2(0, -59)
+position = Vector2(0, -43.75)
 shape = SubResource("RectangleShape2D_uprjh")
 
 [node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("4_75ty4")]

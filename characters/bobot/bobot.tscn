@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://djag1mf5xcqji" path="res://characters/bobot/bobot.gd" id="1_jt0t2"]
 [ext_resource type="Texture2D" uid="uid://drcpvm2lrroi4" path="res://characters/bobot/sprites/Bobot shadow.png" id="2_6h4th"]
-[ext_resource type="Material" uid="uid://baak0wv81vjkv" path="res://resources/shaders/visual_boil_shader/new_shader_material.tres" id="2_d7das"]
 [ext_resource type="SpriteFrames" uid="uid://1160c2jtd0ge" path="res://characters/bobot/bobot_sprite_frames.tres" id="3_25c5j"]
 [ext_resource type="PackedScene" uid="uid://bpsxk644vopdu" path="res://components/movement/movement_component.tscn" id="3_eno68"]
-[ext_resource type="PackedScene" uid="uid://6bw1wgoo3rks" path="res://components/animated_shader_2d/animated_shader_2d_component.tscn" id="4_i3uv8"]
 [ext_resource type="Script" uid="uid://cli3yj6xskekl" path="res://components/proximity_interactor/proximity_interactor_component.gd" id="4_trx6w"]
+[ext_resource type="Material" uid="uid://bn3drkgdlh1yo" path="res://resources/shaders/visual_boil_shader/boil_shader_mat.tres" id="4_xkikd"]
 [ext_resource type="PackedScene" uid="uid://buyx0fvko6hu0" path="res://ui/bobot ui/bobot_charge_display.tscn" id="7_0op0h"]
 [ext_resource type="PackedScene" uid="uid://blsi222gcll5f" path="res://ui/casettes ui/casette_popup.tscn" id="9_obths"]
 [ext_resource type="PackedScene" uid="uid://ckyoe6ut0owfg" path="res://ui/bobot ui/bobot_vignette.tscn" id="10_xkikd"]
@@ -31,11 +30,11 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_6h4th")
 offset = Vector2(10, -280)
 
-[node name="AnimatedShader2DComponent" parent="." unique_id=978142458 instance=ExtResource("4_i3uv8")]
-material = ExtResource("2_d7das")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2043321006]
+material = ExtResource("4_xkikd")
 scale = Vector2(0.3, 0.3)
 sprite_frames = ExtResource("3_25c5j")
-animation = &"stand_up"
+animation = &"stand_down"
 autoplay = "stand_down"
 offset = Vector2(0, -280)
 

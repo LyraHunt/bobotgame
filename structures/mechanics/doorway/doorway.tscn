@@ -1,20 +1,24 @@
 [gd_scene format=3 uid="uid://chu4f1vf3b2ma"]
 
 [ext_resource type="Script" uid="uid://bum64o4tgl3aj" path="res://structures/mechanics/doorway/doorway.gd" id="1_hbrbf"]
+[ext_resource type="Material" uid="uid://bn3drkgdlh1yo" path="res://resources/shaders/visual_boil_shader/boil_shader_mat.tres" id="2_il7kc"]
 [ext_resource type="PackedScene" uid="uid://djyaxwrsd83y4" path="res://components/proximity_interaction/proximity_interaction_component.tscn" id="2_pyfbf"]
 [ext_resource type="Texture2D" uid="uid://bppw7l2mwd0wo" path="res://main/rooms/assets/door front.png" id="2_uprjh"]
 [ext_resource type="PackedScene" uid="uid://cooufmusuhqsl" path="res://components/dynamic_hotkey/dynamic_hotkey_component.tscn" id="4_gsevw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uprjh"]
-size = Vector2(230, 27)
+size = Vector2(230, 42.5)
 
 [node name="Doorway" type="Area2D" unique_id=585523427]
+y_sort_enabled = true
 script = ExtResource("1_hbrbf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=274388446]
+material = ExtResource("2_il7kc")
+position = Vector2(0, -30)
 scale = Vector2(0.6, 0.54)
 texture = ExtResource("2_uprjh")
-offset = Vector2(0, -300)
+offset = Vector2(0, -290)
 
 [node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("sprite", "dynamic_hotkey") instance=ExtResource("2_pyfbf")]
 position = Vector2(0, 40)
@@ -22,7 +26,7 @@ sprite = NodePath("../Sprite2D")
 dynamic_hotkey = NodePath("../DynamicHotkeyComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityInteractionComponent" unique_id=779210597]
-position = Vector2(0, -32)
+position = Vector2(0, -39.75)
 shape = SubResource("RectangleShape2D_uprjh")
 
 [node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("4_gsevw")]

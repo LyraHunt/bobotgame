@@ -1,0 +1,38 @@
+[gd_scene format=4 uid="uid://dvoive7gtto8"]
+
+[ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="1_y6ghx"]
+[ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="3_4pg4x"]
+[ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="4_5b15h"]
+
+[node name="Workshop" type="Node2D" unique_id=1671798769]
+y_sort_enabled = true
+
+[node name="WorkshopDoorToCH" parent="." unique_id=585523427 instance=ExtResource("1_y6ghx")]
+position = Vector2(839, -331)
+
+[node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAP//AAADAAAAAAABAP//AAABAAAAAAABAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAP//AAABAAAAAAACAP7/AAACAAAAAAABAP7/AAABAAAAAAAAAP7/AAAAAAAAAAAAAAEAAAABAAAAAAABAAEAAAAAAAAAAAACAAEAAAACAAAAAAADAAAAAAADAAAAAAADAAEAAAAAAAAAAAADAP//AAACAAAAAAADAP7/AAACAAAAAAAAAAIAAAAAAAAAAAABAAIAAAACAAAAAAACAAIAAAADAAAAAAADAAIAAAADAAAAAAAEAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAAAAAABAAAAAAAEAP//AAAAAAAAAAAEAP7/AAADAAAAAAAFAP7/AAABAAAAAAAFAP//AAACAAAAAAAFAAAAAAABAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAADAAAAAAAAAAMAAAADAAAAAAABAAMAAAADAAAAAAACAAMAAAAAAAAAAAADAAMAAAACAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAP7/AAADAAAAAAAGAP//AAACAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAABAAAAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAHAP7/AAACAAAAAAAHAP//AAACAAAAAAAHAAAAAAABAAAAAAAHAAEAAAACAAAAAAAHAAIAAAACAAAAAAAHAAMAAAABAAAAAAAIAP7/AAADAAAAAAAIAP//AAABAAAAAAAIAAAAAAABAAAAAAAIAAEAAAADAAAAAAAIAAIAAAACAAAAAAAIAAMAAAADAAAAAAAJAP7/AAACAAAAAAAJAP//AAACAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAADAAAAAAAJAAIAAAADAAAAAAAJAAMAAAAAAAAAAAA=")
+tile_set = ExtResource("3_4pg4x")
+
+[node name="TileMapLayerWalls" type="TileMapLayer" parent="." unique_id=1587837278]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAAAAP7/DwAAAAAAAAABAP7/DwAAAAAAAAACAP7/DwAAAAAAAAADAP7/DwAAAAAAAAAEAP7/DwAAAAAAAAAFAP7/EQAAAAAAAAD///7/EAAAAAAAAAA=")
+tile_set = ExtResource("4_5b15h")
+
+[node name="TileMapLayerSides" type="TileMapLayer" parent="." unique_id=2104830140]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAAFAP//FAAAAAAAAAAFAAAAFAAAAAAAAAAFAAEAEgAAAAAAAAAFAP7/EwAAAAAAAAD///7/AQAAAAAAAAD/////AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAAAAAAAAAAA=")
+tile_set = ExtResource("4_5b15h")
+
+[node name="RoomPhysicsBounds" type="StaticBody2D" parent="." unique_id=271627776]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1251044420]
+build_mode = 1
+polygon = PackedVector2Array(1199, -352, 1202, 713, -2, 721, 1, -360)

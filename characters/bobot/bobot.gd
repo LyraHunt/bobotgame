@@ -3,7 +3,7 @@ class_name Bobot extends CharacterBody2D
 @onready var movement_component: MovementComponent = get_node("MovementComponent")
 @onready var proximity_interactor_component: ProximityInteractorComponent = get_node("ProximityInteractorComponent")
 
-@onready var animated_sprite: AnimatedShader2DComponent = get_node("AnimatedShader2DComponent")
+@onready var animated_sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
 
 @onready var charge_label: RichTextLabel = get_node("CanvasLayer/RichTextLabel")
 @onready var casette_popup: CasettePopup = get_node("CanvasLayer/CasettePopup")

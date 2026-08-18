@@ -12,10 +12,10 @@
 y_sort_enabled = true
 
 [node name="StorageDoorToGreen" parent="." unique_id=327097148 instance=ExtResource("2_es08y")]
-position = Vector2(-466, 484)
+position = Vector2(-446, 453)
 
 [node name="StorageDoorToCH" parent="." unique_id=46150101 instance=ExtResource("9_es08y")]
-position = Vector2(708, 466)
+position = Vector2(689, 447)
 
 [node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("4_funn3")]
 position = Vector2(244, 207)

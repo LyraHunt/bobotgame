@@ -9,7 +9,7 @@
 y_sort_enabled = true
 
 [node name="DoorwayToCentralHallway" parent="." unique_id=585523427 instance=ExtResource("1_as0fk")]
-position = Vector2(-117, -355)
+position = Vector2(-117, -330)
 
 [node name="ResearchBot" parent="." unique_id=1192683161 instance=ExtResource("2_0fcd5")]
 position = Vector2(844, -100)
@@ -39,4 +39,4 @@ tile_set = ExtResource("5_t08a1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1251044420]
 build_mode = 1
-polygon = PackedVector2Array(1199, -352, 1199, 705, -469, 719, -485, -366)
+polygon = PackedVector2Array(1204, -356, 1199, 705, -469, 719, -485, -366)

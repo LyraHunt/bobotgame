@@ -11,3 +11,6 @@ func _ready() -> void:
 func _on_proximity_interaction_component_interacted() -> void:
 	if connected_doorway:
 		bobot.global_position = connected_doorway.global_position
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		bobot.proximity_interactor_component.queue_proximity_check()

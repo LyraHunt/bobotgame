@@ -6,24 +6,24 @@
 [ext_resource type="PackedScene" uid="uid://cooufmusuhqsl" path="res://components/dynamic_hotkey/dynamic_hotkey_component.tscn" id="4_rml8j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uprjh"]
-size = Vector2(36.5, 114)
+size = Vector2(36.5, 125)
 
 [node name="Doorway" type="Area2D" unique_id=585523427]
+y_sort_enabled = true
 script = ExtResource("1_7i8px")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=274388446]
-position = Vector2(30, 21.999998)
+position = Vector2(30, 63.800003)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_ijcm3")
-offset = Vector2(0, -100)
+offset = Vector2(25, -100)
 
 [node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("sprite", "dynamic_hotkey") instance=ExtResource("3_fsp76")]
-position = Vector2(0, 40)
 sprite = NodePath("../Sprite2D")
 dynamic_hotkey = NodePath("../DynamicHotkeyComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityInteractionComponent" unique_id=779210597]
-position = Vector2(-0.75, -75)
+position = Vector2(5, 14)
 shape = SubResource("RectangleShape2D_uprjh")
 
 [node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("4_rml8j")]

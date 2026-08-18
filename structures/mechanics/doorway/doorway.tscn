@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://chu4f1vf3b2ma"]
 
 [ext_resource type="Script" uid="uid://bum64o4tgl3aj" path="res://structures/mechanics/doorway/doorway.gd" id="1_hbrbf"]
-[ext_resource type="Material" uid="uid://bn3drkgdlh1yo" path="res://resources/shaders/visual_boil_shader/boil_shader_mat.tres" id="2_il7kc"]
 [ext_resource type="PackedScene" uid="uid://djyaxwrsd83y4" path="res://components/proximity_interaction/proximity_interaction_component.tscn" id="2_pyfbf"]
 [ext_resource type="Texture2D" uid="uid://bppw7l2mwd0wo" path="res://main/rooms/assets/door front.png" id="2_uprjh"]
 [ext_resource type="PackedScene" uid="uid://cooufmusuhqsl" path="res://components/dynamic_hotkey/dynamic_hotkey_component.tscn" id="4_gsevw"]
@@ -14,7 +13,6 @@ y_sort_enabled = true
 script = ExtResource("1_hbrbf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=274388446]
-material = ExtResource("2_il7kc")
 position = Vector2(0, -30)
 scale = Vector2(0.6, 0.54)
 texture = ExtResource("2_uprjh")

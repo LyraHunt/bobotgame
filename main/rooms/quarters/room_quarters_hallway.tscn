@@ -1,0 +1,48 @@
+[gd_scene format=4 uid="uid://b8tx0eh5dgtar"]
+
+[ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="1_uhykc"]
+[ext_resource type="PackedScene" uid="uid://d0vfwatct2sst" path="res://structures/mechanics/doorway/doorway_bottom.tscn" id="2_m5x2n"]
+[ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="3_s3haq"]
+[ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="4_m5bsj"]
+
+[node name="QuartersHallway" type="Node2D" unique_id=1671798769]
+y_sort_enabled = true
+
+[node name="NatashaDoor" parent="." unique_id=585523427 instance=ExtResource("1_uhykc")]
+position = Vector2(106, -330)
+
+[node name="AliceDoor" parent="." unique_id=1271002927 instance=ExtResource("1_uhykc")]
+position = Vector2(972, -324)
+
+[node name="OwenDoor" parent="." unique_id=1904743863 instance=ExtResource("2_m5x2n")]
+position = Vector2(478, -31)
+
+[node name="RoseDoor" parent="." unique_id=1794369991 instance=ExtResource("2_m5x2n")]
+position = Vector2(1336, -7)
+
+[node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAD+////AAACAAAAAAD/////AAADAAAAAAAAAP//AAADAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAACAP7/AAACAAAAAAABAP7/AAABAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAADAAAAAAADAP//AAACAAAAAAADAP7/AAACAAAAAAAEAP//AAAAAAAAAAAEAP7/AAADAAAAAAAFAP7/AAABAAAAAAAFAP//AAACAAAAAAAGAP7/AAADAAAAAAAGAP//AAACAAAAAAAHAP7/AAACAAAAAAAHAP//AAACAAAAAAAIAP7/AAADAAAAAAAIAP//AAABAAAAAAAJAP7/AAACAAAAAAAJAP//AAACAAAAAAAKAP7/AAADAAAAAAAKAP//AAACAAAAAAALAP7/AAACAAAAAAALAP//AAACAAAAAAAMAP7/AAADAAAAAAAMAP//AAAAAAAAAAANAP7/AAAAAAAAAAANAP//AAABAAAAAAA=")
+tile_set = ExtResource("3_s3haq")
+
+[node name="TileMapLayerWalls" type="TileMapLayer" parent="." unique_id=1587837278]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAACAP7/DwAAAAAAAAADAP7/DwAAAAAAAAAEAP7/DwAAAAAAAAAFAP7/DwAAAAAAAAD///7/DwAAAAAAAAAAAP7/DwAAAAAAAAD+//7/EAAAAAAAAAAHAP7/EQAAAAAAAAABAP7/DwAAAAAAAAAGAP7/DwAAAAAAAAA=")
+tile_set = ExtResource("4_m5bsj")
+
+[node name="TileMapLayerSides" type="TileMapLayer" parent="." unique_id=2104830140]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAD+//7/AQAAAAAAAAAHAP7/EwAAAAAAAAD+////AAAAAAAAAAAHAP//EgAAAAAAAAA=")
+tile_set = ExtResource("4_m5bsj")
+
+[node name="RoomPhysicsBounds" type="StaticBody2D" parent="." unique_id=271627776]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1251044420]
+build_mode = 1
+polygon = PackedVector2Array(1685, -357, 1685, -4, -237, -8, -229, -350)

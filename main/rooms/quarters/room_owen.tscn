@@ -1,0 +1,38 @@
+[gd_scene format=4 uid="uid://bk7v2gjf7e5d1"]
+
+[ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="1_y37hp"]
+[ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="2_hh8dc"]
+[ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="3_cqk5b"]
+
+[node name="OwenQuarters" type="Node2D" unique_id=1671798769]
+y_sort_enabled = true
+
+[node name="Doorway" parent="." unique_id=585523427 instance=ExtResource("1_y37hp")]
+position = Vector2(118, -329)
+
+[node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAD+////AAACAAAAAAD/////AAABAAAAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAACAP7/AAAAAAAAAAABAP7/AAACAAAAAAAAAP7/AAABAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAADAP//AAABAAAAAAADAP7/AAADAAAAAAD+/wAAAAACAAAAAAD+/wEAAAACAAAAAAD//wAAAAADAAAAAAD//wEAAAACAAAAAAAAAAAAAAADAAAAAAAAAAEAAAADAAAAAAABAAAAAAABAAAAAAABAAEAAAABAAAAAAACAAAAAAADAAAAAAACAAEAAAACAAAAAAADAAAAAAADAAAAAAADAAEAAAACAAAAAAA=")
+tile_set = ExtResource("2_hh8dc")
+
+[node name="TileMapLayerWalls" type="TileMapLayer" parent="." unique_id=1587837278]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAD///7/DwAAAAAAAAAAAP7/DwAAAAAAAAD+//7/EAAAAAAAAAABAP7/DwAAAAAAAAACAP7/EQAAAAAAAAA=")
+tile_set = ExtResource("3_cqk5b")
+
+[node name="TileMapLayerSides" type="TileMapLayer" parent="." unique_id=2104830140]
+z_index = -2
+z_as_relative = false
+scale = Vector2(0.6, 0.6)
+tile_map_data = PackedByteArray("AAD+//7/AQAAAAAAAAACAP7/EwAAAAAAAAD+/wAAAAAAAAAAAAACAAAAEgAAAAAAAAD+////AgAAAAAAAAACAP//FAAAAAAAAAA=")
+tile_set = ExtResource("3_cqk5b")
+
+[node name="RoomPhysicsBounds" type="StaticBody2D" parent="." unique_id=271627776]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1251044420]
+build_mode = 1
+polygon = PackedVector2Array(475, -362, 483, 360, -235, 360, -235, -362)

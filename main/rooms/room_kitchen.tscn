@@ -8,7 +8,7 @@
 [node name="Kitchen" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
 
-[node name="Doorway" parent="." unique_id=585523427 instance=ExtResource("1_hirn7")]
+[node name="KitchenDoorToCH" parent="." unique_id=585523427 instance=ExtResource("1_hirn7")]
 position = Vector2(-122, 690)
 
 [node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("2_hirn7")]

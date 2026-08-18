@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ct3kr3da5w0i0"]
+
+[ext_resource type="PackedScene" uid="uid://b8hm4bqaumbh4" path="res://structures/mechanics/side_doorway/side_doorway_flip.tscn" id="1_51tks"]
+[ext_resource type="PackedScene" uid="uid://b8tx0eh5dgtar" path="res://main/rooms/quarters/room_quarters_hallway.tscn" id="1_qewyj"]
+[ext_resource type="PackedScene" uid="uid://cvnplnsfc4ldg" path="res://main/rooms/quarters/room_alice.tscn" id="2_wxp0r"]
+[ext_resource type="PackedScene" uid="uid://dsy5teagstpjv" path="res://main/rooms/quarters/room_natasha.tscn" id="3_2sqw5"]
+[ext_resource type="PackedScene" uid="uid://bk7v2gjf7e5d1" path="res://main/rooms/quarters/room_owen.tscn" id="4_51tks"]
+[ext_resource type="PackedScene" uid="uid://sw4o67h5ji62" path="res://main/rooms/quarters/room_rose.tscn" id="5_e05iq"]
+
+[node name="RoomAllQuarters" type="Node2D" unique_id=1846541918]
+
+[node name="QuartersDoorToCH" parent="." unique_id=585523427 instance=ExtResource("1_51tks")]
+position = Vector2(-208, -253)
+
+[node name="QuartersHallway" parent="." unique_id=1671798769 instance=ExtResource("1_qewyj")]
+
+[node name="AliceDoor" parent="QuartersHallway" index="1" unique_id=1271002927 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../AliceQuarters/AliceDoorToHallway")
+
+[node name="NatashaQuarters" parent="." unique_id=71196317 instance=ExtResource("3_2sqw5")]
+position = Vector2(-426, -1862)
+
+[node name="AliceQuarters" parent="." unique_id=1788389262 instance=ExtResource("2_wxp0r")]
+position = Vector2(1766, -1810)
+
+[node name="AliceDoorToHallway" parent="AliceQuarters" index="0" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
+connected_doorway = NodePath("../../QuartersHallway/AliceDoor")
+
+[node name="OwenQuarters" parent="." unique_id=168769881 instance=ExtResource("4_51tks")]
+position = Vector2(-474, 1482)
+
+[node name="RoseQuarters" parent="." unique_id=1633177790 instance=ExtResource("5_e05iq")]
+position = Vector2(1767, 1498)
+
+[editable path="QuartersHallway"]
+[editable path="AliceQuarters"]

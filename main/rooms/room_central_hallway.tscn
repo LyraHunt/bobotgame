@@ -12,7 +12,7 @@
 y_sort_enabled = true
 
 [node name="CHDoorToKitchen" parent="." unique_id=585523427 instance=ExtResource("1_nrb7j")]
-position = Vector2(-117, -355)
+position = Vector2(360, -330)
 
 [node name="CHDoorToStorage" parent="." unique_id=1037123891 instance=ExtResource("2_kx2ot")]
 position = Vector2(-447, 107)
@@ -27,7 +27,7 @@ position = Vector2(-122, 691)
 position = Vector2(1166, 64)
 
 [node name="PowerStation" parent="." unique_id=724469414 instance=ExtResource("2_e8shv")]
-position = Vector2(97, 457)
+position = Vector2(358, 143)
 power_station_id = 1
 
 [node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]

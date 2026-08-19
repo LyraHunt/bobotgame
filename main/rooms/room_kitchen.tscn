@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://q00t41kep4tp"]
 
 [ext_resource type="PackedScene" uid="uid://d0vfwatct2sst" path="res://structures/mechanics/doorway/doorway_bottom.tscn" id="1_hirn7"]
-[ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="2_hirn7"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="3_147qm"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="4_8x2wg"]
 
@@ -10,10 +9,6 @@ y_sort_enabled = true
 
 [node name="KitchenDoorToCH" parent="." unique_id=585523427 instance=ExtResource("1_hirn7")]
 position = Vector2(-122, 690)
-
-[node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("2_hirn7")]
-position = Vector2(361, -182)
-memory_id = 2
 
 [node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]
 z_index = -2

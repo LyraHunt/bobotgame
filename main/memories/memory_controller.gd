@@ -21,11 +21,11 @@ func _ready() -> void:
 			#	return
 			Dialogic.start(GameData.memory_timelines[GameData.Memory.STORAGE_AREA]) 
 		
-		GameData.Memory.KITCHEN:
+		#GameData.Memory.KITCHEN:
 			print("getting cooked")
 			#if Dialogic.current_timeline != null:
 			#	return
-			Dialogic.start(GameData.memory_timelines[GameData.Memory.KITCHEN])
+		#	Dialogic.start(GameData.memory_timelines[GameData.Memory.KITCHEN])
 		
 		GameData.Memory.ALICE_QUARTERS:
 			print("lesbians? in my game jam?")

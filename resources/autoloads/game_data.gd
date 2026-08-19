@@ -1,6 +1,7 @@
 extends Node
 
-enum Memory {GREENHOUSE, STORAGE_AREA, KITCHEN, ALICE_QUARTERS, LAB}
+#enum Memory {GREENHOUSE, STORAGE_AREA, KITCHEN, ALICE_QUARTERS, LAB}
+enum Memory {GREENHOUSE, STORAGE_AREA, ALICE_QUARTERS, LAB}
 
 var memory_controller_scene: PackedScene = preload("res://main/memories/memory_controller.tscn")
 var world_scene: PackedScene = preload("res://main/world/world.tscn")
@@ -8,7 +9,7 @@ var world_scene: PackedScene = preload("res://main/world/world.tscn")
 var memory_timelines: Dictionary[Memory, DialogicTimeline] = {
 	Memory.GREENHOUSE: preload("res://resources/dialogic stuffs/cutscenes/memory_greenhouse_bot.dtl"),
 	Memory.STORAGE_AREA: preload("res://resources/dialogic stuffs/cutscenes/memory_cargo_bot.dtl"),
-	Memory.KITCHEN: preload("res://resources/dialogic stuffs/cutscenes/memory_chef_bot.dtl"),
+	#Memory.KITCHEN: preload("res://resources/dialogic stuffs/cutscenes/memory_chef_bot.dtl"),
 	Memory.ALICE_QUARTERS: preload("res://resources/dialogic stuffs/cutscenes/memory_record_bot.dtl"),
 	Memory.LAB: preload("res://resources/dialogic stuffs/cutscenes/memory_research_bot.dtl")
 }
@@ -16,7 +17,7 @@ var memory_timelines: Dictionary[Memory, DialogicTimeline] = {
 var memory_casette_sprites: Dictionary[Memory, Texture] = {
 	Memory.GREENHOUSE: preload("res://ui/casettes ui/Bobot cassette.PNG"),
 	Memory.STORAGE_AREA: preload("res://ui/casettes ui/Bobot cassette.PNG"),
-	Memory.KITCHEN: preload("res://ui/casettes ui/Bobot cassette.PNG"),
+	#Memory.KITCHEN: preload("res://ui/casettes ui/Bobot cassette.PNG"),
 	Memory.ALICE_QUARTERS: preload("res://ui/casettes ui/Bobot cassette.PNG"),
 	Memory.LAB: preload("res://ui/casettes ui/Research bot cassette.PNG")
 }
@@ -24,7 +25,7 @@ var memory_casette_sprites: Dictionary[Memory, Texture] = {
 var robot_ids: Dictionary[Memory, String] = {
 	Memory.GREENHOUSE: "BT-534-04",
 	Memory.STORAGE_AREA: "CO-56-02",
-	Memory.KITCHEN: "CX-574-03",
+	#Memory.KITCHEN: "CX-574-03",
 	Memory.ALICE_QUARTERS: "MN-134-02",
 	Memory.LAB: "SC-912-08"
 }

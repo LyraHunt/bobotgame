@@ -50,15 +50,12 @@ layout_mode = 2
 
 [node name="CasetteContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1127295911]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 0
 
 [node name="CasetteOption" parent="HBoxContainer/CasetteContainer" unique_id=682180153 instance=ExtResource("1_pexda")]
 layout_mode = 2
 
 [node name="CasetteOption2" parent="HBoxContainer/CasetteContainer" unique_id=499690784 instance=ExtResource("1_pexda")]
-layout_mode = 2
-
-[node name="CasetteOption3" parent="HBoxContainer/CasetteContainer" unique_id=462600054 instance=ExtResource("1_pexda")]
 layout_mode = 2
 
 [node name="CasetteOption4" parent="HBoxContainer/CasetteContainer" unique_id=1707624194 instance=ExtResource("1_pexda")]
@@ -69,10 +66,10 @@ layout_mode = 2
 
 [node name="Control" type="Control" parent="." unique_id=320877331]
 anchors_preset = 0
-offset_left = 629.0
-offset_top = 86.0
-offset_right = 669.0
-offset_bottom = 126.0
+offset_left = 122.0
+offset_top = 103.0
+offset_right = 162.0
+offset_bottom = 143.0
 
 [node name="CloseButton" type="Button" parent="Control" unique_id=661072311]
 custom_minimum_size = Vector2(80, 80)

@@ -2,6 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://trst7pq56k7j" path="res://ui/casettes ui/Bobot cassette.PNG" id="1_iju6n"]
 [ext_resource type="Script" uid="uid://dm5hnjan22get" path="res://ui/memory ui/casette_option.gd" id="1_w7mj7"]
+[ext_resource type="Texture2D" uid="uid://bvatxvd8ret74" path="res://ui/casettes ui/Cassette box ui.PNG" id="2_qxctk"]
+[ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="3_4wq45"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6mvlm"]
+shader = ExtResource("3_4wq45")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 8.00000038
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7mj7"]
 content_margin_left = 4.0
@@ -40,29 +51,44 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [node name="CasetteOption" type="MarginContainer" unique_id=1421712059]
-custom_minimum_size = Vector2(120, 120)
+custom_minimum_size = Vector2(140, 140)
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 130.0
+offset_bottom = 130.0
 script = ExtResource("1_w7mj7")
 
-[node name="Panel" type="Panel" parent="." unique_id=65674772]
+[node name="Background" type="TextureRect" parent="." unique_id=2023002407]
 layout_mode = 2
-mouse_filter = 1
+texture = ExtResource("2_qxctk")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1550724719]
+[node name="ControlCasette" type="Control" parent="." unique_id=478756321]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+
+[node name="CasetteSprite" type="TextureRect" parent="ControlCasette" unique_id=1550724719]
+material = SubResource("ShaderMaterial_6mvlm")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = -21.0
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_iju6n")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Control" type="Control" parent="." unique_id=1231413647]
+[node name="ControlLabel" type="Control" parent="." unique_id=1231413647]
 layout_mode = 2
 mouse_filter = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=577030806]
+[node name="CasetteLabel" type="RichTextLabel" parent="ControlLabel" unique_id=577030806]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 0
 offset_left = 144.0

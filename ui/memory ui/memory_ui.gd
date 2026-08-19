@@ -34,7 +34,7 @@ func update_display() -> void:
 			if GameData.casette_is_selected and GameData.selected_casette == GameData.acquired_memories[casette_option_index]:
 				casette_option.button.grab_focus()
 		else:
-			casette_option.visible = false
+			casette_option.show_blank()
 		casette_option_index += 1
 	
 	if not GameData.casette_is_selected:

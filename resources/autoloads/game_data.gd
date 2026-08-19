@@ -36,7 +36,7 @@ var flavor_texts: Dictionary[String, DialogicTimeline] = {
 var power_stations: Dictionary[int, PowerStation] = {}
 var power_station_count: int = 2
 
-var bobot_charge: float = 40.0
+var bobot_charge: float = 1.0
 var bobot_max_charge: float = 40.0
 var bobot_charge_per_sec: float = 10.0
 var bobot_last_power_station: int

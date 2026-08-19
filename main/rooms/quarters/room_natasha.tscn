@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://d0vfwatct2sst" path="res://structures/mechanics/doorway/doorway_bottom.tscn" id="1_muiid"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="2_tdtq0"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="3_unrar"]
+[ext_resource type="PackedScene" uid="uid://djfuhdxla6o6i" path="res://structures/decor/quarters_decor/bed.tscn" id="4_tdtq0"]
+[ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="5_unrar"]
 
 [node name="NatashaQuarters" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -36,3 +38,9 @@ tile_set = ExtResource("3_unrar")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1251044420]
 build_mode = 1
 polygon = PackedVector2Array(475, -362, 483, 360, -235, 360, -235, -362)
+
+[node name="Bed" parent="." unique_id=892621697 instance=ExtResource("4_tdtq0")]
+position = Vector2(397, -318)
+
+[node name="Desk" parent="." unique_id=1193520964 instance=ExtResource("5_unrar")]
+position = Vector2(-126, -143)

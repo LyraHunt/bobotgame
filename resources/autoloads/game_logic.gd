@@ -2,7 +2,7 @@ extends Node
 
 signal state_changed()
 signal controls_changed()
-signal power_stations_initialized()
+@warning_ignore("unused_signal") signal power_stations_initialized()
 
 enum State {EXPLORING, CHARGING, REMBERING, POPUP}
 var state: State = State.CHARGING
@@ -18,7 +18,12 @@ func change_state(new_state: State) -> void:
 	state_changed.emit()
 
 func change_scene(scene: PackedScene) -> void:
+	GameData.power_stations = {}
 	get_tree().change_scene_to_packed.call_deferred(scene)
+
+func reload_scene() -> void:
+	GameData.power_stations = {}
+	get_tree().reload_current_scene()
 
 func update_controller_type() -> void:
 	if Input.get_joy_name(0) != "":

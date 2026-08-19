@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://blsi222gcll5f"]
 
 [ext_resource type="Script" uid="uid://bmjr7dlm6pufc" path="res://ui/casettes ui/casette_popup.gd" id="1_025dm"]
-[ext_resource type="Texture2D" uid="uid://ct51pcgb4ccim" path="res://ui/casettes ui/Research bot cassette.PNG" id="1_nvk1k"]
-[ext_resource type="Texture2D" uid="uid://trst7pq56k7j" path="res://ui/casettes ui/Bobot cassette.PNG" id="2_2558y"]
 [ext_resource type="Material" uid="uid://da2j3woubb552" path="res://resources/shaders/outline_shader/outline_shader_mat.tres" id="4_lf4oa"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2558y"]
@@ -16,13 +14,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_025dm")
-casette_sprites = Dictionary[int, Texture]({
-0: ExtResource("2_2558y"),
-1: ExtResource("1_nvk1k"),
-2: null,
-3: null,
-4: ExtResource("1_nvk1k")
-})
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=700042519]
 self_modulate = Color(1, 1, 1, 0.5176471)

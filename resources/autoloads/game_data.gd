@@ -13,6 +13,22 @@ var memory_timelines: Dictionary[Memory, DialogicTimeline] = {
 	Memory.LAB: preload("res://resources/dialogic stuffs/cutscenes/memory_research_bot.dtl")
 }
 
+var memory_casette_sprites: Dictionary[Memory, Texture] = {
+	Memory.GREENHOUSE: preload("res://ui/casettes ui/Bobot cassette.PNG"),
+	Memory.STORAGE_AREA: preload("res://ui/casettes ui/Bobot cassette.PNG"),
+	Memory.KITCHEN: preload("res://ui/casettes ui/Bobot cassette.PNG"),
+	Memory.ALICE_QUARTERS: preload("res://ui/casettes ui/Bobot cassette.PNG"),
+	Memory.LAB: preload("res://ui/casettes ui/Research bot cassette.PNG")
+}
+
+var robot_ids: Dictionary[Memory, String] = {
+	Memory.GREENHOUSE: "BT-534-04",
+	Memory.STORAGE_AREA: "CO-56-02",
+	Memory.KITCHEN: "CX-574-03",
+	Memory.ALICE_QUARTERS: "MN-134-02",
+	Memory.LAB: "SC-912-08"
+}
+
 var power_stations: Dictionary[int, PowerStation] = {}
 var power_station_count: int = 2
 
@@ -21,8 +37,8 @@ var bobot_max_charge: float = 40.0
 var bobot_charge_per_sec: float = 10.0
 var bobot_last_power_station: int
 
-var acquired_memories: Array[GameData.Memory] = []
-var pending_memories: Array[GameData.Memory] = []
+var pending_memories: Array[Memory] = []
+var acquired_memories: Array[Memory] = []
 
 func add_power_station_id(new_id: int, power_station: PowerStation) -> void:
 	power_stations.set(new_id, power_station)
@@ -31,4 +47,4 @@ func add_power_station_id(new_id: int, power_station: PowerStation) -> void:
 		GameLogic.power_stations_initialized.emit()
 
 func _ready() -> void:
-	bobot_last_power_station = 1
+	bobot_last_power_station = 0

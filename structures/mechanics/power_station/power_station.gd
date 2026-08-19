@@ -6,6 +6,7 @@ var bobot: Bobot
 
 func _ready() -> void:
 	bobot = get_tree().get_first_node_in_group("bobot")
+	print("pushing to GameData: " + str(self.global_position))
 	GameData.add_power_station_id(power_station_id, self)
 	#GameData.power_stations[power_station_id] = self
 

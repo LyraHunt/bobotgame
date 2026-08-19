@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://eosui5nkfef2"]
+
+[ext_resource type="Script" uid="uid://dh7o7wowlqyrm" path="res://structures/mechanics/bobots/research_bot/research_bot.gd" id="1_scjbp"]
+[ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="2_n4bqj"]
+[ext_resource type="Texture2D" uid="uid://bag3b5jrsvg5b" path="res://structures/mechanics/bobots/research_bot/Research bot plants.PNG" id="3_b6tw0"]
+[ext_resource type="Texture2D" uid="uid://br6wlf6l2pe0a" path="res://structures/mechanics/bobots/research_bot/Research bot shadow.PNG" id="4_n3ac3"]
+[ext_resource type="Material" uid="uid://bn3drkgdlh1yo" path="res://resources/shaders/visual_boil_shader/boil_shader_mat.tres" id="5_w5rrj"]
+[ext_resource type="Texture2D" uid="uid://ccg21t7uw1my4" path="res://structures/mechanics/bobots/research_bot/Research bot no cassette.PNG" id="6_6hh5q"]
+[ext_resource type="Texture2D" uid="uid://cgmlrjnjlu4ub" path="res://structures/mechanics/bobots/research_bot/Research bot cassette.PNG" id="7_mv7ra"]
+[ext_resource type="Texture2D" uid="uid://31h12tire06e" path="res://structures/mechanics/bobots/cargo_bot/Cargo bot test 2.PNG" id="8_gyv0n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aya8i"]
+radius = 80.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aya8i"]
+size = Vector2(132, 56.5)
+
+[node name="ResearchBot" type="Node2D" unique_id=1192683161]
+script = ExtResource("1_scjbp")
+
+[node name="MemoryBank" parent="." unique_id=512886027 node_paths=PackedStringArray("sprites_to_hide") instance=ExtResource("2_n4bqj")]
+memory_id = 4
+sprites_to_hide = [NodePath("../Casette")]
+
+[node name="Sprite2D" parent="MemoryBank" index="0" unique_id=917366805]
+visible = false
+
+[node name="ProximityInteractionComponent" parent="MemoryBank" index="1" unique_id=606314739 node_paths=PackedStringArray("sprite")]
+sprite = NodePath("../../Casette")
+
+[node name="CollisionShape2D" parent="MemoryBank/ProximityInteractionComponent" index="0" unique_id=807831631]
+shape = SubResource("CircleShape2D_aya8i")
+
+[node name="Plants" type="Sprite2D" parent="." unique_id=2108926364]
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_b6tw0")
+offset = Vector2(-20, -80)
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1778127819]
+visible = false
+self_modulate = Color(1, 1, 1, 0.78431374)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_n3ac3")
+offset = Vector2(-20, -80)
+
+[node name="BobotNoCasette" type="Sprite2D" parent="." unique_id=1624559786]
+visible = false
+material = ExtResource("5_w5rrj")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_6hh5q")
+offset = Vector2(-20, -80)
+
+[node name="Casette" type="Sprite2D" parent="." unique_id=1845255996]
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_mv7ra")
+offset = Vector2(-20, -80)
+
+[node name="BobotFront" type="Sprite2D" parent="." unique_id=1510752185]
+material = ExtResource("5_w5rrj")
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("8_gyv0n")
+offset = Vector2(-20, -160)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1716541196]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1128712945]
+position = Vector2(-1, 14)
+shape = SubResource("RectangleShape2D_aya8i")
+
+[editable path="MemoryBank"]

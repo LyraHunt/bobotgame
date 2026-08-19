@@ -10,6 +10,6 @@ noise = SubResource("FastNoiseLite_bb0xe")
 [resource]
 shader = ExtResource("1_ye0jh")
 shader_parameter/scale = Vector2(1, 1)
-shader_parameter/strength = 0.4
+shader_parameter/strength = 0.1
 shader_parameter/fps = 6.0
 shader_parameter/noise = SubResource("NoiseTexture2D_xkikd")

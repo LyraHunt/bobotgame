@@ -10,6 +10,8 @@ func _ready() -> void:
 
 func _on_proximity_interaction_component_interacted() -> void:
 	if connected_doorway:
+		SoundManager.play_sound((SRM as SoundResourceManager).get_sound("sfx_door_open")).volume_db = -12
+		
 		bobot.global_position = connected_doorway.global_position
 		await get_tree().physics_frame
 		await get_tree().physics_frame

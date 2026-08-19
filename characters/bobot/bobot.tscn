@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://bn3drkgdlh1yo" path="res://resources/shaders/visual_boil_shader/boil_shader_mat.tres" id="4_xkikd"]
 [ext_resource type="PackedScene" uid="uid://buyx0fvko6hu0" path="res://ui/bobot ui/bobot_charge_display.tscn" id="7_0op0h"]
 [ext_resource type="PackedScene" uid="uid://blsi222gcll5f" path="res://ui/casettes ui/casette_popup.tscn" id="9_obths"]
+[ext_resource type="PackedScene" uid="uid://cqfr74q3xqugw" path="res://ui/memory ui/memory_ui.tscn" id="10_bb0xe"]
 [ext_resource type="PackedScene" uid="uid://ckyoe6ut0owfg" path="res://ui/bobot ui/bobot_vignette.tscn" id="10_xkikd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r5iys"]
@@ -15,6 +16,19 @@ radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ojbw0"]
 radius = 30.0
+
+[sub_resource type="Gradient" id="Gradient_b4vhw"]
+offsets = PackedFloat32Array(0.48253968, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_obths"]
+gradient = SubResource("Gradient_b4vhw")
+width = 196
+height = 196
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.8)
+metadata/_snap_enabled = true
 
 [node name="Bobot" type="CharacterBody2D" unique_id=1167471414 groups=["bobot"]]
 y_sort_enabled = true
@@ -34,7 +48,7 @@ offset = Vector2(10, -280)
 material = ExtResource("4_xkikd")
 scale = Vector2(0.3, 0.3)
 sprite_frames = ExtResource("3_25c5j")
-animation = &"stand_down"
+animation = &"death"
 autoplay = "stand_down"
 offset = Vector2(0, -280)
 
@@ -59,7 +73,7 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -35.0
-offset_right = 400.0
+offset_right = 550.0
 offset_bottom = 35.0
 grow_vertical = 2
 bbcode_enabled = true
@@ -73,8 +87,16 @@ visible = false
 
 [node name="BobotVignette" parent="CanvasLayer" unique_id=809498127 instance=ExtResource("10_xkikd")]
 
+[node name="MemoryUI" parent="CanvasLayer" unique_id=1600028043 instance=ExtResource("10_bb0xe")]
+visible = false
+
 [node name="IdleTimer" type="Timer" parent="." unique_id=1137402389]
 wait_time = 4.0
 one_shot = true
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1621479207]
+energy = 0.6
+texture = SubResource("GradientTexture2D_obths")
+texture_scale = 3.0
 
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

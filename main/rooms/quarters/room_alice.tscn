@@ -4,6 +4,8 @@
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="2_2a65c"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="3_frm7m"]
 [ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="4_f0pkw"]
+[ext_resource type="PackedScene" uid="uid://djfuhdxla6o6i" path="res://structures/decor/quarters_decor/bed.tscn" id="5_7cq72"]
+[ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="6_atgn6"]
 
 [node name="AliceQuarters" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -33,11 +35,17 @@ tile_map_data = PackedByteArray("AAD+//7/AQAAAAAAAAACAP7/EwAAAAAAAAD+/wAAAAAAAAA
 tile_set = ExtResource("3_frm7m")
 
 [node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("4_f0pkw")]
-position = Vector2(242, -183)
+position = Vector2(349, -242)
 memory_id = 3
+
+[node name="Bed" parent="." unique_id=892621697 instance=ExtResource("5_7cq72")]
+position = Vector2(-148, -319)
 
 [node name="RoomPhysicsBounds" type="StaticBody2D" parent="." unique_id=271627776]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1251044420]
 build_mode = 1
 polygon = PackedVector2Array(475, -362, 483, 360, -235, 360, -235, -362)
+
+[node name="Desk" parent="RoomPhysicsBounds" unique_id=451949449 instance=ExtResource("6_atgn6")]
+position = Vector2(349, -62)

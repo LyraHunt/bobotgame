@@ -7,6 +7,8 @@ class_name Bobot extends CharacterBody2D
 
 @onready var charge_label: RichTextLabel = get_node("CanvasLayer/RichTextLabel")
 @onready var casette_popup: CasettePopup = get_node("CanvasLayer/CasettePopup")
+var casette_popup_timer: SceneTreeTimer
+@onready var memory_ui: MemoryUI = get_node("CanvasLayer/MemoryUI")
 @onready var vignette: Control = get_node("CanvasLayer/BobotVignette")
 
 
@@ -25,7 +27,9 @@ func _start_charge_on_load() -> void:
 
 func add_memory(memory_id: GameData.Memory) -> void:
 	#var casette_popup_timer: SceneTreeTimer = get_tree().create_timer(2).timeout.connect(close_casette_popup)
-	get_tree().create_timer(3).timeout.connect(close_casette_popup)
+	casette_popup_timer = get_tree().create_timer(2.5)
+	casette_popup_timer.timeout.connect(close_casette_popup)
+	
 	casette_popup.visible = true
 	casette_popup.set_casette_and_animate(memory_id)
 	GameLogic.state = GameLogic.State.POPUP
@@ -39,43 +43,56 @@ func start_charge(power_station: PowerStation) -> void:
 	global_position = power_station.global_position
 	velocity = Vector2.ZERO
 	movement_component.motion_input = Vector2.ZERO
-	idle_timer.start()
+	idle_timer.start(2)
 	
 	GameData.bobot_last_power_station = power_station.power_station_id
 	animated_sprite.animation = "stand_down"
 	
-	if GameData.pending_memories.size() > 0:
-		start_memory(GameData.pending_memories[0])
-	else:
-		GameLogic.change_state(GameLogic.State.CHARGING)
+	GameLogic.change_state(GameLogic.State.CHARGING)
+	
+	# move memories from pending to acquired
+	for memory: GameData.Memory in GameData.pending_memories:
+		GameData.acquired_memories.append(memory)
+	GameData.acquired_memories.sort()
+	GameData.pending_memories = []
+	
+	# show memory ui if has memories
+	if GameData.acquired_memories.size() > 0:
+		memory_ui.visible = true
+		memory_ui.update_display()
 
 func stop_charge() -> void:
+	memory_ui.visible = false
 	GameLogic.change_state(GameLogic.State.EXPLORING)
 
 func charge_out() -> void:
-	kill()
+	#kill()
+	animated_sprite.animation = "death"
+	animated_sprite.frame = 0
+	
+	SoundManager.play_sound((SRM as SoundResourceManager).get_sound("sfx_bobot_die")).volume_db = -8
+	
+	GameLogic.change_state(GameLogic.State.POPUP)
+	get_tree().create_timer(3).timeout.connect(kill)
 
 func kill() -> void:
 	GameData.pending_memories = []
 	GameData.bobot_charge = GameData.bobot_max_charge
-	get_tree().reload_current_scene()
+	GameLogic.reload_scene()
 
 func start_memory(memory_id: GameData.Memory) -> void:
+	SoundManager.play_sound((SRM as SoundResourceManager).get_sound("sfx_casette_play")).volume_db = -8
 	GameLogic.change_state(GameLogic.State.REMBERING)
+	get_tree().create_timer(2).timeout.connect(switch_to_memory.bind(memory_id))
+
+func switch_to_memory(memory_id: GameData.Memory) -> void:
 	GameLogic.current_memory = memory_id
 	GameData.pending_memories.remove_at(0)
-	GameData.power_stations = {}
 	
 	GameLogic.change_scene(GameData.memory_controller_scene)
 
 func _physics_process(_delta: float) -> void:
-	"""match GameLogic.state:
-		GameLogic.State.EXPLORING:
-			_handle_movement_input()
-		_:
-			movement_component.motion_input = Vector2.ZERO"""
 	_handle_movement_input()
-	
 	move_and_slide()
 
 func _process(_delta: float) -> void:
@@ -120,7 +137,7 @@ func _handle_movement_input() -> void:
 			animated_sprite.animation = "walk_right"
 		elif x_direction < 0:
 			animated_sprite.animation = "walk_left"
-		idle_timer.start()
+		idle_timer.start(4)
 		
 	
 	elif movement_component:
@@ -140,12 +157,21 @@ func _unhandled_input(event: InputEvent) -> void:
 		GameLogic.State.CHARGING:
 			if event.is_action_pressed("escape_key"):
 				stop_charge()
+		
+		GameLogic.State.POPUP:
+			if event.is_action_pressed("escape_key"):
+				casette_popup_timer.timeout.emit()
+				casette_popup_timer = null
 
 
 func _on_idle_timer_timeout() -> void:
-	animated_sprite.animation = "eepy"
-	if eepy_tween:
-		eepy_tween.kill()
-	eepy_tween = get_tree().create_tween()
-	eepy_tween.tween_property(animated_sprite, "scale", Vector2(0.3, 0.25), 0.15)
-	eepy_tween.tween_property(animated_sprite, "scale", Vector2(0.3, 0.3), 0.15)
+	match GameLogic.state:
+		GameLogic.State.EXPLORING, GameLogic.State.CHARGING:
+			animated_sprite.animation = "eepy"
+			if eepy_tween:
+				eepy_tween.kill()
+			eepy_tween = get_tree().create_tween()
+			eepy_tween.tween_property(animated_sprite, "scale", Vector2(0.3, 0.25), 0.15)
+			eepy_tween.tween_property(animated_sprite, "scale", Vector2(0.3, 0.3), 0.15)
+		_:
+			idle_timer.start(1)

@@ -8,7 +8,18 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_63nx4"]
 radius = 50.0
 
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_b4vhw"]
+[sub_resource type="Gradient" id="Gradient_b4vhw"]
+offsets = PackedFloat32Array(0.48253968, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b4vhw"]
+gradient = SubResource("Gradient_b4vhw")
+width = 196
+height = 196
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.8)
+metadata/_snap_enabled = true
 
 [node name="PowerStation" type="Node2D" unique_id=724469414]
 y_sort_enabled = true
@@ -29,10 +40,10 @@ shape = SubResource("CircleShape2D_63nx4")
 position = Vector2(1, -128)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=848799078]
-visible = false
 color = Color(0.6544553, 0.64771765, 1.92523e-07, 1)
-energy = 7.09
-texture = SubResource("CurveXYZTexture_b4vhw")
+energy = 1.5
+texture = SubResource("GradientTexture2D_b4vhw")
+texture_scale = 4.0
 
 [connection signal="interacted" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_interacted"]
 [connection signal="selection_update" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]

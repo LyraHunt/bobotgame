@@ -1,12 +1,10 @@
 class_name CasettePopup extends Control
 
-@export var casette_sprites: Dictionary[GameData.Memory, Texture] = {}
-
 @onready var casette_texture: TextureRect = get_node("CasetteTexture")
 var animation_tween: Tween
 
 func set_casette_and_animate(memory_id: GameData.Memory) -> void:
-	casette_texture.texture = casette_sprites[memory_id]
+	casette_texture.texture = GameData.memory_casette_sprites[memory_id]
 	
 	if animation_tween:
 		animation_tween.kill()

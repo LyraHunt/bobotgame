@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cqfr74q3xqugw"]
+
+[ext_resource type="Script" uid="uid://cchpm5rv0rp7n" path="res://ui/memory ui/memory_ui.gd" id="1_6wkk2"]
+[ext_resource type="PackedScene" uid="uid://dwukd70guhg6q" path="res://ui/memory ui/lore_option.tscn" id="1_fyh57"]
+[ext_resource type="PackedScene" uid="uid://wldep812x6ac" path="res://ui/memory ui/casette_option.tscn" id="1_pexda"]
+
+[node name="MemoryUI" type="Control" unique_id=1600028043]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6wkk2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=801429043]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -258.0
+offset_right = 52.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -50)
+theme_override_constants/separation = 500
+
+[node name="LoreContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=526162190]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LoreOption" parent="HBoxContainer/LoreContainer" unique_id=1421712059 instance=ExtResource("1_fyh57")]
+layout_mode = 2
+
+[node name="LoreOption2" parent="HBoxContainer/LoreContainer" unique_id=761454652 instance=ExtResource("1_fyh57")]
+layout_mode = 2
+
+[node name="LoreOption3" parent="HBoxContainer/LoreContainer" unique_id=184513327 instance=ExtResource("1_fyh57")]
+layout_mode = 2
+
+[node name="CasetteContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1127295911]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CasetteOption" parent="HBoxContainer/CasetteContainer" unique_id=682180153 instance=ExtResource("1_pexda")]
+layout_mode = 2
+
+[node name="CasetteOption2" parent="HBoxContainer/CasetteContainer" unique_id=499690784 instance=ExtResource("1_pexda")]
+layout_mode = 2
+
+[node name="CasetteOption3" parent="HBoxContainer/CasetteContainer" unique_id=462600054 instance=ExtResource("1_pexda")]
+layout_mode = 2
+
+[node name="CasetteOption4" parent="HBoxContainer/CasetteContainer" unique_id=1707624194 instance=ExtResource("1_pexda")]
+layout_mode = 2
+
+[node name="CasetteOption5" parent="HBoxContainer/CasetteContainer" unique_id=250577260 instance=ExtResource("1_pexda")]
+layout_mode = 2

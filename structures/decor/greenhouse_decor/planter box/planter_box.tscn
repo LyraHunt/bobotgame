@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://8ohd48nd0yjy"]
+
+[ext_resource type="Texture2D" uid="uid://ckref8ijt2tcx" path="res://structures/decor/greenhouse_decor/planter box/planter box.png" id="1_sdwej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4vhw"]
+size = Vector2(143, 61)
+
+[node name="PlanterBox" type="StaticBody2D" unique_id=892621697]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=603463743]
+y_sort_enabled = true
+position = Vector2(0, -1.9073486e-06)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_sdwej")
+offset = Vector2(-10, -80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462808171]
+position = Vector2(0.5, -4.5)
+shape = SubResource("RectangleShape2D_b4vhw")

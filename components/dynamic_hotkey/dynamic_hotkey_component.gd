@@ -8,6 +8,7 @@ var texture_should_reload: bool = true
 
 func _ready() -> void:
 	GameLogic.connect("controls_changed", mark_for_reload)
+	mark_for_reload()
 
 func mark_for_reload() -> void:
 	if sprite.visible:

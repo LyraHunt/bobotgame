@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dwukd70guhg6q"]
+
+[ext_resource type="Texture2D" uid="uid://trst7pq56k7j" path="res://ui/casettes ui/Bobot cassette.PNG" id="1_yh3nn"]
+
+[node name="LoreOption" type="MarginContainer" unique_id=1421712059]
+custom_minimum_size = Vector2(120, 120)
+
+[node name="Panel" type="Panel" parent="." unique_id=65674772]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1550724719]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yh3nn")
+expand_mode = 1
+stretch_mode = 5

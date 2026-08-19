@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dvoive7gtto8" path="res://main/rooms/room_workshop.tscn" id="9_5f05i"]
 [ext_resource type="PackedScene" uid="uid://ct3kr3da5w0i0" path="res://main/rooms/room_all_quarters.tscn" id="10_4ttqp"]
 
+[sub_resource type="Environment" id="Environment_r5iys"]
+
 [node name="World" type="Node2D" unique_id=566275448]
 y_sort_enabled = true
 script = ExtResource("1_myska")
@@ -78,10 +80,22 @@ position = Vector2(2134, 3057)
 [node name="WorkshopDoorToCH" parent="Workshop" index="0" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
 connected_doorway = NodePath("../../CentralHallway/CHDoorToWorkshop")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=588472766]
+environment = SubResource("Environment_r5iys")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1136760070]
+position = Vector2(29, 0)
+color = Color(0.60719997, 0.594, 0.66, 1)
+
 [editable path="Greenhouse"]
 [editable path="StorageArea"]
 [editable path="CentralHallway"]
 [editable path="Kitchen"]
 [editable path="RoomAllQuarters"]
+[editable path="RoomAllQuarters/QuartersHallway"]
+[editable path="RoomAllQuarters/NatashaQuarters"]
+[editable path="RoomAllQuarters/AliceQuarters"]
+[editable path="RoomAllQuarters/OwenQuarters"]
+[editable path="RoomAllQuarters/RoseQuarters"]
 [editable path="Lab"]
 [editable path="Workshop"]

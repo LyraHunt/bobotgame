@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="5_5w0c5"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="6_qtdh2"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="7_0iwav"]
+[ext_resource type="PackedScene" uid="uid://8ohd48nd0yjy" path="res://structures/decor/greenhouse_decor/planter box/planter_box.tscn" id="7_7ltw3"]
 [ext_resource type="PackedScene" uid="uid://j1kp2cxbjq4m" path="res://structures/decor/cargo_shelf/cargo_shelf.tscn" id="8_35hhk"]
 [ext_resource type="PackedScene" uid="uid://c800r2teiclqk" path="res://structures/decor/cargo_crate_sprite/cargo_crate_sprite.tscn" id="9_l4oau"]
 [ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="11_mb6ns"]
@@ -16,8 +17,6 @@
 
 [node name="Greenhouse" type="Node2D" unique_id=1292530247]
 y_sort_enabled = true
-
-[node name="CargoCrate" parent="." unique_id=892621697 instance=ExtResource("1_mm337")]
 
 [node name="GreenDoorToStorage" parent="." unique_id=1706434301 instance=ExtResource("3_cxk13")]
 position = Vector2(689, 61)
@@ -50,8 +49,11 @@ scale = Vector2(0.6, 0.6)
 tile_map_data = PackedByteArray("AAADAP7/EwAAAAAAAAADAP//FAAAAAAAAAADAAAAFAAAAAAAAAADAAEAFAAAAAAAAAADAAMAEgAAAAAAAAADAAIAFAAAAAAAAAA=")
 tile_set = ExtResource("7_0iwav")
 
+[node name="CargoCrate" parent="." unique_id=892621697 instance=ExtResource("1_mm337")]
+position = Vector2(359, 554)
+
 [node name="CargoShelf" parent="." unique_id=2139562809 instance=ExtResource("8_35hhk")]
-position = Vector2(192, -52)
+position = Vector2(594, 556)
 
 [node name="CargoCrate" parent="CargoShelf" unique_id=523836031 instance=ExtResource("9_l4oau")]
 y_sort_enabled = false
@@ -60,6 +62,18 @@ position = Vector2(0, -195)
 [node name="CargoCrate2" parent="CargoShelf" unique_id=1397896547 instance=ExtResource("9_l4oau")]
 y_sort_enabled = false
 position = Vector2(1, -114)
+
+[node name="PlanterBox" parent="." unique_id=1471946490 instance=ExtResource("7_7ltw3")]
+position = Vector2(481, -135)
+
+[node name="PlanterBox2" parent="." unique_id=1768961988 instance=ExtResource("7_7ltw3")]
+position = Vector2(226, -138)
+
+[node name="PlanterBox3" parent="." unique_id=651492669 instance=ExtResource("7_7ltw3")]
+position = Vector2(228, 86)
+
+[node name="PlanterBox4" parent="." unique_id=1392508654 instance=ExtResource("7_7ltw3")]
+position = Vector2(483, 83)
 
 [node name="RoomPhysicsBounds" type="StaticBody2D" parent="." unique_id=1189953484]
 

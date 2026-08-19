@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://rcclf21xo81f"]
+
+[ext_resource type="Texture2D" uid="uid://dc5jmu8eys1qk" path="res://structures/decor/quarters_decor/desk.PNG" id="1_4rxxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4vhw"]
+size = Vector2(183, 78)
+
+[node name="Desk" type="StaticBody2D" unique_id=892621697]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=603463743]
+y_sort_enabled = true
+position = Vector2(0, -1.9073486e-06)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_4rxxe")
+offset = Vector2(-20, -140)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462808171]
+position = Vector2(5.5, 25)
+shape = SubResource("RectangleShape2D_b4vhw")

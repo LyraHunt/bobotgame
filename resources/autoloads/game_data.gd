@@ -29,6 +29,10 @@ var robot_ids: Dictionary[Memory, String] = {
 	Memory.LAB: "SC-912-08"
 }
 
+var flavor_texts: Dictionary[String, DialogicTimeline] = {
+	"cargo_crate": preload("res://structures/decor/cargo_crate/cargo_crate_flavor.dtl")
+}
+
 var power_stations: Dictionary[int, PowerStation] = {}
 var power_station_count: int = 2
 
@@ -39,6 +43,7 @@ var bobot_last_power_station: int
 
 var pending_memories: Array[Memory] = []
 var acquired_memories: Array[Memory] = []
+#var acquired_memories: Array[Memory] = [Memory.GREENHOUSE, Memory.STORAGE_AREA, Memory.KITCHEN, Memory.ALICE_QUARTERS, Memory.LAB]
 
 var selected_casette: Memory
 var casette_is_selected: bool

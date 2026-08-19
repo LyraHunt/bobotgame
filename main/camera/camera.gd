@@ -7,10 +7,11 @@ func _ready() -> void:
 	start_charge()
 
 func game_state_changed() -> void:
-	if GameLogic.state == GameLogic.State.CHARGING:
-		start_charge()
-	elif charging:
-		stop_charge()
+	match GameLogic.state:
+		GameLogic.State.CHARGING, GameLogic.State.REMBERING:
+			start_charge()
+		_:
+			stop_charge()
 
 func start_charge() -> void:
 	charging = true

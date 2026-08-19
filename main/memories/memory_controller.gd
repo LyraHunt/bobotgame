@@ -44,7 +44,7 @@ func _ready() -> void:
 
 
 func memory_ended() -> void:
-	GameData.acquired_memories.append(GameLogic.current_memory)
+	#GameData.acquired_memories.append(GameLogic.current_memory)
 	GameData.bobot_charge = GameData.bobot_max_charge
 	
 	GameLogic.state = GameLogic.State.CHARGING

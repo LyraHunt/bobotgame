@@ -3,12 +3,30 @@
 [ext_resource type="Texture2D" uid="uid://trst7pq56k7j" path="res://ui/casettes ui/Bobot cassette.PNG" id="1_iju6n"]
 [ext_resource type="Script" uid="uid://dm5hnjan22get" path="res://ui/memory ui/casette_option.gd" id="1_w7mj7"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7mj7"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="CasetteOption" type="MarginContainer" unique_id=1421712059]
 custom_minimum_size = Vector2(120, 120)
 script = ExtResource("1_w7mj7")
 
+[node name="Button" type="Button" parent="." unique_id=1986190618]
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_w7mj7")
+
 [node name="Panel" type="Panel" parent="." unique_id=65674772]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1550724719]
 layout_mode = 1
@@ -23,6 +41,7 @@ stretch_mode = 5
 
 [node name="Control" type="Control" parent="." unique_id=1231413647]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=577030806]
 custom_minimum_size = Vector2(400, 0)
@@ -34,3 +53,6 @@ offset_bottom = 148.0
 bbcode_enabled = true
 text = "[font_size=32w]BT-534-04's[br]MEMORY BANK"
 fit_content = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

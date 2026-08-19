@@ -87,7 +87,6 @@ func start_memory(memory_id: GameData.Memory) -> void:
 
 func switch_to_memory(memory_id: GameData.Memory) -> void:
 	GameLogic.current_memory = memory_id
-	GameData.pending_memories.remove_at(0)
 	
 	GameLogic.change_scene(GameData.memory_controller_scene)
 

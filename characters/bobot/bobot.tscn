@@ -81,11 +81,14 @@ text = "[font_size=32]Charge"
 fit_content = true
 
 [node name="BobotChargeDisplay" parent="CanvasLayer" unique_id=1861570010 instance=ExtResource("7_0op0h")]
+mouse_filter = 1
 
 [node name="CasettePopup" parent="CanvasLayer" unique_id=492480769 instance=ExtResource("9_obths")]
 visible = false
+mouse_filter = 1
 
 [node name="BobotVignette" parent="CanvasLayer" unique_id=809498127 instance=ExtResource("10_xkikd")]
+mouse_filter = 1
 
 [node name="MemoryUI" parent="CanvasLayer" unique_id=1600028043 instance=ExtResource("10_bb0xe")]
 visible = false

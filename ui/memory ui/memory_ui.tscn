@@ -11,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_6wkk2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=801429043]
@@ -20,14 +21,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = -258.0
-offset_right = 52.0
-offset_bottom = 258.0
+offset_left = -370.0
+offset_top = -366.0
+offset_right = 370.0
+offset_bottom = 266.0
 grow_horizontal = 2
 grow_vertical = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, -50)
 theme_override_constants/separation = 500
 
 [node name="LoreContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=526162190]
@@ -41,6 +40,12 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="LoreOption3" parent="HBoxContainer/LoreContainer" unique_id=184513327 instance=ExtResource("1_fyh57")]
+layout_mode = 2
+
+[node name="LoreOption4" parent="HBoxContainer/LoreContainer" unique_id=452951319 instance=ExtResource("1_fyh57")]
+layout_mode = 2
+
+[node name="LoreOption5" parent="HBoxContainer/LoreContainer" unique_id=1955378894 instance=ExtResource("1_fyh57")]
 layout_mode = 2
 
 [node name="CasetteContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1127295911]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://eosui5nkfef2"]
 
-[ext_resource type="Script" uid="uid://dh7o7wowlqyrm" path="res://structures/mechanics/bobots/research_bot/research_bot.gd" id="1_scjbp"]
+[ext_resource type="Script" uid="uid://7dbgf6it2pdi" path="res://structures/mechanics/bobots/cargo_bot/cargo_bot.gd" id="1_gyv0n"]
 [ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="2_n4bqj"]
 [ext_resource type="Texture2D" uid="uid://bag3b5jrsvg5b" path="res://structures/mechanics/bobots/research_bot/Research bot plants.PNG" id="3_b6tw0"]
 [ext_resource type="Texture2D" uid="uid://br6wlf6l2pe0a" path="res://structures/mechanics/bobots/research_bot/Research bot shadow.PNG" id="4_n3ac3"]
@@ -8,18 +8,29 @@
 [ext_resource type="Texture2D" uid="uid://ccg21t7uw1my4" path="res://structures/mechanics/bobots/research_bot/Research bot no cassette.PNG" id="6_6hh5q"]
 [ext_resource type="Texture2D" uid="uid://cgmlrjnjlu4ub" path="res://structures/mechanics/bobots/research_bot/Research bot cassette.PNG" id="7_mv7ra"]
 [ext_resource type="Texture2D" uid="uid://31h12tire06e" path="res://structures/mechanics/bobots/cargo_bot/Cargo bot test 2.PNG" id="8_gyv0n"]
+[ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="9_g6pen"]
+[ext_resource type="Script" uid="uid://n8gyxoucnnos" path="res://components/shader_second_pass/second_shader_pass_component.gd" id="9_rj4cg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aya8i"]
 radius = 80.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_53b5w"]
+shader = ExtResource("9_g6pen")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 4.00000019
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aya8i"]
 size = Vector2(132, 56.5)
 
-[node name="ResearchBot" type="Node2D" unique_id=1192683161]
-script = ExtResource("1_scjbp")
+[node name="CargoBot" type="Node2D" unique_id=1192683161]
+script = ExtResource("1_gyv0n")
 
 [node name="MemoryBank" parent="." unique_id=512886027 node_paths=PackedStringArray("sprites_to_hide") instance=ExtResource("2_n4bqj")]
-memory_id = 4
+memory_id = 1
 sprites_to_hide = [NodePath("../Casette")]
 
 [node name="Sprite2D" parent="MemoryBank" index="0" unique_id=917366805]
@@ -63,10 +74,19 @@ scale = Vector2(0.265, 0.265)
 texture = ExtResource("8_gyv0n")
 offset = Vector2(-20, -160)
 
+[node name="SecondShaderPassComponent" type="Sprite2D" parent="." unique_id=1570233548 node_paths=PackedStringArray("target_sprite")]
+material = SubResource("ShaderMaterial_53b5w")
+script = ExtResource("9_rj4cg")
+target_sprite = NodePath("../BobotFront")
+metadata/_custom_type_script = "uid://n8gyxoucnnos"
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1716541196]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1128712945]
 position = Vector2(-1, 14)
 shape = SubResource("RectangleShape2D_aya8i")
+
+[connection signal="collected" from="MemoryBank" to="." method="_on_memory_bank_collected"]
+[connection signal="selection_update" from="MemoryBank/ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]
 
 [editable path="MemoryBank"]

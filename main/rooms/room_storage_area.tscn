@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://b8hm4bqaumbh4" path="res://structures/mechanics/side_doorway/side_doorway_flip.tscn" id="2_es08y"]
 [ext_resource type="PackedScene" uid="uid://eosui5nkfef2" path="res://structures/mechanics/bobots/cargo_bot/cargo_bot.tscn" id="4_eb511"]
-[ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="4_funn3"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="5_xwpff"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="6_5gw6j"]
 [ext_resource type="PackedScene" uid="uid://j1kp2cxbjq4m" path="res://structures/decor/cargo_shelf/cargo_shelf.tscn" id="7_bdem1"]
@@ -18,12 +17,8 @@ position = Vector2(-446, 453)
 [node name="StorageDoorToCH" parent="." unique_id=46150101 instance=ExtResource("9_es08y")]
 position = Vector2(689, 447)
 
-[node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("4_funn3")]
-position = Vector2(244, 207)
-memory_id = 1
-
-[node name="ResearchBot" parent="MemoryBank" unique_id=1192683161 instance=ExtResource("4_eb511")]
-position = Vector2(-305, -314)
+[node name="ResearchBot" parent="." unique_id=1192683161 instance=ExtResource("4_eb511")]
+position = Vector2(-61, -107)
 
 [node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]
 z_index = -2

@@ -49,6 +49,12 @@ scale = Vector2(0.6, 0.6)
 tile_map_data = PackedByteArray("AAADAP7/EwAAAAAAAAADAP//FAAAAAAAAAADAAAAFAAAAAAAAAADAAEAFAAAAAAAAAADAAMAEgAAAAAAAAADAAIAFAAAAAAAAAA=")
 tile_set = ExtResource("7_0iwav")
 
+[node name="RoomPhysicsBounds" type="StaticBody2D" parent="." unique_id=1189953484]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=2065594639]
+build_mode = 1
+polygon = PackedVector2Array(717, -360, 723, 1440, -478, 1440, -485, -366)
+
 [node name="CargoCrate" parent="." unique_id=892621697 instance=ExtResource("1_mm337")]
 position = Vector2(359, 554)
 
@@ -74,12 +80,6 @@ position = Vector2(228, 86)
 
 [node name="PlanterBox4" parent="." unique_id=1392508654 instance=ExtResource("7_7ltw3")]
 position = Vector2(483, 83)
-
-[node name="RoomPhysicsBounds" type="StaticBody2D" parent="." unique_id=1189953484]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=2065594639]
-build_mode = 1
-polygon = PackedVector2Array(717, -360, 711, 724, -463, 730, -485, -366)
 
 [node name="Overgrowth" type="Node2D" parent="." unique_id=1835052771]
 y_sort_enabled = true

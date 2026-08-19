@@ -7,12 +7,14 @@ class_name Bobot extends CharacterBody2D
 
 @onready var charge_label: RichTextLabel = get_node("CanvasLayer/RichTextLabel")
 @onready var casette_popup: CasettePopup = get_node("CanvasLayer/CasettePopup")
-var casette_popup_timer: SceneTreeTimer
 @onready var memory_ui: MemoryUI = get_node("CanvasLayer/MemoryUI")
 @onready var vignette: Control = get_node("CanvasLayer/BobotVignette")
 
 
 @onready var idle_timer: Timer = get_node("IdleTimer")
+var casette_popup_timer: SceneTreeTimer
+var death_cutscene_timer: SceneTreeTimer
+var start_casette_timer: SceneTreeTimer
 
 var eepy_tween: Tween
 var world_scene: PackedScene = preload("res://main/world/world.tscn")
@@ -62,7 +64,7 @@ func start_charge(power_station: PowerStation) -> void:
 		memory_ui.update_display()
 
 func stop_charge() -> void:
-	memory_ui.visible = false
+	memory_ui.hide_display()
 	GameLogic.change_state(GameLogic.State.EXPLORING)
 
 func charge_out() -> void:
@@ -72,8 +74,9 @@ func charge_out() -> void:
 	
 	SoundManager.play_sound((SRM as SoundResourceManager).get_sound("sfx_bobot_die")).volume_db = -8
 	
-	GameLogic.change_state(GameLogic.State.POPUP)
-	get_tree().create_timer(3).timeout.connect(kill)
+	GameLogic.change_state(GameLogic.State.DEATH_CUTSCENE)
+	death_cutscene_timer = get_tree().create_timer(3.5)
+	death_cutscene_timer.timeout.connect(kill)
 
 func kill() -> void:
 	GameData.pending_memories = []
@@ -82,12 +85,13 @@ func kill() -> void:
 
 func start_memory(memory_id: GameData.Memory) -> void:
 	SoundManager.play_sound((SRM as SoundResourceManager).get_sound("sfx_casette_play")).volume_db = -8
-	GameLogic.change_state(GameLogic.State.REMBERING)
-	get_tree().create_timer(2).timeout.connect(switch_to_memory.bind(memory_id))
+	GameLogic.change_state(GameLogic.State.START_REMBERING)
+	start_casette_timer = get_tree().create_timer(2)
+	start_casette_timer.timeout.connect(switch_to_memory.bind(memory_id))
 
 func switch_to_memory(memory_id: GameData.Memory) -> void:
+	GameLogic.change_state(GameLogic.State.REMBERING)
 	GameLogic.current_memory = memory_id
-	
 	GameLogic.change_scene(GameData.memory_controller_scene)
 
 func _physics_process(_delta: float) -> void:
@@ -122,8 +126,9 @@ func _handle_movement_input() -> void:
 		movement_input = movement_input.normalized()
 		
 		if Input.is_action_pressed("sprint_key"):
-			movement_input *= 2
+			movement_input *= 1.75
 		
+		movement_input.y *= 0.8
 		
 		if movement_component:
 			movement_component.motion_input = movement_input
@@ -161,6 +166,16 @@ func _unhandled_input(event: InputEvent) -> void:
 			if event.is_action_pressed("escape_key"):
 				casette_popup_timer.timeout.emit()
 				casette_popup_timer = null
+		
+		GameLogic.State.START_REMBERING:
+			if event.is_action_pressed("escape_key"):
+				start_casette_timer.timeout.emit()
+				start_casette_timer = null
+		
+		GameLogic.State.DEATH_CUTSCENE:
+			if event.is_action_pressed("escape_key"):
+				death_cutscene_timer.timeout.emit()
+				death_cutscene_timer = null
 
 
 func _on_idle_timer_timeout() -> void:

@@ -26,7 +26,7 @@ position = Vector2(0, -54)
 [node name="Greenhouse" parent="." unique_id=1292530247 instance=ExtResource("4_276oa")]
 position = Vector2(-1024, 0)
 
-[node name="GreenDoorToStorage" parent="Greenhouse" index="1" unique_id=1706434301 node_paths=PackedStringArray("connected_doorway")]
+[node name="GreenDoorToStorage" parent="Greenhouse" index="0" unique_id=1706434301 node_paths=PackedStringArray("connected_doorway")]
 connected_doorway = NodePath("../../StorageArea/StorageDoorToGreen")
 
 [node name="StorageArea" parent="." unique_id=104887320 instance=ExtResource("5_3xpkk")]

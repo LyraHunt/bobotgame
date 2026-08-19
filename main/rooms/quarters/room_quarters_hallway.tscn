@@ -18,7 +18,7 @@ position = Vector2(958, -330)
 position = Vector2(478, -31)
 
 [node name="RoseDoor" parent="." unique_id=1794369991 instance=ExtResource("2_m5x2n")]
-position = Vector2(1336, -7)
+position = Vector2(1320, -32)
 
 [node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]
 z_index = -2

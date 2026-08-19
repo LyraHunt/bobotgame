@@ -19,7 +19,7 @@
 [resource]
 animations = [{
 "frames": [{
-"duration": 0.5,
+"duration": 1.0,
 "texture": ExtResource("4_byagi")
 }, {
 "duration": 1.0,

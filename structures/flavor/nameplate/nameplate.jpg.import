@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lkpf66uk25pu"
-path="res://.godot/imported/Bobot taskbar.PNG-9478c2227c044426f1a8bde02ba5fbde.ctex"
+uid="uid://dk8xs6popmbte"
+path="res://.godot/imported/nameplate.jpg-275fd534e3254c7f37a40bdb807ce7db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/Bobot taskbar.PNG"
-dest_files=["res://.godot/imported/Bobot taskbar.PNG-9478c2227c044426f1a8bde02ba5fbde.ctex"]
+source_file="res://structures/flavor/nameplate/nameplate.jpg"
+dest_files=["res://.godot/imported/nameplate.jpg-275fd534e3254c7f37a40bdb807ce7db.ctex"]
 
 [params]
 

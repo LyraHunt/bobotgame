@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bu0q4v7mo8lfg"]
+
+[ext_resource type="Script" uid="uid://n8gyxoucnnos" path="res://components/shader_second_pass/second_shader_pass_component.gd" id="1_0kwdd"]
+
+[node name="SecondShaderPassComponent" type="Sprite2D" unique_id=745430328]
+script = ExtResource("1_0kwdd")

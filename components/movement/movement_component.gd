@@ -17,19 +17,22 @@ var motion_input: Vector2
 var starting_scale: float = 1.0
 
 func _ready() -> void:
+	movement_mult /= friction
+	
 	if sprite_to_wiggle:
 		starting_scale = sprite_to_wiggle.scale.x
 		#sprite_wiggle_intensity *= starting_scale
 
 func _physics_process(_delta: float) -> void:
+	if target_character_body:
+		_apply_friction_on_target()
+	
 	if motion_input.length() != 0:
 		_move_character(motion_input)
 		if sprite_to_wiggle:
 			sprite_to_wiggle.scale.y = starting_scale + remap(sin(Time.get_ticks_msec() / sprite_wiggle_msec), -1.0, 1.0, -sprite_wiggle_intensity, sprite_wiggle_intensity) * starting_scale
 	elif sprite_to_wiggle:
 		sprite_to_wiggle.scale.y = starting_scale
-	if target_character_body:
-		_apply_friction_on_target()
 	
 	#if footprint_particles:
 	#	footprint_particles.emitting = motion_input.length() != 0

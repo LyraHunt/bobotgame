@@ -38,7 +38,10 @@ var bobot_charge_per_sec: float = 10.0
 var bobot_last_power_station: int
 
 var pending_memories: Array[Memory] = []
-var acquired_memories: Array[Memory] = [Memory.GREENHOUSE]
+var acquired_memories: Array[Memory] = []
+
+var selected_casette: Memory
+var casette_is_selected: bool
 
 func add_power_station_id(new_id: int, power_station: PowerStation) -> void:
 	power_stations.set(new_id, power_station)

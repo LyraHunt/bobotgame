@@ -2,6 +2,7 @@ class_name MemoryUI extends Control
 
 @onready var lore_container: VBoxContainer = get_node("HBoxContainer/LoreContainer")
 @onready var casette_container: VBoxContainer = get_node("HBoxContainer/CasetteContainer")
+@onready var close_button: Button = get_node("Control/CloseButton")
 
 var bobot: Bobot
 
@@ -9,7 +10,6 @@ func _ready() -> void:
 	for casette_option: CasetteOption in get_memory_casettes():
 		casette_option.selected.connect(memory_selected)
 	
-	update_display()
 	bobot = get_tree().get_first_node_in_group("bobot")
 
 func get_memory_casettes() -> Array[CasetteOption]:
@@ -29,9 +29,29 @@ func update_display() -> void:
 		if GameData.acquired_memories.size() > casette_option_index:
 			casette_option.update_display(GameData.acquired_memories[casette_option_index])
 			casette_option.visible = true
+			
+			# give casette focus if was selected previously
+			if GameData.casette_is_selected and GameData.selected_casette == GameData.acquired_memories[casette_option_index]:
+				casette_option.button.grab_focus()
 		else:
 			casette_option.visible = false
 		casette_option_index += 1
+	
+	if not GameData.casette_is_selected:
+		close_button.grab_focus()
+
+func hide_display() -> void:
+	get_viewport().gui_release_focus()
+	visible = false
 
 func memory_selected(memory_id: GameData.Memory) -> void:
+	GameData.selected_casette = memory_id
+	GameData.casette_is_selected = true
 	bobot.start_memory(memory_id)
+
+
+func _on_close_button_button_down() -> void:
+	get_viewport().set_input_as_handled()
+	print("close")
+	GameData.casette_is_selected = false
+	bobot.stop_charge()

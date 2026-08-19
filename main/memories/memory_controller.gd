@@ -45,6 +45,7 @@ func _ready() -> void:
 
 func memory_ended() -> void:
 	#GameData.acquired_memories.append(GameLogic.current_memory)
+	await Dialogic.timeline_ended
 	GameData.bobot_charge = GameData.bobot_max_charge
 	
 	GameLogic.state = GameLogic.State.CHARGING
@@ -54,5 +55,4 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape_key"):
 		if Dialogic.current_timeline != null:
 			Dialogic.end_timeline()
-			await Dialogic.timeline_ended
 			memory_ended()

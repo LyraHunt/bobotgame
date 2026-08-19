@@ -9,7 +9,6 @@
 size = Vector2(36.5, 125)
 
 [node name="Doorway" type="Area2D" unique_id=585523427]
-y_sort_enabled = true
 script = ExtResource("1_7i8px")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=274388446]

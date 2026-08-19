@@ -1,5 +1,7 @@
 class_name MemoryBank extends Node2D
 
+signal collected
+
 @export var memory_id: GameData.Memory
 @export var sprites_to_hide: Array[Sprite2D]
 
@@ -23,3 +25,4 @@ func collect() -> void:
 	for sprite: Sprite2D in sprites_to_hide:
 		sprite.visible = false
 	hotkey_component.queue_free()
+	collected.emit()

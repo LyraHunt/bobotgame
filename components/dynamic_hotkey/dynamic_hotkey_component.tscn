@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://cooufmusuhqsl"]
 
 [ext_resource type="Script" uid="uid://b0tk312eoll01" path="res://components/dynamic_hotkey/dynamic_hotkey_component.gd" id="1_4atpb"]
-[ext_resource type="Texture2D" uid="uid://bo5871iw3l4g1" path="res://ui/bobot ui/Bobot eye 2.PNG" id="2_kskd1"]
 [ext_resource type="Material" uid="uid://c0ifs5gb5hojo" path="res://resources/shaders/bright_shader/bright_shader_mat.tres" id="2_ylmfw"]
+[ext_resource type="Texture2D" uid="uid://bhm1gx0nu36e8" path="res://ui/bobot ui/Bobot eye skrunkly.PNG" id="3_ylmfw"]
 
 [node name="DynamicHotkeyComponent" type="Node2D" unique_id=62764332]
+visible = false
 script = ExtResource("1_4atpb")
 inputName = "interact_key"
 
@@ -15,7 +16,7 @@ visibility_layer = 2
 z_index = 1
 material = ExtResource("2_ylmfw")
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_kskd1")
+texture = ExtResource("3_ylmfw")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="Sprite2D" to="." method="_on_sprite_2d_visibility_changed"]

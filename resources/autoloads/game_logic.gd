@@ -55,3 +55,12 @@ func _input(event: InputEvent) -> void:
 	
 	if _last_device != controls.device or _last_controller_type != controls.controller_type:
 		controls_changed.emit()
+
+func get_children_of_type(target_parent: Node, type: String) -> Array[Node]:
+	var children: Array[Node] = target_parent.get_children()
+	var children_of_type: Array[Node]
+	for child: Node in children:
+		if child.is_class(type):
+			children_of_type.append(child)
+	
+	return children_of_type

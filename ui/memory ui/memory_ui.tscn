@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cchpm5rv0rp7n" path="res://ui/memory ui/memory_ui.gd" id="1_6wkk2"]
 [ext_resource type="PackedScene" uid="uid://dwukd70guhg6q" path="res://ui/memory ui/lore_option.tscn" id="1_fyh57"]
 [ext_resource type="PackedScene" uid="uid://wldep812x6ac" path="res://ui/memory ui/casette_option.tscn" id="1_pexda"]
-[ext_resource type="Texture2D" uid="uid://dllg58csbnnd1" path="res://ui/casettes ui/Close menu button.PNG" id="4_yxox3"]
+[ext_resource type="Texture2D" uid="uid://c0q4m783cq6im" path="res://ui/casettes ui/Menu close ui.PNG" id="4_yxox3"]
 
 [node name="MemoryUI" type="Control" unique_id=1600028043]
 layout_mode = 3

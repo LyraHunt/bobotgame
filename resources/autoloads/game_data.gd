@@ -16,7 +16,7 @@ var memory_timelines: Dictionary[Memory, DialogicTimeline] = {
 
 var memory_casette_sprites: Dictionary[Memory, Texture] = {
 	Memory.GREENHOUSE: preload("res://ui/casettes ui/Bobot cassette.PNG"),
-	Memory.STORAGE_AREA: preload("res://ui/casettes ui/Bobot cassette.PNG"),
+	Memory.STORAGE_AREA: preload("res://ui/casettes ui/Cargo bot cassette.PNG"),
 	#Memory.KITCHEN: preload("res://ui/casettes ui/Bobot cassette.PNG"),
 	Memory.ALICE_QUARTERS: preload("res://ui/casettes ui/Bobot cassette.PNG"),
 	Memory.LAB: preload("res://ui/casettes ui/Research bot cassette.PNG")
@@ -28,10 +28,6 @@ var robot_ids: Dictionary[Memory, String] = {
 	#Memory.KITCHEN: "CX-574-03",
 	Memory.ALICE_QUARTERS: "MN-134-02",
 	Memory.LAB: "SC-912-08"
-}
-
-var flavor_texts: Dictionary[String, DialogicTimeline] = {
-	"cargo_crate": preload("res://structures/decor/cargo_crate/cargo_crate_flavor.dtl")
 }
 
 var power_stations: Dictionary[int, PowerStation] = {}
@@ -49,10 +45,19 @@ var acquired_memories: Array[Memory] = []
 var selected_casette: Memory
 var casette_is_selected: bool
 
+# flavor text stuff
+var flavor_text_folder: String = "res://resources/dialogic stuffs/flavor_texts/"
+
 func add_power_station_id(new_id: int, power_station: PowerStation) -> void:
 	power_stations.set(new_id, power_station)
 	if power_stations.keys().size() == power_station_count:
 		GameLogic.power_stations_initialized.emit()
 
+func play_flavor_timeline(flavor_id: String) -> void:
+	print(flavor_text_folder + "/" + flavor_id + ".dtl")
+	if FileAccess.file_exists(flavor_text_folder + flavor_id + ".dtl"):
+		Dialogic.start(load(flavor_text_folder + flavor_id + ".dtl"))
+
+
 func _ready() -> void:
-	bobot_last_power_station = 0
+	bobot_last_power_station = 1

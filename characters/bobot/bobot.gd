@@ -65,10 +65,10 @@ func start_charge(power_station: PowerStation) -> void:
 	GameData.acquired_memories.sort()
 	GameData.pending_memories = []
 	
-	# show memory ui if has memories
-	if GameData.acquired_memories.size() > 0:
-		memory_ui.visible = true
-		memory_ui.update_display()
+	# show memory ui
+	#if GameData.acquired_memories.size() > 0:
+	memory_ui.visible = true
+	memory_ui.update_display()
 
 func stop_charge() -> void:
 	memory_ui.hide_display()
@@ -210,7 +210,7 @@ func _on_idle_timer_timeout() -> void:
 func track_eye_icon(node: Node2D) -> void:
 	node_for_icon_tracking = node
 	interaction_icon.texture = eye_icon
-	interaction_icon.custom_maximum_size = Vector2(80, 80)
+	interaction_icon.custom_maximum_size = Vector2(70, 70)
 
 func track_arm_icon(node: Node2D) -> void:
 	node_for_icon_tracking = node

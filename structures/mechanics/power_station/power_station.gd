@@ -2,6 +2,7 @@ class_name PowerStation extends Node2D
 
 @export var power_station_id: int = -1
 
+@onready var dynamic_hotkey_component: DynamicHotkeyComponent = get_node("DynamicHotkeyComponent")
 var bobot: Bobot
 
 func _ready() -> void:
@@ -17,3 +18,4 @@ func _on_proximity_interaction_component_selection_update(selected: bool) -> voi
 
 func _on_proximity_interaction_component_interacted() -> void:
 	bobot.start_charge(self)
+	dynamic_hotkey_component.visible = false

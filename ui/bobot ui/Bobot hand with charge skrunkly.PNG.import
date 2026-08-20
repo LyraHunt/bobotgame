@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dllg58csbnnd1"
-path="res://.godot/imported/Close menu button.PNG-c7c8aaaa82fc74c31cd878c53c78e5f9.ctex"
+uid="uid://c2jrq53ywgmp1"
+path="res://.godot/imported/Bobot hand with charge skrunkly.PNG-7893ccd2a1711a4e94d4358032e78e9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/casettes ui/Close menu button.PNG"
-dest_files=["res://.godot/imported/Close menu button.PNG-c7c8aaaa82fc74c31cd878c53c78e5f9.ctex"]
+source_file="res://ui/bobot ui/Bobot hand with charge skrunkly.PNG"
+dest_files=["res://.godot/imported/Bobot hand with charge skrunkly.PNG-7893ccd2a1711a4e94d4358032e78e9a.ctex"]
 
 [params]
 

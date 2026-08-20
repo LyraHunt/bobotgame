@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvatxvd8ret74"
-path="res://.godot/imported/Cassette box ui.PNG-e69bfca1c400e0bd8cf420716c42fbd5.ctex"
+uid="uid://cykk1qsf1h32x"
+path="res://.godot/imported/Cargo bot cassette.PNG-1262061b253783d911c07fe4d9cf8934.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/casettes ui/Cassette box ui.PNG"
-dest_files=["res://.godot/imported/Cassette box ui.PNG-e69bfca1c400e0bd8cf420716c42fbd5.ctex"]
+source_file="res://ui/casettes ui/Cargo bot cassette.PNG"
+dest_files=["res://.godot/imported/Cargo bot cassette.PNG-1262061b253783d911c07fe4d9cf8934.ctex"]
 
 [params]
 

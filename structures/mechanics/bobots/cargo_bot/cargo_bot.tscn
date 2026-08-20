@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://7dbgf6it2pdi" path="res://structures/mechanics/bobots/cargo_bot/cargo_bot.gd" id="1_gyv0n"]
 [ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="2_n4bqj"]
 [ext_resource type="Texture2D" uid="uid://ba1jqafi06stl" path="res://structures/mechanics/bobots/cargo_bot/Cargo bot shadow.PNG" id="3_gyv0n"]
-[ext_resource type="Texture2D" uid="uid://bdr04i1myr7gd" path="res://structures/mechanics/bobots/cargo_bot/Cargo bot open.PNG" id="5_gyv0n"]
+[ext_resource type="Texture2D" uid="uid://bioib3joclgee" path="res://structures/mechanics/bobots/cargo_bot/Cargo bot open.PNG" id="5_gyv0n"]
 [ext_resource type="Material" uid="uid://bn3drkgdlh1yo" path="res://resources/shaders/visual_boil_shader/boil_shader_mat.tres" id="5_w5rrj"]
-[ext_resource type="Texture2D" uid="uid://coxovg4qnqjyj" path="res://structures/mechanics/bobots/cargo_bot/Cargo bot.PNG" id="7_rj4cg"]
+[ext_resource type="Texture2D" uid="uid://bjoqcv7fcplgf" path="res://structures/mechanics/bobots/cargo_bot/Cargo bot.PNG" id="7_rj4cg"]
 [ext_resource type="Script" uid="uid://wxowyt8urw6g" path="res://main/camera/camera.gd" id="9_53b5w"]
 [ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="9_g6pen"]
 [ext_resource type="Script" uid="uid://n8gyxoucnnos" path="res://components/shader_second_pass/second_shader_pass_component.gd" id="9_rj4cg"]
@@ -94,7 +94,6 @@ visible = false
 shape = SubResource("CircleShape2D_aya8i")
 
 [node name="DynamicHotkeyComponent" parent="MemoryBank" index="2" unique_id=62764332]
-visible = false
 position = Vector2(-12, -216)
 icon_type_inspect = false
 

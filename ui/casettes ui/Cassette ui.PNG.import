@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo5871iw3l4g1"
-path="res://.godot/imported/Bobot eye 2.PNG-841f19406d905efd2c0356499c0e6d3c.ctex"
+uid="uid://cgthqusj1u1ta"
+path="res://.godot/imported/Cassette ui.PNG-c9b307de8c67223fb23247736d39e101.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/bobot ui/Bobot eye 2.PNG"
-dest_files=["res://.godot/imported/Bobot eye 2.PNG-841f19406d905efd2c0356499c0e6d3c.ctex"]
+source_file="res://ui/casettes ui/Cassette ui.PNG"
+dest_files=["res://.godot/imported/Cassette ui.PNG-c9b307de8c67223fb23247736d39e101.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf4b06bg6s41i"
-path="res://.godot/imported/Bobot hand.PNG-ca45be3c2ca95bab383036ff2a3e4362.ctex"
+uid="uid://bhm1gx0nu36e8"
+path="res://.godot/imported/Bobot eye skrunkly.PNG-eded217e990fadfd21c45c4e986941ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/bobot ui/Bobot hand.PNG"
-dest_files=["res://.godot/imported/Bobot hand.PNG-ca45be3c2ca95bab383036ff2a3e4362.ctex"]
+source_file="res://ui/bobot ui/Bobot eye skrunkly.PNG"
+dest_files=["res://.godot/imported/Bobot eye skrunkly.PNG-eded217e990fadfd21c45c4e986941ca.ctex"]
 
 [params]
 

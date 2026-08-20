@@ -2,26 +2,29 @@
 
 [ext_resource type="Script" uid="uid://djag1mf5xcqji" path="res://characters/bobot/bobot.gd" id="1_jt0t2"]
 [ext_resource type="Texture2D" uid="uid://drcpvm2lrroi4" path="res://characters/bobot/sprites/Bobot shadow.png" id="2_6h4th"]
+[ext_resource type="Texture2D" uid="uid://bhm1gx0nu36e8" path="res://ui/bobot ui/Bobot eye skrunkly.PNG" id="2_d7das"]
 [ext_resource type="SpriteFrames" uid="uid://1160c2jtd0ge" path="res://characters/bobot/bobot_sprite_frames.tres" id="3_25c5j"]
 [ext_resource type="PackedScene" uid="uid://bpsxk644vopdu" path="res://components/movement/movement_component.tscn" id="3_eno68"]
+[ext_resource type="Texture2D" uid="uid://6u5qrl1ftpw3" path="res://ui/bobot ui/Bobot hand skrunkly.PNG" id="3_ke3xm"]
 [ext_resource type="Script" uid="uid://cli3yj6xskekl" path="res://components/proximity_interactor/proximity_interactor_component.gd" id="4_trx6w"]
 [ext_resource type="Material" uid="uid://bn3drkgdlh1yo" path="res://resources/shaders/visual_boil_shader/boil_shader_mat.tres" id="4_xkikd"]
 [ext_resource type="PackedScene" uid="uid://buyx0fvko6hu0" path="res://ui/bobot ui/bobot_charge_display.tscn" id="7_0op0h"]
 [ext_resource type="PackedScene" uid="uid://blsi222gcll5f" path="res://ui/casettes ui/casette_popup.tscn" id="9_obths"]
 [ext_resource type="PackedScene" uid="uid://cqfr74q3xqugw" path="res://ui/memory ui/memory_ui.tscn" id="10_bb0xe"]
 [ext_resource type="PackedScene" uid="uid://ckyoe6ut0owfg" path="res://ui/bobot ui/bobot_vignette.tscn" id="10_xkikd"]
-[ext_resource type="Texture2D" uid="uid://bo5871iw3l4g1" path="res://ui/bobot ui/Bobot eye 2.PNG" id="11_bb0xe"]
-[ext_resource type="Texture2D" uid="uid://cf4b06bg6s41i" path="res://ui/bobot ui/Bobot hand.PNG" id="12_d7das"]
 
 [sub_resource type="Gradient" id="Gradient_bb0xe"]
-offsets = PackedFloat32Array(0, 0.675, 0.88)
-colors = PackedColorArray(0.6255971, 0.6255971, 0.6255971, 1, 1, 1, 1, 1, 1, 1, 0.5568628, 1)
+offsets = PackedFloat32Array(0, 0.675, 0.8825)
+colors = PackedColorArray(0.6255971, 0.6255971, 0.6255971, 1, 1, 1, 1, 1, 1, 1, 0.27999997, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r5iys"]
 radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ojbw0"]
-radius = 30.0
+radius = 35.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iqcf8"]
+load_path = "res://.godot/imported/Bobot hand.PNG-ca45be3c2ca95bab383036ff2a3e4362.ctex"
 
 [sub_resource type="Gradient" id="Gradient_b4vhw"]
 offsets = PackedFloat32Array(0.48253968, 1)
@@ -42,8 +45,8 @@ motion_mode = 1
 wall_min_slide_angle = 0.08726646
 script = ExtResource("1_jt0t2")
 spotlight_energy_ramp = SubResource("Gradient_bb0xe")
-eye_icon = ExtResource("11_bb0xe")
-arm_icon = ExtResource("12_d7das")
+eye_icon = ExtResource("2_d7das")
+arm_icon = ExtResource("3_ke3xm")
 
 [node name="Sprite2DShadow" type="Sprite2D" parent="." unique_id=1671335306]
 modulate = Color(0.21176471, 0.09411765, 0.101960786, 0.84313726)
@@ -108,7 +111,7 @@ material = ExtResource("4_xkikd")
 custom_maximum_size = Vector2(80, 80)
 offset_right = 530.0
 offset_bottom = 530.0
-texture = ExtResource("12_d7das")
+texture = SubResource("CompressedTexture2D_iqcf8")
 
 [node name="IdleTimer" type="Timer" parent="." unique_id=1137402389]
 wait_time = 4.0

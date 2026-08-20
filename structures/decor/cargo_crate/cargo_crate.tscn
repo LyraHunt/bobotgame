@@ -1,14 +1,9 @@
 [gd_scene format=3 uid="uid://b6m0qy58wq06l"]
 
 [ext_resource type="Texture2D" uid="uid://b2cpv736f0rum" path="res://structures/decor/cargo_crate_sprite/outlined cargo crate.png" id="1_bq41y"]
-[ext_resource type="PackedScene" uid="uid://djyaxwrsd83y4" path="res://components/proximity_interaction/proximity_interaction_component.tscn" id="2_fc5hb"]
-[ext_resource type="PackedScene" uid="uid://dfe46cb11lhge" path="res://components/inspect_component/inspect_component.tscn" id="3_uqu1c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4vhw"]
 size = Vector2(100, 60)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5iys"]
-size = Vector2(127, 100)
 
 [node name="CargoCrate" type="StaticBody2D" unique_id=892621697]
 y_sort_enabled = true
@@ -23,15 +18,3 @@ offset = Vector2(0, -80)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462808171]
 position = Vector2(2, -4)
 shape = SubResource("RectangleShape2D_b4vhw")
-
-[node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("sprite") instance=ExtResource("2_fc5hb")]
-sprite = NodePath("../Sprite2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityInteractionComponent" unique_id=637078157]
-position = Vector2(0.5, -13)
-shape = SubResource("RectangleShape2D_r5iys")
-
-[node name="InspectComponent" parent="." unique_id=915355483 node_paths=PackedStringArray("proximity_interaction_component") instance=ExtResource("3_uqu1c")]
-position = Vector2(0, -158)
-proximity_interaction_component = NodePath("../ProximityInteractionComponent")
-flavor_text_id = "cargo_crate"

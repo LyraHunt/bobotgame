@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b5k28b8t1vjyy"]
+
+[ext_resource type="Script" uid="uid://btg5s0nm4gkgp" path="res://components/proximity_inspection_component/proximity_inspection_component.gd" id="1_0gj3q"]
+[ext_resource type="Material" uid="uid://da2j3woubb552" path="res://resources/shaders/outline_shader/outline_shader_mat.tres" id="2_dwk4r"]
+[ext_resource type="Texture2D" uid="uid://bhm1gx0nu36e8" path="res://ui/bobot ui/Bobot eye skrunkly.PNG" id="3_dwk4r"]
+
+[node name="ProximityInspectionComponent" type="Area2D" unique_id=368491059]
+script = ExtResource("1_0gj3q")
+outline_shader = ExtResource("2_dwk4r")
+metadata/_custom_type_script = "uid://bbiaxdn4v0rfj"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1209243456]
+z_index = 1
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("3_dwk4r")

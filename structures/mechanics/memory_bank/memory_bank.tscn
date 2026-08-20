@@ -29,6 +29,7 @@ shape = SubResource("CircleShape2D_r5iys")
 
 [node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("4_f6w76")]
 position = Vector2(0, -194)
+icon_type_inspect = false
 
 [connection signal="interacted" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_interacted"]
 [connection signal="selection_update" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]

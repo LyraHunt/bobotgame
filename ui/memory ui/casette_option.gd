@@ -23,7 +23,8 @@ func show_blank() -> void:
 	button.focus_mode = Control.FOCUS_NONE
 
 func select() ->  void:
-	selected.emit(current_memory_id)
+	if casette_sprite.visible:
+		selected.emit(current_memory_id)
 
 """func _on_gui_input(event: InputEvent) -> void:
 	print(event)

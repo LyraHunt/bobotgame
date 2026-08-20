@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://driqrr4kvmm8f"]
 
-[ext_resource type="Texture2D" uid="uid://dk8xs6popmbte" path="res://structures/flavor/nameplate/nameplate.jpg" id="1_c7y1p"]
+[ext_resource type="Texture2D" uid="uid://c8fkw31v1vfru" path="res://structures/flavor/nameplate/nameplate.png" id="1_efwnc"]
 
 [node name="NamePlate" type="Node2D" unique_id=882252241]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=581876097]
-texture = ExtResource("1_c7y1p")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_efwnc")
+offset = Vector2(10, -80)

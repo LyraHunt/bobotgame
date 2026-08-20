@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d0vfwatct2sst" path="res://structures/mechanics/doorway/doorway_bottom.tscn" id="2_m5x2n"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="3_s3haq"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="4_m5bsj"]
+[ext_resource type="PackedScene" uid="uid://driqrr4kvmm8f" path="res://structures/flavor/nameplate/name_plate.tscn" id="5_m5x2n"]
 
 [node name="QuartersHallway" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -46,3 +47,17 @@ tile_set = ExtResource("4_m5bsj")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1251044420]
 build_mode = 1
 polygon = PackedVector2Array(1685, -357, 1685, -4, -237, -8, -229, -350)
+
+[node name="NatashaNamePlate" parent="." unique_id=882252241 instance=ExtResource("5_m5x2n")]
+position = Vector2(324, -447)
+
+[node name="AliceNamePlate" parent="." unique_id=1449513645 instance=ExtResource("5_m5x2n")]
+position = Vector2(1187, -447)
+
+[node name="OwenNamePlate" parent="." unique_id=35003906 instance=ExtResource("5_m5x2n")]
+modulate = Color(0.43134022, 0.43134025, 0.43134025, 0.48235294)
+position = Vector2(254, -106)
+
+[node name="RoseNamePlate" parent="." unique_id=1732381870 instance=ExtResource("5_m5x2n")]
+modulate = Color(0.43134022, 0.43134025, 0.43134025, 0.48235294)
+position = Vector2(1098, -106)

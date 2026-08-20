@@ -114,6 +114,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/soun
 
 bobot=""
 first_power_station=""
+camera=""
 
 [gui]
 

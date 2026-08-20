@@ -37,14 +37,14 @@ var flavor_texts: Dictionary[String, DialogicTimeline] = {
 var power_stations: Dictionary[int, PowerStation] = {}
 var power_station_count: int = 2
 
-var bobot_charge: float = 1.0
+var bobot_charge: float = 40.0
 var bobot_max_charge: float = 40.0
 var bobot_charge_per_sec: float = 10.0
 var bobot_last_power_station: int
 
 var pending_memories: Array[Memory] = []
 var acquired_memories: Array[Memory] = []
-#var acquired_memories: Array[Memory] = [Memory.GREENHOUSE, Memory.STORAGE_AREA, Memory.KITCHEN, Memory.ALICE_QUARTERS, Memory.LAB]
+#var acquired_memories: Array[Memory] = [Memory.GREENHOUSE, Memory.STORAGE_AREA, Memory.LAB]
 
 var selected_casette: Memory
 var casette_is_selected: bool
@@ -52,7 +52,6 @@ var casette_is_selected: bool
 func add_power_station_id(new_id: int, power_station: PowerStation) -> void:
 	power_stations.set(new_id, power_station)
 	if power_stations.keys().size() == power_station_count:
-		print(power_stations)
 		GameLogic.power_stations_initialized.emit()
 
 func _ready() -> void:

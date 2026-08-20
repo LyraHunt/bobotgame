@@ -17,7 +17,7 @@ position = Vector2(-446, 453)
 [node name="StorageDoorToCH" parent="." unique_id=46150101 instance=ExtResource("9_es08y")]
 position = Vector2(689, 447)
 
-[node name="ResearchBot" parent="." unique_id=1192683161 instance=ExtResource("4_eb511")]
+[node name="CargoBot" parent="." unique_id=1192683161 instance=ExtResource("4_eb511")]
 position = Vector2(-61, -107)
 
 [node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]

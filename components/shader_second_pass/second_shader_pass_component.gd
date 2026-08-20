@@ -24,12 +24,14 @@ func start_mirroring() -> void:
 		#target_sprite.reparent(sub_viewport)
 		
 		target_sprite_dupe = target_sprite.duplicate()
+		target_sprite_dupe.offset = Vector2.ZERO
 		sub_viewport.add_child(target_sprite_dupe)
 		target_sprite_dupe.texture = target_sprite.texture
 		target_sprite_dupe.centered = false
 		
 		texture = sub_viewport.get_texture()
 		visible = true
+		offset = target_sprite.offset * target_sprite.scale
 		
 		target_sprite.visible = false
 	

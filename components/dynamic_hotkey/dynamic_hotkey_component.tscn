@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://cooufmusuhqsl"]
 
 [ext_resource type="Script" uid="uid://b0tk312eoll01" path="res://components/dynamic_hotkey/dynamic_hotkey_component.gd" id="1_4atpb"]
-[ext_resource type="Texture2D" uid="uid://dus663o6rsgve" path="res://ui/controls/keyboard/A_Key_Dark.png" id="2_kskd1"]
+[ext_resource type="Texture2D" uid="uid://bo5871iw3l4g1" path="res://ui/bobot ui/Bobot eye 2.PNG" id="2_kskd1"]
+[ext_resource type="Material" uid="uid://c0ifs5gb5hojo" path="res://resources/shaders/bright_shader/bright_shader_mat.tres" id="2_ylmfw"]
 
-[node name="DynamicHotkeyComponent" type="Node2D" unique_id=62764332 node_paths=PackedStringArray("sprite")]
-visible = false
+[node name="DynamicHotkeyComponent" type="Node2D" unique_id=62764332]
 script = ExtResource("1_4atpb")
-sprite = NodePath("Sprite2D")
 inputName = "interact_key"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=265538363]
+visible = false
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+material = ExtResource("2_ylmfw")
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_kskd1")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Sprite2D" to="." method="_on_sprite_2d_visibility_changed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk8xs6popmbte"
-path="res://.godot/imported/nameplate.jpg-275fd534e3254c7f37a40bdb807ce7db.ctex"
+uid="uid://b2dyultkyixno"
+path="res://.godot/imported/Bobot eye.PNG-8d2d6a46172de30df062c6e4881aaf38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://structures/flavor/nameplate/nameplate.jpg"
-dest_files=["res://.godot/imported/nameplate.jpg-275fd534e3254c7f37a40bdb807ce7db.ctex"]
+source_file="res://ui/bobot ui/Bobot eye.PNG"
+dest_files=["res://.godot/imported/Bobot eye.PNG-8d2d6a46172de30df062c6e4881aaf38.ctex"]
 
 [params]
 

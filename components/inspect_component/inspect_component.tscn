@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dfe46cb11lhge"]
 
 [ext_resource type="Script" uid="uid://c57ywl0ttwo3n" path="res://components/inspect_component/inspect_component.gd" id="1_noeh4"]
-[ext_resource type="Texture2D" uid="uid://drcpvm2lrroi4" path="res://characters/bobot/sprites/Bobot shadow.png" id="2_p2qm5"]
+[ext_resource type="Texture2D" uid="uid://bo5871iw3l4g1" path="res://ui/bobot ui/Bobot eye 2.PNG" id="2_p2qm5"]
 
 [node name="InspectComponent" type="Node2D" unique_id=915355483]
 script = ExtResource("1_noeh4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=472414455]
 z_index = 1
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_p2qm5")

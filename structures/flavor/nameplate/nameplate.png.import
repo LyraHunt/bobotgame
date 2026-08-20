@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tx2j5823qnpc"
-path="res://.godot/imported/Cargo bot test 1.PNG-503caa028088381f09d2ac3f46c46c8e.ctex"
+uid="uid://c8fkw31v1vfru"
+path="res://.godot/imported/nameplate.png-980afa8801a4f576c1a4390152c285db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://structures/mechanics/bobots/cargo_bot/Cargo bot test 1.PNG"
-dest_files=["res://.godot/imported/Cargo bot test 1.PNG-503caa028088381f09d2ac3f46c46c8e.ctex"]
+source_file="res://structures/flavor/nameplate/nameplate.png"
+dest_files=["res://.godot/imported/nameplate.png-980afa8801a4f576c1a4390152c285db.ctex"]
 
 [params]
 

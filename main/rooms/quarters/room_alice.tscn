@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="4_f0pkw"]
 [ext_resource type="PackedScene" uid="uid://djfuhdxla6o6i" path="res://structures/decor/quarters_decor/bed.tscn" id="5_7cq72"]
 [ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="6_atgn6"]
+[ext_resource type="PackedScene" uid="uid://dbus6u310w6ph" path="res://structures/flavor/notes/notes.tscn" id="7_b67v1"]
 
 [node name="AliceQuarters" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -36,7 +37,7 @@ tile_set = ExtResource("3_frm7m")
 
 [node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("4_f0pkw")]
 position = Vector2(349, -242)
-memory_id = 3
+memory_id = 2
 
 [node name="Bed" parent="." unique_id=892621697 instance=ExtResource("5_7cq72")]
 position = Vector2(-148, -319)
@@ -48,4 +49,8 @@ build_mode = 1
 polygon = PackedVector2Array(475, -362, 483, 360, -235, 360, -235, -362)
 
 [node name="Desk" parent="RoomPhysicsBounds" unique_id=451949449 instance=ExtResource("6_atgn6")]
+y_sort_enabled = false
 position = Vector2(349, -62)
+
+[node name="Notes" parent="RoomPhysicsBounds/Desk" unique_id=882252241 instance=ExtResource("7_b67v1")]
+position = Vector2(-47, -59)

@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c0ifs5gb5hojo"]
+
+[ext_resource type="Shader" uid="uid://cahmda87dhleb" path="res://resources/shaders/bright_shader/bright_shader.gdshader" id="1_idpy0"]
+
+[resource]
+shader = ExtResource("1_idpy0")

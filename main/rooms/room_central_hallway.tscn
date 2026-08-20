@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://xd7tdn5pitl7"]
 
-[ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="1_nrb7j"]
 [ext_resource type="PackedScene" uid="uid://boxj3bj3d3mnm" path="res://structures/mechanics/power_station/power_station.tscn" id="2_e8shv"]
 [ext_resource type="PackedScene" uid="uid://b8hm4bqaumbh4" path="res://structures/mechanics/side_doorway/side_doorway_flip.tscn" id="2_kx2ot"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="4_jhqeb"]
@@ -10,9 +9,6 @@
 
 [node name="CentralHallway" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
-
-[node name="CHDoorToKitchen" parent="." unique_id=585523427 instance=ExtResource("1_nrb7j")]
-position = Vector2(360, -330)
 
 [node name="CHDoorToStorage" parent="." unique_id=1037123891 instance=ExtResource("2_kx2ot")]
 position = Vector2(-447, 107)

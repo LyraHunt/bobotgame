@@ -19,7 +19,7 @@ size = Vector2(132, 56.5)
 script = ExtResource("1_bryhg")
 
 [node name="MemoryBank" parent="." unique_id=512886027 node_paths=PackedStringArray("sprites_to_hide") instance=ExtResource("2_ki3jw")]
-memory_id = 4
+memory_id = 3
 sprites_to_hide = [NodePath("../Casette")]
 
 [node name="Sprite2D" parent="MemoryBank" index="0" unique_id=917366805]

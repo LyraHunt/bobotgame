@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://voragsesgqhf"
-path="res://.godot/imported/notes.jpg-67abb583d834a26a5919e9d3674f9725.ctex"
+uid="uid://coxovg4qnqjyj"
+path="res://.godot/imported/Cargo bot.PNG-23c8b1d221b918a23ccd2858c7bbb59f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://structures/flavor/notes/notes.jpg"
-dest_files=["res://.godot/imported/notes.jpg-67abb583d834a26a5919e9d3674f9725.ctex"]
+source_file="res://structures/mechanics/bobots/cargo_bot/Cargo bot.PNG"
+dest_files=["res://.godot/imported/Cargo bot.PNG-23c8b1d221b918a23ccd2858c7bbb59f.ctex"]
 
 [params]
 

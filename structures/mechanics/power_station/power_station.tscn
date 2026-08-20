@@ -38,6 +38,7 @@ shape = SubResource("CircleShape2D_63nx4")
 
 [node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("3_n7tvs")]
 position = Vector2(1, -128)
+icon_type_inspect = false
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=848799078]
 color = Color(0.6544553, 0.64771765, 1.92523e-07, 1)

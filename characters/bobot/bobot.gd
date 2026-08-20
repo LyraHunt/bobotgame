@@ -1,5 +1,9 @@
 class_name Bobot extends CharacterBody2D
 
+@export var spotlight_energy_ramp: Gradient
+@export var eye_icon: Texture
+@export var arm_icon: Texture
+
 @onready var movement_component: MovementComponent = get_node("MovementComponent")
 @onready var proximity_interactor_component: ProximityInteractorComponent = get_node("ProximityInteractorComponent")
 
@@ -9,19 +13,22 @@ class_name Bobot extends CharacterBody2D
 @onready var casette_popup: CasettePopup = get_node("CanvasLayer/CasettePopup")
 @onready var memory_ui: MemoryUI = get_node("CanvasLayer/MemoryUI")
 @onready var vignette: Control = get_node("CanvasLayer/BobotVignette")
-
+@onready var interaction_icon: TextureRect = get_node("CanvasLayer/InteractionIcon")
+var node_for_icon_tracking: Node2D
 
 @onready var idle_timer: Timer = get_node("IdleTimer")
+@onready var spotlight: PointLight2D = get_node("Spotlight")
 var casette_popup_timer: SceneTreeTimer
 var death_cutscene_timer: SceneTreeTimer
 var start_casette_timer: SceneTreeTimer
 
 var eepy_tween: Tween
-var world_scene: PackedScene = preload("res://main/world/world.tscn")
+var camera: Camera
 
 func _ready() -> void:
 	#start_charge(GameData.power_stations[GameData.bobot_last_power_station])
 	GameLogic.power_stations_initialized.connect(_start_charge_on_load)
+	camera = get_tree().get_first_node_in_group("camera")
 
 func _start_charge_on_load() -> void:
 	#add_memory(GameData.Memory.GREENHOUSE)
@@ -113,6 +120,13 @@ func _process(_delta: float) -> void:
 	charge_label.text += "Pending Memories: " + str(GameData.pending_memories)
 	charge_label.text += "\n"
 	charge_label.text += "Acquired Memories: " + str(GameData.acquired_memories)
+	
+	var charge_ratio: float = GameData.bobot_charge / GameData.bobot_max_charge
+	spotlight.color = spotlight_energy_ramp.sample(charge_ratio)
+	
+	interaction_icon.visible = not node_for_icon_tracking == null
+	if node_for_icon_tracking:
+		interaction_icon.global_position = (node_for_icon_tracking.global_position - global_position) * camera.zoom + Vector2(960, 540) + Vector2(-40, 20)
 
 func _handle_movement_input() -> void:
 	var x_direction: float = Input.get_axis("move_left_key", "move_right_key")
@@ -189,3 +203,16 @@ func _on_idle_timer_timeout() -> void:
 			eepy_tween.tween_property(animated_sprite, "scale", Vector2(0.3, 0.3), 0.15)
 		_:
 			idle_timer.start(1)
+
+#func WorldToViewport(target: Node2D) -> void:
+	#return target.GetScreenTransform().Origin.Clamp(new Vector2(0, 0), target.GetViewportRect().Size);
+
+func track_eye_icon(node: Node2D) -> void:
+	node_for_icon_tracking = node
+	interaction_icon.texture = eye_icon
+	interaction_icon.custom_maximum_size = Vector2(80, 80)
+
+func track_arm_icon(node: Node2D) -> void:
+	node_for_icon_tracking = node
+	interaction_icon.texture = arm_icon
+	interaction_icon.custom_maximum_size = Vector2(100, 100)

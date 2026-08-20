@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dbus6u310w6ph"]
+
+[ext_resource type="Texture2D" uid="uid://cvfm7ktaaytpa" path="res://structures/flavor/notes/notes.PNG" id="1_lsymc"]
+
+[node name="Notes" type="Node2D" unique_id=882252241]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=581876097]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_lsymc")
+offset = Vector2(0, -30)

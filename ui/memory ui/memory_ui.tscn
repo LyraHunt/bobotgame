@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cchpm5rv0rp7n" path="res://ui/memory ui/memory_ui.gd" id="1_6wkk2"]
 [ext_resource type="PackedScene" uid="uid://dwukd70guhg6q" path="res://ui/memory ui/lore_option.tscn" id="1_fyh57"]
 [ext_resource type="PackedScene" uid="uid://wldep812x6ac" path="res://ui/memory ui/casette_option.tscn" id="1_pexda"]
+[ext_resource type="Texture2D" uid="uid://dllg58csbnnd1" path="res://ui/casettes ui/Close menu button.PNG" id="4_yxox3"]
 
 [node name="MemoryUI" type="Control" unique_id=1600028043]
 layout_mode = 3
@@ -66,9 +67,9 @@ layout_mode = 2
 
 [node name="Control" type="Control" parent="." unique_id=320877331]
 anchors_preset = 0
-offset_left = 122.0
+offset_left = 940.0
 offset_top = 103.0
-offset_right = 162.0
+offset_right = 980.0
 offset_bottom = 143.0
 
 [node name="CloseButton" type="Button" parent="Control" unique_id=661072311]
@@ -86,24 +87,13 @@ offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/CloseButton" unique_id=457882951]
-custom_minimum_size = Vector2(20, 10)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -25.0
-offset_right = 10.0
-offset_bottom = 15.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-text = "[font_size=40]x"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="TextureRect" type="TextureRect" parent="Control/CloseButton" unique_id=852711837]
+custom_maximum_size = Vector2(92, 92)
+layout_mode = 0
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 85.0
+offset_bottom = 85.0
+texture = ExtResource("4_yxox3")
 
 [connection signal="button_down" from="Control/CloseButton" to="." method="_on_close_button_button_down"]

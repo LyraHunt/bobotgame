@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://wxowyt8urw6g" path="res://main/camera/camera.gd" id="1_7io0s"]
 
-[node name="Camera" type="Camera2D" unique_id=402554782]
+[node name="Camera" type="Camera2D" unique_id=402554782 groups=["camera"]]
 script = ExtResource("1_7io0s")

@@ -52,7 +52,12 @@ directories/dch_directory={
 "char_rose": "res://resources/dialogic stuffs/characters/char_rose.dch"
 }
 directories/dtl_directory={
+"alice_name_plate": "res://resources/dialogic stuffs/flavor_texts/alice_name_plate.dtl",
 "cargo_box_one": "res://resources/dialogic stuffs/flavor_texts/cargo_box_one.dtl",
+"cargo_five": "res://resources/dialogic stuffs/flavor_texts/cargo_five.dtl",
+"cargo_four": "res://resources/dialogic stuffs/flavor_texts/cargo_four.dtl",
+"cargo_three": "res://resources/dialogic stuffs/flavor_texts/cargo_three.dtl",
+"cargo_two": "res://resources/dialogic stuffs/flavor_texts/cargo_two.dtl",
 "greenhouse_crate": "res://resources/dialogic stuffs/flavor_texts/greenhouse_crate.dtl",
 "memory_cargo_bot": "res://resources/dialogic stuffs/cutscenes/memory_cargo_bot.dtl",
 "memory_chef_bot": "res://resources/dialogic stuffs/cutscenes/memory_chef_bot.dtl",
@@ -60,9 +65,12 @@ directories/dtl_directory={
 "memory_record_bot": "res://resources/dialogic stuffs/cutscenes/memory_record_bot.dtl",
 "memory_research_bot": "res://resources/dialogic stuffs/cutscenes/memory_research_bot.dtl",
 "natasha_desk": "res://resources/dialogic stuffs/flavor_texts/natasha_desk.dtl",
+"natasha_name_plate": "res://resources/dialogic stuffs/flavor_texts/natasha_name_plate.dtl",
+"owen_name_plate": "res://resources/dialogic stuffs/flavor_texts/owen_name_plate.dtl",
 "planter_box_one": "res://resources/dialogic stuffs/flavor_texts/planter_box_one.dtl",
 "planter_box_three": "res://resources/dialogic stuffs/flavor_texts/planter_box_three.dtl",
-"planter_box_two": "res://resources/dialogic stuffs/flavor_texts/planter_box_two.dtl"
+"planter_box_two": "res://resources/dialogic stuffs/flavor_texts/planter_box_two.dtl",
+"rose_name_plate": "res://resources/dialogic stuffs/flavor_texts/rose_name_plate.dtl"
 }
 layout/style_directory={
 "": "res://resources/dialogic stuffs/styles/default_style.tres",

@@ -5,6 +5,24 @@
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="3_s3haq"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="4_m5bsj"]
 [ext_resource type="PackedScene" uid="uid://driqrr4kvmm8f" path="res://structures/flavor/nameplate/name_plate.tscn" id="5_m5x2n"]
+[ext_resource type="PackedScene" uid="uid://b5k28b8t1vjyy" path="res://components/proximity_inspection_component/proximity_inspection_component.tscn" id="6_s3haq"]
+[ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="7_2mdhy"]
+[ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="8_ixcca"]
+[ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="9_wngoi"]
+[ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="10_aeqn8"]
+[ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="11_b0ttq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsad5"]
+radius = 102.0784
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vdhf0"]
+radius = 105.38501
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_harlm"]
+radius = 99.18165
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vm1bt"]
+radius = 109.01835
 
 [node name="QuartersHallway" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -51,13 +69,77 @@ polygon = PackedVector2Array(1685, -357, 1685, -4, -237, -8, -229, -350)
 [node name="NatashaNamePlate" parent="." unique_id=882252241 instance=ExtResource("5_m5x2n")]
 position = Vector2(324, -447)
 
+[node name="ProximityInspectionComponent" parent="NatashaNamePlate" unique_id=368491059 instance=ExtResource("6_s3haq")]
+position = Vector2(2, -61)
+flavor_text_id = "natasha_name_plate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NatashaNamePlate/ProximityInspectionComponent" unique_id=1666861742]
+position = Vector2(8, 97)
+shape = SubResource("CircleShape2D_bsad5")
+
 [node name="AliceNamePlate" parent="." unique_id=1449513645 instance=ExtResource("5_m5x2n")]
 position = Vector2(1187, -447)
+
+[node name="ProximityInspectionComponent" parent="AliceNamePlate" unique_id=374821134 instance=ExtResource("6_s3haq")]
+position = Vector2(2, -61)
+flavor_text_id = "alice_name_plate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AliceNamePlate/ProximityInspectionComponent" unique_id=307732806]
+position = Vector2(-1, 86)
+shape = SubResource("CircleShape2D_vdhf0")
 
 [node name="OwenNamePlate" parent="." unique_id=35003906 instance=ExtResource("5_m5x2n")]
 modulate = Color(0.43134022, 0.43134025, 0.43134025, 0.48235294)
 position = Vector2(254, -106)
 
+[node name="ProximityInspectionComponent" parent="OwenNamePlate" unique_id=1335300537 instance=ExtResource("6_s3haq")]
+position = Vector2(2, -66)
+flavor_text_id = "owen_name_plate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OwenNamePlate/ProximityInspectionComponent" unique_id=1181940077]
+position = Vector2(-5, 69)
+shape = SubResource("CircleShape2D_harlm")
+
 [node name="RoseNamePlate" parent="." unique_id=1732381870 instance=ExtResource("5_m5x2n")]
 modulate = Color(0.43134022, 0.43134025, 0.43134025, 0.48235294)
 position = Vector2(1098, -106)
+
+[node name="ProximityInspectionComponent" parent="RoseNamePlate" unique_id=337818092 instance=ExtResource("6_s3haq")]
+position = Vector2(0, -65)
+flavor_text_id = "rose_name_plate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoseNamePlate/ProximityInspectionComponent" unique_id=731746068]
+position = Vector2(-11, 66)
+shape = SubResource("CircleShape2D_vm1bt")
+
+[node name="Overgrowth" type="Node2D" parent="." unique_id=403761007]
+y_sort_enabled = true
+position = Vector2(0, 1)
+
+[node name="lilguy15" parent="Overgrowth" unique_id=86382574 instance=ExtResource("7_2mdhy")]
+position = Vector2(5, -98)
+
+[node name="lilguy16" parent="Overgrowth" unique_id=960166017 instance=ExtResource("7_2mdhy")]
+position = Vector2(775, -366)
+
+[node name="lilguy3" parent="Overgrowth" unique_id=1700214742 instance=ExtResource("8_ixcca")]
+position = Vector2(1625, -20)
+
+[node name="lilguy5" parent="Overgrowth" unique_id=1238555733 instance=ExtResource("8_ixcca")]
+position = Vector2(658, -22)
+
+[node name="lilguy4" parent="Overgrowth" unique_id=1553183419 instance=ExtResource("9_wngoi")]
+position = Vector2(845, -183)
+
+[node name="lilguy6" parent="Overgrowth" unique_id=1777738801 instance=ExtResource("9_wngoi")]
+position = Vector2(-5, -269)
+rotation = 3.1415927
+
+[node name="root1" parent="Overgrowth" unique_id=1565256147 instance=ExtResource("10_aeqn8")]
+position = Vector2(1386, -319)
+
+[node name="lilguy7" parent="Overgrowth" unique_id=636513794 instance=ExtResource("11_b0ttq")]
+position = Vector2(484, -353)
+
+[node name="lilguy8" parent="Overgrowth" unique_id=2085634625 instance=ExtResource("11_b0ttq")]
+position = Vector2(1562, -94)

@@ -7,10 +7,27 @@
 [ext_resource type="PackedScene" uid="uid://j1kp2cxbjq4m" path="res://structures/decor/cargo_shelf/cargo_shelf.tscn" id="7_bdem1"]
 [ext_resource type="PackedScene" uid="uid://c800r2teiclqk" path="res://structures/decor/cargo_crate_sprite/cargo_crate_sprite.tscn" id="8_0ykqe"]
 [ext_resource type="PackedScene" uid="uid://b5k28b8t1vjyy" path="res://components/proximity_inspection_component/proximity_inspection_component.tscn" id="8_eb511"]
+[ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="9_5gw6j"]
 [ext_resource type="PackedScene" uid="uid://ctw0xedmi8cm8" path="res://structures/mechanics/side_doorway/side_doorway.tscn" id="9_es08y"]
+[ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="10_bdem1"]
+[ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="11_0ykqe"]
+[ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="12_axs44"]
+[ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="13_s0bem"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_harlm"]
+radius = 88.09086
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ig7c"]
+radius = 103.01942
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bsad5"]
 radius = 97.6166
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vm1bt"]
+radius = 99.0202
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vdhf0"]
+radius = 100.12492
 
 [node name="StorageArea" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -65,6 +82,14 @@ position = Vector2(0, -195)
 y_sort_enabled = false
 position = Vector2(1, -114)
 
+[node name="ProximityInspectionComponent" parent="shelf row 1/CargoShelf/CargoCrate2" unique_id=368491059 instance=ExtResource("8_eb511")]
+position = Vector2(1, -101)
+flavor_text_id = "cargo_two"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf row 1/CargoShelf/CargoCrate2/ProximityInspectionComponent" unique_id=694316959]
+position = Vector2(0, 54)
+shape = SubResource("CircleShape2D_harlm")
+
 [node name="CargoShelf2" parent="shelf row 1" unique_id=1420541548 instance=ExtResource("7_bdem1")]
 
 [node name="CargoShelf3" parent="shelf row 1" unique_id=582019660 instance=ExtResource("7_bdem1")]
@@ -91,6 +116,14 @@ position = Vector2(762, -2)
 [node name="CargoCrate" parent="shelf row 1/CargoShelf5" unique_id=1272548488 instance=ExtResource("8_0ykqe")]
 y_sort_enabled = false
 position = Vector2(0, -195)
+
+[node name="ProximityInspectionComponent" parent="shelf row 1/CargoShelf5/CargoCrate" unique_id=1655875969 instance=ExtResource("8_eb511")]
+position = Vector2(6, -94)
+flavor_text_id = "cargo_four"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf row 1/CargoShelf5/CargoCrate/ProximityInspectionComponent" unique_id=433292227]
+position = Vector2(-6, 123)
+shape = SubResource("CircleShape2D_0ig7c")
 
 [node name="shelf row 2" type="Node2D" parent="." unique_id=1844611011]
 position = Vector2(-143, 223)
@@ -126,8 +159,8 @@ position = Vector2(0, -195)
 y_sort_enabled = false
 position = Vector2(1, -114)
 
-[node name="ProximityInspectionComponent" parent="shelf row 2/CargoShelf4/CargoCrate2" unique_id=368491059 instance=ExtResource("8_eb511")]
-position = Vector2(-1, -81)
+[node name="ProximityInspectionComponent" parent="shelf row 2/CargoShelf4/CargoCrate2" unique_id=1381580551 instance=ExtResource("8_eb511")]
+position = Vector2(0, -87)
 flavor_text_id = "cargo_box_one"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shelf row 2/CargoShelf4/CargoCrate2/ProximityInspectionComponent" unique_id=702995251]
@@ -154,6 +187,14 @@ position = Vector2(0, -195)
 [node name="CargoCrate2" parent="shelf row 3/CargoShelf" unique_id=1657933892 instance=ExtResource("8_0ykqe")]
 y_sort_enabled = false
 position = Vector2(1, -114)
+
+[node name="ProximityInspectionComponent" parent="shelf row 3/CargoShelf/CargoCrate2" unique_id=1726941690 instance=ExtResource("8_eb511")]
+position = Vector2(1, -88)
+flavor_text_id = "cargo_five"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf row 3/CargoShelf/CargoCrate2/ProximityInspectionComponent" unique_id=417719164]
+position = Vector2(-1, 50)
+shape = SubResource("CircleShape2D_vm1bt")
 
 [node name="CargoShelf2" parent="shelf row 3" unique_id=485477747 instance=ExtResource("7_bdem1")]
 
@@ -216,9 +257,78 @@ position = Vector2(0, -195)
 y_sort_enabled = false
 position = Vector2(1, -114)
 
+[node name="ProximityInspectionComponent" parent="shelf row 4/CargoShelf4/CargoCrate2" unique_id=251195138 instance=ExtResource("8_eb511")]
+position = Vector2(0, -94)
+flavor_text_id = "cargo_three"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf row 4/CargoShelf4/CargoCrate2/ProximityInspectionComponent" unique_id=1752060377]
+position = Vector2(-2, 57)
+shape = SubResource("CircleShape2D_vdhf0")
+
 [node name="CargoShelf5" parent="shelf row 4" unique_id=1977909946 instance=ExtResource("7_bdem1")]
 position = Vector2(762, -2)
 
 [node name="CargoCrate" parent="shelf row 4/CargoShelf5" unique_id=1005552547 instance=ExtResource("8_0ykqe")]
 y_sort_enabled = false
 position = Vector2(0, -195)
+
+[node name="Overgrowth" type="Node2D" parent="." unique_id=353258264]
+y_sort_enabled = true
+position = Vector2(0, 1)
+
+[node name="lilguy6" parent="Overgrowth" unique_id=86382574 instance=ExtResource("9_5gw6j")]
+position = Vector2(178, 295)
+
+[node name="lilguy13" parent="Overgrowth" unique_id=653073193 instance=ExtResource("9_5gw6j")]
+position = Vector2(-65, 629)
+
+[node name="lilguy15" parent="Overgrowth" unique_id=742484238 instance=ExtResource("9_5gw6j")]
+position = Vector2(-359, 356)
+
+[node name="lilguy1" parent="Overgrowth" unique_id=669826118 instance=ExtResource("10_bdem1")]
+position = Vector2(534, -363)
+
+[node name="lilguy2" parent="Overgrowth" unique_id=543167973 instance=ExtResource("10_bdem1")]
+position = Vector2(692, 291)
+
+[node name="lilguy3" parent="Overgrowth" unique_id=31698052 instance=ExtResource("10_bdem1")]
+position = Vector2(-332, -138)
+
+[node name="lilguy11" parent="Overgrowth" unique_id=1678643472 instance=ExtResource("10_bdem1")]
+position = Vector2(-352, 954)
+
+[node name="lilguy12" parent="Overgrowth" unique_id=1027170911 instance=ExtResource("10_bdem1")]
+position = Vector2(465, 1414)
+
+[node name="lilguy4" parent="Overgrowth" unique_id=398923673 instance=ExtResource("11_0ykqe")]
+position = Vector2(483, -93)
+
+[node name="lilguy5" parent="Overgrowth" unique_id=930249095 instance=ExtResource("11_0ykqe")]
+position = Vector2(244, 450)
+rotation = -3.1415927
+
+[node name="lilguy10" parent="Overgrowth" unique_id=1858802447 instance=ExtResource("11_0ykqe")]
+position = Vector2(-125, 1352)
+rotation = -3.1415927
+
+[node name="lilguy9" parent="Overgrowth" unique_id=43263344 instance=ExtResource("11_0ykqe")]
+position = Vector2(-239, 813)
+rotation = 1.5707964
+
+[node name="root1" parent="Overgrowth" unique_id=1134653383 instance=ExtResource("12_axs44")]
+position = Vector2(496, 157)
+
+[node name="root2" parent="Overgrowth" unique_id=1385948427 instance=ExtResource("12_axs44")]
+position = Vector2(-28, 1104)
+
+[node name="root3" parent="Overgrowth" unique_id=1076571599 instance=ExtResource("12_axs44")]
+position = Vector2(-287, -280)
+
+[node name="lilguy7" parent="Overgrowth" unique_id=848456079 instance=ExtResource("13_s0bem")]
+position = Vector2(300, -225)
+
+[node name="lilguy8" parent="Overgrowth" unique_id=125645262 instance=ExtResource("13_s0bem")]
+position = Vector2(167, 1336)
+
+[node name="lilguy14" parent="Overgrowth" unique_id=1959858508 instance=ExtResource("13_s0bem")]
+position = Vector2(447, 908)

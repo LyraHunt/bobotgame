@@ -60,4 +60,4 @@ func play_flavor_timeline(flavor_id: String) -> void:
 
 
 func _ready() -> void:
-	bobot_last_power_station = 1
+	bobot_last_power_station = 0

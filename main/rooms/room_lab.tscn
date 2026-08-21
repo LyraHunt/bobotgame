@@ -3,7 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="1_as0fk"]
 [ext_resource type="PackedScene" uid="uid://cfgyqsdvwo618" path="res://structures/mechanics/bobots/research_bot/research_bot.tscn" id="2_0fcd5"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="4_052iq"]
+[ext_resource type="PackedScene" uid="uid://dv0rr0swpplka" path="res://structures/mechanics/power_box/power_box.tscn" id="5_as0fk"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="5_t08a1"]
+[ext_resource type="PackedScene" uid="uid://kfacys7sq1nm" path="res://structures/decor/lab_decor/lab_counter_small.tscn" id="6_pfpt1"]
+[ext_resource type="PackedScene" uid="uid://b4dq3382v0qhb" path="res://structures/decor/lab_decor/lab_counter_small_vert.tscn" id="7_t04ie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_as0fk"]
+size = Vector2(123, 30)
 
 [node name="Lab" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -40,3 +46,25 @@ tile_set = ExtResource("5_t08a1")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1251044420]
 build_mode = 1
 polygon = PackedVector2Array(1204, -356, 1199, 705, -469, 719, -485, -366)
+
+[node name="PowerBox" parent="." unique_id=433000163 instance=ExtResource("5_as0fk")]
+position = Vector2(479, -425)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerBox" unique_id=1056542742]
+position = Vector2(-0.5, 78)
+shape = SubResource("RectangleShape2D_as0fk")
+
+[node name="LabCounterSmall" parent="." unique_id=1550508382 instance=ExtResource("6_pfpt1")]
+position = Vector2(42, 97.00001)
+
+[node name="LabCounterSmall2" parent="." unique_id=197619004 instance=ExtResource("6_pfpt1")]
+position = Vector2(917.99994, -254.99998)
+
+[node name="LabCounterSmallVert" parent="." unique_id=370786341 instance=ExtResource("7_t04ie")]
+position = Vector2(1093, -105.99999)
+
+[node name="LabCounterSmallVert2" parent="." unique_id=2011165247 instance=ExtResource("7_t04ie")]
+position = Vector2(1093, 398)
+
+[node name="LabCounterSmallVert3" parent="." unique_id=31358341 instance=ExtResource("7_t04ie")]
+position = Vector2(-328.99988, 398)

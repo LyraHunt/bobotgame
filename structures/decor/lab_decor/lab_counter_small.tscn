@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://kfacys7sq1nm"]
+
+[ext_resource type="Texture2D" uid="uid://bu6fdfq3h0rro" path="res://structures/decor/lab_decor/lab counter front middle.png" id="1_ohroa"]
+[ext_resource type="Texture2D" uid="uid://cgpct3gs2vx0n" path="res://structures/decor/lab_decor/lab counter front right.png" id="2_ojrl4"]
+[ext_resource type="Texture2D" uid="uid://dwcxxf75nu4hx" path="res://structures/decor/lab_decor/lab counter front left.png" id="3_gyj18"]
+
+[node name="LabCounterSmall" type="StaticBody2D" unique_id=1550508382]
+scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1556870315]
+position = Vector2(-20, -129)
+texture = ExtResource("1_ohroa")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1173770225]
+position = Vector2(171, -130)
+texture = ExtResource("2_ojrl4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=166645439]
+position = Vector2(-210, -127.14286)
+texture = ExtResource("3_gyj18")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=155161851]
+build_mode = 1
+polygon = PackedVector2Array(285, 81, -285, 79, -284.2857, -52.85714, 284.2857, -49.999996)

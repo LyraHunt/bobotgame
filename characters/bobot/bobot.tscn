@@ -24,7 +24,6 @@ radius = 20.0
 radius = 35.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iqcf8"]
-load_path = "res://.godot/imported/Bobot hand.PNG-ca45be3c2ca95bab383036ff2a3e4362.ctex"
 
 [sub_resource type="Gradient" id="Gradient_b4vhw"]
 offsets = PackedFloat32Array(0.48253968, 1)

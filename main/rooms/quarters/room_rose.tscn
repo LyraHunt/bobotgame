@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="1_lnn1h"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="2_7u73h"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="3_8meb7"]
-[ext_resource type="PackedScene" uid="uid://djfuhdxla6o6i" path="res://structures/decor/quarters_decor/bed.tscn" id="4_7u73h"]
 [ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="5_8meb7"]
+[ext_resource type="PackedScene" uid="uid://c0ronkg0mfkqy" path="res://structures/decor/quarters_decor/bed_other_way.tscn" id="5_uql4g"]
+[ext_resource type="PackedScene" uid="uid://dbus6u310w6ph" path="res://structures/flavor/notes/notes.tscn" id="6_q7tyn"]
 
 [node name="RoseQuarters" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -39,8 +40,13 @@ tile_set = ExtResource("3_8meb7")
 build_mode = 1
 polygon = PackedVector2Array(475, -362, 483, 360, -235, 360, -235, -362)
 
-[node name="Bed" parent="." unique_id=892621697 instance=ExtResource("4_7u73h")]
+[node name="BedOtherWay" parent="." unique_id=45486395 instance=ExtResource("5_uql4g")]
 position = Vector2(380, 154)
 
 [node name="Desk" parent="." unique_id=728673120 instance=ExtResource("5_8meb7")]
+y_sort_enabled = false
 position = Vector2(-120, -9)
+
+[node name="Notes" parent="Desk" unique_id=882252241 instance=ExtResource("6_q7tyn")]
+position = Vector2(-54, -66)
+rotation = -0.5861407

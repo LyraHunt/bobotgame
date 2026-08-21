@@ -52,13 +52,12 @@ directories/dch_directory={
 "char_rose": "res://resources/dialogic stuffs/characters/char_rose.dch"
 }
 directories/dtl_directory={
-"cargo_crate_flavor": "res://resources/dialogic stuffs/flavor_texts/cargo_crate_flavor.dtl",
-"lilguy6_flavor": "res://resources/dialogic stuffs/flavor_texts/lilguy6_flavor.dtl",
 "memory_cargo_bot": "res://resources/dialogic stuffs/cutscenes/memory_cargo_bot.dtl",
 "memory_chef_bot": "res://resources/dialogic stuffs/cutscenes/memory_chef_bot.dtl",
 "memory_greenhouse_bot": "res://resources/dialogic stuffs/cutscenes/memory_greenhouse_bot.dtl",
 "memory_record_bot": "res://resources/dialogic stuffs/cutscenes/memory_record_bot.dtl",
-"memory_research_bot": "res://resources/dialogic stuffs/cutscenes/memory_research_bot.dtl"
+"memory_research_bot": "res://resources/dialogic stuffs/cutscenes/memory_research_bot.dtl",
+"planter_box_flavor": "res://resources/dialogic stuffs/flavor_texts/planter_box_flavor.dtl"
 }
 layout/style_directory={
 "": "res://resources/dialogic stuffs/styles/default_style.tres",

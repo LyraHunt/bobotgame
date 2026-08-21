@@ -95,7 +95,6 @@ shape = SubResource("CircleShape2D_aya8i")
 
 [node name="DynamicHotkeyComponent" parent="MemoryBank" index="2" unique_id=62764332]
 position = Vector2(-12, -216)
-icon_type_inspect = false
 
 [node name="BobotShadow" type="Sprite2D" parent="." unique_id=397453103]
 modulate = Color(1, 1, 1, 0.7372549)

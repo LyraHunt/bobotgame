@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dv0rr0swpplka"]
+
+[ext_resource type="Texture2D" uid="uid://b7rwtnvcvboe" path="res://structures/mechanics/power_box/power box.PNG" id="1_osuco"]
+
+[node name="PowerBox" type="StaticBody2D" unique_id=433000163]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005027801]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_osuco")
+offset = Vector2(-20, -40)

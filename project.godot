@@ -66,10 +66,14 @@ directories/dtl_directory={
 "memory_research_bot": "res://resources/dialogic stuffs/cutscenes/memory_research_bot.dtl",
 "natasha_desk": "res://resources/dialogic stuffs/flavor_texts/natasha_desk.dtl",
 "natasha_name_plate": "res://resources/dialogic stuffs/flavor_texts/natasha_name_plate.dtl",
+"natasha_plant_box": "res://resources/dialogic stuffs/flavor_texts/natasha_plant_box.dtl",
+"owen_crate": "res://resources/dialogic stuffs/flavor_texts/owen_crate.dtl",
+"owen_desk": "res://resources/dialogic stuffs/flavor_texts/owen_desk.dtl",
 "owen_name_plate": "res://resources/dialogic stuffs/flavor_texts/owen_name_plate.dtl",
 "planter_box_one": "res://resources/dialogic stuffs/flavor_texts/planter_box_one.dtl",
 "planter_box_three": "res://resources/dialogic stuffs/flavor_texts/planter_box_three.dtl",
 "planter_box_two": "res://resources/dialogic stuffs/flavor_texts/planter_box_two.dtl",
+"power_box": "res://resources/dialogic stuffs/flavor_texts/power_box.dtl",
 "rose_name_plate": "res://resources/dialogic stuffs/flavor_texts/rose_name_plate.dtl"
 }
 layout/style_directory={

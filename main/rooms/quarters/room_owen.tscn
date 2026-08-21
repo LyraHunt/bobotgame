@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="5_x8noy"]
 [ext_resource type="PackedScene" uid="uid://c0ronkg0mfkqy" path="res://structures/decor/quarters_decor/bed_other_way.tscn" id="6_dwism"]
 [ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="6_s1t6q"]
+[ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="7_bknq3"]
+[ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="8_05yos"]
+[ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="9_hwqk6"]
+[ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="10_u5lr3"]
+[ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="11_33r5j"]
 
 [node name="OwenQuarters" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -49,3 +54,35 @@ position = Vector2(-142, 154)
 [node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("6_s1t6q")]
 position = Vector2(335, -190)
 memory_id = 2
+
+[node name="Overgrowth" type="Node2D" parent="." unique_id=1696933603]
+y_sort_enabled = true
+position = Vector2(0, 2)
+
+[node name="lilguy15" parent="Overgrowth" unique_id=86382574 instance=ExtResource("7_bknq3")]
+position = Vector2(279, -41)
+
+[node name="lilguy16" parent="Overgrowth" unique_id=1779210268 instance=ExtResource("7_bknq3")]
+position = Vector2(127, 263)
+
+[node name="lilguy3" parent="Overgrowth" unique_id=490381924 instance=ExtResource("8_05yos")]
+position = Vector2(120, -187)
+
+[node name="lilguy5" parent="Overgrowth" unique_id=524731931 instance=ExtResource("8_05yos")]
+position = Vector2(-5, 339)
+
+[node name="lilguy4" parent="Overgrowth" unique_id=1279979637 instance=ExtResource("9_hwqk6")]
+position = Vector2(8, -5)
+
+[node name="lilguy6" parent="Overgrowth" unique_id=649811158 instance=ExtResource("9_hwqk6")]
+position = Vector2(356, 184)
+rotation = 1.5707964
+
+[node name="root1" parent="Overgrowth" unique_id=705012677 instance=ExtResource("10_u5lr3")]
+position = Vector2(-25, -121)
+
+[node name="lilguy7" parent="Overgrowth" unique_id=2037874731 instance=ExtResource("11_33r5j")]
+position = Vector2(-120, -270)
+
+[node name="lilguy8" parent="Overgrowth" unique_id=1861123010 instance=ExtResource("11_33r5j")]
+position = Vector2(241, 88)

@@ -3,6 +3,22 @@
 [ext_resource type="PackedScene" uid="uid://chu4f1vf3b2ma" path="res://structures/mechanics/doorway/doorway.tscn" id="1_y6ghx"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="3_4pg4x"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="4_5b15h"]
+[ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="4_weotp"]
+[ext_resource type="PackedScene" uid="uid://b5k28b8t1vjyy" path="res://components/proximity_inspection_component/proximity_inspection_component.tscn" id="5_0wi5p"]
+[ext_resource type="PackedScene" uid="uid://j1kp2cxbjq4m" path="res://structures/decor/cargo_shelf/cargo_shelf.tscn" id="6_h60fi"]
+[ext_resource type="PackedScene" uid="uid://c800r2teiclqk" path="res://structures/decor/cargo_crate_sprite/cargo_crate_sprite.tscn" id="7_h5ygg"]
+[ext_resource type="PackedScene" uid="uid://b6m0qy58wq06l" path="res://structures/decor/cargo_crate/cargo_crate.tscn" id="8_weotp"]
+[ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="9_w2lbu"]
+[ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="10_aegkf"]
+[ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="11_yjwjt"]
+[ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="12_o2hmf"]
+[ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="13_5mtks"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j34qf"]
+size = Vector2(207, 111.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsad5"]
+radius = 83.00603
 
 [node name="Workshop" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -14,25 +30,118 @@ position = Vector2(839, -331)
 z_index = -2
 z_as_relative = false
 scale = Vector2(0.6, 0.6)
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAP//AAADAAAAAAABAP//AAABAAAAAAABAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAP//AAABAAAAAAACAP7/AAACAAAAAAABAP7/AAABAAAAAAAAAP7/AAAAAAAAAAAAAAEAAAABAAAAAAABAAEAAAAAAAAAAAACAAEAAAACAAAAAAADAAAAAAADAAAAAAADAAEAAAAAAAAAAAADAP//AAACAAAAAAADAP7/AAACAAAAAAAAAAIAAAAAAAAAAAABAAIAAAACAAAAAAACAAIAAAADAAAAAAADAAIAAAADAAAAAAAEAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAAAAAABAAAAAAAEAP//AAAAAAAAAAAEAP7/AAADAAAAAAAFAP7/AAABAAAAAAAFAP//AAACAAAAAAAFAAAAAAABAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAADAAAAAAAAAAMAAAADAAAAAAABAAMAAAADAAAAAAACAAMAAAAAAAAAAAADAAMAAAACAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAP7/AAADAAAAAAAGAP//AAACAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAABAAAAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAHAP7/AAACAAAAAAAHAP//AAACAAAAAAAHAAAAAAABAAAAAAAHAAEAAAACAAAAAAAHAAIAAAACAAAAAAAHAAMAAAABAAAAAAAIAP7/AAADAAAAAAAIAP//AAABAAAAAAAIAAAAAAABAAAAAAAIAAEAAAADAAAAAAAIAAIAAAACAAAAAAAIAAMAAAADAAAAAAAJAP7/AAACAAAAAAAJAP//AAACAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAADAAAAAAAJAAIAAAADAAAAAAAJAAMAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAACAAAAAAAAAAAAAAACAP//AAABAAAAAAACAP7/AAACAAAAAAACAAEAAAACAAAAAAADAAAAAAADAAAAAAADAAEAAAAAAAAAAAADAP//AAACAAAAAAADAP7/AAACAAAAAAAEAAEAAAAAAAAAAAAEAAAAAAABAAAAAAAEAP//AAAAAAAAAAAEAP7/AAADAAAAAAAFAP7/AAABAAAAAAAFAP//AAACAAAAAAAFAAAAAAABAAAAAAAFAAEAAAAAAAAAAAAGAP7/AAADAAAAAAAGAP//AAACAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAABAAAAAAAHAP7/AAACAAAAAAAHAP//AAACAAAAAAAHAAAAAAABAAAAAAAHAAEAAAACAAAAAAAIAP7/AAADAAAAAAAIAP//AAABAAAAAAAIAAAAAAABAAAAAAAIAAEAAAADAAAAAAAJAP7/AAACAAAAAAAJAP//AAACAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAADAAAAAAA=")
 tile_set = ExtResource("3_4pg4x")
 
 [node name="TileMapLayerWalls" type="TileMapLayer" parent="." unique_id=1587837278]
 z_index = -2
 z_as_relative = false
 scale = Vector2(0.6, 0.6)
-tile_map_data = PackedByteArray("AAAAAP7/DwAAAAAAAAABAP7/DwAAAAAAAAACAP7/DwAAAAAAAAADAP7/DwAAAAAAAAAEAP7/DwAAAAAAAAAFAP7/EQAAAAAAAAD///7/EAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAABAP7/DwAAAAAAAAACAP7/DwAAAAAAAAADAP7/DwAAAAAAAAAEAP7/DwAAAAAAAAAFAP7/EQAAAAAAAAAAAP7/EAAAAAAAAAA=")
 tile_set = ExtResource("4_5b15h")
 
 [node name="TileMapLayerSides" type="TileMapLayer" parent="." unique_id=2104830140]
 z_index = -2
 z_as_relative = false
 scale = Vector2(0.6, 0.6)
-tile_map_data = PackedByteArray("AAAFAP//FAAAAAAAAAAFAAAAFAAAAAAAAAAFAAEAEgAAAAAAAAAFAP7/EwAAAAAAAAD///7/AQAAAAAAAAD/////AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAFAP//FAAAAAAAAAAFAAAAEgAAAAAAAAAFAP7/EwAAAAAAAAAAAP7/AQAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAAAAAAAAAAA=")
 tile_set = ExtResource("4_5b15h")
 
 [node name="RoomPhysicsBounds" type="StaticBody2D" parent="." unique_id=271627776]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1251044420]
 build_mode = 1
-polygon = PackedVector2Array(1199, -352, 1202, 713, -2, 721, 1, -360)
+polygon = PackedVector2Array(1199, -352, 1201, 359, 244, 357, 245, -357)
+
+[node name="Desk" parent="." unique_id=892621697 instance=ExtResource("4_weotp")]
+position = Vector2(475, -63)
+
+[node name="ProximityInspectionComponent" parent="Desk" unique_id=368491059 instance=ExtResource("5_0wi5p")]
+position = Vector2(8, -114)
+flavor_text_id = "owen_desk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desk/ProximityInspectionComponent" unique_id=667829023]
+position = Vector2(-8, 136)
+shape = SubResource("RectangleShape2D_j34qf")
+
+[node name="CargoShelf" parent="." unique_id=462188294 instance=ExtResource("6_h60fi")]
+position = Vector2(1131, -175)
+
+[node name="CargoCrate" parent="CargoShelf" unique_id=523836031 instance=ExtResource("7_h5ygg")]
+y_sort_enabled = false
+position = Vector2(0, -195)
+
+[node name="CargoCrate2" parent="CargoShelf" unique_id=1387416426 instance=ExtResource("7_h5ygg")]
+y_sort_enabled = false
+position = Vector2(1, -114)
+
+[node name="CargoCrate" parent="." unique_id=1987721192 instance=ExtResource("8_weotp")]
+position = Vector2(298, -301)
+
+[node name="CargoCrate2" parent="." unique_id=1935474180 instance=ExtResource("8_weotp")]
+position = Vector2(412, -301)
+
+[node name="CargoCrate4" parent="." unique_id=1715128334 instance=ExtResource("8_weotp")]
+position = Vector2(1024, 332)
+
+[node name="CargoCrate5" parent="." unique_id=900655085 instance=ExtResource("8_weotp")]
+position = Vector2(435, 330)
+
+[node name="CargoCrate8" parent="." unique_id=319042625 instance=ExtResource("8_weotp")]
+position = Vector2(1144, 59)
+
+[node name="CargoCrate6" parent="." unique_id=253262389 instance=ExtResource("8_weotp")]
+position = Vector2(319, 329)
+
+[node name="CargoCrate7" parent="." unique_id=1621877609 instance=ExtResource("8_weotp")]
+position = Vector2(1144, 122)
+
+[node name="ProximityInspectionComponent" parent="CargoCrate7" unique_id=832538954 instance=ExtResource("5_0wi5p")]
+position = Vector2(3, -92)
+flavor_text_id = "owen_crate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CargoCrate7/ProximityInspectionComponent" unique_id=559867135]
+position = Vector2(-8, 67)
+shape = SubResource("CircleShape2D_bsad5")
+
+[node name="CargoCrate3" parent="." unique_id=1013657482 instance=ExtResource("8_weotp")]
+z_index = 1
+position = Vector2(355, -379)
+
+[node name="Overgrowth" type="Node2D" parent="." unique_id=946909139]
+y_sort_enabled = true
+position = Vector2(0, 1)
+
+[node name="lilguy15" parent="Overgrowth" unique_id=86382574 instance=ExtResource("9_w2lbu")]
+position = Vector2(557, -7)
+
+[node name="lilguy17" parent="Overgrowth" unique_id=1811513276 instance=ExtResource("9_w2lbu")]
+position = Vector2(716, -276)
+
+[node name="lilguy16" parent="Overgrowth" unique_id=1806170580 instance=ExtResource("9_w2lbu")]
+position = Vector2(1072, -114)
+
+[node name="lilguy3" parent="Overgrowth" unique_id=1723558456 instance=ExtResource("10_aegkf")]
+position = Vector2(840, 338)
+
+[node name="lilguy9" parent="Overgrowth" unique_id=95935453 instance=ExtResource("10_aegkf")]
+position = Vector2(957, -5)
+
+[node name="lilguy5" parent="Overgrowth" unique_id=590266428 instance=ExtResource("10_aegkf")]
+position = Vector2(596, -370)
+
+[node name="lilguy4" parent="Overgrowth" unique_id=428783225 instance=ExtResource("11_yjwjt")]
+position = Vector2(845, -183)
+
+[node name="lilguy6" parent="Overgrowth" unique_id=965769538 instance=ExtResource("11_yjwjt")]
+position = Vector2(594, 180)
+rotation = 3.1415927
+
+[node name="root1" parent="Overgrowth" unique_id=729065241 instance=ExtResource("12_o2hmf")]
+position = Vector2(1071, 195)
+
+[node name="lilguy7" parent="Overgrowth" unique_id=776932571 instance=ExtResource("13_5mtks")]
+position = Vector2(1011, -349)
+
+[node name="lilguy8" parent="Overgrowth" unique_id=1043851896 instance=ExtResource("13_5mtks")]
+position = Vector2(380, 9)

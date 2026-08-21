@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="6_atgn6"]
 [ext_resource type="PackedScene" uid="uid://dbus6u310w6ph" path="res://structures/flavor/notes/notes.tscn" id="7_b67v1"]
 [ext_resource type="PackedScene" uid="uid://b5k28b8t1vjyy" path="res://components/proximity_inspection_component/proximity_inspection_component.tscn" id="8_a5ixg"]
+[ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="8_dv243"]
+[ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="9_j1283"]
+[ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="10_ppase"]
+[ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="11_btbm8"]
+[ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="12_vmm4a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dwk4r"]
 radius = 94.00532
@@ -61,3 +66,35 @@ flavor_text_id = "cargo_crate_flavor"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomPhysicsBounds/Desk/Notes/ProximityInspectionComponent" unique_id=1974502498]
 position = Vector2(0, 120)
 shape = SubResource("CircleShape2D_dwk4r")
+
+[node name="Overgrowth" type="Node2D" parent="." unique_id=465663145]
+y_sort_enabled = true
+position = Vector2(0, 2)
+
+[node name="lilguy15" parent="Overgrowth" unique_id=86382574 instance=ExtResource("8_dv243")]
+position = Vector2(-67, -264)
+
+[node name="lilguy16" parent="Overgrowth" unique_id=1369953648 instance=ExtResource("8_dv243")]
+position = Vector2(424, -13)
+
+[node name="lilguy3" parent="Overgrowth" unique_id=1548387818 instance=ExtResource("9_j1283")]
+position = Vector2(371, -371)
+
+[node name="lilguy5" parent="Overgrowth" unique_id=1548404235 instance=ExtResource("9_j1283")]
+position = Vector2(-118, 338)
+
+[node name="lilguy4" parent="Overgrowth" unique_id=1470193629 instance=ExtResource("10_ppase")]
+position = Vector2(-123, 88)
+
+[node name="lilguy6" parent="Overgrowth" unique_id=1050782148 instance=ExtResource("10_ppase")]
+position = Vector2(364, 185)
+rotation = 1.5707964
+
+[node name="root1" parent="Overgrowth" unique_id=1134960270 instance=ExtResource("11_btbm8")]
+position = Vector2(-25, -121)
+
+[node name="lilguy7" parent="Overgrowth" unique_id=971666063 instance=ExtResource("12_vmm4a")]
+position = Vector2(122, -266)
+
+[node name="lilguy8" parent="Overgrowth" unique_id=692847914 instance=ExtResource("12_vmm4a")]
+position = Vector2(253, 90)

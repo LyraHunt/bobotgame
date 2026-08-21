@@ -6,6 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://djfuhdxla6o6i" path="res://structures/decor/quarters_decor/bed.tscn" id="4_tdtq0"]
 [ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="5_unrar"]
 [ext_resource type="PackedScene" uid="uid://dbus6u310w6ph" path="res://structures/flavor/notes/notes.tscn" id="6_4tubf"]
+[ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="7_j4xh0"]
+[ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="8_mrot3"]
+[ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="9_4gh7g"]
+[ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="10_mmt3y"]
+[ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="11_ue5o5"]
+[ext_resource type="PackedScene" uid="uid://8ohd48nd0yjy" path="res://structures/decor/greenhouse_decor/planter box/planter_box.tscn" id="12_4gh7g"]
+[ext_resource type="PackedScene" uid="uid://b5k28b8t1vjyy" path="res://components/proximity_inspection_component/proximity_inspection_component.tscn" id="13_mmt3y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsad5"]
+radius = 106.56923
 
 [node name="NatashaQuarters" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -51,3 +61,46 @@ position = Vector2(-126, -143)
 z_index = -1
 position = Vector2(320, -258)
 rotation = -0.2548489
+
+[node name="Overgrowth" type="Node2D" parent="." unique_id=1665341804]
+y_sort_enabled = true
+position = Vector2(0, 2)
+
+[node name="lilguy15" parent="Overgrowth" unique_id=86382574 instance=ExtResource("7_j4xh0")]
+position = Vector2(-35, -89)
+
+[node name="lilguy16" parent="Overgrowth" unique_id=1493724098 instance=ExtResource("7_j4xh0")]
+position = Vector2(362, -2)
+
+[node name="lilguy3" parent="Overgrowth" unique_id=396891191 instance=ExtResource("8_mrot3")]
+position = Vector2(-113, 338)
+
+[node name="lilguy5" parent="Overgrowth" unique_id=1767320510 instance=ExtResource("8_mrot3")]
+position = Vector2(125, -366)
+
+[node name="lilguy4" parent="Overgrowth" unique_id=1554786853 instance=ExtResource("9_4gh7g")]
+position = Vector2(246, 82)
+
+[node name="lilguy6" parent="Overgrowth" unique_id=1616762992 instance=ExtResource("9_4gh7g")]
+position = Vector2(362, 182)
+rotation = 1.5707964
+
+[node name="root1" parent="Overgrowth" unique_id=476459129 instance=ExtResource("10_mmt3y")]
+position = Vector2(-99, 99)
+
+[node name="lilguy7" parent="Overgrowth" unique_id=44027568 instance=ExtResource("11_ue5o5")]
+position = Vector2(-111, -355)
+
+[node name="lilguy8" parent="Overgrowth" unique_id=36019727 instance=ExtResource("11_ue5o5")]
+position = Vector2(244, -101)
+
+[node name="PlanterBox" parent="." unique_id=1588456151 instance=ExtResource("12_4gh7g")]
+position = Vector2(363, 327)
+
+[node name="ProximityInspectionComponent" parent="PlanterBox" unique_id=368491059 instance=ExtResource("13_mmt3y")]
+position = Vector2(0, -120)
+flavor_text_id = "natasha_plant_box"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanterBox/ProximityInspectionComponent" unique_id=847145210]
+position = Vector2(1, 72)
+shape = SubResource("CircleShape2D_bsad5")

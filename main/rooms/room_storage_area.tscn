@@ -6,7 +6,11 @@
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="6_5gw6j"]
 [ext_resource type="PackedScene" uid="uid://j1kp2cxbjq4m" path="res://structures/decor/cargo_shelf/cargo_shelf.tscn" id="7_bdem1"]
 [ext_resource type="PackedScene" uid="uid://c800r2teiclqk" path="res://structures/decor/cargo_crate_sprite/cargo_crate_sprite.tscn" id="8_0ykqe"]
+[ext_resource type="PackedScene" uid="uid://b5k28b8t1vjyy" path="res://components/proximity_inspection_component/proximity_inspection_component.tscn" id="8_eb511"]
 [ext_resource type="PackedScene" uid="uid://ctw0xedmi8cm8" path="res://structures/mechanics/side_doorway/side_doorway.tscn" id="9_es08y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsad5"]
+radius = 97.6166
 
 [node name="StorageArea" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -121,6 +125,14 @@ position = Vector2(0, -195)
 [node name="CargoCrate2" parent="shelf row 2/CargoShelf4" unique_id=1764521781 instance=ExtResource("8_0ykqe")]
 y_sort_enabled = false
 position = Vector2(1, -114)
+
+[node name="ProximityInspectionComponent" parent="shelf row 2/CargoShelf4/CargoCrate2" unique_id=368491059 instance=ExtResource("8_eb511")]
+position = Vector2(-1, -81)
+flavor_text_id = "cargo_box_one"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf row 2/CargoShelf4/CargoCrate2/ProximityInspectionComponent" unique_id=702995251]
+position = Vector2(-2, 59)
+shape = SubResource("CircleShape2D_bsad5")
 
 [node name="CargoShelf5" parent="shelf row 2" unique_id=1267582054 instance=ExtResource("7_bdem1")]
 position = Vector2(762, -2)

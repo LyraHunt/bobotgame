@@ -5,6 +5,7 @@
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="3_cqk5b"]
 [ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="5_x8noy"]
 [ext_resource type="PackedScene" uid="uid://c0ronkg0mfkqy" path="res://structures/decor/quarters_decor/bed_other_way.tscn" id="6_dwism"]
+[ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="6_s1t6q"]
 
 [node name="OwenQuarters" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -44,3 +45,7 @@ position = Vector2(353, -90)
 
 [node name="BedOtherWay" parent="." unique_id=96573843 instance=ExtResource("6_dwism")]
 position = Vector2(-142, 154)
+
+[node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("6_s1t6q")]
+position = Vector2(335, -190)
+memory_id = 2

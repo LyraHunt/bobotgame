@@ -1,3 +1,4 @@
 join char_greenhouse_bot center
 [style name="flavor_style"]
 char_greenhouse_bot: This is the station’s main power source. It’s locked with a four-part password, but if I could figure that out, maybe I could find a way to temporarily restore power...
+[text_input allow_empty="true"]

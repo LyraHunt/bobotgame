@@ -51,6 +51,12 @@ height = 256
 fill_from = Vector2(1, 0)
 fill_to = Vector2(0.25213677, 0)
 
+[sub_resource type="Gradient" id="Gradient_n6x0s"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a3ktg"]
+gradient = SubResource("Gradient_n6x0s")
+
 [node name="Greenhouse" type="Node2D" unique_id=1292530247]
 y_sort_enabled = true
 
@@ -520,12 +526,20 @@ position = Vector2(-1326, 395.00003)
 scale = Vector2(2, 1.95)
 texture = ExtResource("24_iced8")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1482187743]
+[node name="GradientLight" type="PointLight2D" parent="." unique_id=1482187743]
 position = Vector2(-896, 148.00002)
 rotation = 0.22996058
 scale = Vector2(12.787218, 15.451425)
 color = Color(1, 1, 0.76862746, 1)
-energy = 2.0
+energy = 1.8
 range_item_cull_mask = 5
 texture = SubResource("GradientTexture2D_r5iys")
 metadata/_edit_lock_ = true
+
+[node name="FullLight" type="PointLight2D" parent="." unique_id=929011122]
+position = Vector2(-344.00003, 282.00003)
+scale = Vector2(80, 60)
+color = Color(1, 1, 0.76862746, 1)
+energy = 0.3
+range_item_cull_mask = 7
+texture = SubResource("GradientTexture2D_a3ktg")

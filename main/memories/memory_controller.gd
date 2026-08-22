@@ -39,7 +39,9 @@ func _ready() -> void:
 			#	return
 			Dialogic.start(GameData.memory_timelines[GameData.Memory.LAB])  
 	
-	SoundManager.play_music((SRM as SoundResourceManager).get_sound("memory_start")).volume_db = -60
+	var music: AudioStreamPlayer = SoundManager.play_music((SRM as SoundResourceManager).get_sound("memory_start"))
+	await get_tree().process_frame
+	music.volume_db = -8
 
 
 
@@ -54,5 +56,5 @@ func memory_ended() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape_key"):
 		if Dialogic.current_timeline != null:
-			Dialogic.end_timeline()
 			memory_ended()
+			Dialogic.end_timeline()

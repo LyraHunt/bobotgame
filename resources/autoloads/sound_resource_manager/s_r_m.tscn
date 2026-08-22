@@ -9,6 +9,13 @@
 [ext_resource type="AudioStream" uid="uid://62tixkjqal3f" path="res://structures/mechanics/doorway/door_open_two.mp3" id="7_4xhyy"]
 [ext_resource type="AudioStream" uid="uid://dx14bjmmgh7ge" path="res://characters/bobot/sprites/bobot_die.mp3" id="8_4xhyy"]
 [ext_resource type="AudioStream" uid="uid://eqmfms0h3vqq" path="res://ui/casettes ui/memory_bank_play.mp3" id="9_b53ws"]
+[ext_resource type="AudioStream" uid="uid://bo6p6v62e8w4t" path="res://ui/casettes ui/Memory Collected.mp3" id="10_i3qp0"]
+[ext_resource type="AudioStream" uid="uid://cln62xrqtrdw3" path="res://characters/bobot/sprites/metal_footsteps_short.mp3" id="11_661h1"]
+
+[sub_resource type="Resource" id="Resource_rxdsk"]
+script = ExtResource("2_qpb0q")
+sounds = Array[AudioStream]([ExtResource("10_i3qp0")])
+metadata/_custom_type_script = "uid://bh08fsqvg3562"
 
 [sub_resource type="Resource" id="Resource_qpb0q"]
 script = ExtResource("2_qpb0q")
@@ -25,11 +32,6 @@ script = ExtResource("2_qpb0q")
 sounds = Array[AudioStream]([ExtResource("4_duaue")])
 metadata/_custom_type_script = "uid://bh08fsqvg3562"
 
-[sub_resource type="Resource" id="Resource_obths"]
-script = ExtResource("2_qpb0q")
-sounds = Array[AudioStream]([ExtResource("6_x60cc"), ExtResource("7_4xhyy")])
-metadata/_custom_type_script = "uid://bh08fsqvg3562"
-
 [sub_resource type="Resource" id="Resource_b4vhw"]
 script = ExtResource("2_qpb0q")
 sounds = Array[AudioStream]([ExtResource("8_4xhyy")])
@@ -40,9 +42,21 @@ script = ExtResource("2_qpb0q")
 sounds = Array[AudioStream]([ExtResource("9_b53ws")])
 metadata/_custom_type_script = "uid://bh08fsqvg3562"
 
+[sub_resource type="Resource" id="Resource_obths"]
+script = ExtResource("2_qpb0q")
+sounds = Array[AudioStream]([ExtResource("6_x60cc"), ExtResource("7_4xhyy")])
+metadata/_custom_type_script = "uid://bh08fsqvg3562"
+
+[sub_resource type="Resource" id="Resource_ke3xm"]
+script = ExtResource("2_qpb0q")
+sounds = Array[AudioStream]([ExtResource("11_661h1")])
+metadata/_custom_type_script = "uid://bh08fsqvg3562"
+
 [node name="SRM" type="Node" unique_id=1279880996]
 script = ExtResource("1_05uwb")
 sound_lists = Dictionary[String, ExtResource("2_qpb0q")]({
+"bobot_footsteps": SubResource("Resource_ke3xm"),
+"casette_collected": SubResource("Resource_rxdsk"),
 "escape": SubResource("Resource_qpb0q"),
 "lab": SubResource("Resource_mtad7"),
 "memory_start": SubResource("Resource_i3uv8"),

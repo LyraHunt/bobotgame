@@ -25,24 +25,36 @@ var start_casette_timer: SceneTreeTimer
 var eepy_tween: Tween
 var camera: Camera
 
+var is_playing_footsteps: bool = false
+#var footsteps_audiostream: AudioStreamPlayer
+
 func _ready() -> void:
 	#start_charge(GameData.power_stations[GameData.bobot_last_power_station])
 	GameLogic.power_stations_initialized.connect(_start_charge_on_load)
 	camera = get_tree().get_first_node_in_group("camera")
+	SoundManager.stop_sound((SRM as SoundResourceManager).get_sound("casette_collected"))
+	
+	if GameData.queue_first_memory:
+		GameData.queue_first_memory = false
+		switch_to_memory(GameData.Memory.GREENHOUSE)
+	else:
+		SoundManager.set_default_music_bus("Music")
+		SoundManager.set_default_sound_bus("SoundEffects")
+		SoundManager.play_music((SRM as SoundResourceManager).get_sound("lab"))
 
 func _start_charge_on_load() -> void:
 	#add_memory(GameData.Memory.GREENHOUSE)
 	start_charge(GameData.power_stations[GameData.bobot_last_power_station])
 
 func add_memory(memory_id: GameData.Memory) -> void:
-	#var casette_popup_timer: SceneTreeTimer = get_tree().create_timer(2).timeout.connect(close_casette_popup)
-	casette_popup_timer = get_tree().create_timer(2.5)
-	casette_popup_timer.timeout.connect(close_casette_popup)
-	
 	casette_popup.visible = true
 	casette_popup.set_casette_and_animate(memory_id)
 	GameLogic.state = GameLogic.State.POPUP
 	GameData.pending_memories.append(memory_id)
+	SoundManager.play_sound((SRM as SoundResourceManager).get_sound("casette_collected")).volume_db = -8
+	
+	casette_popup_timer = get_tree().create_timer(2.5)
+	casette_popup_timer.timeout.connect(close_casette_popup)
 
 func close_casette_popup() -> void:
 	casette_popup.visible = false
@@ -157,6 +169,15 @@ func _handle_movement_input() -> void:
 			animated_sprite.animation = "walk_right"
 		elif x_direction < 0:
 			animated_sprite.animation = "walk_left"
+		
+		if not is_playing_footsteps:
+			var footsteps: AudioStreamPlayer = SoundManager.play_sound((SRM as SoundResourceManager).get_sound("bobot_footsteps"))
+			is_playing_footsteps = true
+			await get_tree().process_frame
+			footsteps.volume_db = -4
+			#footsteps.stop()
+			footsteps.play(randf_range(0.0, 3.0))
+		
 		idle_timer.start(4)
 		
 	
@@ -166,6 +187,10 @@ func _handle_movement_input() -> void:
 		if animated_sprite.animation.contains("walk_"):
 			var animation_suffix: String = animated_sprite.animation.split("_")[1]
 			animated_sprite.animation = "stand_" + animation_suffix
+		
+		if is_playing_footsteps:
+			SoundManager.stop_sound((SRM as SoundResourceManager).get_sound("bobot_footsteps"))
+			is_playing_footsteps = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	match GameLogic.state:

@@ -57,10 +57,14 @@ scene = ExtResource("9_ad17q")
 script = ExtResource("2_hgdie")
 scene = ExtResource("10_4o7oj")
 
+[sub_resource type="Resource" id="Resource_4o7oj"]
+script = ExtResource("2_hgdie")
+scene = ExtResource("9_ad17q")
+
 [resource]
 script = ExtResource("11_xvr77")
 name = "default_style"
-layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
+layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17", "18"])
 layer_info = {
 "": SubResource("Resource_apsgp"),
 "10": SubResource("Resource_hgdie"),
@@ -70,6 +74,7 @@ layer_info = {
 "14": SubResource("Resource_tysok"),
 "15": SubResource("Resource_3nuel"),
 "16": SubResource("Resource_7fcxu"),
-"17": SubResource("Resource_ad17q")
+"17": SubResource("Resource_ad17q"),
+"18": SubResource("Resource_4o7oj")
 }
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "16"

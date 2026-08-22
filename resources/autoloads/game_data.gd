@@ -40,6 +40,7 @@ var bobot_last_power_station: int
 
 var pending_memories: Array[Memory] = []
 var acquired_memories: Array[Memory] = []
+var queue_first_memory: bool = true
 #var acquired_memories: Array[Memory] = [Memory.GREENHOUSE, Memory.STORAGE_AREA, Memory.LAB]
 #var acquired_memories: Array[Memory] = [Memory.STORAGE_AREA, Memory.LAB, Memory.ALICE_QUARTERS]
 
@@ -67,6 +68,8 @@ var actual_progress: Dictionary[String, bool] = {
 # flavor text stuff
 var flavor_text_folder: String = "res://resources/dialogic stuffs/flavor_texts/"
 
+var debug_mode: bool = true
+
 func add_power_station_id(new_id: int, power_station: PowerStation) -> void:
 	power_stations.set(new_id, power_station)
 	if power_stations.keys().size() == power_station_count:
@@ -88,4 +91,13 @@ func save_progression() -> void:
 	pending_progress = actual_progress.duplicate()
 
 func _ready() -> void:
-	bobot_last_power_station = 0
+	if debug_mode:
+		actual_progress["has_quarters_passkey"] = true
+		actual_progress["has_lab_passkey"] = true
+		bobot_last_power_station = 1
+		queue_first_memory = false
+	
+	else:
+		bobot_last_power_station = 0
+		acquired_memories.append(Memory.GREENHOUSE)
+		queue_first_memory = true

@@ -11,6 +11,7 @@ class_name Bobot extends CharacterBody2D
 
 @onready var charge_label: RichTextLabel = get_node("CanvasLayer/RichTextLabel")
 @onready var casette_popup: CasettePopup = get_node("CanvasLayer/CasettePopup")
+@onready var document_popup: DocumentPopup = get_node("CanvasLayer/DocumentPopup")
 @onready var memory_ui: MemoryUI = get_node("CanvasLayer/MemoryUI")
 @onready var vignette: Control = get_node("CanvasLayer/BobotVignette")
 @onready var interaction_icon: TextureRect = get_node("CanvasLayer/InteractionIcon")
@@ -49,7 +50,7 @@ func _start_charge_on_load() -> void:
 func add_memory(memory_id: GameData.Memory) -> void:
 	casette_popup.visible = true
 	casette_popup.set_casette_and_animate(memory_id)
-	GameLogic.state = GameLogic.State.POPUP
+	GameLogic.change_state(GameLogic.State.POPUP)
 	GameData.pending_memories.append(memory_id)
 	SoundManager.play_sound((SRM as SoundResourceManager).get_sound("casette_collected")).volume_db = -8
 	
@@ -58,7 +59,21 @@ func add_memory(memory_id: GameData.Memory) -> void:
 
 func close_casette_popup() -> void:
 	casette_popup.visible = false
-	GameLogic.state = GameLogic.State.EXPLORING
+	GameLogic.change_state(GameLogic.State.EXPLORING)
+
+func add_document(document_id: GameData.Document) -> void:
+	document_popup.visible = true
+	document_popup.set_document_and_animate(document_id)
+	GameLogic.change_state(GameLogic.State.POPUP)
+	GameData.pending_documents.append(document_id)
+	SoundManager.play_sound((SRM as SoundResourceManager).get_sound("casette_collected")).volume_db = -8
+	
+	casette_popup_timer = get_tree().create_timer(2.5)
+	casette_popup_timer.timeout.connect(close_document_popup)
+
+func close_document_popup() -> void:
+	document_popup.visible = false
+	GameLogic.change_state(GameLogic.State.EXPLORING)
 
 func start_charge(power_station: PowerStation) -> void:
 	global_position = power_station.global_position
@@ -77,6 +92,12 @@ func start_charge(power_station: PowerStation) -> void:
 	GameData.acquired_memories.sort()
 	GameData.pending_memories = []
 	
+	# move documents from pending to acquired
+	for document: GameData.Document in GameData.pending_documents:
+		GameData.acquired_documents.append(document)
+	GameData.acquired_documents.sort()
+	GameData.pending_documents = []
+	
 	GameData.save_progression()
 	
 	# show memory ui
@@ -85,6 +106,7 @@ func start_charge(power_station: PowerStation) -> void:
 	memory_ui.update_display()
 
 func stop_charge() -> void:
+	#print("stop charge")
 	memory_ui.hide_display()
 	GameLogic.change_state(GameLogic.State.EXPLORING)
 

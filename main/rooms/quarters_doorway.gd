@@ -21,11 +21,11 @@ func enter() -> void:
 
 func show_flavor_text() -> void:
 	if GameLogic.state == GameLogic.State.EXPLORING and GameData.flavor_text_exists(flavor_text_id):
-		GameLogic.state = GameLogic.State.FLAVOR
+		GameLogic.change_state(GameLogic.State.FLAVOR)
 		
 		if Dialogic.current_timeline != null:
 			return
 		GameData.play_flavor_timeline(flavor_text_id)
 		
 		await Dialogic.timeline_ended
-		GameLogic.state = GameLogic.State.EXPLORING
+		GameLogic.change_state(GameLogic.State.EXPLORING)

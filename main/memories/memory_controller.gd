@@ -50,7 +50,7 @@ func memory_ended() -> void:
 	await Dialogic.timeline_ended
 	GameData.bobot_charge = GameData.bobot_max_charge
 	
-	GameLogic.state = GameLogic.State.CHARGING
+	GameLogic.change_state(GameLogic.State.CHARGING)
 	GameLogic.change_scene(GameData.world_scene)
 
 func _unhandled_input(event: InputEvent) -> void:

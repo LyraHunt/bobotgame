@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cooufmusuhqsl" path="res://components/dynamic_hotkey/dynamic_hotkey_component.tscn" id="5_pxaqk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r5iys"]
-radius = 50.0
+radius = 66.007576
 
 [node name="Cable" type="Node2D" unique_id=512886027]
 y_sort_enabled = true

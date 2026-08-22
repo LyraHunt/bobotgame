@@ -6,13 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="5_8meb7"]
 [ext_resource type="PackedScene" uid="uid://b8fcyu8dg3h31" path="res://structures/mechanics/keycards/lab_keycard.tscn" id="5_nklh8"]
 [ext_resource type="PackedScene" uid="uid://c0ronkg0mfkqy" path="res://structures/decor/quarters_decor/bed_other_way.tscn" id="5_uql4g"]
-[ext_resource type="PackedScene" uid="uid://dbus6u310w6ph" path="res://structures/flavor/notes/notes.tscn" id="6_q7tyn"]
 [ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="7_wwlii"]
+[ext_resource type="PackedScene" uid="uid://dgjsmmyh7rubc" path="res://structures/mechanics/documents/document.tscn" id="8_f0pn8"]
 [ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="8_nklh8"]
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="9_4id7v"]
 [ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="10_f0pn8"]
 [ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="11_kacqt"]
 [ext_resource type="PackedScene" uid="uid://cwxdcswacspiv" path="res://structures/decor/overgrowth/wall_creep_1.tscn" id="13_4id7v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi563"]
+size = Vector2(125.177826, 165.99997)
 
 [node name="RoseQuarters" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -58,9 +61,16 @@ position = Vector2(-120, -9)
 [node name="LabKeycard" parent="Desk" unique_id=512886027 instance=ExtResource("5_nklh8")]
 position = Vector2(-31, -79)
 
-[node name="Notes" parent="Desk/LabKeycard" unique_id=882252241 instance=ExtResource("6_q7tyn")]
-position = Vector2(-23, 13)
-rotation = -0.5861407
+[node name="Document" parent="Desk" unique_id=2045725498 instance=ExtResource("8_f0pn8")]
+position = Vector2(-54, -66)
+
+[node name="Sprite2D" parent="Desk/Document" index="0" unique_id=917366805]
+rotation = -0.5864306
+
+[node name="CollisionShape2D" parent="Desk/Document/ProximityInteractionComponent" parent_id_path=PackedInt32Array(2045725498, 606314739) index="0" unique_id=807831631]
+position = Vector2(7.588928, 48)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_qi563")
 
 [node name="Overgrowth" type="Node2D" parent="." unique_id=261605161]
 y_sort_enabled = true
@@ -93,3 +103,5 @@ position = Vector2(241, 88)
 
 [node name="wallCreep1" parent="Overgrowth" unique_id=828645694 instance=ExtResource("13_4id7v")]
 position = Vector2(-94, -363)
+
+[editable path="Desk/Document"]

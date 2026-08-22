@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cowricmvcl3ke"]
+
+[ext_resource type="Script" uid="uid://fsqogomadijw" path="res://structures/mechanics/documents/document_popup.gd" id="1_8wr1s"]
+[ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="2_ueun4"]
+[ext_resource type="Texture2D" uid="uid://bh8c00vfdanwy" path="res://structures/mechanics/documents/notes-big.PNG" id="3_8wr1s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6qgrn"]
+shader = ExtResource("2_ueun4")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 5.0000002375
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[node name="DocumentPopup" type="Control" unique_id=1315895303]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8wr1s")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1520161245]
+self_modulate = Color(1, 1, 1, 0.5176471)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DocumentTexture" type="TextureRect" parent="." unique_id=1382406272]
+material = SubResource("ShaderMaterial_6qgrn")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1105.0
+offset_top = -985.0
+offset_right = 1062.1638
+offset_bottom = 644.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8wr1s")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2053603865]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.75
+offset_top = -60.0
+offset_right = 247.75
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 200)
+bbcode_enabled = true
+text = "[font_size=60][center]DOCUMENT ACQUIRED"
+fit_content = true

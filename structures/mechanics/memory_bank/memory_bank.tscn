@@ -9,10 +9,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_r5iys"]
 radius = 50.0
 
-[node name="MemoryBank" type="Node2D" unique_id=512886027 node_paths=PackedStringArray("sprites_to_hide")]
+[node name="MemoryBank" type="Node2D" unique_id=512886027]
 y_sort_enabled = true
 script = ExtResource("1_wr4mb")
-sprites_to_hide = [NodePath("Sprite2D")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=917366805]
 material = ExtResource("2_k5cdl")

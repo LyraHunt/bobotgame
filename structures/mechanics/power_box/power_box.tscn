@@ -55,6 +55,10 @@ shape = SubResource("RectangleShape2D_r5iys")
 material = SubResource("ShaderMaterial_a7lj3")
 target_sprite = NodePath("../Sprite2D")
 
+[node name="SecondShaderPassComponentOpened" parent="." unique_id=1211254061 node_paths=PackedStringArray("target_sprite") instance=ExtResource("6_kvwoo")]
+material = SubResource("ShaderMaterial_a7lj3")
+target_sprite = NodePath("../Sprite2DOpened")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=926759350]
 
 [node name="PowerBoxPassword" parent="CanvasLayer" unique_id=529666326 instance=ExtResource("9_nrrnb")]

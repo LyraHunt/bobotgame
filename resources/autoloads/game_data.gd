@@ -2,6 +2,7 @@ extends Node
 
 #enum Memory {GREENHOUSE, STORAGE_AREA, KITCHEN, ALICE_QUARTERS, LAB}
 enum Memory {GREENHOUSE, STORAGE_AREA, ALICE_QUARTERS, LAB}
+enum Document {ALICE, NATASHA, ROSE, GREENHOUSE, WORKSHOP}
 
 var memory_controller_scene: PackedScene = preload("res://main/memories/memory_controller.tscn")
 var world_scene: PackedScene = preload("res://main/world/world.tscn")
@@ -22,6 +23,14 @@ var memory_casette_sprites: Dictionary[Memory, Texture] = {
 	Memory.LAB: preload("res://ui/casettes ui/Research bot cassette.PNG")
 }
 
+var document_sprites: Dictionary[Document, Texture] = {
+	Document.ALICE: preload("res://structures/mechanics/documents/Alice Letter.png"),
+	Document.NATASHA: preload("res://structures/mechanics/documents/Natashas Diary.png"),
+	Document.ROSE: preload("res://structures/mechanics/documents/Rose Letter.png"),
+	Document.GREENHOUSE: preload("res://structures/mechanics/documents/Greenhouse_Note.png"),
+	Document.WORKSHOP: preload("res://structures/mechanics/documents/Workshop Document.png")
+}
+
 var robot_ids: Dictionary[Memory, String] = {
 	Memory.GREENHOUSE: "BT-534-04",
 	Memory.STORAGE_AREA: "CO-56-02",
@@ -40,6 +49,10 @@ var bobot_last_power_station: int
 
 var pending_memories: Array[Memory] = []
 var acquired_memories: Array[Memory] = []
+
+var pending_documents: Array[Document] = []
+var acquired_documents: Array[Document] = []
+
 var queue_first_memory: bool = true
 #var acquired_memories: Array[Memory] = [Memory.GREENHOUSE, Memory.STORAGE_AREA, Memory.LAB]
 #var acquired_memories: Array[Memory] = [Memory.STORAGE_AREA, Memory.LAB, Memory.ALICE_QUARTERS]
@@ -94,6 +107,7 @@ func _ready() -> void:
 	if debug_mode:
 		actual_progress["has_quarters_passkey"] = true
 		actual_progress["has_lab_passkey"] = true
+		actual_progress["opened_power_box"] = false
 		bobot_last_power_station = 1
 		queue_first_memory = false
 	

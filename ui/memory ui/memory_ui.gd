@@ -44,7 +44,9 @@ func update_display() -> void:
 		close_button.grab_focus()
 
 func hide_display() -> void:
+	#print("hide display")
 	get_viewport().gui_release_focus()
+	GameData.casette_is_selected = false
 	visible = false
 
 func memory_selected(memory_id: GameData.Memory) -> void:
@@ -55,6 +57,4 @@ func memory_selected(memory_id: GameData.Memory) -> void:
 
 func _on_close_button_button_down() -> void:
 	get_viewport().set_input_as_handled()
-	print("close")
-	GameData.casette_is_selected = false
 	bobot.stop_charge()

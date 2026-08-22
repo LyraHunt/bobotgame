@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://blsi222gcll5f" path="res://ui/casettes ui/casette_popup.tscn" id="9_obths"]
 [ext_resource type="PackedScene" uid="uid://cqfr74q3xqugw" path="res://ui/memory ui/memory_ui.tscn" id="10_bb0xe"]
 [ext_resource type="PackedScene" uid="uid://ckyoe6ut0owfg" path="res://ui/bobot ui/bobot_vignette.tscn" id="10_xkikd"]
+[ext_resource type="PackedScene" uid="uid://cowricmvcl3ke" path="res://structures/mechanics/documents/document_popup.tscn" id="11_iqcf8"]
 [ext_resource type="PackedScene" uid="uid://h1o5n2y8j01g" path="res://ui/progression_ui/progression_ui.tscn" id="13_ke3xm"]
 
 [sub_resource type="Gradient" id="Gradient_bb0xe"]
@@ -100,6 +101,9 @@ mouse_filter = 1
 [node name="CasettePopup" parent="CanvasLayer" unique_id=492480769 instance=ExtResource("9_obths")]
 visible = false
 mouse_filter = 1
+
+[node name="DocumentPopup" parent="CanvasLayer" unique_id=1315895303 instance=ExtResource("11_iqcf8")]
+visible = false
 
 [node name="BobotVignette" parent="CanvasLayer" unique_id=809498127 instance=ExtResource("10_xkikd")]
 mouse_filter = 1

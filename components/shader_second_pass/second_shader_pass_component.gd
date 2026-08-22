@@ -8,6 +8,7 @@ var target_sprite_dupe: Sprite2D
 var result_sprite: Sprite2D
 
 var is_mirroring: bool = false
+var target_sprite_was_visible: bool = false
 
 func _ready() -> void:
 	if mirror_on_load:
@@ -33,6 +34,7 @@ func start_mirroring() -> void:
 		visible = true
 		offset = target_sprite.offset * target_sprite.scale
 		
+		target_sprite_was_visible = target_sprite.visible
 		target_sprite.visible = false
 	
 
@@ -52,7 +54,7 @@ func stop_mirroring() -> void:
 		texture = null
 		visible = false
 		
-		target_sprite.visible = true
+		target_sprite.visible = target_sprite_was_visible
 
 # for testing
 """func _unhandled_input(event: InputEvent) -> void:

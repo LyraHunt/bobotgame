@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://djyaxwrsd83y4" path="res://components/proximity_interaction/proximity_interaction_component.tscn" id="4_vfyer"]
 [ext_resource type="PackedScene" uid="uid://bu0q4v7mo8lfg" path="res://components/shader_second_pass/second_shader_pass_component.tscn" id="6_kvwoo"]
 [ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="7_qqxco"]
+[ext_resource type="PackedScene" uid="uid://crns1sk5lhrcx" path="res://structures/mechanics/power_box/power_box_password.tscn" id="9_nrrnb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5iys"]
 size = Vector2(201, 43)
@@ -54,5 +55,12 @@ shape = SubResource("RectangleShape2D_r5iys")
 material = SubResource("ShaderMaterial_a7lj3")
 target_sprite = NodePath("../Sprite2D")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=926759350]
+
+[node name="PowerBoxPassword" parent="CanvasLayer" unique_id=529666326 instance=ExtResource("9_nrrnb")]
+visible = false
+
 [connection signal="interacted" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_interacted"]
 [connection signal="selection_update" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]
+[connection signal="closed" from="CanvasLayer/PowerBoxPassword" to="." method="_on_power_box_password_closed"]
+[connection signal="completed" from="CanvasLayer/PowerBoxPassword" to="." method="_on_power_box_password_completed"]

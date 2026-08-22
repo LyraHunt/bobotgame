@@ -75,6 +75,7 @@ directories/dtl_directory={
 "planter_box_three": "res://resources/dialogic stuffs/flavor_texts/planter_box_three.dtl",
 "planter_box_two": "res://resources/dialogic stuffs/flavor_texts/planter_box_two.dtl",
 "power_box_locked": "res://resources/dialogic stuffs/flavor_texts/power_box_locked.dtl",
+"power_box_password": "res://structures/mechanics/power_box/power_box_password.dtl",
 "quarters_doorway_locked": "res://resources/dialogic stuffs/flavor_texts/quarters_doorway_locked.dtl",
 "rose_name_plate": "res://resources/dialogic stuffs/flavor_texts/rose_name_plate.dtl"
 }
@@ -117,6 +118,7 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
+glossary/default_case_sensitive=true
 
 [display]
 

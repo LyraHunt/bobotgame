@@ -327,10 +327,10 @@ position = Vector2(0, -88)
 position = Vector2(421, 99)
 
 [node name="PlanterBox5" parent="PlanterRow1" unique_id=1561852538 instance=ExtResource("7_7ltw3")]
+y_sort_enabled = false
 position = Vector2(-148, -117)
 
 [node name="DeadSparkBulb" parent="PlanterRow1/PlanterBox5" unique_id=1771413083 instance=ExtResource("22_n6x0s")]
-z_index = 1
 position = Vector2(1, -84)
 
 [node name="PlanterBox6" parent="PlanterRow1" unique_id=1475303527 instance=ExtResource("7_7ltw3")]
@@ -385,10 +385,10 @@ position = Vector2(-148, -117)
 position = Vector2(-403, -120)
 
 [node name="PlanterBox7" parent="PlanterRow3" unique_id=223174466 instance=ExtResource("7_7ltw3")]
+y_sort_enabled = false
 position = Vector2(-401, 104)
 
 [node name="DeadBuglemelon" parent="PlanterRow3/PlanterBox7" unique_id=976649334 instance=ExtResource("21_mb6ns")]
-z_index = 1
 position = Vector2(-8, -98)
 
 [node name="PlanterBox8" parent="PlanterRow3" unique_id=1073037710 instance=ExtResource("7_7ltw3")]
@@ -415,10 +415,10 @@ position = Vector2(421, 99)
 position = Vector2(416, -653)
 
 [node name="PlanterBox6" parent="PlanterRow4" unique_id=1916307884 instance=ExtResource("7_7ltw3")]
+y_sort_enabled = false
 position = Vector2(161, -656)
 
 [node name="DeadSparkBulb" parent="PlanterRow4/PlanterBox6" unique_id=308569424 instance=ExtResource("22_n6x0s")]
-z_index = 1
 position = Vector2(1, -84)
 
 [node name="BotanyClutter" parent="PlanterRow4/PlanterBox6" unique_id=1569190255 instance=ExtResource("18_5w0c5")]
@@ -426,20 +426,20 @@ position = Vector2(-67, 51.000015)
 texture = ExtResource("20_0iwav")
 
 [node name="PlanterBox7" parent="PlanterRow4" unique_id=511429887 instance=ExtResource("7_7ltw3")]
+y_sort_enabled = false
 position = Vector2(163, -432)
 
 [node name="DeadSparkBulb" parent="PlanterRow4/PlanterBox7" unique_id=654047444 instance=ExtResource("22_n6x0s")]
-z_index = 1
 position = Vector2(1, -84)
 
 [node name="PlanterBox8" parent="PlanterRow4" unique_id=578443272 instance=ExtResource("7_7ltw3")]
 position = Vector2(418, -435)
 
 [node name="PlanterBox9" parent="PlanterRow4" unique_id=1906726024 instance=ExtResource("7_7ltw3")]
+y_sort_enabled = false
 position = Vector2(408, -1138)
 
 [node name="DeadSparkBulb" parent="PlanterRow4/PlanterBox9" unique_id=1083463358 instance=ExtResource("22_n6x0s")]
-z_index = 1
 position = Vector2(1, -84)
 
 [node name="PlanterBox10" parent="PlanterRow4" unique_id=900560788 instance=ExtResource("7_7ltw3")]
@@ -462,10 +462,10 @@ position = Vector2(419, -119)
 position = Vector2(164, -122)
 
 [node name="PlanterBox3" parent="PlanterRow2" unique_id=1669231562 instance=ExtResource("7_7ltw3")]
+y_sort_enabled = false
 position = Vector2(166, 102)
 
 [node name="DeadSparkBulb" parent="PlanterRow2/PlanterBox3" unique_id=693586839 instance=ExtResource("22_n6x0s")]
-z_index = 1
 position = Vector2(1, -84)
 
 [node name="PlanterBox4" parent="PlanterRow2" unique_id=1471658825 instance=ExtResource("7_7ltw3")]
@@ -543,3 +543,4 @@ color = Color(1, 1, 0.76862746, 1)
 energy = 0.3
 range_item_cull_mask = 7
 texture = SubResource("GradientTexture2D_a3ktg")
+metadata/_edit_lock_ = true

@@ -5,6 +5,7 @@ class_name PowerBox extends StaticBody2D
 
 @onready var hotkey_component: DynamicHotkeyComponent = get_node("DynamicHotkeyComponent")
 @onready var second_shader_pass_component: SecondShaderPassComponent = get_node("SecondShaderPassComponent")
+@onready var password_inputs: Control = get_node("CanvasLayer/PowerBoxPassword")
 
 var bobot: Bobot
 
@@ -16,12 +17,8 @@ func _ready() -> void:
 
 func _on_proximity_interaction_component_interacted() -> void:
 	if not GameData.check_progress("opened_power_box"):
-		if GameData.check_progress("has_power_box_passkey"):
-			bobot = get_tree().get_first_node_in_group("bobot")
-			GameData.pending_progress["opened_power_box"] = true
-			open()
-		else:
-			show_flavor_text()
+		#if not GameData.check_progress("has_power_box_passkey"):
+		show_flavor_text()
 
 func open() -> void:
 	for sprite: Sprite2D in sprites_to_hide:
@@ -50,4 +47,22 @@ func show_flavor_text() -> void:
 		GameData.play_flavor_timeline(flavor_text_id)
 		
 		await Dialogic.timeline_ended
-		GameLogic.state = GameLogic.State.EXPLORING
+		
+		password_inputs.visible = true
+		#Dialogic.start(load())
+		#Dialogic.start_timeline()
+		
+		#GameLogic.state = GameLogic.State.EXPLORING
+
+
+func _on_power_box_password_closed() -> void:
+	password_inputs.visible = false
+	GameLogic.state = GameLogic.State.EXPLORING
+
+
+func _on_power_box_password_completed() -> void:
+	password_inputs.visible = false
+	GameLogic.state = GameLogic.State.EXPLORING
+	
+	GameData.pending_progress["opened_power_box"] = true
+	open()

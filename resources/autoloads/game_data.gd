@@ -33,8 +33,8 @@ var robot_ids: Dictionary[Memory, String] = {
 var power_stations: Dictionary[int, PowerStation] = {}
 var power_station_count: int = 2
 
-var bobot_charge: float = 40.0
-var bobot_max_charge: float = 40.0
+var bobot_charge: float = 50.0
+var bobot_max_charge: float = 50.0
 var bobot_charge_per_sec: float = 10.0
 var bobot_last_power_station: int
 
@@ -50,7 +50,7 @@ var casette_is_selected: bool
 var pending_progress: Dictionary[String, bool] = {
 	"has_quarters_passkey": false,
 	"has_lab_passkey": false,
-	"has_power_box_passkey": false,
+	#"has_power_box_passkey": false,
 	"opened_power_box": false,
 	"picked_up_cable": false,
 	"powered_box": false
@@ -59,7 +59,7 @@ var pending_progress: Dictionary[String, bool] = {
 var actual_progress: Dictionary[String, bool] = {
 	"has_quarters_passkey": false,
 	"has_lab_passkey": false,
-	"has_power_box_passkey": false,
+	#"has_power_box_passkey": false,
 	"opened_power_box": false,
 	"picked_up_cable": false,
 	"powered_box": false

@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="6_tysok"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="7_3nuel"]
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="8_7fcxu"]
-[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="9_ad17q"]
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="10_4o7oj"]
+[ext_resource type="PackedScene" uid="uid://bha5rq3jlrwkh" path="res://resources/dialogic stuffs/styles/SimpleTextInputBox/custom_simple_text_input_box.tscn" id="11_hgdie"]
 [ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_xvr77"]
 
 [sub_resource type="Resource" id="Resource_apsgp"]
@@ -51,20 +51,16 @@ scene = ExtResource("8_7fcxu")
 
 [sub_resource type="Resource" id="Resource_7fcxu"]
 script = ExtResource("2_hgdie")
-scene = ExtResource("9_ad17q")
+scene = ExtResource("11_hgdie")
 
 [sub_resource type="Resource" id="Resource_ad17q"]
 script = ExtResource("2_hgdie")
 scene = ExtResource("10_4o7oj")
 
-[sub_resource type="Resource" id="Resource_4o7oj"]
-script = ExtResource("2_hgdie")
-scene = ExtResource("9_ad17q")
-
 [resource]
 script = ExtResource("11_xvr77")
 name = "default_style"
-layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17", "18"])
+layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
 layer_info = {
 "": SubResource("Resource_apsgp"),
 "10": SubResource("Resource_hgdie"),
@@ -74,7 +70,6 @@ layer_info = {
 "14": SubResource("Resource_tysok"),
 "15": SubResource("Resource_3nuel"),
 "16": SubResource("Resource_7fcxu"),
-"17": SubResource("Resource_ad17q"),
-"18": SubResource("Resource_4o7oj")
+"17": SubResource("Resource_ad17q")
 }
 metadata/_latest_layer = "16"

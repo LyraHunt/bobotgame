@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="9_4id7v"]
 [ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="10_f0pn8"]
 [ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="11_kacqt"]
+[ext_resource type="PackedScene" uid="uid://cwxdcswacspiv" path="res://structures/decor/overgrowth/wall_creep_1.tscn" id="13_4id7v"]
 
 [node name="RoseQuarters" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -87,8 +88,8 @@ rotation = 1.5707964
 [node name="root1" parent="Overgrowth" unique_id=1731267959 instance=ExtResource("10_f0pn8")]
 position = Vector2(-25, -121)
 
-[node name="lilguy7" parent="Overgrowth" unique_id=1270021294 instance=ExtResource("11_kacqt")]
-position = Vector2(-120, -270)
-
 [node name="lilguy8" parent="Overgrowth" unique_id=1718365497 instance=ExtResource("11_kacqt")]
 position = Vector2(241, 88)
+
+[node name="wallCreep1" parent="Overgrowth" unique_id=828645694 instance=ExtResource("13_4id7v")]
+position = Vector2(-94, -363)

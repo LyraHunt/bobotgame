@@ -190,6 +190,18 @@ position = Vector2(223, 16)
 [node name="lilguy13" parent="Overgrowth" unique_id=537680333 instance=ExtResource("11_mb6ns")]
 position = Vector2(9, 724)
 
+[node name="lilguy20" parent="Overgrowth" unique_id=2114669352 instance=ExtResource("11_mb6ns")]
+position = Vector2(-828, 526)
+
+[node name="lilguy21" parent="Overgrowth" unique_id=1124363707 instance=ExtResource("11_mb6ns")]
+position = Vector2(-1322, 5)
+
+[node name="lilguy22" parent="Overgrowth" unique_id=418537395 instance=ExtResource("11_mb6ns")]
+position = Vector2(-1077, 1348)
+
+[node name="lilguy23" parent="Overgrowth" unique_id=2105502571 instance=ExtResource("11_mb6ns")]
+position = Vector2(-721, 811)
+
 [node name="lilguy1" parent="Overgrowth" unique_id=179358380 instance=ExtResource("12_n6x0s")]
 position = Vector2(497, -194)
 
@@ -205,11 +217,35 @@ position = Vector2(-354, 1066)
 [node name="lilguy12" parent="Overgrowth" unique_id=435758120 instance=ExtResource("12_n6x0s")]
 position = Vector2(465, 1414)
 
+[node name="lilguy24" parent="Overgrowth" unique_id=1730611212 instance=ExtResource("12_n6x0s")]
+position = Vector2(-839, 1417)
+
+[node name="lilguy25" parent="Overgrowth" unique_id=921036796 instance=ExtResource("12_n6x0s")]
+position = Vector2(-954, 749)
+
+[node name="lilguy26" parent="Overgrowth" unique_id=1776147716 instance=ExtResource("12_n6x0s")]
+position = Vector2(-1085, -275)
+
 [node name="lilguy4" parent="Overgrowth" unique_id=1865311761 instance=ExtResource("13_l3e06")]
 position = Vector2(-120, -183)
 
+[node name="lilguy16" parent="Overgrowth" unique_id=755135385 instance=ExtResource("13_l3e06")]
+position = Vector2(-1320, 356)
+
+[node name="lilguy17" parent="Overgrowth" unique_id=467194276 instance=ExtResource("13_l3e06")]
+position = Vector2(-599, 546)
+rotation = 1.5707964
+
+[node name="lilguy18" parent="Overgrowth" unique_id=728731566 instance=ExtResource("13_l3e06")]
+position = Vector2(-1201, 1077)
+rotation = -1.5707964
+
 [node name="lilguy5" parent="Overgrowth" unique_id=1979799083 instance=ExtResource("13_l3e06")]
 position = Vector2(236, 354)
+rotation = -3.1415927
+
+[node name="lilguy19" parent="Overgrowth" unique_id=223014190 instance=ExtResource("13_l3e06")]
+position = Vector2(-608, 1351)
 rotation = -3.1415927
 
 [node name="lilguy10" parent="Overgrowth" unique_id=1294944433 instance=ExtResource("13_l3e06")]
@@ -226,6 +262,12 @@ position = Vector2(-22, 8)
 [node name="root2" parent="Overgrowth" unique_id=910409659 instance=ExtResource("14_o8vjc")]
 position = Vector2(501, 604)
 
+[node name="root4" parent="Overgrowth" unique_id=840496211 instance=ExtResource("14_o8vjc")]
+position = Vector2(-1206, 840)
+
+[node name="root5" parent="Overgrowth" unique_id=2065659918 instance=ExtResource("14_o8vjc")]
+position = Vector2(-784, -299)
+
 [node name="root3" parent="Overgrowth" unique_id=1736123733 instance=ExtResource("14_o8vjc")]
 position = Vector2(-311, 1354)
 flip_h = true
@@ -233,11 +275,20 @@ flip_h = true
 [node name="lilguy7" parent="Overgrowth" unique_id=1614045049 instance=ExtResource("15_ephht")]
 position = Vector2(-85, 398)
 
+[node name="lilguy14" parent="Overgrowth" unique_id=1204659462 instance=ExtResource("15_ephht")]
+position = Vector2(-1197, 272)
+
+[node name="lilguy15" parent="Overgrowth" unique_id=2023099826 instance=ExtResource("15_ephht")]
+position = Vector2(-609, 990)
+
 [node name="lilguy8" parent="Overgrowth" unique_id=1540774221 instance=ExtResource("15_ephht")]
 position = Vector2(323, 1286)
 
 [node name="wallCreep1" parent="Overgrowth" unique_id=969526103 instance=ExtResource("16_q8isb")]
 position = Vector2(313, -371)
+
+[node name="wallCreep2" parent="Overgrowth" unique_id=1488617357 instance=ExtResource("16_q8isb")]
+position = Vector2(-900, -350)
 
 [node name="PlanterRow1" type="Node2D" parent="." unique_id=1519680260]
 y_sort_enabled = true
@@ -271,6 +322,10 @@ position = Vector2(421, 99)
 
 [node name="PlanterBox5" parent="PlanterRow1" unique_id=1561852538 instance=ExtResource("7_7ltw3")]
 position = Vector2(-148, -117)
+
+[node name="DeadSparkBulb" parent="PlanterRow1/PlanterBox5" unique_id=1771413083 instance=ExtResource("22_n6x0s")]
+z_index = 1
+position = Vector2(1, -84)
 
 [node name="PlanterBox6" parent="PlanterRow1" unique_id=1475303527 instance=ExtResource("7_7ltw3")]
 position = Vector2(-403, -120)
@@ -326,8 +381,69 @@ position = Vector2(-403, -120)
 [node name="PlanterBox7" parent="PlanterRow3" unique_id=223174466 instance=ExtResource("7_7ltw3")]
 position = Vector2(-401, 104)
 
+[node name="DeadBuglemelon" parent="PlanterRow3/PlanterBox7" unique_id=976649334 instance=ExtResource("21_mb6ns")]
+z_index = 1
+position = Vector2(-8, -98)
+
 [node name="PlanterBox8" parent="PlanterRow3" unique_id=1073037710 instance=ExtResource("7_7ltw3")]
 position = Vector2(-146, 101)
+
+[node name="PlanterRow4" type="Node2D" parent="." unique_id=408179055]
+y_sort_enabled = true
+position = Vector2(-1176, 1153)
+
+[node name="PlanterBox" parent="PlanterRow4" unique_id=2057767454 instance=ExtResource("7_7ltw3")]
+position = Vector2(419, -119)
+
+[node name="PlanterBox2" parent="PlanterRow4" unique_id=143836657 instance=ExtResource("7_7ltw3")]
+y_sort_enabled = false
+position = Vector2(164, -122)
+
+[node name="PlanterBox3" parent="PlanterRow4" unique_id=1114106511 instance=ExtResource("7_7ltw3")]
+position = Vector2(166, 102)
+
+[node name="PlanterBox4" parent="PlanterRow4" unique_id=1605558087 instance=ExtResource("7_7ltw3")]
+position = Vector2(421, 99)
+
+[node name="PlanterBox5" parent="PlanterRow4" unique_id=2115429417 instance=ExtResource("7_7ltw3")]
+position = Vector2(416, -653)
+
+[node name="PlanterBox6" parent="PlanterRow4" unique_id=1916307884 instance=ExtResource("7_7ltw3")]
+position = Vector2(161, -656)
+
+[node name="DeadSparkBulb" parent="PlanterRow4/PlanterBox6" unique_id=308569424 instance=ExtResource("22_n6x0s")]
+z_index = 1
+position = Vector2(1, -84)
+
+[node name="BotanyClutter" parent="PlanterRow4/PlanterBox6" unique_id=1569190255 instance=ExtResource("18_5w0c5")]
+position = Vector2(-67, 51.000015)
+texture = ExtResource("20_0iwav")
+
+[node name="PlanterBox7" parent="PlanterRow4" unique_id=511429887 instance=ExtResource("7_7ltw3")]
+position = Vector2(163, -432)
+
+[node name="DeadSparkBulb" parent="PlanterRow4/PlanterBox7" unique_id=654047444 instance=ExtResource("22_n6x0s")]
+z_index = 1
+position = Vector2(1, -84)
+
+[node name="PlanterBox8" parent="PlanterRow4" unique_id=578443272 instance=ExtResource("7_7ltw3")]
+position = Vector2(418, -435)
+
+[node name="PlanterBox9" parent="PlanterRow4" unique_id=1906726024 instance=ExtResource("7_7ltw3")]
+position = Vector2(408, -1138)
+
+[node name="DeadSparkBulb" parent="PlanterRow4/PlanterBox9" unique_id=1083463358 instance=ExtResource("22_n6x0s")]
+z_index = 1
+position = Vector2(1, -84)
+
+[node name="PlanterBox10" parent="PlanterRow4" unique_id=900560788 instance=ExtResource("7_7ltw3")]
+position = Vector2(153, -1141)
+
+[node name="PlanterBox11" parent="PlanterRow4" unique_id=1524527644 instance=ExtResource("7_7ltw3")]
+position = Vector2(155, -917)
+
+[node name="PlanterBox12" parent="PlanterRow4" unique_id=1428456759 instance=ExtResource("7_7ltw3")]
+position = Vector2(410, -920)
 
 [node name="PlanterRow2" type="Node2D" parent="." unique_id=234695712]
 y_sort_enabled = true
@@ -341,6 +457,10 @@ position = Vector2(164, -122)
 
 [node name="PlanterBox3" parent="PlanterRow2" unique_id=1669231562 instance=ExtResource("7_7ltw3")]
 position = Vector2(166, 102)
+
+[node name="DeadSparkBulb" parent="PlanterRow2/PlanterBox3" unique_id=693586839 instance=ExtResource("22_n6x0s")]
+z_index = 1
+position = Vector2(1, -84)
 
 [node name="PlanterBox4" parent="PlanterRow2" unique_id=1471658825 instance=ExtResource("7_7ltw3")]
 position = Vector2(421, 99)

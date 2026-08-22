@@ -8,9 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://c800r2teiclqk" path="res://structures/decor/cargo_crate_sprite/cargo_crate_sprite.tscn" id="8_0ykqe"]
 [ext_resource type="PackedScene" uid="uid://b5k28b8t1vjyy" path="res://components/proximity_inspection_component/proximity_inspection_component.tscn" id="8_eb511"]
 [ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="9_5gw6j"]
+[ext_resource type="PackedScene" uid="uid://c5r1lpt63kbrx" path="res://structures/decor/greenhouse_decor/botany_clutter/botany_clutter.tscn" id="9_axs44"]
 [ext_resource type="PackedScene" uid="uid://ctw0xedmi8cm8" path="res://structures/mechanics/side_doorway/side_doorway.tscn" id="9_es08y"]
 [ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="10_bdem1"]
+[ext_resource type="Texture2D" uid="uid://bkjarrbaydytx" path="res://structures/decor/greenhouse_decor/botany_clutter/botany clutter-bucket.png" id="10_s0bem"]
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="11_0ykqe"]
+[ext_resource type="Texture2D" uid="uid://0cety24aoowb" path="res://structures/decor/greenhouse_decor/botany_clutter/botany clutter-two-tools.png" id="11_s0bem"]
 [ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="12_axs44"]
 [ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="13_s0bem"]
 [ext_resource type="PackedScene" uid="uid://cwxdcswacspiv" path="res://structures/decor/overgrowth/wall_creep_1.tscn" id="14_bdem1"]
@@ -126,6 +129,21 @@ flavor_text_id = "cargo_four"
 position = Vector2(-6, 123)
 shape = SubResource("CircleShape2D_0ig7c")
 
+[node name="BotanyClutter3" parent="shelf row 1" unique_id=1695079663 instance=ExtResource("9_axs44")]
+position = Vector2(41, -221)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_s0bem")
+
+[node name="BotanyClutter4" parent="shelf row 1" unique_id=407931118 instance=ExtResource("9_axs44")]
+position = Vector2(9, -181)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_s0bem")
+
+[node name="BotanyClutter5" parent="shelf row 1" unique_id=1235417058 instance=ExtResource("9_axs44")]
+position = Vector2(41, -140)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_s0bem")
+
 [node name="shelf row 2" type="Node2D" parent="." unique_id=1844611011]
 position = Vector2(-143, 223)
 
@@ -174,6 +192,12 @@ position = Vector2(762, -2)
 [node name="CargoCrate" parent="shelf row 2/CargoShelf5" unique_id=564323530 instance=ExtResource("8_0ykqe")]
 y_sort_enabled = false
 position = Vector2(0, -195)
+
+[node name="BotanyClutter3" parent="shelf row 2" unique_id=845640238 instance=ExtResource("9_axs44")]
+position = Vector2(-3, -19.000015)
+rotation = -0.45311448
+texture = ExtResource("11_s0bem")
+flip_h = true
 
 [node name="shelf row 3" type="Node2D" parent="." unique_id=1206463358]
 position = Vector2(-151, 840)
@@ -224,6 +248,12 @@ position = Vector2(762, -2)
 y_sort_enabled = false
 position = Vector2(0, -195)
 
+[node name="BotanyClutter3" parent="shelf row 3" unique_id=1200118389 instance=ExtResource("9_axs44")]
+position = Vector2(779.00006, -138)
+rotation = 0.6667158
+texture = ExtResource("11_s0bem")
+flip_h = true
+
 [node name="shelf row 4" type="Node2D" parent="." unique_id=945744967]
 position = Vector2(-151, 1249)
 
@@ -272,6 +302,16 @@ position = Vector2(762, -2)
 [node name="CargoCrate" parent="shelf row 4/CargoShelf5" unique_id=1005552547 instance=ExtResource("8_0ykqe")]
 y_sort_enabled = false
 position = Vector2(0, -195)
+
+[node name="BotanyClutter3" parent="shelf row 4" unique_id=1965828815 instance=ExtResource("9_axs44")]
+position = Vector2(261, -128)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_s0bem")
+
+[node name="BotanyClutter4" parent="shelf row 4" unique_id=199002958 instance=ExtResource("9_axs44")]
+position = Vector2(301, -88)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_s0bem")
 
 [node name="Overgrowth" type="Node2D" parent="." unique_id=353258264]
 y_sort_enabled = true

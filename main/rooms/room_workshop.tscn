@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="4_weotp"]
 [ext_resource type="PackedScene" uid="uid://b5k28b8t1vjyy" path="res://components/proximity_inspection_component/proximity_inspection_component.tscn" id="5_0wi5p"]
 [ext_resource type="PackedScene" uid="uid://j1kp2cxbjq4m" path="res://structures/decor/cargo_shelf/cargo_shelf.tscn" id="6_h60fi"]
+[ext_resource type="PackedScene" uid="uid://c5r1lpt63kbrx" path="res://structures/decor/greenhouse_decor/botany_clutter/botany_clutter.tscn" id="6_x5ip4"]
+[ext_resource type="Texture2D" uid="uid://0cety24aoowb" path="res://structures/decor/greenhouse_decor/botany_clutter/botany clutter-two-tools.png" id="7_aofn0"]
 [ext_resource type="PackedScene" uid="uid://c800r2teiclqk" path="res://structures/decor/cargo_crate_sprite/cargo_crate_sprite.tscn" id="7_h5ygg"]
 [ext_resource type="PackedScene" uid="uid://b6m0qy58wq06l" path="res://structures/decor/cargo_crate/cargo_crate.tscn" id="8_weotp"]
 [ext_resource type="PackedScene" uid="uid://8uqhggjpcofj" path="res://structures/mechanics/cable/cable.tscn" id="9_aegkf"]
@@ -15,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="11_yjwjt"]
 [ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="12_o2hmf"]
 [ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="13_5mtks"]
+[ext_resource type="PackedScene" uid="uid://cwxdcswacspiv" path="res://structures/decor/overgrowth/wall_creep_1.tscn" id="18_16c82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j34qf"]
 size = Vector2(207, 111.5)
@@ -65,6 +68,13 @@ flavor_text_id = "owen_desk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Desk/ProximityInspectionComponent" unique_id=667829023]
 position = Vector2(-8, 136)
 shape = SubResource("RectangleShape2D_j34qf")
+
+[node name="BotanyClutter3" parent="Desk" unique_id=1695079663 instance=ExtResource("6_x5ip4")]
+z_index = 1
+position = Vector2(60, -35)
+rotation = -3.996804
+texture = ExtResource("7_aofn0")
+flip_h = true
 
 [node name="CargoShelf" parent="." unique_id=462188294 instance=ExtResource("6_h60fi")]
 position = Vector2(1131, -175)
@@ -120,7 +130,7 @@ position = Vector2(355, -379)
 
 [node name="Overgrowth" type="Node2D" parent="." unique_id=946909139]
 y_sort_enabled = true
-position = Vector2(0, 1)
+position = Vector2(-1, 1)
 
 [node name="lilguy15" parent="Overgrowth" unique_id=86382574 instance=ExtResource("9_w2lbu")]
 position = Vector2(557, -7)
@@ -155,3 +165,6 @@ position = Vector2(1011, -349)
 
 [node name="lilguy8" parent="Overgrowth" unique_id=1043851896 instance=ExtResource("13_5mtks")]
 position = Vector2(380, 9)
+
+[node name="wallCreep1" parent="Overgrowth" unique_id=1868780187 instance=ExtResource("18_16c82")]
+position = Vector2(415, -363)

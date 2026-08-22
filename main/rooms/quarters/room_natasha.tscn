@@ -12,7 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="10_mmt3y"]
 [ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="11_ue5o5"]
 [ext_resource type="PackedScene" uid="uid://8ohd48nd0yjy" path="res://structures/decor/greenhouse_decor/planter box/planter_box.tscn" id="12_4gh7g"]
+[ext_resource type="PackedScene" uid="uid://cwxdcswacspiv" path="res://structures/decor/overgrowth/wall_creep_1.tscn" id="12_ue5o5"]
 [ext_resource type="PackedScene" uid="uid://b5k28b8t1vjyy" path="res://components/proximity_inspection_component/proximity_inspection_component.tscn" id="13_mmt3y"]
+[ext_resource type="PackedScene" uid="uid://t0morq6fyk0h" path="res://structures/decor/greenhouse_decor/dead_plants/dead_spark_bulb.tscn" id="15_rjx5x"]
+[ext_resource type="PackedScene" uid="uid://c5r1lpt63kbrx" path="res://structures/decor/greenhouse_decor/botany_clutter/botany_clutter.tscn" id="16_pmsoa"]
+[ext_resource type="Texture2D" uid="uid://bkjarrbaydytx" path="res://structures/decor/greenhouse_decor/botany_clutter/botany clutter-bucket.png" id="17_x8kua"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bsad5"]
 radius = 106.56923
@@ -75,9 +79,6 @@ position = Vector2(362, -2)
 [node name="lilguy3" parent="Overgrowth" unique_id=396891191 instance=ExtResource("8_mrot3")]
 position = Vector2(-113, 338)
 
-[node name="lilguy5" parent="Overgrowth" unique_id=1767320510 instance=ExtResource("8_mrot3")]
-position = Vector2(125, -366)
-
 [node name="lilguy4" parent="Overgrowth" unique_id=1554786853 instance=ExtResource("9_4gh7g")]
 position = Vector2(246, 82)
 
@@ -94,6 +95,9 @@ position = Vector2(-111, -355)
 [node name="lilguy8" parent="Overgrowth" unique_id=36019727 instance=ExtResource("11_ue5o5")]
 position = Vector2(244, -101)
 
+[node name="wallCreep1" parent="Overgrowth" unique_id=2023332219 instance=ExtResource("12_ue5o5")]
+position = Vector2(285, -370)
+
 [node name="PlanterBox" parent="." unique_id=1588456151 instance=ExtResource("12_4gh7g")]
 position = Vector2(363, 298)
 
@@ -104,3 +108,13 @@ flavor_text_id = "natasha_plant_box"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlanterBox/ProximityInspectionComponent" unique_id=847145210]
 position = Vector2(1, 94)
 shape = SubResource("CircleShape2D_bsad5")
+
+[node name="DeadSparkBulb" parent="PlanterBox" unique_id=1771413083 instance=ExtResource("15_rjx5x")]
+z_index = 1
+position = Vector2(5, -79)
+
+[node name="BotanyClutter3" parent="." unique_id=1695079663 instance=ExtResource("16_pmsoa")]
+z_index = 1
+position = Vector2(-141, -213)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_x8kua")

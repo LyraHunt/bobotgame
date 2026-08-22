@@ -1,5 +1,7 @@
 class_name Camera extends Camera2D
 
+@onready var background_sprite: Sprite2D = get_node("Sprite2D")
+
 var focus: bool
 var default_zoom: Vector2 = Vector2(1.2, 1.2)
 
@@ -8,6 +10,10 @@ var zoom_tween: Tween
 func _ready() -> void:
 	GameLogic.state_changed.connect(game_state_changed)
 	start_focus()
+
+func _process(_delta: float) -> void:
+	if background_sprite:
+		background_sprite.scale = Vector2.ONE / zoom
 
 func game_state_changed() -> void:
 	match GameLogic.state:

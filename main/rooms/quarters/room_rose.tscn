@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="2_7u73h"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="3_8meb7"]
 [ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="5_8meb7"]
+[ext_resource type="PackedScene" uid="uid://b8fcyu8dg3h31" path="res://structures/mechanics/keycards/lab_keycard.tscn" id="5_nklh8"]
 [ext_resource type="PackedScene" uid="uid://c0ronkg0mfkqy" path="res://structures/decor/quarters_decor/bed_other_way.tscn" id="5_uql4g"]
 [ext_resource type="PackedScene" uid="uid://dbus6u310w6ph" path="res://structures/flavor/notes/notes.tscn" id="6_q7tyn"]
 [ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="7_wwlii"]
@@ -46,14 +47,18 @@ build_mode = 1
 polygon = PackedVector2Array(475, -362, 483, 360, -235, 360, -235, -362, 330, -359)
 
 [node name="BedOtherWay" parent="." unique_id=45486395 instance=ExtResource("5_uql4g")]
+y_sort_enabled = false
 position = Vector2(380, 154)
 
 [node name="Desk" parent="." unique_id=728673120 instance=ExtResource("5_8meb7")]
 y_sort_enabled = false
 position = Vector2(-120, -9)
 
-[node name="Notes" parent="Desk" unique_id=882252241 instance=ExtResource("6_q7tyn")]
-position = Vector2(-54, -66)
+[node name="LabKeycard" parent="Desk" unique_id=512886027 instance=ExtResource("5_nklh8")]
+position = Vector2(-31, -79)
+
+[node name="Notes" parent="Desk/LabKeycard" unique_id=882252241 instance=ExtResource("6_q7tyn")]
+position = Vector2(-23, 13)
 rotation = -0.5861407
 
 [node name="Overgrowth" type="Node2D" parent="." unique_id=261605161]

@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="11_0ykqe"]
 [ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="12_axs44"]
 [ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="13_s0bem"]
+[ext_resource type="PackedScene" uid="uid://cwxdcswacspiv" path="res://structures/decor/overgrowth/wall_creep_1.tscn" id="14_bdem1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_harlm"]
 radius = 88.09086
@@ -316,7 +317,8 @@ position = Vector2(-239, 813)
 rotation = 1.5707964
 
 [node name="root1" parent="Overgrowth" unique_id=1134653383 instance=ExtResource("12_axs44")]
-position = Vector2(496, 157)
+position = Vector2(545, 144)
+flip_h = true
 
 [node name="root2" parent="Overgrowth" unique_id=1385948427 instance=ExtResource("12_axs44")]
 position = Vector2(-28, 1104)
@@ -332,3 +334,6 @@ position = Vector2(167, 1336)
 
 [node name="lilguy14" parent="Overgrowth" unique_id=1959858508 instance=ExtResource("13_s0bem")]
 position = Vector2(447, 908)
+
+[node name="wallCreep1" parent="Overgrowth" unique_id=1584038170 instance=ExtResource("14_bdem1")]
+position = Vector2(239, -358)

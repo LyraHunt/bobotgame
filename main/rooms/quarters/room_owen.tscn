@@ -4,8 +4,8 @@
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="2_hh8dc"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="3_cqk5b"]
 [ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="5_x8noy"]
+[ext_resource type="PackedScene" uid="uid://nsdjri54eac0" path="res://structures/mechanics/bobots/recording_bot/recording_bot.tscn" id="6_bknq3"]
 [ext_resource type="PackedScene" uid="uid://c0ronkg0mfkqy" path="res://structures/decor/quarters_decor/bed_other_way.tscn" id="6_dwism"]
-[ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="6_s1t6q"]
 [ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="7_bknq3"]
 [ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="8_05yos"]
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="9_hwqk6"]
@@ -46,14 +46,14 @@ build_mode = 1
 polygon = PackedVector2Array(475, -362, 483, 360, -235, 360, -235, -362)
 
 [node name="Desk" parent="." unique_id=1664455908 instance=ExtResource("5_x8noy")]
+y_sort_enabled = false
 position = Vector2(353, -90)
+
+[node name="RecordingBot" parent="Desk" unique_id=1192683161 instance=ExtResource("6_bknq3")]
+position = Vector2(26, -69)
 
 [node name="BedOtherWay" parent="." unique_id=96573843 instance=ExtResource("6_dwism")]
 position = Vector2(-142, 154)
-
-[node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("6_s1t6q")]
-position = Vector2(335, -190)
-memory_id = 2
 
 [node name="Overgrowth" type="Node2D" parent="." unique_id=1696933603]
 y_sort_enabled = true

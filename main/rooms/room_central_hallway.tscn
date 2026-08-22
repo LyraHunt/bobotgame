@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://boxj3bj3d3mnm" path="res://structures/mechanics/power_station/power_station.tscn" id="2_e8shv"]
 [ext_resource type="PackedScene" uid="uid://b8hm4bqaumbh4" path="res://structures/mechanics/side_doorway/side_doorway_flip.tscn" id="2_kx2ot"]
+[ext_resource type="Script" uid="uid://bymhj83u26cqk" path="res://main/rooms/lab_doorway.gd" id="3_jhqeb"]
+[ext_resource type="Script" uid="uid://diigwg4h3dena" path="res://main/rooms/quarters_doorway.gd" id="4_62tbk"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="4_jhqeb"]
 [ext_resource type="PackedScene" uid="uid://ctw0xedmi8cm8" path="res://structures/mechanics/side_doorway/side_doorway.tscn" id="4_kx2ot"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="5_62tbk"]
@@ -15,12 +17,14 @@ position = Vector2(-447, 107)
 
 [node name="CHDoorToLab" parent="." unique_id=1432913595 instance=ExtResource("6_e8shv")]
 position = Vector2(839, 690)
+script = ExtResource("3_jhqeb")
 
 [node name="CHDoorToWorkshop" parent="." unique_id=377503910 instance=ExtResource("6_e8shv")]
 position = Vector2(-122, 691)
 
 [node name="CHDoorToQuarters" parent="." unique_id=1674412733 instance=ExtResource("4_kx2ot")]
 position = Vector2(1166, 64)
+script = ExtResource("4_62tbk")
 
 [node name="PowerStation" parent="." unique_id=724469414 instance=ExtResource("2_e8shv")]
 position = Vector2(358, 143)

@@ -18,7 +18,7 @@ var memory_casette_sprites: Dictionary[Memory, Texture] = {
 	Memory.GREENHOUSE: preload("res://ui/casettes ui/Bobot cassette.PNG"),
 	Memory.STORAGE_AREA: preload("res://ui/casettes ui/Cargo bot cassette.PNG"),
 	#Memory.KITCHEN: preload("res://ui/casettes ui/Bobot cassette.PNG"),
-	Memory.ALICE_QUARTERS: preload("res://ui/casettes ui/Bobot cassette.PNG"),
+	Memory.ALICE_QUARTERS: preload("res://ui/casettes ui/Recording bot cassette.PNG"),
 	Memory.LAB: preload("res://ui/casettes ui/Research bot cassette.PNG")
 }
 
@@ -41,9 +41,28 @@ var bobot_last_power_station: int
 var pending_memories: Array[Memory] = []
 var acquired_memories: Array[Memory] = []
 #var acquired_memories: Array[Memory] = [Memory.GREENHOUSE, Memory.STORAGE_AREA, Memory.LAB]
+#var acquired_memories: Array[Memory] = [Memory.STORAGE_AREA, Memory.LAB, Memory.ALICE_QUARTERS]
 
 var selected_casette: Memory
 var casette_is_selected: bool
+
+var pending_progress: Dictionary[String, bool] = {
+	"has_quarters_passkey": false,
+	"has_lab_passkey": false,
+	"has_power_box_passkey": false,
+	"opened_power_box": false,
+	"picked_up_cable": false,
+	"powered_box": false
+}
+
+var actual_progress: Dictionary[String, bool] = {
+	"has_quarters_passkey": false,
+	"has_lab_passkey": false,
+	"has_power_box_passkey": false,
+	"opened_power_box": false,
+	"picked_up_cable": false,
+	"powered_box": false
+}
 
 # flavor text stuff
 var flavor_text_folder: String = "res://resources/dialogic stuffs/flavor_texts/"
@@ -53,11 +72,20 @@ func add_power_station_id(new_id: int, power_station: PowerStation) -> void:
 	if power_stations.keys().size() == power_station_count:
 		GameLogic.power_stations_initialized.emit()
 
+func flavor_text_exists(flavor_id: String) -> bool:
+	return FileAccess.file_exists(flavor_text_folder + flavor_id + ".dtl")
+
 func play_flavor_timeline(flavor_id: String) -> void:
-	print(flavor_text_folder + "/" + flavor_id + ".dtl")
 	if FileAccess.file_exists(flavor_text_folder + flavor_id + ".dtl"):
 		Dialogic.start(load(flavor_text_folder + flavor_id + ".dtl"))
 
+func check_progress(progress_key: String) -> bool:
+	return pending_progress[progress_key] or actual_progress[progress_key]
+
+func save_progression() -> void:
+	for key: String in pending_progress.keys():
+		actual_progress[key] = pending_progress[key] or actual_progress[key]
+	pending_progress = actual_progress.duplicate()
 
 func _ready() -> void:
 	bobot_last_power_station = 0

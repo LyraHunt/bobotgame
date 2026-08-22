@@ -3,7 +3,20 @@
 [ext_resource type="Script" uid="uid://cchpm5rv0rp7n" path="res://ui/memory ui/memory_ui.gd" id="1_6wkk2"]
 [ext_resource type="PackedScene" uid="uid://dwukd70guhg6q" path="res://ui/memory ui/lore_option.tscn" id="1_fyh57"]
 [ext_resource type="PackedScene" uid="uid://wldep812x6ac" path="res://ui/memory ui/casette_option.tscn" id="1_pexda"]
+[ext_resource type="Texture2D" uid="uid://dhgdd1umgyut5" path="res://ui/casettes ui/Cassette ui big.PNG" id="3_ogx2r"]
 [ext_resource type="Texture2D" uid="uid://c0q4m783cq6im" path="res://ui/casettes ui/Menu close ui.PNG" id="4_yxox3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogx2r"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="MemoryUI" type="Control" unique_id=1600028043]
 layout_mode = 3
@@ -22,13 +35,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -370.0
-offset_top = -366.0
-offset_right = 370.0
-offset_bottom = 266.0
+offset_left = -390.0
+offset_top = -393.0
+offset_right = 390.0
+offset_bottom = 247.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 500
+theme_override_constants/separation = 540
 
 [node name="LoreContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=526162190]
 layout_mode = 2
@@ -53,6 +66,20 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 0
 
+[node name="Control" type="Control" parent="HBoxContainer/CasetteContainer" unique_id=1035540725]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CasetteContainer/Control" unique_id=855106285]
+custom_minimum_size = Vector2(400, 730)
+layout_mode = 0
+offset_left = -225.0
+offset_top = -52.0
+offset_right = 525.0
+offset_bottom = 678.0
+texture = ExtResource("3_ogx2r")
+expand_mode = 2
+stretch_mode = 5
+
 [node name="CasetteOption" parent="HBoxContainer/CasetteContainer" unique_id=682180153 instance=ExtResource("1_pexda")]
 layout_mode = 2
 
@@ -73,7 +100,7 @@ offset_right = 980.0
 offset_bottom = 143.0
 
 [node name="CloseButton" type="Button" parent="Control" unique_id=661072311]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(94, 94)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -86,14 +113,15 @@ offset_right = 30.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ogx2r")
 
 [node name="TextureRect" type="TextureRect" parent="Control/CloseButton" unique_id=852711837]
 custom_maximum_size = Vector2(92, 92)
 layout_mode = 0
-offset_left = -7.0
-offset_top = -7.0
-offset_right = 85.0
-offset_bottom = 85.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 94.0
+offset_bottom = 93.0
 texture = ExtResource("4_yxox3")
 
 [connection signal="button_down" from="Control/CloseButton" to="." method="_on_close_button_button_down"]

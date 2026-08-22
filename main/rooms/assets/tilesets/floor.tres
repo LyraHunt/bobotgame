@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://3o6vwrx1ilyj" path="res://main/rooms/assets/tilesets/floors.png" id="1_2tylo"]
 [ext_resource type="Texture2D" uid="uid://ej7p1tgig6j3" path="res://main/rooms/assets/tilesets/floors-horiz.png" id="1_mgfip"]
+[ext_resource type="Texture2D" uid="uid://dnc7uibqhadh7" path="res://main/rooms/assets/floors_and_walls/floorcrack 1 diagonal.PNG" id="2_rp58a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rp58a"]
 texture = ExtResource("1_mgfip")
@@ -10,6 +11,11 @@ texture_region_size = Vector2i(200, 300)
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lqru4"]
+texture = ExtResource("2_rp58a")
+texture_region_size = Vector2i(200, 300)
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s2mhl"]
 texture = ExtResource("1_2tylo")
@@ -23,3 +29,4 @@ texture_region_size = Vector2i(200, 300)
 tile_size = Vector2i(200, 300)
 sources/6 = SubResource("TileSetAtlasSource_s2mhl")
 sources/0 = SubResource("TileSetAtlasSource_rp58a")
+sources/2 = SubResource("TileSetAtlasSource_lqru4")

@@ -1,6 +1,69 @@
 [gd_scene format=3 uid="uid://bl8ibeyhwd5yc"]
 
 [ext_resource type="Script" uid="uid://wxowyt8urw6g" path="res://main/camera/camera.gd" id="1_7io0s"]
+[ext_resource type="Texture2D" uid="uid://113a7jpepim7" path="res://main/rooms/assets/skrunkly_background.png" id="2_u1n2v"]
+
+[sub_resource type="Shader" id="Shader_33ctm"]
+code = "shader_type canvas_item;
+render_mode world_vertex_coords;
+
+group_uniforms Squiggle;
+/**
+ * Noise texture scale
+ * By default, the noise texture's size in world coordinates is set by its resolution
+*/
+uniform vec2 scale = vec2(1.0);
+uniform float strength = 0.4;
+/**
+ * Number of squiggle frames per second
+*/
+uniform float fps = 6.0;
+uniform sampler2D noise : filter_linear, repeat_enable;
+group_uniforms;
+
+varying vec4 modulate;
+varying vec2 noise_uv;
+
+void vertex() {
+	modulate = COLOR;
+	
+	// Use world coordinates for scale-independent squiggles, offset by position to keep pattern attached to object
+	noise_uv = (VERTEX.xy - MODEL_MATRIX[3].xy) / (vec2(textureSize(noise, 0)) * scale);
+}
+
+// Use irrational constants for unique squiggles every frame
+#define offset_multiplier vec2(PI, E)
+//#define offset_multiplier vec2(0.16666, 0.33333)
+
+void fragment() {
+	vec2 noise_offset = vec2(floor(TIME * fps)) * offset_multiplier;
+	float noise_sample = texture(noise, noise_uv + noise_offset).r * 4.0 * PI;
+	vec2 direction = vec2(cos(noise_sample), sin(noise_sample));
+	vec2 squiggle_uv = UV + direction * strength * 0.005;
+	
+	COLOR.rgb = (texture(TEXTURE, squiggle_uv) * modulate).rgb;
+	COLOR.a = texture(TEXTURE, squiggle_uv).a * modulate.a;
+}"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bb0xe"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xkikd"]
+noise = SubResource("FastNoiseLite_bb0xe")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u1n2v"]
+shader = SubResource("Shader_33ctm")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.8
+shader_parameter/fps = 2.0
+shader_parameter/noise = SubResource("NoiseTexture2D_xkikd")
 
 [node name="Camera" type="Camera2D" unique_id=402554782 groups=["camera"]]
 script = ExtResource("1_7io0s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1073669647]
+modulate = Color(0.4392157, 0.45882353, 0.45882353, 1)
+light_mask = 4
+visibility_layer = 5
+z_index = -5
+material = SubResource("ShaderMaterial_u1n2v")
+texture = ExtResource("2_u1n2v")

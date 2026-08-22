@@ -5,7 +5,6 @@
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="4_052iq"]
 [ext_resource type="PackedScene" uid="uid://dv0rr0swpplka" path="res://structures/mechanics/power_box/power_box.tscn" id="5_as0fk"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="5_t08a1"]
-[ext_resource type="PackedScene" uid="uid://b5k28b8t1vjyy" path="res://components/proximity_inspection_component/proximity_inspection_component.tscn" id="6_052iq"]
 [ext_resource type="PackedScene" uid="uid://kfacys7sq1nm" path="res://structures/decor/lab_decor/lab_counter_small.tscn" id="6_pfpt1"]
 [ext_resource type="PackedScene" uid="uid://b4dq3382v0qhb" path="res://structures/decor/lab_decor/lab_counter_small_vert.tscn" id="7_t04ie"]
 [ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="9_k7kvm"]
@@ -14,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="12_c4d0n"]
 [ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="13_slliu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_as0fk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7kvm"]
 size = Vector2(123, 30)
 
 [node name="Lab" type="Node2D" unique_id=1671798769]
@@ -56,12 +55,9 @@ polygon = PackedVector2Array(1204, -356, 1199, 705, -469, 719, -485, -366)
 [node name="PowerBox" parent="." unique_id=433000163 instance=ExtResource("5_as0fk")]
 position = Vector2(479, -425)
 
-[node name="ProximityInspectionComponent" parent="PowerBox" unique_id=368491059 instance=ExtResource("6_052iq")]
-flavor_text_id = "power_box"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerBox/ProximityInspectionComponent" unique_id=1056542742]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerBox" unique_id=1021780532]
 position = Vector2(-0.5, 78)
-shape = SubResource("RectangleShape2D_as0fk")
+shape = SubResource("RectangleShape2D_k7kvm")
 
 [node name="LabCounterSmall" parent="." unique_id=1550508382 instance=ExtResource("6_pfpt1")]
 position = Vector2(42, 97.00001)

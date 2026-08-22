@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://blsi222gcll5f" path="res://ui/casettes ui/casette_popup.tscn" id="9_obths"]
 [ext_resource type="PackedScene" uid="uid://cqfr74q3xqugw" path="res://ui/memory ui/memory_ui.tscn" id="10_bb0xe"]
 [ext_resource type="PackedScene" uid="uid://ckyoe6ut0owfg" path="res://ui/bobot ui/bobot_vignette.tscn" id="10_xkikd"]
+[ext_resource type="PackedScene" uid="uid://h1o5n2y8j01g" path="res://ui/progression_ui/progression_ui.tscn" id="13_ke3xm"]
 
 [sub_resource type="Gradient" id="Gradient_bb0xe"]
 offsets = PackedFloat32Array(0, 0.675, 0.8825)
@@ -56,6 +57,7 @@ texture = ExtResource("2_6h4th")
 offset = Vector2(10, -280)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2043321006]
+light_mask = 2
 material = ExtResource("4_xkikd")
 scale = Vector2(0.3, 0.3)
 sprite_frames = ExtResource("3_25c5j")
@@ -105,6 +107,12 @@ mouse_filter = 1
 [node name="MemoryUI" parent="CanvasLayer" unique_id=1600028043 instance=ExtResource("10_bb0xe")]
 visible = false
 
+[node name="ProgressionUI" parent="CanvasLayer" unique_id=168651921 instance=ExtResource("13_ke3xm")]
+offset_left = 12.0
+offset_top = 930.0
+offset_right = 12.0
+offset_bottom = 930.0
+
 [node name="InteractionIcon" type="TextureRect" parent="CanvasLayer" unique_id=642595828]
 material = ExtResource("4_xkikd")
 custom_maximum_size = Vector2(80, 80)
@@ -118,6 +126,7 @@ one_shot = true
 
 [node name="Spotlight" type="PointLight2D" parent="." unique_id=1621479207]
 energy = 0.6
+range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_obths")
 texture_scale = 3.0
 

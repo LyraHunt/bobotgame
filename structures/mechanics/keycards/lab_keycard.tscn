@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b8fcyu8dg3h31"]
+
+[ext_resource type="Script" uid="uid://cdo6kndyx8mhf" path="res://structures/mechanics/cable/cable.gd" id="1_t7xfo"]
+[ext_resource type="Texture2D" uid="uid://tbi3abkmmqur" path="res://structures/mechanics/keycards/Lab keycard.PNG" id="2_xxo2a"]
+[ext_resource type="PackedScene" uid="uid://djyaxwrsd83y4" path="res://components/proximity_interaction/proximity_interaction_component.tscn" id="4_gqwqj"]
+[ext_resource type="PackedScene" uid="uid://cooufmusuhqsl" path="res://components/dynamic_hotkey/dynamic_hotkey_component.tscn" id="5_xi8cy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r5iys"]
+radius = 47.0
+
+[node name="LabKeycard" type="Node2D" unique_id=512886027]
+y_sort_enabled = true
+script = ExtResource("1_t7xfo")
+progression_id = "has_lab_passkey"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=917366805]
+position = Vector2(0, 3.8146973e-06)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_xxo2a")
+
+[node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("sprite", "dynamic_hotkey") instance=ExtResource("4_gqwqj")]
+sprite = NodePath("../Sprite2D")
+dynamic_hotkey = NodePath("../DynamicHotkeyComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityInteractionComponent" unique_id=807831631]
+shape = SubResource("CircleShape2D_r5iys")
+
+[node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("5_xi8cy")]
+position = Vector2(0, -194)
+icon_type_inspect = false
+
+[connection signal="interacted" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_interacted"]
+[connection signal="selection_update" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]

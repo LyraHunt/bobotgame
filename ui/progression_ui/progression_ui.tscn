@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://h1o5n2y8j01g"]
+
+[ext_resource type="Texture2D" uid="uid://bq4mstxs0l5jv" path="res://ui/casettes ui/Collectibles ui.PNG" id="1_wctwg"]
+[ext_resource type="Script" uid="uid://bmibc63nsmk4x" path="res://ui/progression_ui/progression_ui.gd" id="1_yl05u"]
+[ext_resource type="Texture2D" uid="uid://ccs2f5oxid1iy" path="res://structures/mechanics/keycards/Crew quarters keycard.PNG" id="2_p43i6"]
+[ext_resource type="Texture2D" uid="uid://tbi3abkmmqur" path="res://structures/mechanics/keycards/Lab keycard.PNG" id="3_4k74w"]
+[ext_resource type="Texture2D" uid="uid://chakvy0d6hohw" path="res://structures/mechanics/cable/Cable.PNG" id="4_ykus8"]
+
+[node name="ProgressionUI" type="Control" unique_id=168651921]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yl05u")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=733362107]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuartersKeycard" type="TextureRect" parent="HBoxContainer" unique_id=841166907]
+custom_minimum_size = Vector2(140, 140)
+custom_maximum_size = Vector2(140, 140)
+layout_mode = 2
+texture = ExtResource("1_wctwg")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/QuartersKeycard" unique_id=1415227205]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 26.0
+offset_right = 114.0
+offset_bottom = 116.0
+texture = ExtResource("2_p43i6")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="LabKeycard" type="TextureRect" parent="HBoxContainer" unique_id=1247479376]
+custom_maximum_size = Vector2(140, 140)
+layout_mode = 2
+texture = ExtResource("1_wctwg")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/LabKeycard" unique_id=2048936672]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 115.0
+offset_bottom = 115.0
+texture = ExtResource("3_4k74w")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Cable" type="TextureRect" parent="HBoxContainer" unique_id=1886580158]
+custom_maximum_size = Vector2(140, 140)
+layout_mode = 2
+texture = ExtResource("1_wctwg")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Cable" unique_id=1320249307]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 130.0
+offset_bottom = 130.0
+texture = ExtResource("4_ykus8")
+expand_mode = 2
+stretch_mode = 5

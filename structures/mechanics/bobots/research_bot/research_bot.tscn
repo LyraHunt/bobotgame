@@ -8,9 +8,20 @@
 [ext_resource type="Material" uid="uid://bn3drkgdlh1yo" path="res://resources/shaders/visual_boil_shader/boil_shader_mat.tres" id="5_2344x"]
 [ext_resource type="Texture2D" uid="uid://ccg21t7uw1my4" path="res://structures/mechanics/bobots/research_bot/Research bot no cassette.PNG" id="5_aya8i"]
 [ext_resource type="Texture2D" uid="uid://cgmlrjnjlu4ub" path="res://structures/mechanics/bobots/research_bot/Research bot cassette.PNG" id="5_nveq6"]
+[ext_resource type="PackedScene" uid="uid://bu0q4v7mo8lfg" path="res://components/shader_second_pass/second_shader_pass_component.tscn" id="9_2344x"]
+[ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="10_571cc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aya8i"]
 radius = 80.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_533fg"]
+shader = ExtResource("10_571cc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 4.00000019
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aya8i"]
 size = Vector2(132, 56.5)
@@ -25,10 +36,7 @@ sprites_to_hide = [NodePath("../Casette")]
 [node name="Sprite2D" parent="MemoryBank" index="0" unique_id=917366805]
 visible = false
 
-[node name="ProximityInteractionComponent" parent="MemoryBank" index="1" unique_id=606314739 node_paths=PackedStringArray("sprite")]
-sprite = NodePath("../../Casette")
-
-[node name="CollisionShape2D" parent="MemoryBank/ProximityInteractionComponent" index="0" unique_id=807831631]
+[node name="CollisionShape2D" parent="MemoryBank/ProximityInteractionComponent" parent_id_path=PackedInt32Array(512886027, 606314739) index="0" unique_id=807831631]
 shape = SubResource("CircleShape2D_aya8i")
 
 [node name="Plants" type="Sprite2D" parent="." unique_id=2108926364]
@@ -48,7 +56,12 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_aya8i")
 offset = Vector2(-20, -80)
 
+[node name="SecondShaderPassComponent" parent="." unique_id=745430328 node_paths=PackedStringArray("target_sprite") instance=ExtResource("9_2344x")]
+material = SubResource("ShaderMaterial_533fg")
+target_sprite = NodePath("../Casette")
+
 [node name="Casette" type="Sprite2D" parent="." unique_id=1845255996]
+material = ExtResource("5_2344x")
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_nveq6")
 offset = Vector2(-20, -80)
@@ -64,5 +77,8 @@ offset = Vector2(-20, -80)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1128712945]
 position = Vector2(-1, 14)
 shape = SubResource("RectangleShape2D_aya8i")
+
+[connection signal="collected" from="MemoryBank" to="." method="_on_memory_bank_collected"]
+[connection signal="selection_update" from="MemoryBank/ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]
 
 [editable path="MemoryBank"]

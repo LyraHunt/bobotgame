@@ -65,6 +65,8 @@ func start_charge(power_station: PowerStation) -> void:
 	GameData.acquired_memories.sort()
 	GameData.pending_memories = []
 	
+	GameData.save_progression()
+	
 	# show memory ui
 	#if GameData.acquired_memories.size() > 0:
 	memory_ui.visible = true
@@ -177,7 +179,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				stop_charge()
 		
 		GameLogic.State.POPUP:
-			if event.is_action_pressed("escape_key"):
+			if event.is_action_pressed("escape_key") or event.is_action_pressed("interact_key"):
 				casette_popup_timer.timeout.emit()
 				casette_popup_timer = null
 		
@@ -203,9 +205,6 @@ func _on_idle_timer_timeout() -> void:
 			eepy_tween.tween_property(animated_sprite, "scale", Vector2(0.3, 0.3), 0.15)
 		_:
 			idle_timer.start(1)
-
-#func WorldToViewport(target: Node2D) -> void:
-	#return target.GetScreenTransform().Origin.Clamp(new Vector2(0, 0), target.GetViewportRect().Size);
 
 func track_eye_icon(node: Node2D) -> void:
 	node_for_icon_tracking = node

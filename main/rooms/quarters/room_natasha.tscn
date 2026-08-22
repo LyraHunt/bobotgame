@@ -95,12 +95,12 @@ position = Vector2(-111, -355)
 position = Vector2(244, -101)
 
 [node name="PlanterBox" parent="." unique_id=1588456151 instance=ExtResource("12_4gh7g")]
-position = Vector2(363, 327)
+position = Vector2(363, 298)
 
 [node name="ProximityInspectionComponent" parent="PlanterBox" unique_id=368491059 instance=ExtResource("13_mmt3y")]
-position = Vector2(0, -120)
+position = Vector2(0, -148)
 flavor_text_id = "natasha_plant_box"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlanterBox/ProximityInspectionComponent" unique_id=847145210]
-position = Vector2(1, 72)
+position = Vector2(1, 94)
 shape = SubResource("CircleShape2D_bsad5")

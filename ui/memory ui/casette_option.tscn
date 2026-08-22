@@ -82,19 +82,27 @@ mouse_filter = 1
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 0
 offset_left = 144.0
-offset_top = 28.0
+offset_top = 40.0
 offset_right = 544.0
-offset_bottom = 148.0
+offset_bottom = 160.0
 bbcode_enabled = true
 text = "[font_size=32w]BT-534-04's[br]MEMORY BANK"
 fit_content = true
 
-[node name="Button" type="Button" parent="." unique_id=1986190618]
+[node name="Control" type="Control" parent="." unique_id=1938524951]
 layout_mode = 2
+
+[node name="Button" type="Button" parent="Control" unique_id=1986190618]
+custom_maximum_size = Vector2(130, 130)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 136.0
+offset_bottom = 135.0
 mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_w7mj7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4wq45")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qxctk")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Control/Button" to="." method="_on_button_button_down"]

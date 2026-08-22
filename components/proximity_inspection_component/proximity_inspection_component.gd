@@ -30,7 +30,7 @@ func update_display(was_selected: bool) -> void:
 
 func show_flavor_text() -> void:
 	print(flavor_text_id)
-	if GameLogic.state == GameLogic.State.EXPLORING:
+	if GameLogic.state == GameLogic.State.EXPLORING and GameData.flavor_text_exists(flavor_text_id):
 		GameLogic.state = GameLogic.State.FLAVOR
 		
 		if Dialogic.current_timeline != null:

@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://j1kp2cxbjq4m" path="res://structures/decor/cargo_shelf/cargo_shelf.tscn" id="6_h60fi"]
 [ext_resource type="PackedScene" uid="uid://c800r2teiclqk" path="res://structures/decor/cargo_crate_sprite/cargo_crate_sprite.tscn" id="7_h5ygg"]
 [ext_resource type="PackedScene" uid="uid://b6m0qy58wq06l" path="res://structures/decor/cargo_crate/cargo_crate.tscn" id="8_weotp"]
+[ext_resource type="PackedScene" uid="uid://8uqhggjpcofj" path="res://structures/mechanics/cable/cable.tscn" id="9_aegkf"]
 [ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="9_w2lbu"]
 [ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="10_aegkf"]
+[ext_resource type="PackedScene" uid="uid://by1amftn4wyib" path="res://structures/mechanics/keycards/quarters_keycard.tscn" id="10_yjwjt"]
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="11_yjwjt"]
 [ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="12_o2hmf"]
 [ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="13_5mtks"]
@@ -75,6 +77,10 @@ position = Vector2(0, -195)
 y_sort_enabled = false
 position = Vector2(1, -114)
 
+[node name="Cable" parent="CargoShelf" unique_id=512886027 instance=ExtResource("9_aegkf")]
+y_sort_enabled = false
+position = Vector2(1, 17)
+
 [node name="CargoCrate" parent="." unique_id=1987721192 instance=ExtResource("8_weotp")]
 position = Vector2(298, -301)
 
@@ -91,7 +97,11 @@ position = Vector2(435, 330)
 position = Vector2(1144, 59)
 
 [node name="CargoCrate6" parent="." unique_id=253262389 instance=ExtResource("8_weotp")]
+y_sort_enabled = false
 position = Vector2(319, 329)
+
+[node name="QuartersKeycard" parent="CargoCrate6" unique_id=922629882 instance=ExtResource("10_yjwjt")]
+position = Vector2(-23, -78)
 
 [node name="CargoCrate7" parent="." unique_id=1621877609 instance=ExtResource("8_weotp")]
 position = Vector2(1144, 122)

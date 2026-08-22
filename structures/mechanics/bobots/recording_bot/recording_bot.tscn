@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://nsdjri54eac0"]
+
+[ext_resource type="Script" uid="uid://dh7o7wowlqyrm" path="res://structures/mechanics/bobots/research_bot/research_bot.gd" id="1_i4num"]
+[ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="2_bnnhb"]
+[ext_resource type="Texture2D" uid="uid://vcmgnabnrxgi" path="res://structures/mechanics/bobots/recording_bot/Recording bot shadow.PNG" id="3_gxfls"]
+[ext_resource type="Texture2D" uid="uid://buhkk3j7i8na" path="res://structures/mechanics/bobots/recording_bot/Recording bot.PNG" id="5_gxfls"]
+[ext_resource type="Material" uid="uid://bn3drkgdlh1yo" path="res://resources/shaders/visual_boil_shader/boil_shader_mat.tres" id="5_ogv0y"]
+[ext_resource type="PackedScene" uid="uid://bu0q4v7mo8lfg" path="res://components/shader_second_pass/second_shader_pass_component.tscn" id="7_dhmp7"]
+[ext_resource type="Texture2D" uid="uid://bmxrt8lql7js" path="res://structures/mechanics/bobots/recording_bot/Recording bot cassette small but the bottom half is gone.PNG" id="8_gxfls"]
+[ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="8_ibrq3"]
+[ext_resource type="Texture2D" uid="uid://b0xkiaiju1h53" path="res://structures/mechanics/bobots/recording_bot/Recording bot cassette holder.PNG" id="9_sd01s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aya8i"]
+radius = 121.037186
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_533fg"]
+shader = ExtResource("8_ibrq3")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 4.00000019
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[node name="RecordingBot" type="Node2D" unique_id=1192683161]
+script = ExtResource("1_i4num")
+
+[node name="MemoryBank" parent="." unique_id=512886027 node_paths=PackedStringArray("sprites_to_hide") instance=ExtResource("2_bnnhb")]
+memory_id = 2
+sprites_to_hide = [NodePath("../Casette")]
+
+[node name="Sprite2D" parent="MemoryBank" index="0" unique_id=917366805]
+visible = false
+
+[node name="CollisionShape2D" parent="MemoryBank/ProximityInteractionComponent" parent_id_path=PackedInt32Array(512886027, 606314739) index="0" unique_id=807831631]
+position = Vector2(-23, 25)
+shape = SubResource("CircleShape2D_aya8i")
+
+[node name="DynamicHotkeyComponent" parent="MemoryBank" index="2" unique_id=62764332]
+position = Vector2(-16, -142)
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1778127819]
+self_modulate = Color(1, 1, 1, 0.78431374)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_gxfls")
+offset = Vector2(-20, -80)
+
+[node name="BobotNoCasette" type="Sprite2D" parent="." unique_id=1624559786]
+material = ExtResource("5_ogv0y")
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("5_gxfls")
+offset = Vector2(-20, -80)
+
+[node name="SecondShaderPassComponent" parent="." unique_id=745430328 node_paths=PackedStringArray("target_sprite") instance=ExtResource("7_dhmp7")]
+material = SubResource("ShaderMaterial_533fg")
+target_sprite = NodePath("../Casette")
+
+[node name="Casette" type="Sprite2D" parent="." unique_id=1845255996]
+material = ExtResource("5_ogv0y")
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("8_gxfls")
+offset = Vector2(-20, -80)
+
+[node name="BobotFront" type="Sprite2D" parent="." unique_id=1510752185]
+material = ExtResource("5_ogv0y")
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("9_sd01s")
+offset = Vector2(-20, -80)
+
+[connection signal="collected" from="MemoryBank" to="." method="_on_memory_bank_collected"]
+[connection signal="selection_update" from="MemoryBank/ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]
+
+[editable path="MemoryBank"]

@@ -26,12 +26,15 @@ func update_display() -> void:
 	
 	var casette_option_index: int = 0
 	for casette_option: CasetteOption in casette_options:
-		if GameData.acquired_memories.size() > casette_option_index:
-			casette_option.update_display(GameData.acquired_memories[casette_option_index])
+		var display_order: Array[GameData.Memory] = [GameData.Memory.GREENHOUSE, GameData.Memory.STORAGE_AREA, GameData.Memory.LAB, GameData.Memory.ALICE_QUARTERS]
+		var actual_memory: int = display_order[casette_option_index]
+		#if GameData.acquired_memories.size() > casette_option_index:
+		if GameData.acquired_memories.has(actual_memory):
+			casette_option.update_display(actual_memory)
 			casette_option.visible = true
 			
 			# give casette focus if was selected previously
-			if GameData.casette_is_selected and GameData.selected_casette == GameData.acquired_memories[casette_option_index]:
+			if GameData.casette_is_selected and GameData.selected_casette == display_order[casette_option_index]:
 				casette_option.button.grab_focus()
 		else:
 			casette_option.show_blank()

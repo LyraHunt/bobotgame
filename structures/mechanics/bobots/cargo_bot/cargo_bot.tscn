@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bioib3joclgee" path="res://structures/mechanics/bobots/cargo_bot/Cargo bot open.PNG" id="5_gyv0n"]
 [ext_resource type="Material" uid="uid://bn3drkgdlh1yo" path="res://resources/shaders/visual_boil_shader/boil_shader_mat.tres" id="5_w5rrj"]
 [ext_resource type="Texture2D" uid="uid://bjoqcv7fcplgf" path="res://structures/mechanics/bobots/cargo_bot/Cargo bot.PNG" id="7_rj4cg"]
-[ext_resource type="Script" uid="uid://wxowyt8urw6g" path="res://main/camera/camera.gd" id="9_53b5w"]
 [ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="9_g6pen"]
 [ext_resource type="Script" uid="uid://n8gyxoucnnos" path="res://components/shader_second_pass/second_shader_pass_component.gd" id="9_rj4cg"]
 
@@ -127,10 +126,6 @@ metadata/_custom_type_script = "uid://n8gyxoucnnos"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1128712945]
 position = Vector2(-1, 14)
 shape = SubResource("RectangleShape2D_aya8i")
-
-[node name="Camera" type="Camera2D" parent="." unique_id=665270598]
-script = ExtResource("9_53b5w")
-metadata/_custom_type_script = "uid://wxowyt8urw6g"
 
 [connection signal="collected" from="MemoryBank" to="." method="_on_memory_bank_collected"]
 [connection signal="selection_update" from="MemoryBank/ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]

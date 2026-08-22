@@ -1,10 +1,58 @@
 [gd_scene format=3 uid="uid://dv0rr0swpplka"]
 
 [ext_resource type="Texture2D" uid="uid://b7rwtnvcvboe" path="res://structures/mechanics/power_box/power box.PNG" id="1_osuco"]
+[ext_resource type="Script" uid="uid://ctginqe4bd30f" path="res://structures/mechanics/power_box/power_box.gd" id="1_pqcbt"]
+[ext_resource type="Material" uid="uid://bn3drkgdlh1yo" path="res://resources/shaders/visual_boil_shader/boil_shader_mat.tres" id="2_vfyer"]
+[ext_resource type="PackedScene" uid="uid://cooufmusuhqsl" path="res://components/dynamic_hotkey/dynamic_hotkey_component.tscn" id="3_bvcls"]
+[ext_resource type="Texture2D" uid="uid://cxqopxg3b8pna" path="res://structures/mechanics/power_box/power box open.png" id="4_a7lj3"]
+[ext_resource type="PackedScene" uid="uid://djyaxwrsd83y4" path="res://components/proximity_interaction/proximity_interaction_component.tscn" id="4_vfyer"]
+[ext_resource type="PackedScene" uid="uid://bu0q4v7mo8lfg" path="res://components/shader_second_pass/second_shader_pass_component.tscn" id="6_kvwoo"]
+[ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="7_qqxco"]
 
-[node name="PowerBox" type="StaticBody2D" unique_id=433000163]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5iys"]
+size = Vector2(201, 43)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7lj3"]
+shader = ExtResource("7_qqxco")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 5.0000002375
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[node name="PowerBox" type="StaticBody2D" unique_id=433000163 node_paths=PackedStringArray("sprites_to_hide", "sprites_to_show")]
+script = ExtResource("1_pqcbt")
+sprites_to_hide = [NodePath("Sprite2D")]
+sprites_to_show = [NodePath("Sprite2DOpened")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005027801]
+material = ExtResource("2_vfyer")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_osuco")
 offset = Vector2(-20, -40)
+
+[node name="Sprite2DOpened" type="Sprite2D" parent="." unique_id=1497391543]
+visible = false
+material = ExtResource("2_vfyer")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_a7lj3")
+offset = Vector2(0, -40)
+
+[node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("3_bvcls")]
+position = Vector2(0, -191)
+icon_type_inspect = false
+
+[node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("dynamic_hotkey") instance=ExtResource("4_vfyer")]
+dynamic_hotkey = NodePath("../DynamicHotkeyComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityInteractionComponent" unique_id=162173360]
+position = Vector2(0, 100)
+shape = SubResource("RectangleShape2D_r5iys")
+
+[node name="SecondShaderPassComponent" parent="." unique_id=745430328 node_paths=PackedStringArray("target_sprite") instance=ExtResource("6_kvwoo")]
+material = SubResource("ShaderMaterial_a7lj3")
+target_sprite = NodePath("../Sprite2D")
+
+[connection signal="interacted" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_interacted"]
+[connection signal="selection_update" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]

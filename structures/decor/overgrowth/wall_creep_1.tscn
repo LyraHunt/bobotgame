@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cwxdcswacspiv"]
+
+[ext_resource type="Texture2D" uid="uid://c2obxki75irq5" path="res://structures/decor/overgrowth/sprites/wall_creep_1.png" id="1_m68bw"]
+
+[node name="wallCreep1" type="Sprite2D" unique_id=86382574]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_m68bw")
+offset = Vector2(-10, -90)

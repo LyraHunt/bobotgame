@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://by1amftn4wyib"]
+
+[ext_resource type="Script" uid="uid://cdo6kndyx8mhf" path="res://structures/mechanics/cable/cable.gd" id="1_f0ey0"]
+[ext_resource type="Texture2D" uid="uid://ccs2f5oxid1iy" path="res://structures/mechanics/keycards/Crew quarters keycard.PNG" id="2_f0ey0"]
+[ext_resource type="PackedScene" uid="uid://djyaxwrsd83y4" path="res://components/proximity_interaction/proximity_interaction_component.tscn" id="3_iut3s"]
+[ext_resource type="PackedScene" uid="uid://cooufmusuhqsl" path="res://components/dynamic_hotkey/dynamic_hotkey_component.tscn" id="4_4sr7v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r5iys"]
+radius = 41.01219
+
+[node name="QuartersKeycard" type="Node2D" unique_id=512886027]
+y_sort_enabled = true
+script = ExtResource("1_f0ey0")
+progression_id = "has_quarters_passkey"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=917366805]
+position = Vector2(0, 3.8146973e-06)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_f0ey0")
+
+[node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("sprite", "dynamic_hotkey") instance=ExtResource("3_iut3s")]
+sprite = NodePath("../Sprite2D")
+dynamic_hotkey = NodePath("../DynamicHotkeyComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityInteractionComponent" unique_id=807831631]
+shape = SubResource("CircleShape2D_r5iys")
+
+[node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("4_4sr7v")]
+position = Vector2(0, -194)
+icon_type_inspect = false
+
+[connection signal="interacted" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_interacted"]
+[connection signal="selection_update" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]

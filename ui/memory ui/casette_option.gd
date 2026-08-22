@@ -4,7 +4,7 @@ signal selected(current_memory_id: GameData.Memory)
 
 @onready var casette_sprite: TextureRect = get_node("ControlCasette/CasetteSprite")
 @onready var casette_label: RichTextLabel = get_node("ControlLabel/CasetteLabel")
-@onready var button: Button = get_node("Button")
+@onready var button: Button = get_node("Control/Button")
 
 var current_memory_id: GameData.Memory
 

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c5r1lpt63kbrx"]
+
+[ext_resource type="Texture2D" uid="uid://dw28xgf54abab" path="res://structures/decor/greenhouse_decor/botany_clutter/botany clutter.png" id="1_3h0r2"]
+
+[node name="BotanyClutter" type="Sprite2D" unique_id=1695079663]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_3h0r2")

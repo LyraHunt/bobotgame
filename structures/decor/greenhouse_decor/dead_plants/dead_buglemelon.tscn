@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c3wjuktdicto2"]
+
+[ext_resource type="Texture2D" uid="uid://bmh27eeuds5nn" path="res://structures/decor/greenhouse_decor/dead_plants/planter dead buglemelon.png" id="1_xbx5i"]
+
+[node name="DeadBuglemelon" type="Sprite2D" unique_id=976649334]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_xbx5i")
+offset = Vector2(10, 100)

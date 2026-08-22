@@ -13,11 +13,19 @@
 [ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="11_mb6ns"]
 [ext_resource type="PackedScene" uid="uid://b5k28b8t1vjyy" path="res://components/proximity_inspection_component/proximity_inspection_component.tscn" id="11_mm337"]
 [ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="12_n6x0s"]
+[ext_resource type="Texture2D" uid="uid://0cety24aoowb" path="res://structures/decor/greenhouse_decor/botany_clutter/botany clutter-two-tools.png" id="12_qtdh2"]
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="13_l3e06"]
 [ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="14_o8vjc"]
 [ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="15_ephht"]
 [ext_resource type="PackedScene" uid="uid://cwxdcswacspiv" path="res://structures/decor/overgrowth/wall_creep_1.tscn" id="16_q8isb"]
 [ext_resource type="Texture2D" uid="uid://cfa02u2qv4y5b" path="res://structures/decor/greenhouse_decor/big_window/greenhouse_window.png" id="17_cxk13"]
+[ext_resource type="PackedScene" uid="uid://c5r1lpt63kbrx" path="res://structures/decor/greenhouse_decor/botany_clutter/botany_clutter.tscn" id="18_5w0c5"]
+[ext_resource type="Texture2D" uid="uid://bkjarrbaydytx" path="res://structures/decor/greenhouse_decor/botany_clutter/botany clutter-bucket.png" id="20_0iwav"]
+[ext_resource type="PackedScene" uid="uid://c3wjuktdicto2" path="res://structures/decor/greenhouse_decor/dead_plants/dead_buglemelon.tscn" id="21_mb6ns"]
+[ext_resource type="Texture2D" uid="uid://xpbsvqc8h7mi" path="res://structures/decor/greenhouse_decor/big_window/window top.png" id="22_35hhk"]
+[ext_resource type="PackedScene" uid="uid://t0morq6fyk0h" path="res://structures/decor/greenhouse_decor/dead_plants/dead_spark_bulb.tscn" id="22_n6x0s"]
+[ext_resource type="Texture2D" uid="uid://dbi6mbnf5kwre" path="res://structures/decor/greenhouse_decor/big_window/window diagonal.png" id="23_l4oau"]
+[ext_resource type="Texture2D" uid="uid://cxknaynnpmio3" path="res://structures/decor/greenhouse_decor/big_window/window side.png" id="24_iced8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_harlm"]
 radius = 73.0
@@ -67,7 +75,7 @@ tile_set = ExtResource("6_qtdh2")
 z_index = -2
 z_as_relative = false
 scale = Vector2(0.6, 0.6)
-tile_map_data = PackedByteArray("AAD+//7/DwAAAAAAAAD///7/DwAAAAAAAAAAAP7/DwAAAAAAAAABAP7/DwAAAAAAAAACAP7/DwAAAAAAAAADAP7/EQAAAAAAAAD9//7/EAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+//7/DwAAAAAAAAD///7/DwAAAAAAAAAAAP7/DwAAAAAAAAABAP7/DwAAAAAAAAACAP7/DwAAAAAAAAADAP7/EQAAAAAAAAA=")
 tile_set = ExtResource("7_0iwav")
 
 [node name="TileMapLayerSides" type="TileMapLayer" parent="." unique_id=478124911]
@@ -116,7 +124,13 @@ position = Vector2(-25, 1413)
 position = Vector2(-136, 1414)
 
 [node name="CargoCrate11" parent="." unique_id=970497077 instance=ExtResource("1_mm337")]
+y_sort_enabled = false
 position = Vector2(-136, 1414)
+
+[node name="BotanyClutter3" parent="CargoCrate11" unique_id=1695079663 instance=ExtResource("18_5w0c5")]
+position = Vector2(43, -81)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("20_0iwav")
 
 [node name="CargoCrate6" parent="." unique_id=818275016 instance=ExtResource("1_mm337")]
 z_index = 1
@@ -149,6 +163,7 @@ y_sort_enabled = false
 position = Vector2(1, -114)
 
 [node name="Desk" parent="." unique_id=1181395174 instance=ExtResource("9_l76pj")]
+y_sort_enabled = false
 position = Vector2(401, -338)
 
 [node name="ProximityInspectionComponent" parent="Desk" unique_id=1247991738 instance=ExtResource("11_mm337")]
@@ -158,6 +173,12 @@ flavor_text_id = "natasha_desk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Desk/ProximityInspectionComponent" unique_id=518174261]
 position = Vector2(-8, 136)
 shape = SubResource("RectangleShape2D_bsad5")
+
+[node name="BotanyClutter3" parent="Desk" unique_id=133500417 instance=ExtResource("18_5w0c5")]
+position = Vector2(-44, -89)
+rotation = -0.45311448
+texture = ExtResource("12_qtdh2")
+flip_h = true
 
 [node name="Overgrowth" type="Node2D" parent="." unique_id=1835052771]
 y_sort_enabled = true
@@ -223,12 +244,15 @@ y_sort_enabled = true
 position = Vector2(-11, 127)
 
 [node name="PlanterBox" parent="PlanterRow1" unique_id=1471946490 instance=ExtResource("7_7ltw3")]
+y_sort_enabled = false
 position = Vector2(419, -119)
 
 [node name="PlanterBox2" parent="PlanterRow1" unique_id=1768961988 instance=ExtResource("7_7ltw3")]
+y_sort_enabled = false
 position = Vector2(164, -122)
 
 [node name="PlanterBox3" parent="PlanterRow1" unique_id=651492669 instance=ExtResource("7_7ltw3")]
+y_sort_enabled = false
 position = Vector2(166, 102)
 
 [node name="ProximityInspectionComponent" parent="PlanterRow1/PlanterBox3" unique_id=1389150908 instance=ExtResource("11_mm337")]
@@ -238,6 +262,9 @@ flavor_text_id = "planter_box_two"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlanterRow1/PlanterBox3/ProximityInspectionComponent" unique_id=1091685039]
 position = Vector2(-4, 90)
 shape = SubResource("CircleShape2D_ojbw0")
+
+[node name="DeadSparkBulb" parent="PlanterRow1/PlanterBox3" unique_id=407216271 instance=ExtResource("22_n6x0s")]
+position = Vector2(0, -88)
 
 [node name="PlanterBox4" parent="PlanterRow1" unique_id=1392508654 instance=ExtResource("7_7ltw3")]
 position = Vector2(421, 99)
@@ -270,6 +297,7 @@ position = Vector2(-16, 1150)
 position = Vector2(419, -119)
 
 [node name="PlanterBox2" parent="PlanterRow3" unique_id=723647321 instance=ExtResource("7_7ltw3")]
+y_sort_enabled = false
 position = Vector2(164, -122)
 
 [node name="ProximityInspectionComponent" parent="PlanterRow3/PlanterBox2" unique_id=1329875771 instance=ExtResource("11_mm337")]
@@ -279,6 +307,9 @@ flavor_text_id = "planter_box_three"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlanterRow3/PlanterBox2/ProximityInspectionComponent" unique_id=640953895]
 position = Vector2(1, 102)
 shape = SubResource("CircleShape2D_vdhf0")
+
+[node name="DeadBuglemelon" parent="PlanterRow3/PlanterBox2" unique_id=461732007 instance=ExtResource("21_mb6ns")]
+position = Vector2(-8, -98)
 
 [node name="PlanterBox3" parent="PlanterRow3" unique_id=51068125 instance=ExtResource("7_7ltw3")]
 position = Vector2(166, 102)
@@ -315,7 +346,11 @@ position = Vector2(166, 102)
 position = Vector2(421, 99)
 
 [node name="PlanterBox5" parent="PlanterRow2" unique_id=1359439712 instance=ExtResource("7_7ltw3")]
+y_sort_enabled = false
 position = Vector2(-148, -117)
+
+[node name="DeadSparkBulb" parent="PlanterRow2/PlanterBox5" unique_id=190598978 instance=ExtResource("22_n6x0s")]
+position = Vector2(1, -84)
 
 [node name="PlanterBox6" parent="PlanterRow2" unique_id=701980882 instance=ExtResource("7_7ltw3")]
 position = Vector2(-403, -120)
@@ -326,11 +361,44 @@ position = Vector2(-401, 104)
 [node name="PlanterBox8" parent="PlanterRow2" unique_id=1958530381 instance=ExtResource("7_7ltw3")]
 position = Vector2(-146, 101)
 
+[node name="BotanyClutter" parent="." unique_id=551631714 instance=ExtResource("18_5w0c5")]
+position = Vector2(-42, -102.999985)
+texture = ExtResource("20_0iwav")
+
+[node name="BotanyClutter2" parent="." unique_id=1056449948 instance=ExtResource("18_5w0c5")]
+position = Vector2(530, 1218)
+flip_h = true
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1332192042]
+visible = false
 z_index = -1
 position = Vector2(-176, 425.99997)
 scale = Vector2(2.65, 2.65)
 texture = ExtResource("17_cxk13")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1851321915]
+self_modulate = Color(1, 1, 1, 0.85490197)
+light_mask = 2
+z_index = -1
+position = Vector2(-870, -547.00006)
+scale = Vector2(1.925, 1.95)
+texture = ExtResource("22_35hhk")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1890600316]
+self_modulate = Color(1, 1, 1, 0.85490197)
+light_mask = 2
+z_index = -1
+position = Vector2(-1190.0001, -191)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("23_l4oau")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=311339875]
+self_modulate = Color(1, 1, 1, 0.85490197)
+light_mask = 2
+z_index = -1
+position = Vector2(-1326, 395.00003)
+scale = Vector2(2, 1.95)
+texture = ExtResource("24_iced8")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1482187743]
 position = Vector2(-896, 148.00002)
@@ -340,3 +408,4 @@ color = Color(1, 1, 0.76862746, 1)
 energy = 2.0
 range_item_cull_mask = 5
 texture = SubResource("GradientTexture2D_r5iys")
+metadata/_edit_lock_ = true

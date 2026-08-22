@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://t0morq6fyk0h"]
+
+[ext_resource type="Texture2D" uid="uid://dves8784lx8pc" path="res://structures/decor/greenhouse_decor/dead_plants/planter dead spark bulb.png" id="1_7muxk"]
+
+[node name="DeadSparkBulb" type="Sprite2D" unique_id=1771413083]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_7muxk")
+offset = Vector2(0, 75)

@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="10_aegkf"]
 [ext_resource type="PackedScene" uid="uid://by1amftn4wyib" path="res://structures/mechanics/keycards/quarters_keycard.tscn" id="10_yjwjt"]
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="11_yjwjt"]
+[ext_resource type="PackedScene" uid="uid://dgjsmmyh7rubc" path="res://structures/mechanics/documents/document.tscn" id="12_aofn0"]
 [ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="12_o2hmf"]
 [ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="13_5mtks"]
 [ext_resource type="PackedScene" uid="uid://cwxdcswacspiv" path="res://structures/decor/overgrowth/wall_creep_1.tscn" id="18_16c82"]
@@ -98,7 +99,13 @@ position = Vector2(298, -301)
 position = Vector2(412, -301)
 
 [node name="CargoCrate4" parent="." unique_id=1715128334 instance=ExtResource("8_weotp")]
+y_sort_enabled = false
 position = Vector2(1024, 332)
+
+[node name="Document" parent="CargoCrate4" unique_id=713735610 instance=ExtResource("12_aofn0")]
+position = Vector2(-16, -80)
+rotation = -0.78460103
+document_id = 4
 
 [node name="CargoCrate5" parent="." unique_id=900655085 instance=ExtResource("8_weotp")]
 position = Vector2(435, 330)

@@ -10,6 +10,8 @@ class_name PowerBox extends StaticBody2D
 
 @onready var proximity_interaction_component: ProximityInteractionComponent = get_node("ProximityInteractionComponent")
 
+@onready var sprite_cable: Sprite2D = get_node("Sprite2DCable")
+
 var bobot: Bobot
 
 var password_flavor_text_id: String = "power_box_locked"

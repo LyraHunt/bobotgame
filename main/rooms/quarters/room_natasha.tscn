@@ -5,8 +5,8 @@
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="3_unrar"]
 [ext_resource type="PackedScene" uid="uid://djfuhdxla6o6i" path="res://structures/decor/quarters_decor/bed.tscn" id="4_tdtq0"]
 [ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="5_unrar"]
-[ext_resource type="PackedScene" uid="uid://dbus6u310w6ph" path="res://structures/flavor/notes/notes.tscn" id="6_4tubf"]
 [ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="7_j4xh0"]
+[ext_resource type="PackedScene" uid="uid://dgjsmmyh7rubc" path="res://structures/mechanics/documents/document.tscn" id="7_x8kua"]
 [ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="8_mrot3"]
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="9_4gh7g"]
 [ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="10_mmt3y"]
@@ -61,10 +61,12 @@ position = Vector2(397, -318)
 y_sort_enabled = false
 position = Vector2(-126, -143)
 
-[node name="Notes" parent="." unique_id=882252241 instance=ExtResource("6_4tubf")]
+[node name="Document" parent="." unique_id=512886027 instance=ExtResource("7_x8kua")]
 z_index = -1
 position = Vector2(320, -258)
 rotation = -0.2548489
+scale = Vector2(0.99999994, 0.99999994)
+document_id = 1
 
 [node name="Overgrowth" type="Node2D" parent="." unique_id=1665341804]
 y_sort_enabled = true

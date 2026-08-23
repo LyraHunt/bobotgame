@@ -5,8 +5,7 @@
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="3_frm7m"]
 [ext_resource type="PackedScene" uid="uid://djfuhdxla6o6i" path="res://structures/decor/quarters_decor/bed.tscn" id="5_7cq72"]
 [ext_resource type="PackedScene" uid="uid://rcclf21xo81f" path="res://structures/decor/quarters_decor/desk.tscn" id="6_atgn6"]
-[ext_resource type="PackedScene" uid="uid://dbus6u310w6ph" path="res://structures/flavor/notes/notes.tscn" id="7_b67v1"]
-[ext_resource type="PackedScene" uid="uid://b5k28b8t1vjyy" path="res://components/proximity_inspection_component/proximity_inspection_component.tscn" id="8_a5ixg"]
+[ext_resource type="PackedScene" uid="uid://dgjsmmyh7rubc" path="res://structures/mechanics/documents/document.tscn" id="6_dv243"]
 [ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="8_dv243"]
 [ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="9_j1283"]
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="10_ppase"]
@@ -14,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="12_vmm4a"]
 [ext_resource type="PackedScene" uid="uid://cwxdcswacspiv" path="res://structures/decor/overgrowth/wall_creep_1.tscn" id="13_j1283"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dwk4r"]
-radius = 94.00532
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1283"]
+size = Vector2(118, 189)
 
 [node name="AliceQuarters" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -57,16 +56,12 @@ polygon = PackedVector2Array(475, -362, 483, 360, -235, 360, -235, -362)
 y_sort_enabled = false
 position = Vector2(349, -62)
 
-[node name="Notes" parent="RoomPhysicsBounds/Desk" unique_id=882252241 instance=ExtResource("7_b67v1")]
-position = Vector2(-47, -59)
+[node name="Document" parent="RoomPhysicsBounds/Desk" unique_id=512886027 instance=ExtResource("6_dv243")]
+position = Vector2(-47, -63)
 
-[node name="ProximityInspectionComponent" parent="RoomPhysicsBounds/Desk/Notes" unique_id=368491059 instance=ExtResource("8_a5ixg")]
-position = Vector2(0, -84)
-flavor_text_id = "cargo_crate_flavor"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomPhysicsBounds/Desk/Notes/ProximityInspectionComponent" unique_id=1974502498]
-position = Vector2(0, 120)
-shape = SubResource("CircleShape2D_dwk4r")
+[node name="CollisionShape2D" parent="RoomPhysicsBounds/Desk/Document/ProximityInteractionComponent" parent_id_path=PackedInt32Array(512886027, 606314739) index="0" unique_id=807831631]
+position = Vector2(2, 44.5)
+shape = SubResource("RectangleShape2D_j1283")
 
 [node name="Overgrowth" type="Node2D" parent="." unique_id=465663145]
 y_sort_enabled = true
@@ -102,3 +97,5 @@ position = Vector2(253, 90)
 
 [node name="wallCreep1" parent="Overgrowth" unique_id=1589431574 instance=ExtResource("13_j1283")]
 position = Vector2(-71, -362)
+
+[editable path="RoomPhysicsBounds/Desk/Document"]

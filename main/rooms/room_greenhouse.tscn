@@ -69,8 +69,8 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_a3ktg"]
 gradient = SubResource("Gradient_n6x0s")
-fill_from = Vector2(0.8333333, 0.8418803)
-fill_to = Vector2(1, 1)
+fill_from = Vector2(0.66239315, 0.6752137)
+fill_to = Vector2(0.9188034, 0.9059829)
 
 [node name="Greenhouse" type="Node2D" unique_id=1292530247]
 y_sort_enabled = true

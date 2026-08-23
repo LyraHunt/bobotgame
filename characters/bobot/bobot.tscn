@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cowricmvcl3ke" path="res://structures/mechanics/documents/document_popup.tscn" id="11_iqcf8"]
 [ext_resource type="PackedScene" uid="uid://h1o5n2y8j01g" path="res://ui/progression_ui/progression_ui.tscn" id="13_ke3xm"]
 [ext_resource type="PackedScene" uid="uid://dcefm13nt7nbu" path="res://ui/bobot ui/escape_countdown.tscn" id="15_5eok7"]
+[ext_resource type="Texture2D" uid="uid://dss87phr7fflj" path="res://ui/game-complete-3.PNG" id="16_r6tu8"]
 [ext_resource type="Texture2D" uid="uid://dj8eyn6xqj54g" path="res://ui/bobot ui/controls.png" id="16_xx1p5"]
 [ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="17_b38t4"]
 
@@ -204,7 +205,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+
+[node name="EscapeScreen" type="TextureRect" parent="CanvasLayer" unique_id=1165910551]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_r6tu8")
 
 [node name="Controls" type="ColorRect" parent="CanvasLayer" unique_id=1892185379]
 visible = false

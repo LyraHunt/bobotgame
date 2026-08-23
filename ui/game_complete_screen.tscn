@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://hef8wmewqypr"]
 
 [ext_resource type="Script" uid="uid://2g4okmwfx0ju" path="res://ui/game_complete_screen.gd" id="1_j3jwd"]
+[ext_resource type="Texture2D" uid="uid://dss87phr7fflj" path="res://ui/game-complete-3.PNG" id="2_m1qwc"]
 [ext_resource type="Texture2D" uid="uid://dyh3y50hnebgb" path="res://ui/game-complete-1.png" id="2_menux"]
 [ext_resource type="Texture2D" uid="uid://bkqrhc7cprxt6" path="res://ui/game-complete-2.png" id="3_m1qwc"]
 
@@ -22,9 +23,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+texture = ExtResource("2_m1qwc")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=656388440]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_menux")
 
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=18635858]
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=18635858]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 40.0

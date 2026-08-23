@@ -24,6 +24,7 @@ var node_for_icon_tracking: Node2D
 @onready var spotlight: PointLight2D = get_node("Spotlight")
 
 @onready var escape_fade_black: ColorRect = get_node("CanvasLayer/EscapeFadeBlack")
+@onready var escape_screen: TextureRect = get_node("CanvasLayer/EscapeScreen")
 
 @onready var collision_shape: CollisionShape2D = get_node("CollisionShape2D")
 
@@ -347,8 +348,12 @@ func escape() -> void:
 	escape_fade_black.visible = true
 	await get_tree().create_timer(1).timeout
 	var escape_tween: Tween = get_tree().create_tween()
-	escape_tween.tween_property(escape_fade_black, "modulate", Color.WHITE, 2.0)
+	escape_tween.tween_property(escape_fade_black, "modulate", Color.WHITE, 1.0)
 	
 	await get_tree().create_timer(2).timeout
+	escape_screen.visible = true
+	var escape_tween_2: Tween = get_tree().create_tween()
+	escape_tween_2.tween_property(escape_screen, "modulate", Color.WHITE, 1.0)
+	
 	SoundManager.stop_sound((SRM as SoundResourceManager).get_sound("bobot_footsteps"))
 	ready_to_escape = true

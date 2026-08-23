@@ -91,9 +91,10 @@ func hide_display() -> void:
 	visible = false
 
 func memory_selected(memory_id: GameData.Memory) -> void:
-	GameData.selected_casette = memory_id
-	GameData.casette_is_selected = true
-	bobot.start_memory(memory_id)
+	if not GameData.actual_progress["powered_box"]:
+		GameData.selected_casette = memory_id
+		GameData.casette_is_selected = true
+		bobot.start_memory(memory_id)
 
 
 func _on_close_button_button_down() -> void:

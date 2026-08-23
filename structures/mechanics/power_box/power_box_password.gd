@@ -39,5 +39,5 @@ func _input(event: InputEvent) -> void:
 		if event.is_action_pressed("escape_key"):
 			if (event as InputEventKey).keycode != Key.KEY_BACKSPACE:
 				closed.emit()
-		elif event is InputEventKey and event.is_pressed() and (event as InputEventKey).key_label == KEY_BACKSLASH:
+		elif event is InputEventKey and event.is_pressed() and (event as InputEventKey).key_label == KEY_BACKSLASH and GameData.debug_mode:
 			all_correct()

@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ckyoe6ut0owfg" path="res://ui/bobot ui/bobot_vignette.tscn" id="10_xkikd"]
 [ext_resource type="PackedScene" uid="uid://cowricmvcl3ke" path="res://structures/mechanics/documents/document_popup.tscn" id="11_iqcf8"]
 [ext_resource type="PackedScene" uid="uid://h1o5n2y8j01g" path="res://ui/progression_ui/progression_ui.tscn" id="13_ke3xm"]
+[ext_resource type="PackedScene" uid="uid://dcefm13nt7nbu" path="res://ui/bobot ui/escape_countdown.tscn" id="15_5eok7"]
 
 [sub_resource type="Gradient" id="Gradient_bb0xe"]
 offsets = PackedFloat32Array(0, 0.675, 0.8825)
@@ -62,7 +63,7 @@ light_mask = 2
 material = ExtResource("4_xkikd")
 scale = Vector2(0.3, 0.3)
 sprite_frames = ExtResource("3_25c5j")
-animation = &"death"
+animation = &"charge_eepy"
 autoplay = "stand_down"
 offset = Vector2(0, -280)
 
@@ -118,12 +119,25 @@ offset_top = 930.0
 offset_right = 1474.0
 offset_bottom = 930.0
 
+[node name="EscapeCountdown" parent="CanvasLayer" unique_id=2135048579 instance=ExtResource("15_5eok7")]
+visible = false
+
 [node name="InteractionIcon" type="TextureRect" parent="CanvasLayer" unique_id=642595828]
 material = ExtResource("4_xkikd")
 custom_maximum_size = Vector2(80, 80)
 offset_right = 530.0
 offset_bottom = 530.0
 texture = SubResource("CompressedTexture2D_iqcf8")
+
+[node name="EscapeFadeBlack" type="ColorRect" parent="CanvasLayer" unique_id=362363566]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="IdleTimer" type="Timer" parent="." unique_id=1137402389]
 wait_time = 4.0
@@ -135,4 +149,9 @@ range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_obths")
 texture_scale = 3.0
 
+[node name="EscapeTimer" type="Timer" parent="." unique_id=1561425460]
+wait_time = 40.0
+one_shot = true
+
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
+[connection signal="timeout" from="EscapeTimer" to="." method="_on_escape_timer_timeout"]

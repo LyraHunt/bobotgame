@@ -14,11 +14,18 @@ class_name Bobot extends CharacterBody2D
 @onready var document_popup: DocumentPopup = get_node("CanvasLayer/DocumentPopup")
 @onready var memory_ui: MemoryUI = get_node("CanvasLayer/MemoryUI")
 @onready var vignette: Control = get_node("CanvasLayer/BobotVignette")
+@onready var escape_countdown: EscapeCountdown = get_node("CanvasLayer/EscapeCountdown")
 @onready var interaction_icon: TextureRect = get_node("CanvasLayer/InteractionIcon")
 var node_for_icon_tracking: Node2D
 
 @onready var idle_timer: Timer = get_node("IdleTimer")
+@onready var escape_timer: Timer = get_node("EscapeTimer")
 @onready var spotlight: PointLight2D = get_node("Spotlight")
+
+@onready var escape_fade_black: ColorRect = get_node("CanvasLayer/EscapeFadeBlack")
+
+@onready var collision_shape: CollisionShape2D = get_node("CollisionShape2D")
+
 var casette_popup_timer: SceneTreeTimer
 var death_cutscene_timer: SceneTreeTimer
 var start_casette_timer: SceneTreeTimer
@@ -32,6 +39,9 @@ var is_playing_footsteps: bool = false
 func _ready() -> void:
 	#start_charge(GameData.power_stations[GameData.bobot_last_power_station])
 	GameLogic.power_stations_initialized.connect(_start_charge_on_load)
+	GameLogic.start_countdown.connect(start_countdown_display)
+	GameLogic.bobot_escaped.connect(escape)
+	
 	camera = get_tree().get_first_node_in_group("camera")
 	SoundManager.stop_sound((SRM as SoundResourceManager).get_sound("casette_collected"))
 	
@@ -82,7 +92,7 @@ func start_charge(power_station: PowerStation) -> void:
 	idle_timer.start(2)
 	
 	GameData.bobot_last_power_station = power_station.power_station_id
-	animated_sprite.animation = "stand_down"
+	animated_sprite.animation = "charge"
 	
 	GameLogic.change_state(GameLogic.State.CHARGING)
 	
@@ -124,6 +134,8 @@ func charge_out() -> void:
 func kill() -> void:
 	GameData.pending_memories = []
 	GameData.bobot_charge = GameData.bobot_max_charge
+	GameData.pending_progress["powered_box"] = false
+	GameData.actual_progress["powered_box"] = false
 	GameLogic.reload_scene()
 
 func start_memory(memory_id: GameData.Memory) -> void:
@@ -176,11 +188,15 @@ func _handle_movement_input() -> void:
 	
 	if GameLogic.state != GameLogic.State.EXPLORING:
 		movement_input = Vector2.ZERO
+	if GameLogic.state == GameLogic.State.ESCAPED:
+		movement_input = Vector2.UP
+		x_direction = 0.0
+		y_direction = 0.0
 	
 	if movement_input.length() > 0:
 		movement_input = movement_input.normalized()
 		
-		if Input.is_action_pressed("sprint_key"):
+		if Input.is_action_pressed("sprint_key") and GameData.debug_mode:
 			movement_input *= 1.75
 		
 		movement_input.y *= 0.8
@@ -252,7 +268,10 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_idle_timer_timeout() -> void:
 	match GameLogic.state:
 		GameLogic.State.EXPLORING, GameLogic.State.CHARGING:
-			animated_sprite.animation = "eepy"
+			if animated_sprite.animation == "charge":
+				animated_sprite.animation = "charge_eepy"
+			else:
+				animated_sprite.animation = "eepy"
 			if eepy_tween:
 				eepy_tween.kill()
 			eepy_tween = get_tree().create_tween()
@@ -270,3 +289,26 @@ func track_arm_icon(node: Node2D) -> void:
 	node_for_icon_tracking = node
 	interaction_icon.texture = arm_icon
 	interaction_icon.custom_maximum_size = Vector2(100, 100)
+
+func start_countdown_display() -> void:
+	escape_timer.start()
+	escape_countdown.visible = true
+	escape_countdown.timer_ref = escape_timer
+
+
+func _on_escape_timer_timeout() -> void:
+	GameLogic.failed_countdown.emit()
+	if GameLogic.state == GameLogic.State.EXPLORING:
+		charge_out()
+
+func escape() -> void:
+	print("bobot 'scape!")
+	escape_countdown.timer_ref = null
+	movement_component.movement_mult = 30.0
+	animated_sprite.animation = "walk_down"
+	collision_shape.disabled = true
+	
+	escape_fade_black.visible = true
+	await get_tree().create_timer(1).timeout
+	var escape_tween: Tween = get_tree().create_tween()
+	escape_tween.tween_property(escape_fade_black, "modulate", Color.WHITE, 2.0)

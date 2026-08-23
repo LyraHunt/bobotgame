@@ -2,9 +2,14 @@ extends Node
 
 signal state_changed()
 signal controls_changed()
+@warning_ignore("unused_signal") signal power_on()
+signal start_pan_to_door()
+@warning_ignore("unused_signal") signal start_countdown()
+@warning_ignore("unused_signal") signal failed_countdown()
 @warning_ignore("unused_signal") signal power_stations_initialized()
+@warning_ignore("unused_signal") signal bobot_escaped()
 
-enum State {EXPLORING, CHARGING, START_REMBERING, REMBERING, POPUP, MEM_POPUP, DEATH_CUTSCENE, FLAVOR}
+enum State {EXPLORING, CHARGING, START_REMBERING, REMBERING, POPUP, MEM_POPUP, DEATH_CUTSCENE, FLAVOR, DOOR_OPEN, ESCAPED}
 var state: State = State.CHARGING
 var current_memory: GameData.Memory
 
@@ -64,3 +69,7 @@ func get_children_of_type(target_parent: Node, type: String) -> Array[Node]:
 			children_of_type.append(child)
 	
 	return children_of_type
+
+func pan_to_door() -> void:
+	change_state(GameLogic.State.DOOR_OPEN)
+	start_pan_to_door.emit()

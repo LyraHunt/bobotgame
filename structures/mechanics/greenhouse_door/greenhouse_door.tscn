@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://br1qu4ps0poi8"]
+
+[ext_resource type="Script" uid="uid://bondw36a5oq5f" path="res://structures/mechanics/greenhouse_door/greenhouse_door.gd" id="1_b68mc"]
+[ext_resource type="Texture2D" uid="uid://baifk3s2w7s5s" path="res://structures/mechanics/greenhouse_door/big vault door.png" id="2_b68mc"]
+[ext_resource type="Texture2D" uid="uid://cif4vpu53si0c" path="res://structures/mechanics/greenhouse_door/big vault door opened.png" id="3_ra7uc"]
+[ext_resource type="PackedScene" uid="uid://cooufmusuhqsl" path="res://components/dynamic_hotkey/dynamic_hotkey_component.tscn" id="4_lplmg"]
+[ext_resource type="PackedScene" uid="uid://b5k28b8t1vjyy" path="res://components/proximity_inspection_component/proximity_inspection_component.tscn" id="5_ra7uc"]
+[ext_resource type="Script" uid="uid://bbiaxdn4v0rfj" path="res://components/proximity_interaction/proximity_interaction_component.gd" id="6_cqvvw"]
+[ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="7_12qgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uprjh"]
+size = Vector2(230, 47.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_woe55"]
+shader = ExtResource("7_12qgo")
+shader_parameter/color = Color(1, 1, 0.7372549, 1)
+shader_parameter/width = 10.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[node name="GreenhouseDoor" type="Area2D" unique_id=585523427]
+y_sort_enabled = true
+script = ExtResource("1_b68mc")
+
+[node name="Sprite2DOpened" type="Sprite2D" parent="." unique_id=1718446807]
+visible = false
+position = Vector2(0, 30)
+scale = Vector2(0.8, 0.74)
+texture = ExtResource("3_ra7uc")
+offset = Vector2(0, -200)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=274388446]
+modulate = Color(0.27, 0.27, 0.27, 0.7490196)
+position = Vector2(0, 30)
+scale = Vector2(0.8, 0.74)
+texture = ExtResource("2_b68mc")
+offset = Vector2(0, -200)
+
+[node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("4_lplmg")]
+position = Vector2(0, -128)
+icon_type_inspect = false
+
+[node name="ProximityInspectionComponent" parent="." unique_id=368491059 node_paths=PackedStringArray("sprite") instance=ExtResource("5_ra7uc")]
+position = Vector2(0, -153)
+flavor_text_id = "locked_greenhouse_door"
+find_sprite_under_parent = false
+sprite = NodePath("../Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityInspectionComponent" unique_id=779210597]
+position = Vector2(0, 149.25)
+shape = SubResource("RectangleShape2D_uprjh")
+
+[node name="ProximityInteractionComponent" type="Area2D" parent="." unique_id=974439939 node_paths=PackedStringArray("sprite", "dynamic_hotkey")]
+monitorable = false
+script = ExtResource("6_cqvvw")
+sprite = NodePath("../Sprite2DOpened")
+dynamic_hotkey = NodePath("../DynamicHotkeyComponent")
+outline_shader = SubResource("ShaderMaterial_woe55")
+metadata/_custom_type_script = "uid://bbiaxdn4v0rfj"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityInteractionComponent" unique_id=860623274]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_uprjh")
+
+[connection signal="interacted" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_interacted"]
+[connection signal="selection_update" from="ProximityInteractionComponent" to="." method="_on_proximity_interaction_component_selection_update"]

@@ -47,6 +47,8 @@ func power() -> void:
 	second_shader_pass_component.stop_mirroring()
 	second_shader_pass_component_opened.stop_mirroring()
 	hotkey_component.queue_free()
+	sprite_cable.visible = true
+	GameLogic.power_on.emit()
 
 func _on_proximity_interaction_component_selection_update(selected: bool) -> void:
 	if second_shader_pass_component:

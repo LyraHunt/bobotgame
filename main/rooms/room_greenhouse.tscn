@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b6m0qy58wq06l" path="res://structures/decor/cargo_crate/cargo_crate.tscn" id="1_mm337"]
 [ext_resource type="PackedScene" uid="uid://ctw0xedmi8cm8" path="res://structures/mechanics/side_doorway/side_doorway.tscn" id="3_cxk13"]
-[ext_resource type="PackedScene" uid="uid://boxj3bj3d3mnm" path="res://structures/mechanics/power_station/power_station.tscn" id="4_q8isb"]
+[ext_resource type="PackedScene" uid="uid://dagpynb1feygy" path="res://structures/mechanics/power_station/power_station_greenhouse.tscn" id="3_l3e06"]
+[ext_resource type="PackedScene" uid="uid://br1qu4ps0poi8" path="res://structures/mechanics/greenhouse_door/greenhouse_door.tscn" id="5_l3e06"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="6_qtdh2"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="7_0iwav"]
 [ext_resource type="PackedScene" uid="uid://8ohd48nd0yjy" path="res://structures/decor/greenhouse_decor/planter box/planter_box.tscn" id="7_7ltw3"]
@@ -52,10 +53,12 @@ fill_from = Vector2(1, 0)
 fill_to = Vector2(0.25213677, 0)
 
 [sub_resource type="Gradient" id="Gradient_n6x0s"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_a3ktg"]
 gradient = SubResource("Gradient_n6x0s")
+fill_from = Vector2(0.8333333, 0.8418803)
+fill_to = Vector2(1, 1)
 
 [node name="Greenhouse" type="Node2D" unique_id=1292530247]
 y_sort_enabled = true
@@ -63,8 +66,8 @@ y_sort_enabled = true
 [node name="GreenDoorToStorage" parent="." unique_id=1706434301 instance=ExtResource("3_cxk13")]
 position = Vector2(689, 61)
 
-[node name="PowerStation" parent="." unique_id=724469414 groups=["first_power_station"] instance=ExtResource("4_q8isb")]
-position = Vector2(-353, -300)
+[node name="PowerStationGreenhouse" parent="." unique_id=1670497006 instance=ExtResource("3_l3e06")]
+position = Vector2(-87, -357)
 power_station_id = 0
 
 [node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=2107253415]
@@ -93,6 +96,9 @@ tile_set = ExtResource("7_0iwav")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=2065594639]
 build_mode = 1
 polygon = PackedVector2Array(717, -360, 723, 1440, -1200, 1438, -1430, 1072, -1433, 20, -1200, -355)
+
+[node name="Doorway" parent="." unique_id=585523427 groups=["greenhouse_door"] instance=ExtResource("5_l3e06")]
+position = Vector2(276, 1423)
 
 [node name="CargoCrate" parent="." unique_id=892621697 instance=ExtResource("1_mm337")]
 position = Vector2(658, 363)
@@ -267,6 +273,8 @@ position = Vector2(-239, 814)
 rotation = 1.5707964
 
 [node name="root1" parent="Overgrowth" unique_id=732259322 instance=ExtResource("14_o8vjc")]
+z_index = -1
+y_sort_enabled = false
 position = Vector2(-22, 8)
 
 [node name="root2" parent="Overgrowth" unique_id=910409659 instance=ExtResource("14_o8vjc")]
@@ -375,12 +383,6 @@ shape = SubResource("CircleShape2D_vdhf0")
 
 [node name="DeadBuglemelon" parent="PlanterRow3/PlanterBox2" unique_id=461732007 instance=ExtResource("21_mb6ns")]
 position = Vector2(-8, -98)
-
-[node name="PlanterBox3" parent="PlanterRow3" unique_id=51068125 instance=ExtResource("7_7ltw3")]
-position = Vector2(166, 102)
-
-[node name="PlanterBox4" parent="PlanterRow3" unique_id=1751806844 instance=ExtResource("7_7ltw3")]
-position = Vector2(421, 99)
 
 [node name="PlanterBox5" parent="PlanterRow3" unique_id=1380278335 instance=ExtResource("7_7ltw3")]
 position = Vector2(-148, -117)
@@ -535,7 +537,7 @@ position = Vector2(-896, 148.00002)
 rotation = 0.22996058
 scale = Vector2(12.787218, 15.451425)
 color = Color(1, 1, 0.76862746, 1)
-energy = 1.8
+energy = 1.5
 range_item_cull_mask = 5
 texture = SubResource("GradientTexture2D_r5iys")
 metadata/_edit_lock_ = true

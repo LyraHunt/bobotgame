@@ -6,9 +6,64 @@
 [ext_resource type="PackedScene" uid="uid://cooufmusuhqsl" path="res://components/dynamic_hotkey/dynamic_hotkey_component.tscn" id="3_bvcls"]
 [ext_resource type="Texture2D" uid="uid://cxqopxg3b8pna" path="res://structures/mechanics/power_box/power box open.png" id="4_a7lj3"]
 [ext_resource type="PackedScene" uid="uid://djyaxwrsd83y4" path="res://components/proximity_interaction/proximity_interaction_component.tscn" id="4_vfyer"]
+[ext_resource type="Texture2D" uid="uid://clts3x4ch3yar" path="res://structures/mechanics/power_box/cable on power box.PNG" id="5_3spqi"]
 [ext_resource type="PackedScene" uid="uid://bu0q4v7mo8lfg" path="res://components/shader_second_pass/second_shader_pass_component.tscn" id="6_kvwoo"]
 [ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="7_qqxco"]
 [ext_resource type="PackedScene" uid="uid://crns1sk5lhrcx" path="res://structures/mechanics/power_box/power_box_password.tscn" id="9_nrrnb"]
+
+[sub_resource type="Shader" id="Shader_33ctm"]
+code = "shader_type canvas_item;
+render_mode world_vertex_coords;
+
+group_uniforms Squiggle;
+/**
+ * Noise texture scale
+ * By default, the noise texture's size in world coordinates is set by its resolution
+*/
+uniform vec2 scale = vec2(1.0);
+uniform float strength = 0.4;
+/**
+ * Number of squiggle frames per second
+*/
+uniform float fps = 6.0;
+uniform sampler2D noise : filter_linear, repeat_enable;
+group_uniforms;
+
+varying vec4 modulate;
+varying vec2 noise_uv;
+
+void vertex() {
+	modulate = COLOR;
+	
+	// Use world coordinates for scale-independent squiggles, offset by position to keep pattern attached to object
+	noise_uv = (VERTEX.xy - MODEL_MATRIX[3].xy) / (vec2(textureSize(noise, 0)) * scale);
+}
+
+// Use irrational constants for unique squiggles every frame
+#define offset_multiplier vec2(PI, E)
+//#define offset_multiplier vec2(0.16666, 0.33333)
+
+void fragment() {
+	vec2 noise_offset = vec2(floor(TIME * fps)) * offset_multiplier;
+	float noise_sample = texture(noise, noise_uv + noise_offset).r * 4.0 * PI;
+	vec2 direction = vec2(cos(noise_sample), sin(noise_sample));
+	vec2 squiggle_uv = UV + direction * strength * 0.005;
+	
+	COLOR.rgb = (texture(TEXTURE, squiggle_uv) * modulate).rgb;
+	COLOR.a = texture(TEXTURE, squiggle_uv).a * modulate.a;
+}"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bb0xe"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xkikd"]
+noise = SubResource("FastNoiseLite_bb0xe")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3spqi"]
+shader = SubResource("Shader_33ctm")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.2
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_xkikd")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5iys"]
 size = Vector2(201, 43)
@@ -41,6 +96,13 @@ texture = ExtResource("4_a7lj3")
 offset = Vector2(0, -40)
 
 [node name="Sprite2DCable" type="Sprite2D" parent="." unique_id=1834604096]
+visible = false
+material = SubResource("ShaderMaterial_3spqi")
+position = Vector2(-9, 8)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_3spqi")
+offset = Vector2(0, -40)
+flip_h = true
 
 [node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("3_bvcls")]
 position = Vector2(0, -191)

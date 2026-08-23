@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dcefm13nt7nbu"]
+
+[ext_resource type="Script" uid="uid://ga45w2msytsg" path="res://ui/bobot ui/escape_countdown.gd" id="1_evqjj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evqjj"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[node name="EscapeCountdown" type="Control" unique_id=2135048579]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_evqjj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=229085128]
+z_index = 1
+clip_contents = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 80.0
+offset_right = 64.0
+offset_bottom = 160.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[font_size=120]0:00"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Panel" type="Panel" parent="RichTextLabel" unique_id=1631754742]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -60.0
+offset_right = 120.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_evqjj")

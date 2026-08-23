@@ -60,6 +60,7 @@ directories/dtl_directory={
 "cargo_two": "res://resources/dialogic stuffs/flavor_texts/cargo_two.dtl",
 "greenhouse_crate": "res://resources/dialogic stuffs/flavor_texts/greenhouse_crate.dtl",
 "lab_doorway_locked": "res://resources/dialogic stuffs/flavor_texts/lab_doorway_locked.dtl",
+"locked_greenhouse_door": "res://resources/dialogic stuffs/flavor_texts/locked_greenhouse_door.dtl",
 "memory_cargo_bot": "res://resources/dialogic stuffs/cutscenes/memory_cargo_bot.dtl",
 "memory_chef_bot": "res://resources/dialogic stuffs/cutscenes/memory_chef_bot.dtl",
 "memory_greenhouse_bot": "res://resources/dialogic stuffs/cutscenes/memory_greenhouse_bot.dtl",
@@ -136,6 +137,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/soun
 bobot=""
 first_power_station=""
 camera=""
+greenhouse_door=""
 
 [gui]
 

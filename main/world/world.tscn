@@ -21,7 +21,7 @@ position = Vector2(-7168, -1024)
 position = Vector2(0, -54)
 
 [node name="Greenhouse" parent="." unique_id=1292530247 instance=ExtResource("4_276oa")]
-position = Vector2(-1024, 0)
+position = Vector2(-4068, 146)
 
 [node name="GreenDoorToStorage" parent="Greenhouse" index="0" unique_id=1706434301 node_paths=PackedStringArray("connected_doorway")]
 connected_doorway = NodePath("../../StorageArea/StorageDoorToGreen")
@@ -57,7 +57,7 @@ position = Vector2(7004, -721)
 connected_doorway = NodePath("../../CentralHallway/CHDoorToQuarters")
 
 [node name="Lab" parent="." unique_id=1671798769 instance=ExtResource("5_54tnd")]
-position = Vector2(4992, 3072)
+position = Vector2(-171, 3091)
 
 [node name="LabDoorToCH" parent="Lab" index="0" unique_id=585523427 node_paths=PackedStringArray("connected_doorway")]
 connected_doorway = NodePath("../../CentralHallway/CHDoorToLab")
@@ -83,14 +83,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.13725491, 0.13333334, 0.16078432, 0.42745098)
 
+[node name="LightsFlickerTimer" type="Timer" parent="." unique_id=1049375878]
+wait_time = 0.2
+
+[connection signal="timeout" from="LightsFlickerTimer" to="." method="_on_lights_flicker_timer_timeout"]
+
 [editable path="Greenhouse"]
+[editable path="Greenhouse/Desk/Document"]
 [editable path="StorageArea"]
 [editable path="CentralHallway"]
 [editable path="RoomAllQuarters"]
 [editable path="RoomAllQuarters/QuartersHallway"]
 [editable path="RoomAllQuarters/NatashaQuarters"]
 [editable path="RoomAllQuarters/AliceQuarters"]
+[editable path="RoomAllQuarters/AliceQuarters/RoomPhysicsBounds/Desk/Document"]
 [editable path="RoomAllQuarters/OwenQuarters"]
 [editable path="RoomAllQuarters/RoseQuarters"]
+[editable path="RoomAllQuarters/RoseQuarters/Desk/Document"]
 [editable path="Lab"]
 [editable path="Workshop"]

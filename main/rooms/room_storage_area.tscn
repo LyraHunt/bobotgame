@@ -43,7 +43,7 @@ position = Vector2(-446, 453)
 position = Vector2(689, 447)
 
 [node name="CargoBot" parent="." unique_id=1192683161 instance=ExtResource("4_eb511")]
-position = Vector2(-61, -107)
+position = Vector2(-61, 310)
 
 [node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]
 z_index = -2

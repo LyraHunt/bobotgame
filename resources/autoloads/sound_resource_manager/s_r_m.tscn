@@ -17,7 +17,7 @@ script = ExtResource("2_qpb0q")
 sounds = Array[AudioStream]([ExtResource("3_i3qp0")])
 metadata/_custom_type_script = "uid://bh08fsqvg3562"
 
-[sub_resource type="Resource" id="Resource_qpb0q"]
+[sub_resource type="Resource" id="Resource_12qgo"]
 script = ExtResource("2_qpb0q")
 sounds = Array[AudioStream]([ExtResource("5_8do5p")])
 metadata/_custom_type_script = "uid://bh08fsqvg3562"
@@ -57,7 +57,7 @@ script = ExtResource("1_05uwb")
 sound_lists = Dictionary[String, ExtResource("2_qpb0q")]({
 "bobot_footsteps": SubResource("Resource_ke3xm"),
 "casette_collected": SubResource("Resource_rxdsk"),
-"escape": SubResource("Resource_qpb0q"),
+"escape": SubResource("Resource_12qgo"),
 "lab": SubResource("Resource_mtad7"),
 "memory_start": SubResource("Resource_i3uv8"),
 "sfx_bobot_die": SubResource("Resource_b4vhw"),

@@ -20,6 +20,7 @@ func _on_proximity_interaction_component_selection_update(selected: bool) -> voi
 
 func _on_proximity_interaction_component_interacted() -> void:
 	bobot.start_charge(self)
+	modulate = Color.WHITE
 	dynamic_hotkey_component.visible = false
 
 func show_hotkey_again() -> void:

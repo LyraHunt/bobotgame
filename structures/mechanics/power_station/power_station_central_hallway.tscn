@@ -9,8 +9,8 @@
 radius = 81.00617
 
 [sub_resource type="Gradient" id="Gradient_b4vhw"]
-offsets = PackedFloat32Array(0.48253968, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.2987013, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.54805195, 0.54805195, 0.54805195, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_b4vhw"]
 gradient = SubResource("Gradient_b4vhw")
@@ -38,12 +38,21 @@ dynamic_hotkey = NodePath("../DynamicHotkeyComponent")
 shape = SubResource("CircleShape2D_63nx4")
 
 [node name="DynamicHotkeyComponent" parent="." unique_id=62764332 instance=ExtResource("4_8s4dc")]
-position = Vector2(1, 56)
+position = Vector2(0, -205)
 icon_type_inspect = false
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=848799078]
+position = Vector2(0, -385)
+scale = Vector2(2, 2)
 color = Color(0.6544553, 0.64771765, 1.92523e-07, 1)
-energy = 0.5
+energy = 0.75
+texture = SubResource("GradientTexture2D_b4vhw")
+texture_scale = 4.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=175216354]
+position = Vector2(0, -44)
+scale = Vector2(0.5, 0.5)
+color = Color(1, 0.99270386, 0.29529056, 1)
 texture = SubResource("GradientTexture2D_b4vhw")
 texture_scale = 4.0
 

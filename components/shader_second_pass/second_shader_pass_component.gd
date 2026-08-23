@@ -55,6 +55,7 @@ func stop_mirroring() -> void:
 		visible = false
 		
 		target_sprite.visible = target_sprite_was_visible
+		print("stop mirror - " + str(target_sprite_was_visible))
 
 # for testing
 """func _unhandled_input(event: InputEvent) -> void:

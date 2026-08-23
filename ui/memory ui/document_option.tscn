@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://cgbacpwvgftcp"]
+
+[ext_resource type="Script" uid="uid://td34wksri0xu" path="res://ui/memory ui/document_option.gd" id="1_yx3e5"]
+[ext_resource type="Texture2D" uid="uid://bq4mstxs0l5jv" path="res://ui/casettes ui/Collectibles ui.PNG" id="2_yx3e5"]
+[ext_resource type="Texture2D" uid="uid://bh8c00vfdanwy" path="res://structures/mechanics/documents/notes-big.PNG" id="3_yx3e5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7mj7"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wq45"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxctk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.627451, 0.627451, 0.28235295, 0.27450982)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="DocumentOption" type="MarginContainer" unique_id=1421712059]
+custom_minimum_size = Vector2(140, 140)
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 130.0
+offset_bottom = 130.0
+script = ExtResource("1_yx3e5")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2023002407]
+custom_maximum_size = Vector2(140, 140)
+layout_mode = 2
+texture = ExtResource("2_yx3e5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ControlCasette" type="Control" parent="." unique_id=478756321]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="CasetteSprite" type="TextureRect" parent="ControlCasette" unique_id=1550724719]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -153.0
+offset_top = -172.0
+offset_right = 126.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_yx3e5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ControlLabel" type="Control" parent="." unique_id=1231413647]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="CasetteLabel" type="RichTextLabel" parent="ControlLabel" unique_id=577030806]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 40.0
+offset_right = 324.0
+offset_bottom = 172.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "[font_size=32w]BT-534-04's[br]MEMORY BANK"
+
+[node name="Control" type="Control" parent="." unique_id=1938524951]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Button" type="Button" parent="Control" unique_id=1986190618]
+custom_maximum_size = Vector2(130, 130)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 136.0
+offset_bottom = 135.0
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_w7mj7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4wq45")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qxctk")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="button_down" from="Control/Button" to="." method="_on_button_button_down"]

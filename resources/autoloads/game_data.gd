@@ -39,6 +39,14 @@ var robot_ids: Dictionary[Memory, String] = {
 	Memory.LAB: "SC-912-08"
 }
 
+var document_titles: Dictionary[Document, String] = {
+	Document.ALICE: "Letter for Alice",
+	Document.NATASHA: "Natasha's Diary",
+	Document.ROSE: "Letter for Rose",
+	Document.GREENHOUSE: "Rose's Notes",
+	Document.WORKSHOP: "Owen's Repair Log",
+}
+
 var power_stations: Dictionary[int, PowerStation] = {}
 var power_station_count: int = 2
 
@@ -63,7 +71,6 @@ var casette_is_selected: bool
 var pending_progress: Dictionary[String, bool] = {
 	"has_quarters_passkey": false,
 	"has_lab_passkey": false,
-	#"has_power_box_passkey": false,
 	"opened_power_box": false,
 	"picked_up_cable": false,
 	"powered_box": false
@@ -72,7 +79,6 @@ var pending_progress: Dictionary[String, bool] = {
 var actual_progress: Dictionary[String, bool] = {
 	"has_quarters_passkey": false,
 	"has_lab_passkey": false,
-	#"has_power_box_passkey": false,
 	"opened_power_box": false,
 	"picked_up_cable": false,
 	"powered_box": false
@@ -108,7 +114,15 @@ func _ready() -> void:
 		actual_progress["has_quarters_passkey"] = true
 		actual_progress["has_lab_passkey"] = true
 		actual_progress["opened_power_box"] = false
+		
+		"""acquired_documents.append(Document.ALICE)
+		acquired_documents.append(Document.GREENHOUSE)
+		acquired_documents.append(Document.NATASHA)
+		acquired_documents.append(Document.ROSE)
+		acquired_documents.append(Document.WORKSHOP)"""
+		
 		bobot_last_power_station = 1
+		acquired_memories.append(Memory.GREENHOUSE)
 		queue_first_memory = false
 	
 	else:

@@ -8,6 +8,8 @@ class_name PowerBox extends StaticBody2D
 @onready var second_shader_pass_component_opened: SecondShaderPassComponent = get_node("SecondShaderPassComponentOpened")
 @onready var password_inputs: PowerBoxPassword = get_node("CanvasLayer/PowerBoxPassword")
 
+@onready var proximity_interaction_component: ProximityInteractionComponent = get_node("ProximityInteractionComponent")
+
 var bobot: Bobot
 
 var password_flavor_text_id: String = "power_box_locked"
@@ -34,8 +36,9 @@ func open() -> void:
 		sprite.queue_free()
 	for sprite: Sprite2D in sprites_to_show:
 		sprite.visible = true
-	second_shader_pass_component.stop_mirroring()
-	second_shader_pass_component_opened.start_mirroring()
+	if proximity_interaction_component.selected:
+		second_shader_pass_component.stop_mirroring()
+		second_shader_pass_component_opened.start_mirroring()
 
 func power() -> void:
 	GameData.actual_progress["powered_box"] = true

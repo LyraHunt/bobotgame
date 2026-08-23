@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpk7mqrqqflj6"
-path="res://.godot/imported/central-hallway-bulb.png-cfad6853d88b8ded53e15a78dc6c5cc2.ctex"
+uid="uid://bmnrw1cb002am"
+path="res://.godot/imported/Natasha sprite.PNG-cef8eb957c7280440089bdd2cff7480e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://structures/mechanics/power_station/central-hallway-bulb.png"
-dest_files=["res://.godot/imported/central-hallway-bulb.png-cfad6853d88b8ded53e15a78dc6c5cc2.ctex"]
+source_file="res://characters/cutscenes/Natasha sprite.PNG"
+dest_files=["res://.godot/imported/Natasha sprite.PNG-cef8eb957c7280440089bdd2cff7480e.ctex"]
 
 [params]
 

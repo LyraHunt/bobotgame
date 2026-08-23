@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://04l0xk8jgni6" path="res://resources/autoloads/sound_resource_manager/s_r_m.gd" id="1_05uwb"]
 [ext_resource type="Script" uid="uid://bh08fsqvg3562" path="res://resources/autoloads/sound_resource_manager/sound_resource_list.gd" id="2_qpb0q"]
+[ext_resource type="AudioStream" uid="uid://cdsk6vo8b2e60" path="res://ui/casettes ui/Memory Collected Short.mp3" id="3_i3qp0"]
 [ext_resource type="AudioStream" uid="uid://ymsgmpra4p44" path="res://main/world/Abandoned Lab 2.mp3" id="3_qpb0q"]
 [ext_resource type="AudioStream" uid="uid://c2fist4ufang7" path="res://main/world/Memories of the Past 1.mp3" id="4_duaue"]
 [ext_resource type="AudioStream" uid="uid://cq43hlhhimbbl" path="res://main/world/Escaping The Lab 1.mp3" id="5_8do5p"]
@@ -9,12 +10,11 @@
 [ext_resource type="AudioStream" uid="uid://62tixkjqal3f" path="res://structures/mechanics/doorway/door_open_two.mp3" id="7_4xhyy"]
 [ext_resource type="AudioStream" uid="uid://dx14bjmmgh7ge" path="res://characters/bobot/sprites/bobot_die.mp3" id="8_4xhyy"]
 [ext_resource type="AudioStream" uid="uid://eqmfms0h3vqq" path="res://ui/casettes ui/memory_bank_play.mp3" id="9_b53ws"]
-[ext_resource type="AudioStream" uid="uid://bo6p6v62e8w4t" path="res://ui/casettes ui/Memory Collected.mp3" id="10_i3qp0"]
 [ext_resource type="AudioStream" uid="uid://cln62xrqtrdw3" path="res://characters/bobot/sprites/metal_footsteps_short.mp3" id="11_661h1"]
 
 [sub_resource type="Resource" id="Resource_rxdsk"]
 script = ExtResource("2_qpb0q")
-sounds = Array[AudioStream]([ExtResource("10_i3qp0")])
+sounds = Array[AudioStream]([ExtResource("3_i3qp0")])
 metadata/_custom_type_script = "uid://bh08fsqvg3562"
 
 [sub_resource type="Resource" id="Resource_qpb0q"]

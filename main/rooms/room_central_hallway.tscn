@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://xd7tdn5pitl7"]
 
-[ext_resource type="PackedScene" uid="uid://boxj3bj3d3mnm" path="res://structures/mechanics/power_station/power_station.tscn" id="2_e8shv"]
 [ext_resource type="PackedScene" uid="uid://b8hm4bqaumbh4" path="res://structures/mechanics/side_doorway/side_doorway_flip.tscn" id="2_kx2ot"]
 [ext_resource type="Script" uid="uid://bymhj83u26cqk" path="res://main/rooms/lab_doorway.gd" id="3_jhqeb"]
 [ext_resource type="Script" uid="uid://diigwg4h3dena" path="res://main/rooms/quarters_doorway.gd" id="4_62tbk"]
@@ -8,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ctw0xedmi8cm8" path="res://structures/mechanics/side_doorway/side_doorway.tscn" id="4_kx2ot"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="5_62tbk"]
 [ext_resource type="PackedScene" uid="uid://d0vfwatct2sst" path="res://structures/mechanics/doorway/doorway_bottom.tscn" id="6_e8shv"]
+[ext_resource type="PackedScene" uid="uid://cjp0ya53nc0r5" path="res://structures/mechanics/power_station/power_station_central_hallway.tscn" id="7_62tbk"]
 
 [node name="CentralHallway" type="Node2D" unique_id=1671798769]
 y_sort_enabled = true
@@ -26,8 +26,8 @@ position = Vector2(-122, 691)
 position = Vector2(1166, 64)
 script = ExtResource("4_62tbk")
 
-[node name="PowerStation" parent="." unique_id=724469414 instance=ExtResource("2_e8shv")]
-position = Vector2(358, 143)
+[node name="PowerStationCentralHallway" parent="." unique_id=1903011470 instance=ExtResource("7_62tbk")]
+position = Vector2(367, 222)
 power_station_id = 1
 
 [node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=1637244492]
@@ -56,3 +56,7 @@ tile_set = ExtResource("5_62tbk")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1251044420]
 build_mode = 1
 polygon = PackedVector2Array(1205, -352, 1203, 729, -476, 721, -485, -366)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RoomPhysicsBounds" unique_id=1852072327]
+build_mode = 1
+polygon = PackedVector2Array(235, -251, 63, -201, 13, -69, 53, 60, 171, 135, 522, 135, 651, 70, 712, -70, 661, -201, 496, -255)

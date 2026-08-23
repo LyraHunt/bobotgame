@@ -157,6 +157,11 @@ func _process(_delta: float) -> void:
 	charge_label.text += "\n"
 	charge_label.text += "Acquired Memories: " + str(GameData.acquired_memories)
 	
+	charge_label.text += "\n"
+	charge_label.text += "Pending Documents: " + str(GameData.pending_documents)
+	charge_label.text += "\n"
+	charge_label.text += "Acquired Documents: " + str(GameData.acquired_documents)
+	
 	var charge_ratio: float = GameData.bobot_charge / GameData.bobot_max_charge
 	spotlight.color = spotlight_energy_ramp.sample(charge_ratio)
 	
@@ -196,7 +201,7 @@ func _handle_movement_input() -> void:
 			var footsteps: AudioStreamPlayer = SoundManager.play_sound((SRM as SoundResourceManager).get_sound("bobot_footsteps"))
 			is_playing_footsteps = true
 			await get_tree().process_frame
-			footsteps.volume_db = -4
+			footsteps.volume_db = -8
 			#footsteps.stop()
 			footsteps.play(randf_range(0.0, 3.0))
 		
@@ -223,7 +228,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		GameLogic.State.CHARGING:
 			if event.is_action_pressed("escape_key"):
-				stop_charge()
+				if memory_ui.document_view_control.visible:
+					memory_ui.stop_view_document()
+				else:
+					stop_charge()
 		
 		GameLogic.State.POPUP:
 			if event.is_action_pressed("escape_key") or event.is_action_pressed("interact_key"):

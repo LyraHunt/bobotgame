@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdsk6vo8b2e60"
+path="res://.godot/imported/Memory Collected Short.mp3-337cbc64760ab54ff5cba25878184c0e.mp3str"
+
+[deps]
+
+source_file="res://ui/casettes ui/Memory Collected Short.mp3"
+dest_files=["res://.godot/imported/Memory Collected Short.mp3-337cbc64760ab54ff5cba25878184c0e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgjsmmyh7rubc"]
 
-[ext_resource type="Script" uid="uid://dy3qvhk0ev0ai" path="res://structures/mechanics/documents/document.gd" id="1_qi563"]
+[ext_resource type="Script" uid="uid://dy3qvhk0ev0ai" path="res://structures/mechanics/documents/document_pickup.gd" id="1_qi563"]
 [ext_resource type="Texture2D" uid="uid://cvfm7ktaaytpa" path="res://structures/flavor/notes/notes.PNG" id="3_qi563"]
 [ext_resource type="PackedScene" uid="uid://djyaxwrsd83y4" path="res://components/proximity_interaction/proximity_interaction_component.tscn" id="4_wpvdb"]
 [ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="5_6ux0k"]
@@ -21,7 +21,6 @@ radius = 88.0
 [node name="Document" type="Node2D" unique_id=512886027 node_paths=PackedStringArray("sprites_to_hide")]
 y_sort_enabled = true
 script = ExtResource("1_qi563")
-memory_id = null
 sprites_to_hide = [NodePath("Sprite2D")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=917366805]

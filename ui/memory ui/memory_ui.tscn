@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://cqfr74q3xqugw"]
 
 [ext_resource type="Script" uid="uid://cchpm5rv0rp7n" path="res://ui/memory ui/memory_ui.gd" id="1_6wkk2"]
-[ext_resource type="PackedScene" uid="uid://dwukd70guhg6q" path="res://ui/memory ui/lore_option.tscn" id="1_fyh57"]
 [ext_resource type="PackedScene" uid="uid://wldep812x6ac" path="res://ui/memory ui/casette_option.tscn" id="1_pexda"]
+[ext_resource type="Texture2D" uid="uid://dxbtb0s0grh4p" path="res://ui/casettes ui/Collectibles ui big.PNG" id="2_j25ng"]
+[ext_resource type="PackedScene" uid="uid://cgbacpwvgftcp" path="res://ui/memory ui/document_option.tscn" id="3_ochao"]
 [ext_resource type="Texture2D" uid="uid://dhgdd1umgyut5" path="res://ui/casettes ui/Cassette ui big.PNG" id="3_ogx2r"]
 [ext_resource type="Texture2D" uid="uid://c0q4m783cq6im" path="res://ui/casettes ui/Menu close ui.PNG" id="4_yxox3"]
+[ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="7_fbxu3"]
+[ext_resource type="Texture2D" uid="uid://beqnekh4c6e7v" path="res://structures/mechanics/documents/Rose Letter.png" id="8_fbxu3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogx2r"]
 content_margin_left = 4.0
@@ -17,6 +20,18 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ioe5"]
+shader = ExtResource("7_fbxu3")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 5.0000002375
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnidb"]
+bg_color = Color(0.34781694, 0.34781697, 0.34781682, 0.75686276)
 
 [node name="MemoryUI" type="Control" unique_id=1600028043]
 layout_mode = 3
@@ -35,31 +50,46 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -390.0
-offset_top = -393.0
-offset_right = 390.0
-offset_bottom = 247.0
+offset_left = -497.0
+offset_top = -409.0
+offset_right = 363.0
+offset_bottom = 263.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 540
+theme_override_constants/separation = 700
 
 [node name="LoreContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=526162190]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="LoreOption" parent="HBoxContainer/LoreContainer" unique_id=1421712059 instance=ExtResource("1_fyh57")]
+[node name="Control" type="Control" parent="HBoxContainer/LoreContainer" unique_id=909026423]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/LoreContainer/Control" unique_id=1405035178]
+custom_minimum_size = Vector2(400, 730)
+layout_mode = 0
+offset_left = -426.0
+offset_top = -45.0
+offset_right = 729.49316
+offset_bottom = 885.0
+texture = ExtResource("2_j25ng")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="DocumentOption" parent="HBoxContainer/LoreContainer" unique_id=1421712059 instance=ExtResource("3_ochao")]
 layout_mode = 2
 
-[node name="LoreOption2" parent="HBoxContainer/LoreContainer" unique_id=761454652 instance=ExtResource("1_fyh57")]
+[node name="DocumentOption2" parent="HBoxContainer/LoreContainer" unique_id=774192327 instance=ExtResource("3_ochao")]
 layout_mode = 2
 
-[node name="LoreOption3" parent="HBoxContainer/LoreContainer" unique_id=184513327 instance=ExtResource("1_fyh57")]
+[node name="DocumentOption3" parent="HBoxContainer/LoreContainer" unique_id=671592017 instance=ExtResource("3_ochao")]
 layout_mode = 2
 
-[node name="LoreOption4" parent="HBoxContainer/LoreContainer" unique_id=452951319 instance=ExtResource("1_fyh57")]
+[node name="DocumentOption4" parent="HBoxContainer/LoreContainer" unique_id=899782935 instance=ExtResource("3_ochao")]
 layout_mode = 2
 
-[node name="LoreOption5" parent="HBoxContainer/LoreContainer" unique_id=1955378894 instance=ExtResource("1_fyh57")]
+[node name="DocumentOption5" parent="HBoxContainer/LoreContainer" unique_id=351977229 instance=ExtResource("3_ochao")]
 layout_mode = 2
 
 [node name="CasetteContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1127295911]
@@ -124,4 +154,54 @@ offset_right = 94.0
 offset_bottom = 93.0
 texture = ExtResource("4_yxox3")
 
+[node name="DocumentView" type="Control" parent="." unique_id=1135518053]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="DocumentView" unique_id=1875836577]
+self_modulate = Color(1, 1, 1, 0.7137255)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="DocumentView" unique_id=1145484754]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 100
+
+[node name="DocumentTexture" type="TextureRect" parent="DocumentView/MarginContainer" unique_id=1006645427]
+material = SubResource("ShaderMaterial_7ioe5")
+layout_mode = 2
+texture = ExtResource("8_fbxu3")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="CloseDocumentButton" type="Button" parent="DocumentView" unique_id=1290153474]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 91.0
+offset_top = 466.0
+offset_right = 191.0
+offset_bottom = 566.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_dnidb")
+text = "X"
+
 [connection signal="button_down" from="Control/CloseButton" to="." method="_on_close_button_button_down"]
+[connection signal="button_down" from="DocumentView/CloseDocumentButton" to="." method="_on_close_document_button_button_down"]

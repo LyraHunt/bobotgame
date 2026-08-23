@@ -63,6 +63,7 @@ position = Vector2(-31, -79)
 
 [node name="Document" parent="Desk" unique_id=2045725498 instance=ExtResource("8_f0pn8")]
 position = Vector2(-54, -66)
+document_id = 2
 
 [node name="Sprite2D" parent="Desk/Document" index="0" unique_id=917366805]
 rotation = -0.5864306

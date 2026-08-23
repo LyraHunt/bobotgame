@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://b6m0qy58wq06l" path="res://structures/decor/cargo_crate/cargo_crate.tscn" id="1_mm337"]
 [ext_resource type="PackedScene" uid="uid://ctw0xedmi8cm8" path="res://structures/mechanics/side_doorway/side_doorway.tscn" id="3_cxk13"]
 [ext_resource type="PackedScene" uid="uid://boxj3bj3d3mnm" path="res://structures/mechanics/power_station/power_station.tscn" id="4_q8isb"]
-[ext_resource type="PackedScene" uid="uid://d27t8ctieltau" path="res://structures/mechanics/memory_bank/memory_bank.tscn" id="5_5w0c5"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="6_qtdh2"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="7_0iwav"]
 [ext_resource type="PackedScene" uid="uid://8ohd48nd0yjy" path="res://structures/decor/greenhouse_decor/planter box/planter_box.tscn" id="7_7ltw3"]
@@ -15,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="12_n6x0s"]
 [ext_resource type="Texture2D" uid="uid://0cety24aoowb" path="res://structures/decor/greenhouse_decor/botany_clutter/botany clutter-two-tools.png" id="12_qtdh2"]
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="13_l3e06"]
+[ext_resource type="PackedScene" uid="uid://dgjsmmyh7rubc" path="res://structures/mechanics/documents/document.tscn" id="13_n6x0s"]
 [ext_resource type="PackedScene" uid="uid://bx5gu7ub2ue68" path="res://structures/decor/overgrowth/root_1.tscn" id="14_o8vjc"]
 [ext_resource type="PackedScene" uid="uid://7sw0y2igvp4y" path="res://structures/decor/overgrowth/lilguy4.tscn" id="15_ephht"]
 [ext_resource type="PackedScene" uid="uid://cwxdcswacspiv" path="res://structures/decor/overgrowth/wall_creep_1.tscn" id="16_q8isb"]
@@ -66,9 +66,6 @@ position = Vector2(689, 61)
 [node name="PowerStation" parent="." unique_id=724469414 groups=["first_power_station"] instance=ExtResource("4_q8isb")]
 position = Vector2(-353, -300)
 power_station_id = 0
-
-[node name="MemoryBank" parent="." unique_id=512886027 instance=ExtResource("5_5w0c5")]
-position = Vector2(-186, -312)
 
 [node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=2107253415]
 z_index = -2
@@ -185,6 +182,13 @@ position = Vector2(-44, -89)
 rotation = -0.45311448
 texture = ExtResource("12_qtdh2")
 flip_h = true
+
+[node name="Document" parent="Desk" unique_id=512886027 instance=ExtResource("13_n6x0s")]
+position = Vector2(52, -53)
+document_id = 3
+
+[node name="CollisionShape2D" parent="Desk/Document/ProximityInteractionComponent" parent_id_path=PackedInt32Array(512886027, 606314739) index="0" unique_id=807831631]
+position = Vector2(0, 71)
 
 [node name="Overgrowth" type="Node2D" parent="." unique_id=1835052771]
 y_sort_enabled = true
@@ -544,3 +548,5 @@ energy = 0.3
 range_item_cull_mask = 7
 texture = SubResource("GradientTexture2D_a3ktg")
 metadata/_edit_lock_ = true
+
+[editable path="Desk/Document"]

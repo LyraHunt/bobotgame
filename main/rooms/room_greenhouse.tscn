@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://b6m0qy58wq06l" path="res://structures/decor/cargo_crate/cargo_crate.tscn" id="1_mm337"]
 [ext_resource type="PackedScene" uid="uid://ctw0xedmi8cm8" path="res://structures/mechanics/side_doorway/side_doorway.tscn" id="3_cxk13"]
 [ext_resource type="PackedScene" uid="uid://dagpynb1feygy" path="res://structures/mechanics/power_station/power_station_greenhouse.tscn" id="3_l3e06"]
+[ext_resource type="PackedScene" uid="uid://0wtxbney3ydb" path="res://structures/decor/greenhouse_decor/greenhouse_bulb/greenhouse_bulb.tscn" id="3_o8vjc"]
+[ext_resource type="PackedScene" uid="uid://bw65evhu7m28l" path="res://structures/decor/greenhouse_decor/greenhouse_bulb/greenhouse_small_bulb.tscn" id="4_ephht"]
 [ext_resource type="PackedScene" uid="uid://br1qu4ps0poi8" path="res://structures/mechanics/greenhouse_door/greenhouse_door.tscn" id="5_l3e06"]
 [ext_resource type="TileSet" uid="uid://bih18wn1etkpr" path="res://main/rooms/assets/tilesets/floor.tres" id="6_qtdh2"]
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="7_0iwav"]
@@ -27,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://t0morq6fyk0h" path="res://structures/decor/greenhouse_decor/dead_plants/dead_spark_bulb.tscn" id="22_n6x0s"]
 [ext_resource type="Texture2D" uid="uid://dbi6mbnf5kwre" path="res://structures/decor/greenhouse_decor/big_window/window diagonal.png" id="23_l4oau"]
 [ext_resource type="Texture2D" uid="uid://cxknaynnpmio3" path="res://structures/decor/greenhouse_decor/big_window/window side.png" id="24_iced8"]
+[ext_resource type="Shader" uid="uid://k6t3mnv4kbl0" path="res://resources/shaders/outline_shader/outline.gdshader" id="25_hoy1i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_harlm"]
 radius = 73.0
@@ -37,8 +40,17 @@ size = Vector2(207, 111.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ojbw0"]
 radius = 111.0045
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bsad5"]
-radius = 102.044106
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g5l2a"]
+shader = ExtResource("25_hoy1i")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 7.0000003325
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ephht"]
+size = Vector2(173, 154)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vdhf0"]
 radius = 116.03879
@@ -67,8 +79,13 @@ y_sort_enabled = true
 position = Vector2(689, 61)
 
 [node name="PowerStationGreenhouse" parent="." unique_id=1670497006 instance=ExtResource("3_l3e06")]
-position = Vector2(-87, -357)
+position = Vector2(-87, -337)
 power_station_id = 0
+
+[node name="GreenhouseBulb" parent="." unique_id=1236665394 instance=ExtResource("3_o8vjc")]
+z_index = -1
+position = Vector2(-568, -264)
+scale = Vector2(0.82, 0.82)
 
 [node name="TileMapLayerFloor" type="TileMapLayer" parent="." unique_id=2107253415]
 z_index = -2
@@ -349,15 +366,25 @@ position = Vector2(-148, -117)
 position = Vector2(1, -84)
 
 [node name="PlanterBox6" parent="PlanterRow1" unique_id=1475303527 instance=ExtResource("7_7ltw3")]
+y_sort_enabled = false
 position = Vector2(-403, -120)
 
-[node name="ProximityInspectionComponent" parent="PlanterRow1/PlanterBox6" unique_id=287174514 instance=ExtResource("11_mm337")]
-position = Vector2(-1, -129)
-flavor_text_id = "planter_box_one"
+[node name="GreenhouseSmallBulb" parent="PlanterRow1/PlanterBox6" unique_id=162637870 instance=ExtResource("4_ephht")]
+y_sort_enabled = true
+position = Vector2(-158, -274)
+scale = Vector2(0.82, 0.82)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanterRow1/PlanterBox6/ProximityInspectionComponent" unique_id=541747174]
-position = Vector2(-1, 94)
-shape = SubResource("CircleShape2D_bsad5")
+[node name="ProximityInspectionComponent" parent="PlanterRow1/PlanterBox6/GreenhouseSmallBulb" unique_id=287174514 node_paths=PackedStringArray("sprite") instance=ExtResource("11_mm337")]
+position = Vector2(191.46341, 36.585358)
+scale = Vector2(1.2195122, 1.2195122)
+flavor_text_id = "planter_box_one"
+find_sprite_under_parent = false
+sprite = NodePath("..")
+outline_shader = SubResource("ShaderMaterial_g5l2a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanterRow1/PlanterBox6/GreenhouseSmallBulb/ProximityInspectionComponent" unique_id=541747174]
+position = Vector2(1.5, 207)
+shape = SubResource("RectangleShape2D_ephht")
 
 [node name="PlanterBox7" parent="PlanterRow1" unique_id=646927606 instance=ExtResource("7_7ltw3")]
 position = Vector2(-401, 104)

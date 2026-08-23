@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bw65evhu7m28l"]
+
+[ext_resource type="Texture2D" uid="uid://c8ilmh7x4uu6m" path="res://structures/decor/greenhouse_decor/greenhouse_bulb/greenhouse-small-bulb.png" id="1_ux1q4"]
+
+[node name="GreenhouseSmallBulb" type="Sprite2D" unique_id=1236665394]
+texture = ExtResource("1_ux1q4")

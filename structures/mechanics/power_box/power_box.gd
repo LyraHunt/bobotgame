@@ -41,6 +41,7 @@ func open() -> void:
 	if proximity_interaction_component.selected:
 		second_shader_pass_component.stop_mirroring()
 		second_shader_pass_component_opened.start_mirroring()
+		GameLogic.change_state(GameLogic.State.EXPLORING)
 
 func power() -> void:
 	GameLogic.change_state(GameLogic.State.DOOR_OPEN)
@@ -97,6 +98,6 @@ func _on_power_box_password_closed() -> void:
 
 func _on_power_box_password_completed() -> void:
 	password_inputs.visible = false
-	
 	GameData.pending_progress["opened_power_box"] = true
+	SoundManager.play_sound((SRM as SoundResourceManager).get_sound("casette_collected")).volume_db = -8
 	open()

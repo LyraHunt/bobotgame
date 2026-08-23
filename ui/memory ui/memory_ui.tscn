@@ -181,9 +181,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 300
-theme_override_constants/margin_top = 100
+theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 300
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_bottom = 60
 
 [node name="DocumentTexture" type="TextureRect" parent="DocumentView/MarginContainer" unique_id=1006645427]
 material = SubResource("ShaderMaterial_7ioe5")

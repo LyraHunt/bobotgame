@@ -6,6 +6,7 @@ enum Document {ALICE, NATASHA, ROSE, GREENHOUSE, WORKSHOP}
 
 var memory_controller_scene: PackedScene = preload("res://main/memories/memory_controller.tscn")
 var world_scene: PackedScene = preload("res://main/world/world.tscn")
+var game_complete_screen: PackedScene = preload("res://ui/game_complete_screen.tscn")
 
 var memory_timelines: Dictionary[Memory, DialogicTimeline] = {
 	Memory.GREENHOUSE: preload("res://resources/dialogic stuffs/cutscenes/memory_greenhouse_bot.dtl"),
@@ -62,6 +63,7 @@ var pending_documents: Array[Document] = []
 var acquired_documents: Array[Document] = []
 
 var queue_first_memory: bool = true
+var queue_controls: bool = true
 #var acquired_memories: Array[Memory] = [Memory.GREENHOUSE, Memory.STORAGE_AREA, Memory.LAB]
 #var acquired_memories: Array[Memory] = [Memory.STORAGE_AREA, Memory.LAB, Memory.ALICE_QUARTERS]
 
@@ -111,9 +113,9 @@ func save_progression() -> void:
 
 func _ready() -> void:
 	if debug_mode:
-		#actual_progress["has_quarters_passkey"] = true
-		#actual_progress["has_lab_passkey"] = true
-		actual_progress["opened_power_box"] = true
+		actual_progress["has_quarters_passkey"] = true
+		actual_progress["has_lab_passkey"] = true
+		#actual_progress["opened_power_box"] = true
 		#actual_progress["picked_up_cable"] = true
 		
 		"""acquired_documents.append(Document.ALICE)
@@ -125,8 +127,10 @@ func _ready() -> void:
 		bobot_last_power_station = 1
 		acquired_memories.append(Memory.GREENHOUSE)
 		queue_first_memory = false
+		queue_controls = false
 	
 	else:
 		bobot_last_power_station = 0
 		acquired_memories.append(Memory.GREENHOUSE)
 		queue_first_memory = true
+		queue_controls = true

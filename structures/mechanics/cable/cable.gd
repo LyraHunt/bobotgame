@@ -6,6 +6,7 @@ class_name ProgressionPickup extends Node2D
 
 func _ready() -> void:
 	if GameData.check_progress(progression_id):
+		flavor_text_id = "hiii"
 		collect()
 
 func _on_proximity_interaction_component_interacted() -> void:
@@ -20,6 +21,7 @@ func collect() -> void:
 
 func show_flavor_text() -> void:
 	if GameLogic.state == GameLogic.State.EXPLORING and GameData.flavor_text_exists(flavor_text_id):
+		print(flavor_text_id)
 		GameLogic.change_state(GameLogic.State.FLAVOR)
 		
 		if Dialogic.current_timeline != null:

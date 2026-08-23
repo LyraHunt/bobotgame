@@ -1,9 +1,9 @@
 join char_record_bot center
 join char_record_bot_narration center
 join char_alice left
-join char_natasha leftmost
+join char_rose leftmost
 join char_owen rightmost
-join char_rose right
+join char_natasha right
 char_record_bot: Record of meeting #503. Day 905 of Mission. Present\: Alice Johnson, Lead Scientist; Rose Wilson, Researcher; Owen Thompson, Mechanic; and Natasha Ivanovna Ageykina, Botanist.
 char_alice: I just spoke with our representative in the Company. Short answer\: We're done.
 char_owen: What?

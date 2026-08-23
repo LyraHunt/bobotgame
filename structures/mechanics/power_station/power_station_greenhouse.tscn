@@ -17,7 +17,7 @@ z_index = -1
 position = Vector2(0, 10.000001)
 scale = Vector2(0.95, 0.85)
 texture = ExtResource("2_epduf")
-offset = Vector2(66, -120)
+offset = Vector2(66, -140)
 
 [node name="ProximityInteractionComponent" parent="." unique_id=606314739 node_paths=PackedStringArray("dynamic_hotkey") instance=ExtResource("3_8fuyj")]
 dynamic_hotkey = NodePath("../DynamicHotkeyComponent")

@@ -16,6 +16,7 @@ class_name Bobot extends CharacterBody2D
 @onready var vignette: Control = get_node("CanvasLayer/BobotVignette")
 @onready var escape_countdown: EscapeCountdown = get_node("CanvasLayer/EscapeCountdown")
 @onready var interaction_icon: TextureRect = get_node("CanvasLayer/InteractionIcon")
+@onready var controls: ColorRect = get_node("CanvasLayer/Controls")
 var node_for_icon_tracking: Node2D
 
 @onready var idle_timer: Timer = get_node("IdleTimer")
@@ -36,6 +37,8 @@ var camera: Camera
 var is_playing_footsteps: bool = false
 #var footsteps_audiostream: AudioStreamPlayer
 
+var ready_to_escape: bool = false
+
 func _ready() -> void:
 	#start_charge(GameData.power_stations[GameData.bobot_last_power_station])
 	GameLogic.power_stations_initialized.connect(_start_charge_on_load)
@@ -48,6 +51,10 @@ func _ready() -> void:
 	if GameData.queue_first_memory:
 		GameData.queue_first_memory = false
 		switch_to_memory(GameData.Memory.GREENHOUSE)
+	elif GameData.queue_controls:
+		GameData.queue_controls = false
+		controls.visible = true
+		GameLogic.change_state(GameLogic.State.CONTROLS)
 	else:
 		SoundManager.set_default_music_bus("Music")
 		SoundManager.set_default_sound_bus("SoundEffects")
@@ -55,7 +62,9 @@ func _ready() -> void:
 
 func _start_charge_on_load() -> void:
 	#add_memory(GameData.Memory.GREENHOUSE)
-	start_charge(GameData.power_stations[GameData.bobot_last_power_station])
+	if GameLogic.state != GameLogic.State.CONTROLS:
+		print("starting charge")
+		start_charge(GameData.power_stations[GameData.bobot_last_power_station])
 
 func add_memory(memory_id: GameData.Memory) -> void:
 	casette_popup.visible = true
@@ -164,6 +173,7 @@ func _process(_delta: float) -> void:
 			GameData.bobot_charge += _delta * GameData.bobot_charge_per_sec
 			GameData.bobot_charge = min(GameData.bobot_charge, GameData.bobot_max_charge)
 	
+	charge_label.visible = GameData.debug_mode
 	charge_label.text = "[font_size=32]Charge: " + str(snappedf(GameData.bobot_charge, 0.1))
 	charge_label.text += "\n"
 	charge_label.text += "Pending Memories: " + str(GameData.pending_memories)
@@ -181,6 +191,10 @@ func _process(_delta: float) -> void:
 	interaction_icon.visible = not node_for_icon_tracking == null
 	if node_for_icon_tracking:
 		interaction_icon.global_position = (node_for_icon_tracking.global_position - global_position) * camera.zoom + Vector2(960, 540) + Vector2(-40, 20)
+	
+	if GameLogic.state == GameLogic.State.ESCAPED and ready_to_escape:
+		if not SoundManager.is_music_playing((SRM as SoundResourceManager).get_sound("escape")):
+			GameLogic.change_scene(GameData.game_complete_screen)
 
 func _handle_movement_input() -> void:
 	var x_direction: float = Input.get_axis("move_left_key", "move_right_key")
@@ -264,6 +278,22 @@ func _unhandled_input(event: InputEvent) -> void:
 			if event.is_action_pressed("escape_key"):
 				death_cutscene_timer.timeout.emit()
 				death_cutscene_timer = null
+		
+		GameLogic.State.CONTROLS:
+			if event.is_action_pressed("interact_key"):
+				var controls_tween: Tween = get_tree().create_tween()
+				controls_tween.tween_property(controls, "modulate", Color.TRANSPARENT, 0.5)
+				controls_tween.tween_callback(func () -> void:
+					controls.visible = false
+				)
+				start_charge(GameData.power_stations[GameData.bobot_last_power_station])
+			elif event.is_action_pressed("escape_key"):
+				var controls_tween: Tween = get_tree().create_tween()
+				controls_tween.tween_property(controls, "modulate", Color.TRANSPARENT, 0.5)
+				controls_tween.tween_callback(func () -> void:
+					controls.visible = false
+				)
+				start_charge(GameData.power_stations[GameData.bobot_last_power_station])
 
 
 func _on_idle_timer_timeout() -> void:
@@ -304,7 +334,9 @@ func _on_escape_timer_timeout() -> void:
 
 func escape() -> void:
 	print("bobot 'scape!")
+	
 	escape_countdown.timer_ref = null
+	escape_countdown.visible = false
 	movement_component.movement_mult = 30.0
 	animated_sprite.animation = "walk_down"
 	collision_shape.disabled = true
@@ -313,3 +345,7 @@ func escape() -> void:
 	await get_tree().create_timer(1).timeout
 	var escape_tween: Tween = get_tree().create_tween()
 	escape_tween.tween_property(escape_fade_black, "modulate", Color.WHITE, 2.0)
+	
+	await get_tree().create_timer(2).timeout
+	SoundManager.stop_sound((SRM as SoundResourceManager).get_sound("bobot_footsteps"))
+	ready_to_escape = true

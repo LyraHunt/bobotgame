@@ -37,6 +37,7 @@ func _on_close_button_button_down() -> void:
 func _input(event: InputEvent) -> void:
 	if visible:
 		if event.is_action_pressed("escape_key"):
-			closed.emit()
+			if (event as InputEventKey).keycode != Key.KEY_BACKSPACE:
+				closed.emit()
 		elif event is InputEventKey and event.is_pressed() and (event as InputEventKey).key_label == KEY_BACKSLASH:
 			all_correct()

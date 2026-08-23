@@ -9,7 +9,7 @@ signal start_pan_to_door()
 @warning_ignore("unused_signal") signal power_stations_initialized()
 @warning_ignore("unused_signal") signal bobot_escaped()
 
-enum State {EXPLORING, CHARGING, START_REMBERING, REMBERING, POPUP, MEM_POPUP, DEATH_CUTSCENE, FLAVOR, DOOR_OPEN, ESCAPED}
+enum State {EXPLORING, CHARGING, START_REMBERING, REMBERING, POPUP, MEM_POPUP, DEATH_CUTSCENE, FLAVOR, DOOR_OPEN, ESCAPED, CONTROLS}
 var state: State = State.CHARGING
 var current_memory: GameData.Memory
 
@@ -19,6 +19,7 @@ var controls: Dictionary[String, String] = {
 	} as Dictionary[String, String]
 
 func change_state(new_state: State) -> void:
+	print("state changed: " + State.keys()[new_state])
 	state = new_state
 	state_changed.emit()
 

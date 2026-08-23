@@ -71,5 +71,4 @@ func get_children_of_type(target_parent: Node, type: String) -> Array[Node]:
 	return children_of_type
 
 func pan_to_door() -> void:
-	change_state(GameLogic.State.DOOR_OPEN)
 	start_pan_to_door.emit()

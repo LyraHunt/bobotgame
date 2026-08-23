@@ -43,6 +43,7 @@ func open() -> void:
 		second_shader_pass_component_opened.start_mirroring()
 
 func power() -> void:
+	GameLogic.change_state(GameLogic.State.DOOR_OPEN)
 	GameData.actual_progress["powered_box"] = true
 	second_shader_pass_component.stop_mirroring()
 	second_shader_pass_component_opened.stop_mirroring()
@@ -96,7 +97,6 @@ func _on_power_box_password_closed() -> void:
 
 func _on_power_box_password_completed() -> void:
 	password_inputs.visible = false
-	GameLogic.change_state(GameLogic.State.EXPLORING)
 	
 	GameData.pending_progress["opened_power_box"] = true
 	open()

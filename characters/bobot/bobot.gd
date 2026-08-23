@@ -126,6 +126,7 @@ func charge_out() -> void:
 	animated_sprite.frame = 0
 	
 	SoundManager.play_sound((SRM as SoundResourceManager).get_sound("sfx_bobot_die")).volume_db = -8
+	SoundManager.stop_music(0.4)
 	
 	GameLogic.change_state(GameLogic.State.DEATH_CUTSCENE)
 	death_cutscene_timer = get_tree().create_timer(3.5)

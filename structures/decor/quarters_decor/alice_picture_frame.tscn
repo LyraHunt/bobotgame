@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://21c2fnqwc3rp"]
+
+[ext_resource type="Texture2D" uid="uid://dq7s7ueoxva2v" path="res://structures/decor/quarters_decor/picture frame.png" id="1_j5trx"]
+
+[node name="AlicePictureFrame" type="Node2D" unique_id=1997559336]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=124096536]
+z_index = -1
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_j5trx")
+offset = Vector2(-8, 0)

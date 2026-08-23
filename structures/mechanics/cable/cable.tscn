@@ -13,6 +13,7 @@ radius = 66.007576
 y_sort_enabled = true
 script = ExtResource("1_yhxfc")
 progression_id = "picked_up_cable"
+flavor_text_id = "pickup_cable"
 
 [node name="Sprite2DShadow" type="Sprite2D" parent="." unique_id=109605685]
 self_modulate = Color(1, 1, 1, 0.5647059)

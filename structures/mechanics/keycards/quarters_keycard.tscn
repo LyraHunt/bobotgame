@@ -12,6 +12,7 @@ radius = 41.01219
 y_sort_enabled = true
 script = ExtResource("1_f0ey0")
 progression_id = "has_quarters_passkey"
+flavor_text_id = "pickup_quarters_keycard"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=917366805]
 position = Vector2(0, 3.8146973e-06)

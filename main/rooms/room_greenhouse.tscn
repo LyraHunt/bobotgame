@@ -196,6 +196,9 @@ document_id = 3
 [node name="CollisionShape2D" parent="Desk/Document/ProximityInteractionComponent" parent_id_path=PackedInt32Array(512886027, 606314739) index="0" unique_id=807831631]
 position = Vector2(0, 71)
 
+[node name="DynamicHotkeyComponent" parent="Desk/Document" index="2" unique_id=62764332]
+position = Vector2(0, -118)
+
 [node name="Overgrowth" type="Node2D" parent="." unique_id=1835052771]
 y_sort_enabled = true
 position = Vector2(0, 1)

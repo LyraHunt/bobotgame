@@ -7,6 +7,7 @@
 [ext_resource type="TileSet" uid="uid://bopq3ijg2orhf" path="res://main/rooms/assets/tilesets/walls.tres" id="5_t08a1"]
 [ext_resource type="PackedScene" uid="uid://kfacys7sq1nm" path="res://structures/decor/lab_decor/lab_counter_small.tscn" id="6_pfpt1"]
 [ext_resource type="PackedScene" uid="uid://b4dq3382v0qhb" path="res://structures/decor/lab_decor/lab_counter_small_vert.tscn" id="7_t04ie"]
+[ext_resource type="Texture2D" uid="uid://cfu57m0c1vuf5" path="res://structures/decor/lab_decor/lab counter side view middle.PNG" id="8_elw07"]
 [ext_resource type="PackedScene" uid="uid://df7g10xkkullq" path="res://structures/decor/overgrowth/lilguy2.tscn" id="9_k7kvm"]
 [ext_resource type="PackedScene" uid="uid://cs6t6vam1sk6s" path="res://structures/decor/overgrowth/lilguy1.tscn" id="10_elw07"]
 [ext_resource type="PackedScene" uid="uid://cxd40vxy5vw24" path="res://structures/decor/overgrowth/lilguy3.tscn" id="11_4rjgr"]
@@ -67,7 +68,10 @@ position = Vector2(42, 97.00001)
 position = Vector2(917.99994, -254.99998)
 
 [node name="LabCounterSmallVert" parent="." unique_id=370786341 instance=ExtResource("7_t04ie")]
-position = Vector2(1093, -105.99999)
+position = Vector2(1092, -105.99999)
+
+[node name="Sprite2D" parent="LabCounterSmallVert" index="0" unique_id=1556870315]
+texture = ExtResource("8_elw07")
 
 [node name="LabCounterSmallVert2" parent="." unique_id=2011165247 instance=ExtResource("7_t04ie")]
 position = Vector2(1093, 398)
@@ -148,3 +152,5 @@ position = Vector2(961, 691)
 
 [node name="wallCreep1" parent="Overgrowth" unique_id=464869579 instance=ExtResource("13_k7kvm")]
 position = Vector2(1019, -361)
+
+[editable path="LabCounterSmallVert"]

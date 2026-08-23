@@ -104,8 +104,13 @@ position = Vector2(1024, 332)
 
 [node name="Document" parent="CargoCrate4" unique_id=713735610 instance=ExtResource("12_aofn0")]
 position = Vector2(-16, -80)
-rotation = -0.78460103
 document_id = 4
+
+[node name="Sprite2D" parent="CargoCrate4/Document" index="0" unique_id=917366805]
+rotation = -0.7853982
+
+[node name="DynamicHotkeyComponent" parent="CargoCrate4/Document" index="2" unique_id=62764332]
+position = Vector2(0, -131)
 
 [node name="CargoCrate5" parent="." unique_id=900655085 instance=ExtResource("8_weotp")]
 position = Vector2(435, 330)
@@ -175,3 +180,5 @@ position = Vector2(380, 9)
 
 [node name="wallCreep1" parent="Overgrowth" unique_id=1868780187 instance=ExtResource("18_16c82")]
 position = Vector2(415, -363)
+
+[editable path="CargoCrate4/Document"]

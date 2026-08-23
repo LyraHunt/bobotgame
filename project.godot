@@ -53,6 +53,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "alice_name_plate": "res://resources/dialogic stuffs/flavor_texts/alice_name_plate.dtl",
+"alice_picture_frame": "res://resources/dialogic stuffs/flavor_texts/alice_picture_frame.dtl",
 "cargo_box_one": "res://resources/dialogic stuffs/flavor_texts/cargo_box_one.dtl",
 "cargo_five": "res://resources/dialogic stuffs/flavor_texts/cargo_five.dtl",
 "cargo_four": "res://resources/dialogic stuffs/flavor_texts/cargo_four.dtl",
@@ -72,6 +73,9 @@ directories/dtl_directory={
 "owen_crate": "res://resources/dialogic stuffs/flavor_texts/owen_crate.dtl",
 "owen_desk": "res://resources/dialogic stuffs/flavor_texts/owen_desk.dtl",
 "owen_name_plate": "res://resources/dialogic stuffs/flavor_texts/owen_name_plate.dtl",
+"pickup_cable": "res://resources/dialogic stuffs/flavor_texts/pickup_cable.dtl",
+"pickup_lab_keycard": "res://resources/dialogic stuffs/flavor_texts/pickup_lab_keycard.dtl",
+"pickup_quarters_keycard": "res://resources/dialogic stuffs/flavor_texts/pickup_quarters_keycard.dtl",
 "planter_box_one": "res://resources/dialogic stuffs/flavor_texts/planter_box_one.dtl",
 "planter_box_three": "res://resources/dialogic stuffs/flavor_texts/planter_box_three.dtl",
 "planter_box_two": "res://resources/dialogic stuffs/flavor_texts/planter_box_two.dtl",

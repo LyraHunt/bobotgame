@@ -111,10 +111,10 @@ func save_progression() -> void:
 
 func _ready() -> void:
 	if debug_mode:
-		actual_progress["has_quarters_passkey"] = true
-		actual_progress["has_lab_passkey"] = true
+		#actual_progress["has_quarters_passkey"] = true
+		#actual_progress["has_lab_passkey"] = true
 		actual_progress["opened_power_box"] = true
-		actual_progress["picked_up_cable"] = true
+		#actual_progress["picked_up_cable"] = true
 		
 		"""acquired_documents.append(Document.ALICE)
 		acquired_documents.append(Document.GREENHOUSE)

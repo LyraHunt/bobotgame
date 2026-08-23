@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://x5sldqavqgmo"]
+
+[ext_resource type="Script" uid="uid://fmp3yy6klpd" path="res://characters/bobot/intro_cutscene/intro_cutscene_control.gd" id="1_m3kgj"]
+
+[node name="IntroCutsceneControl" type="Node" unique_id=740030458]
+script = ExtResource("1_m3kgj")

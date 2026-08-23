@@ -51,13 +51,16 @@ func _ready() -> void:
 	if GameData.queue_first_memory:
 		GameData.queue_first_memory = false
 		switch_to_memory(GameData.Memory.GREENHOUSE)
+	elif GameData.queue_intro_cutscene:
+		GameData.queue_intro_cutscene = false
+		GameLogic.change_scene(GameData.intro_cutscene_control)
 	elif GameData.queue_controls:
 		GameData.queue_controls = false
 		controls.visible = true
 		GameLogic.change_state(GameLogic.State.CONTROLS)
+		
+		SoundManager.play_music((SRM as SoundResourceManager).get_sound("lab"))
 	else:
-		SoundManager.set_default_music_bus("Music")
-		SoundManager.set_default_sound_bus("SoundEffects")
 		SoundManager.play_music((SRM as SoundResourceManager).get_sound("lab"))
 
 func _start_charge_on_load() -> void:

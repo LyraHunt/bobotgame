@@ -12,6 +12,11 @@
 [ext_resource type="AudioStream" uid="uid://eqmfms0h3vqq" path="res://ui/casettes ui/memory_bank_play.mp3" id="9_b53ws"]
 [ext_resource type="AudioStream" uid="uid://cln62xrqtrdw3" path="res://characters/bobot/sprites/metal_footsteps_short.mp3" id="11_661h1"]
 
+[sub_resource type="Resource" id="Resource_ke3xm"]
+script = ExtResource("2_qpb0q")
+sounds = Array[AudioStream]([ExtResource("11_661h1")])
+metadata/_custom_type_script = "uid://bh08fsqvg3562"
+
 [sub_resource type="Resource" id="Resource_rxdsk"]
 script = ExtResource("2_qpb0q")
 sounds = Array[AudioStream]([ExtResource("3_i3qp0")])
@@ -45,11 +50,6 @@ metadata/_custom_type_script = "uid://bh08fsqvg3562"
 [sub_resource type="Resource" id="Resource_obths"]
 script = ExtResource("2_qpb0q")
 sounds = Array[AudioStream]([ExtResource("6_x60cc"), ExtResource("7_4xhyy")])
-metadata/_custom_type_script = "uid://bh08fsqvg3562"
-
-[sub_resource type="Resource" id="Resource_ke3xm"]
-script = ExtResource("2_qpb0q")
-sounds = Array[AudioStream]([ExtResource("11_661h1")])
 metadata/_custom_type_script = "uid://bh08fsqvg3562"
 
 [node name="SRM" type="Node" unique_id=1279880996]

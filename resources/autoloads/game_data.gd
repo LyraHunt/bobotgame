@@ -6,7 +6,9 @@ enum Document {ALICE, NATASHA, ROSE, GREENHOUSE, WORKSHOP}
 
 var memory_controller_scene: PackedScene = preload("res://main/memories/memory_controller.tscn")
 var world_scene: PackedScene = preload("res://main/world/world.tscn")
+var world_scene_path: String = "res://main/world/world.tscn"
 var game_complete_screen: PackedScene = preload("res://ui/game_complete_screen.tscn")
+var intro_cutscene_control: PackedScene = preload("res://characters/bobot/intro_cutscene/intro_cutscene_control.tscn")
 
 var memory_timelines: Dictionary[Memory, DialogicTimeline] = {
 	Memory.GREENHOUSE: preload("res://resources/dialogic stuffs/cutscenes/memory_greenhouse_bot.dtl"),
@@ -64,6 +66,8 @@ var acquired_documents: Array[Document] = []
 
 var queue_first_memory: bool = true
 var queue_controls: bool = true
+var queue_intro_cutscene: bool = true
+var intro_cutscene_timeline: DialogicTimeline = preload("res://characters/bobot/intro_cutscene/intro_cutscene.dtl")
 #var acquired_memories: Array[Memory] = [Memory.GREENHOUSE, Memory.STORAGE_AREA, Memory.LAB]
 #var acquired_memories: Array[Memory] = [Memory.STORAGE_AREA, Memory.LAB, Memory.ALICE_QUARTERS]
 
@@ -89,7 +93,7 @@ var actual_progress: Dictionary[String, bool] = {
 # flavor text stuff
 var flavor_text_folder: String = "res://resources/dialogic stuffs/flavor_texts/"
 
-var debug_mode: bool = true
+var debug_mode: bool = false
 
 func add_power_station_id(new_id: int, power_station: PowerStation) -> void:
 	power_stations.set(new_id, power_station)
@@ -112,6 +116,9 @@ func save_progression() -> void:
 	pending_progress = actual_progress.duplicate()
 
 func _ready() -> void:
+	SoundManager.set_default_music_bus("Music")
+	SoundManager.set_default_sound_bus("SoundEffects")
+	
 	if debug_mode:
 		actual_progress["has_quarters_passkey"] = true
 		actual_progress["has_lab_passkey"] = true
@@ -128,9 +135,11 @@ func _ready() -> void:
 		acquired_memories.append(Memory.GREENHOUSE)
 		queue_first_memory = false
 		queue_controls = false
+		queue_intro_cutscene = false
 	
 	else:
 		bobot_last_power_station = 0
 		acquired_memories.append(Memory.GREENHOUSE)
 		queue_first_memory = true
 		queue_controls = true
+		queue_intro_cutscene = true

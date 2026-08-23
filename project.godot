@@ -60,6 +60,7 @@ directories/dtl_directory={
 "cargo_three": "res://resources/dialogic stuffs/flavor_texts/cargo_three.dtl",
 "cargo_two": "res://resources/dialogic stuffs/flavor_texts/cargo_two.dtl",
 "greenhouse_crate": "res://resources/dialogic stuffs/flavor_texts/greenhouse_crate.dtl",
+"intro_cutscene": "res://characters/bobot/intro_cutscene/intro_cutscene.dtl",
 "lab_doorway_locked": "res://resources/dialogic stuffs/flavor_texts/lab_doorway_locked.dtl",
 "locked_greenhouse_door": "res://resources/dialogic stuffs/flavor_texts/locked_greenhouse_door.dtl",
 "memory_cargo_bot": "res://resources/dialogic stuffs/cutscenes/memory_cargo_bot.dtl",
